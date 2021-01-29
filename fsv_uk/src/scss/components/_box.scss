@@ -1,0 +1,75 @@
+.box {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  grid-template-rows: 45px 45px;
+  align-items: center;
+  justify-items: center;
+  padding: 1.5em;
+  padding-left: 2em;
+  padding-right: calc(1.5em + 90px);
+  //   margin-left: 2em;
+  //   margin-right: 2em;
+  @media screen and (max-width: $sm * 1em) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 1.5em;
+  }
+  @media screen and (max-width: $sm * 1em) {
+    font-size: 1.8rem;
+  }
+  &--info {
+    span:first-child {
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      //   @media screen and (max-width: $sm * 1em) {
+      //     font-size: 1.8rem;
+      //   }
+    }
+    span:nth-child(2) {
+      font-weight: 800;
+    }
+    &_chat {
+      background-color: #737373;
+      color: white;
+      &::before {
+        @media screen and (max-width: $sm * 1em) {
+          display: none;
+        }
+        display: block;
+        content: "";
+        width: 90px;
+        height: 90px;
+        background-size: contain;
+        margin-right: 0;
+        background: url(/sites/default/files/uploads/images/piktogram_q-and-a.png)
+          no-repeat;
+        background-size: contain;
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+    }
+    &_visitation {
+      margin-bottom: 1.5em;
+      margin-top: 2.5em;
+      background-color: $c4;
+      color: white;
+      &::before {
+        @media screen and (max-width: $sm * 1em) {
+          display: none;
+        }
+        display: block;
+        content: "";
+        width: 90px;
+        height: 90px;
+        background-size: contain;
+        margin-right: 0;
+        background: url(/sites/default/files/uploads/images/piktogram_stream.png)
+          no-repeat;
+        background-size: contain;
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+    }
+  }
+}

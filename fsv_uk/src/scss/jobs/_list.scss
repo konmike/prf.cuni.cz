@@ -1,0 +1,114 @@
+.layout-content--viewnabidka-pracipage-1 {
+  & .views-view-grid.vertical {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    width: 70%;
+    margin: 0 auto;
+  }
+  & .views-view-grid {
+    & .views-col {
+      width: 100% !important;
+      border-top: 1px solid #dadada;
+      padding: 2rem;
+      margin: 0;
+      transition: all 0.3s;
+      &:hover {
+        background-color: rgba(212, 50, 65, 0.1);
+      }
+    }
+    & .views-col:last-child {
+      border-bottom: 0;
+      margin-bottom: 2rem;
+    }
+    & .views-label {
+      padding-right: 0.5rem;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+    & .views-row {
+      display: flex;
+      flex-direction: row;
+      //flex-wrap: wrap;
+      align-items: center;
+
+      & .views-field-field-logo {
+        //PRO verze
+        display: none;
+
+        margin-right: 2rem;
+      }
+      & .views-field-nothing {
+        width: 100%;
+        & .group-1 {
+          display: flex;
+        }
+        & .group-2 {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      & .topovat {
+        //PRO verze
+        display: none;
+
+        background: #d43241;
+        color: white;
+        padding: 0.2rem 0.5rem;
+        margin-right: 0.5rem;
+        font-weight: 900;
+        @media (max-width: $mini * 1em) {
+          order: -2;
+        }
+      }
+      & .created {
+        margin-left: auto;
+        text-align: right;
+        color: #6b6b6b;
+        @media (max-width: $mini * 1em) {
+          order: -1;
+        }
+      }
+      & .nazev-spolecnosti,
+      & .adresa-mista-pracoviste {
+        width: 100%;
+        color: #6b6b6b;
+        font-size: 1.4rem;
+      }
+      & .list-tags {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        & .item {
+          //background: #F28F3B;
+          //padding: 0 0.3rem;
+          padding: 0;
+          width: fit-content;
+          //color: white;
+          color: black;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          font-size: 1.4rem;
+          & .label_tag {
+            font-weight: 900;
+            text-transform: uppercase;
+            padding-right: 0.5rem;
+          }
+          &:after {
+            font-family: "Font Awesome 5 Free", Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            font-size: 0.5rem;
+            padding: 0 0.8rem;
+            color: rgba(0, 0, 0, 0.8);
+            content: "\f111";
+          }
+          &:last-child::after {
+            content: "";
+          }
+        }
+      }
+    }
+  }
+}

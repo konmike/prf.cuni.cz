@@ -1,0 +1,15 @@
+input {
+    max-width: 100%;
+    width: 100%;
+    // font-family: 'Open Sans',sans-serif;
+    border-radius: 0;
+}
+
+input[type=submit] {
+    cursor: pointer;
+}
+
+input[type=search] {
+    min-height: 3.2rem;
+    border: .1rem solid $c9;
+}

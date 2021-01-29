@@ -1,0 +1,30 @@
+global-styling:
+  version: 2.0
+  css:
+    theme:
+      css/main.css: {}
+  js:
+    js/main_script.js: {}
+    js/custom_script.js: {}
+  dependencies:
+    - core/jquery
+
+jobs-styling:
+  css:
+    theme:
+      css/jobs.css: {}
+
+css-job-offer:
+  css:
+    theme:
+      css/job-offer.css: {}
+
+list-job-offer:
+  css:
+    theme:
+      css/list-job-offer.css: {}
+
+font-awesome:
+  css:
+    theme:
+      'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css': {type:external}

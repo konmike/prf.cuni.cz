@@ -1,0 +1,5 @@
+ {% if output == "KNH" %} {{ "Books"|t }} 
+ {% elseif output == "CKN" %} {{ "Chapters in a book"|t }} 
+ {% elseif output == "PST" %} {{ "Lectures, posters"|t }} 
+ {% elseif output == "CAS" %} {{ "Articles"|t }} 
+ {% else %} {{ output }} {% endif %}

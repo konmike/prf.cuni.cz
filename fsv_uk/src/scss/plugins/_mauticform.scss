@@ -1,0 +1,39 @@
+.mauticform{
+    &-checkboxgrp{
+        &-label{
+            position: inherit !important;
+        }
+        &-row{
+            font-size: 12px;
+        }
+    }
+    &-page-wrapper {
+        display: flex !important; 
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: space-between; 
+        align-items: flex-end;
+    }
+    &-email{
+        width: 70%;
+        max-width: 70%;    
+    }
+    &-button{
+        height: 2.5rem;
+    }
+    &-post-success &-message{
+        background: #3b4a3a;
+        border: 1px solid white;
+        padding: 10px 20px;
+    }
+}
+
+#mauticform_finalcampaignform_souhlas1{
+    font-size: 12px;
+    text-decoration: underline;
+    margin-top: -15px;
+}
+
+h3#mauticform_label_finalcampaignform_souhlas1 {
+    display: none;
+}

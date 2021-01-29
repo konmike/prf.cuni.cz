@@ -1,0 +1,15 @@
+.grid {
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+
+  &--2x2 {
+    grid-template-columns: repeat(2, min-content);
+    grid-template-rows: auto auto;
+    gap: 1em;
+
+    @media screen and (max-width: $mini * 1em) {
+      grid-template-columns: min-content;
+    }
+  }
+}

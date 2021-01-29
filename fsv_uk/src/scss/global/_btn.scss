@@ -1,0 +1,39 @@
+.btn {
+  display: inline-block;
+  background-color: $c4;
+  font-size: 1.6rem;
+  height: 3.6rem;
+  line-height: 3.6rem;
+  color: $c1;
+  padding: 0 1.5rem;
+  margin-top: 2rem;
+  border: 0.2rem solid $c4;
+  cursor: pointer;
+  box-sizing: content-box;
+  transition: all 0.3s;
+
+  &:hover {
+    border-color: $c4;
+    background-color: $c1;
+    color: $c4;
+  }
+  &.btn--light {
+    background-color: $c1;
+    color: $c4;
+    border-color: $c1;
+
+    &:hover {
+      border-color: $c1;
+      background-color: $c4;
+      color: $c1;
+    }
+  }
+  &.btn--application {
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 0.4em;
+    font-family: "Amatic SC", "Open Sans", sans-serif;
+    font-size: 4rem;
+    padding: 0.5em;
+  }
+}

@@ -1,0 +1,126 @@
+.side-nav {
+  $this: &;
+  display: none;
+  &__item {
+    font-size: 1.6rem;
+    background-color: $c1;
+    border-bottom: 0.2rem solid $c7;
+    position: relative;
+
+    &--active {
+      #{$this}__list-lvl2 {
+        display: block;
+      }
+    }
+  }
+
+  &__mobile-toggle {
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    &:after {
+      content: "";
+      background-image: url(../images/icons/triangle-red.svg);
+      display: inline-block;
+      width: 9px;
+      height: 15px;
+      position: absolute;
+      right: 2rem;
+      top: calc(50% - 7.5px);
+      background-size: cover;
+      z-index: 1;
+      transform: rotate(90deg);
+      transition: transform 0.3s;
+    }
+  }
+
+  &__toggle {
+    content: "+";
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 100%;
+    line-height: 5rem;
+    cursor: pointer;
+    color: $c11;
+    font-weight: 100;
+    &--active {
+      color: $c4;
+    }
+  }
+
+  &__link {
+    padding: 1.5rem;
+    display: block;
+    border-left: 0.2em solid rgba(255, 255, 255, 1);
+    transition: all 0.3s;
+    &:hover,
+    &--active {
+      background-color: $c12;
+      border-left: 0.2em solid rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  &__list-lvl2 {
+    padding: 1rem;
+    padding-left: 4rem;
+    padding-right: 1.75rem;
+    background-color: $c7;
+    display: none;
+  }
+
+  &__item-lvl2 {
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__link-lvl2 {
+    display: inline;
+    //position: relative;
+    transition: color 0.3s;
+    border-left: 0;
+    &:hover {
+      color: $c4;
+      background-color: transparent;
+      border-left: 0;
+    }
+    &.is-active {
+      color: $c4;
+    }
+    &#{$this}__link--active {
+      color: $c4;
+      background-color: transparent;
+      border-left: 0;
+      &:after {
+        content: "";
+        // display: block;
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-image: url(../images/icons/active_arrow.svg);
+        right: 10px;
+        margin: 6px 0 0 0;
+        //top: .2rem;
+      }
+    }
+  }
+
+  @media (min-width: $sm * 1em) {
+    &__mobile-toggle {
+      margin-top: 0;
+    }
+  }
+
+  @media (min-width: $lg * 1em) {
+    display: block !important;
+    &__mobile-toggle {
+      display: none !important;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+.nav-top {
+    $this: &;
+    @media(max-width: ($headerBreak - .0625) * 1em) {
+        margin-top: 1rem;
+        &__item {
+            font-size: 1.6rem;
+            margin-bottom: 2rem;
+        }
+        &__link {
+            &:after {
+                content: '';
+                display: inline-block;
+                vertical-align: baseline;
+                margin-left: 1rem;
+                width: 1.2rem;
+                height: 1.05rem;
+                background-image: url(../images/icons/external.svg);
+                background-size: cover;
+            }
+        }
+        &__heading {
+            margin-bottom: 2rem;
+            font-size: 1.6rem;
+            color: $c6;
+        }
+    }
+    @media(min-width: $headerBreak * 1em) {
+        text-align: right;
+        &__item {
+            font-size: 1.3rem;
+            display: inline-block;
+            position: relative;
+            font-weight: normal;
+            &:not(:last-child):after {
+                content: "|";
+                color: #a0a0a0;
+                font-size: 14px;
+            }
+            &:last-child {
+                #{$this}__link {
+                    padding-right: 0;                    
+                }
+            }
+        }
+        &__link {
+            padding: 0 .5em;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        &__heading {
+            position:absolute;
+            left:-10000px;
+            top:auto;
+            width:1px;
+            height:1px;
+            overflow:hidden;
+        }
+    }
+}

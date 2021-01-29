@@ -1,0 +1,62 @@
+<div class="controls__print-wrap">
+
+    {% if content.field_control_print['#items'].0.getValue().value %}
+
+        <section class="controls controls--print">        
+            <ul class="controls__list">
+                <li class="controls__item">
+                    <a class="controls__link controls__link--print" href="#" id="jq_print">{{ 'Tisk'|t}}</a>
+                </li>
+            </ul>
+        </section>
+
+    {% endif %}
+
+    {% if (content.field_hide_title['#items'].0.getValue().value) %}{% else %}
+ 
+        <h1 class="padding section-title page-title">{{ label }}</h1>
+
+    {% endif %}
+
+
+    {% block content %} 
+        
+        {{ content|without('field_node_show_controls') }}
+        
+        {% if related_news_tags_ids is defined %}
+            {{ drupal_view(
+            'news_page',
+            'block_related_basic_page',
+            related_news_tags_ids | join('+')
+            ) }}
+        
+        {% endif %}
+
+    {% endblock %}
+
+</div>
+
+{% block controls %}
+    {% if content.field_node_show_controls['#items'].0.getValue().value %}
+        <section class="controls mb">
+            <h2 class="section-title padding">{{"Ovládací prvky"|t}}</h2>
+            <ul class="controls__list">
+                <li class="controls__item">
+                    <a class="controls__link controls__link--print" href="#" id="jq_print">{{ 'Tisk'|t}}</a>
+                </li>
+                <li class="controls__item">
+                    <a class="controls__link controls__link--mail" href="mailto:?&body={{ host }}{{ current_uri }}" target="_blank">{{'Poslat mailem'|t}}</a>
+                </li>
+                <li class="controls__item">
+                    <a class="controls__link controls__link--fb" href="https://www.facebook.com/sharer/sharer.php?u={{ host }}{{ current_uri }}" target="_blank">{{ 'Sdílet na Facebooku'|t}}</a>
+                </li>
+                <li class="controls__item">
+                    <a class="controls__link controls__link--twitter" href="https://twitter.com/intent/tweet?source={{ host }}{{ current_uri }}" target="_blank">{{ 'Sdílet na Twitteru'|t}}</a>
+                </li>
+            </ul>
+        </section>
+    {% endif %}
+{% endblock controls %}
+
+
+

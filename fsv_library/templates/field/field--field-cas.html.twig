@@ -1,0 +1,9 @@
+{% for item in items %}
+	<li>
+        {% set cas %}
+            {{ item.content }}
+        {% endset %}	
+
+        {{ cas|striptags }}
+    </li>
+{% endfor %}

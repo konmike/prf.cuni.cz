@@ -1,0 +1,196 @@
+.toolbar-vertical .header {
+    @media(min-width: $headerBreak * 1em) {
+        top: 39px;
+    }
+}
+
+.toolbar-horizontal .header {
+    @media(min-width: $headerBreak * 1em) {
+        top: 79px;
+    }
+}
+
+.header {
+    z-index: 1;
+    &__logo {
+        display: inline-block
+    }
+    &__logo-img {
+        display: none;
+    }
+    &__logo-mobile {
+        display: block;
+        max-width: 6rem;
+    }
+    &__container {
+        padding: 0 $padMob;
+    }
+    @media(max-width: ($headerBreak - .0625) * 1em) {
+        height: 7.5rem;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: $c1;
+        -webkit-overflow-scrolling: touch;
+        z-index: 1000;
+
+        &--open {
+            position: fixed;
+            transform: none !important;
+            will-change: none !important;
+        }
+
+        // &__container {
+
+        // }
+        &__container,
+        &__left {
+            height: 100%;
+        }
+        &__nav,
+        &__right {
+            width: 100%;
+        }
+        &__inner-wrap {
+            padding: 0 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            position: fixed;
+            width: 100%;
+            height: calc(100% - 7.5rem);
+            bottom: 0;
+            left: 0;
+            align-content: flex-start;
+            background-color: $c1;
+            overflow-y: scroll;
+            opacity: 0;
+            visibility: hidden;
+            -webkit-overflow-scrolling: touch;
+            &--open {
+                opacity: 1;
+                visibility: visible;
+                transition: opacity 0.5s;
+            }
+        }
+        &__left {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &__right {
+            order: 2;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        &__search {
+            display: none;
+        }
+        &__nav {
+            order: 1;
+            padding-top: 1rem;
+        }
+        &__logo {
+            max-width: 18rem;
+        }
+        &__nav-top {
+            order: 1;
+        }
+        &__nav-top,
+        &__nav-bottom {
+            width: 50%;
+            float: right;
+        }
+        &__search-toggle {
+            width: 2.3rem;
+            height: 2.4rem;
+            margin-right: 2rem;
+            background-image: url(../images/icons/search.svg);
+            background-color: transparent;
+            background-size: 2.2rem;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: none;
+            text-indent: -9999px;
+            cursor: pointer;
+        }
+        &__mobile-btns {
+            display: flex;
+            align-items: center;
+        }
+        &__mobile-lang {
+            margin-right: 2rem;
+        }
+    }
+    @media (min-width: $sm * 1em) and (max-width: ($headerBreak - .0625) * 1em) {
+        &__inner-wrap {
+            padding: 0 2rem;
+        }
+    }
+    @media(min-width: $headerBreak * 1em) {
+        position: fixed;
+        height: 183px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: $c1;
+        transition: all .5s ease;
+        backface-visibility: hidden;
+
+        &--squeezed {
+            transform: translateY(-143px);
+        }
+
+        &:after {
+            content: '';
+            height: 4rem;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: $c4;
+            z-index: -1;
+        }
+        &__inner-wrap {
+            display: inline;
+        }
+        &__left {
+            display: inline-block;
+            padding-top: 1rem;
+            transition: all .5s ease;
+        }
+        &__nav {
+            margin-top: 1.3rem;
+        }
+        &__logo {
+            max-width: 33.6rem;
+        }
+        &__logo-img {
+            //width: 336px;
+            height: 102px;
+            display: block;
+        }
+        &__logo-mobile {
+            display: none;
+        }
+        &__right {
+            // margin-top: 0.625rem;
+            margin-top: 10px;
+            float: right;
+            transition: all .5s ease;
+        }
+        &__container {
+            padding-top: 1rem;
+            transition: all .5s ease;
+        }
+        &__search {
+            margin: .75rem 0 .5rem;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        &__search-toggle, &__mobile-btns {
+            display: none;
+        }
+    }
+}
