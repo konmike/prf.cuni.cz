@@ -8891,6 +8891,7 @@ li.gallery__thumbnail a {
 .box--info_chat {
   background-color: #737373;
   color: white;
+  margin-bottom: 1em;
 }
 
 .box--info_chat::before {
@@ -8938,6 +8939,21 @@ li.gallery__thumbnail a {
   .box--info_visitation::before {
     display: none;
   }
+}
+
+.youtube {
+  position: relative;
+  min-width: 560px;
+  padding-bottom: 56.25%;
+}
+
+.youtube .iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  aspect-ratio: 16/9;
 }
 
 #jq_side-nav-toggle {
