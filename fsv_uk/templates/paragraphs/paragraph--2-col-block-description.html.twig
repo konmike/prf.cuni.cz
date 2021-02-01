@@ -42,7 +42,12 @@
 {% block paragraph %}
   <section class="description padding mb">
     {% block content %}
-      {{ content }}
+      {% if (content.field_skryt_nadpis['#items'].0.getValue().value) %}{% else %}
+        {{ content.field_title }}
+    {% endif %}
+
+
+    {{ content.field_wysiwyg_body }}
     {% endblock %}
   </section>
 {% endblock paragraph %}
