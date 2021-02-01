@@ -148,6 +148,16 @@ iframe {
   overflow: hidden;
 }
 
+.no-after {
+  &::after {
+    display: none !important;
+  }
+}
+.image--youtube-logo {
+  width: 50% !important;
+  max-width: 50% !important;
+}
+
 @media (min-width: $headerBreak * 1em) {
   #content-wrap {
     transform: translateY(183px);

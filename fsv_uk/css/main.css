@@ -680,6 +680,15 @@ iframe {
   overflow: hidden;
 }
 
+.no-after::after {
+  display: none !important;
+}
+
+.image--youtube-logo {
+  width: 50% !important;
+  max-width: 50% !important;
+}
+
 @media (min-width: 62.5em) {
   #content-wrap {
     -webkit-transform: translateY(183px);
