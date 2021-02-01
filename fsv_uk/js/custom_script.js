@@ -13,6 +13,20 @@
       });
     }
 
+    //Pokud je youtube iframe prekryt obrazkem, pak skryj obrazek
+    //a zacni prehravat video
+    $(".youtube--with-cover .image").click(function (e) {
+      e.preventDefault();
+      $(this).hide();
+      let wrapperAndIframe = $(this).siblings(".iframe");
+      let src = wrapperAndIframe.attr("src");
+      src += "?autoplay=1";
+      // console.log(src);
+      wrapperAndIframe.attr("src", src).show();
+
+      $(this).parent().css("padding-bottom", "56.25%");
+    });
+
     let addText = "<span>Zvýraznit</span>";
 
     // let buttonUploadImage = "<div class='upload-button'><span class='upload-button__text'>Nahrát soubor</span></div>";

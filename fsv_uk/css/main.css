@@ -8944,7 +8944,28 @@ li.gallery__thumbnail a {
 .youtube {
   position: relative;
   min-width: 560px;
+}
+
+@media screen and (max-width: 35.5em) {
+  .youtube {
+    min-width: 100%;
+  }
+}
+
+.youtube--only-iframe {
   padding-bottom: 56.25%;
+}
+
+.youtube--with-cover {
+  padding-bottom: 0;
+}
+
+.youtube--with-cover .iframe {
+  display: none;
+}
+
+.youtube--with-cover .image {
+  cursor: pointer;
 }
 
 .youtube .iframe {
@@ -8954,6 +8975,13 @@ li.gallery__thumbnail a {
   left: 0px;
   top: 0px;
   aspect-ratio: 16/9;
+}
+
+@media screen and (max-width: 35.5em) {
+  .youtube .iframe {
+    min-width: 100%;
+    min-height: 100% !important;
+  }
 }
 
 #jq_side-nav-toggle {

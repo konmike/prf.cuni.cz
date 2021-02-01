@@ -50,13 +50,32 @@
     {% if '?v=' in link or '?vi=' in link %}
         {% set cut = link|split('=') %}
         {% set id = cut[1]|slice(0,11) %}
+    {% elseif 'embed' in link %}
+        {% set cut = link|split('/') %}
+        {% set id = cut[4] %}
     {% else %}
-        {% set id = link|split('/') %}
+        {% set cut = link|split('/') %}
         {% set id = cut[3] %}
     {% endif %}
     
-    <div class="youtube youtube--wrapper">
-    <iframe class="iframe iframe--youtube" src="https://www.youtube.com/embed/{{id}}"></iframe>
+    {% if (content.field_autoplay['#items'].0.getValue().value) %}
+        {% set id = id ~ '?autoplay=1&mute=1' %}
+    {% endif %}
+
+
+
+    {% if content.field_cover_iframe['#items'].value is empty %}
+        {% set classes = 'youtube--only-iframe' %}
+    {% else %}
+        {% set classes = 'youtube--with-cover' %}
+    {% endif %}
+    <div class="youtube {{classes}}">
+    
+    {% if content.field_cover_iframe['#items'].value is not empty %}
+        <img class="image" src='{{ file_url(content.field_cover_iframe['#items'].entity.uri.value) }}' />
+    {% endif %}
+    <iframe loading="lazy" class="iframe" allow="autoplay; gyroscope; picture-in-picture" src="https://www.youtube.com/embed/{{id}}"></iframe>
+
     </div>
     {% endblock %}
   </section>
