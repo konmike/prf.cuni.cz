@@ -1,18 +1,5 @@
 (function ($) {
   $(document).ready(function () {
-    if ($(".ratio-16-9.cover-iframe")) {
-      // console.log("Je tu neco skryteho za obrazkem");
-      $(".ratio-16-9.cover-iframe img").click(function () {
-        $(this).hide();
-        let src = $(".ratio-16-9.cover-iframe iframe").attr("src");
-        src += "?autoplay=1";
-        // console.log(src);
-        $(".ratio-16-9.cover-iframe iframe").attr("src", src);
-        $(".ratio-16-9.cover-iframe iframe").show();
-        $(".ratio-16-9.cover-iframe").css("padding-bottom", "56.25%");
-      });
-    }
-
     //Pokud je youtube iframe prekryt obrazkem, pak skryj obrazek
     //a zacni prehravat video
     $(".youtube--with-cover .image").click(function (e) {
