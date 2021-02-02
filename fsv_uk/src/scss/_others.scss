@@ -339,3 +339,16 @@ li.front-news-item {
     display: none !important;
   }
 }
+
+.just-for-h1-fakultni-youtube {
+  border-bottom: 0.2rem solid #f6f6f6;
+  color: #d43241;
+  margin-bottom: 0.5em;
+  padding: 1rem;
+  padding-left: 0;
+  background: white;
+  font-weight: normal;
+  @media (min-width: 35.5em) {
+    font-size: 2.4rem;
+  }
+}

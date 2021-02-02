@@ -7082,27 +7082,38 @@ li.gallery__thumbnail a {
   }
 }
 
+.controls__dod {
+  background: white;
+}
+
+.controls__dod .padding {
+  padding: 0;
+}
+
 .controls__dod .hero-image {
   display: block;
   margin-bottom: 0 !important;
   padding-bottom: 38% !important;
 }
 
-.controls__dod #bodycontent {
-  padding: 0;
-  padding-top: 2rem;
+.controls__dod .body {
+  margin-top: 0;
 }
 
-.controls__dod #bodycontent .line {
+.controls__dod .mb {
+  margin-bottom: 0;
+}
+
+.controls__dod .line {
   border-bottom: 1rem solid #d43241 !important;
   margin: 1em 1.5em 2em 1.5em !important;
 }
 
-.controls__dod #bodycontent .info-text {
+.controls__dod .info-text {
   margin: 1em 3em;
 }
 
-.controls__dod #bodycontent .btn-description {
+.controls__dod .btn-description {
   color: #d43241;
   font-weight: 800;
   display: block;
@@ -7110,7 +7121,7 @@ li.gallery__thumbnail a {
   outline: none;
 }
 
-.controls__dod #bodycontent h4 {
+.controls__dod h4 {
   color: #d43241;
   font-weight: 800;
   text-transform: uppercase;
@@ -9456,5 +9467,21 @@ li.front-news-item div:last-of-type {
   footer,
   .prefooter {
     display: none !important;
+  }
+}
+
+.just-for-h1-fakultni-youtube {
+  border-bottom: 0.2rem solid #f6f6f6;
+  color: #d43241;
+  margin-bottom: 0.5em;
+  padding: 1rem;
+  padding-left: 0;
+  background: white;
+  font-weight: normal;
+}
+
+@media (min-width: 35.5em) {
+  .just-for-h1-fakultni-youtube {
+    font-size: 2.4rem;
   }
 }

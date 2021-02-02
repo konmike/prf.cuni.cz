@@ -100,36 +100,43 @@
     }
   }
   &__dod {
+    background: white;
+    .padding {
+      padding: 0;
+    }
     .hero-image {
       display: block;
       margin-bottom: 0 !important;
       padding-bottom: 38% !important;
     }
-    #bodycontent {
-      padding: 0;
-      padding-top: 2rem;
-      .line {
-        border-bottom: 1rem solid $c4 !important;
-        margin: 1em 1.5em 2em 1.5em !important;
-      }
-      .info-text {
-        margin: 1em 3em;
-      }
-      .btn-description {
-        color: $c4;
-        font-weight: 800;
-        display: block;
-        margin-bottom: 2em;
-        outline: none;
-      }
-      h4 {
-        color: $c4;
-        font-weight: 800;
-        text-transform: uppercase;
-        font-family: "Amatic SC", "Open Sans", sans-serif;
-        font-size: 4rem;
-      }
+    .body {
+      margin-top: 0;
     }
+    .mb {
+      margin-bottom: 0;
+    }
+    .line {
+      border-bottom: 1rem solid $c4 !important;
+      margin: 1em 1.5em 2em 1.5em !important;
+    }
+    .info-text {
+      margin: 1em 3em;
+    }
+    .btn-description {
+      color: $c4;
+      font-weight: 800;
+      display: block;
+      margin-bottom: 2em;
+      outline: none;
+    }
+    h4 {
+      color: $c4;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-family: "Amatic SC", "Open Sans", sans-serif;
+      font-size: 4rem;
+    }
+
     a {
       &::after {
         display: none !important;
