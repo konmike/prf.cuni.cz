@@ -14,14 +14,22 @@
       $(this).parent().css("padding-bottom", "56.25%");
     });
 
+    /*
+     * Prida tridu pro aktivni odkazy v menu,
+     * nejprve se podiva na nejniz zanorene
+     * a prida tridu vyssimu linku v menu,
+     * az to probubla uplne nahoru
+     */
+    if ($(".side-nav__link--active")) {
+      let lactive = $(".side-nav__link--active");
+      let link = lactive.closest(".side-nav__link--active").attr("href");
+      $(".header__nav").find(`[href="${link}"]`).addClass("is-active");
+    }
     if ($(".nav__link-lvl2.is-active")) {
-      // console.log("ANOOOOO");
-      // console.log($(this));
-      // console.log($(this).children());
       let it = $(".nav__link-lvl2.is-active");
       it.closest(".nav__item").addClass("is-active");
-      // it.addClass("zdarek");
     }
+    /* ******** */
 
     let addText = "<span>Zvýraznit</span>";
 
