@@ -117,6 +117,7 @@
       align-items: center;
       height: 4rem;
       line-height: 4rem;
+      transition: background-color 0.3s;
       // margin-top: .3rem;
       &:hover,
       &:active {
@@ -126,7 +127,7 @@
       }
       &:hover,
       &.is-active {
-        background: $c5;
+        background-color: $c5;
       }
     }
     &__link {

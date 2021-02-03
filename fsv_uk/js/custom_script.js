@@ -18,8 +18,8 @@
       // console.log("ANOOOOO");
       // console.log($(this));
       // console.log($(this).children());
-      // var it = $(".nav__link-lvl2.is-active");
-      $(this).closest(".nav__item").addClass("is-active");
+      let it = $(".nav__link-lvl2.is-active");
+      it.closest(".nav__item").addClass("is-active");
       // it.addClass("zdarek");
     }
 
