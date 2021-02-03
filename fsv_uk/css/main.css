@@ -1337,14 +1337,17 @@ a.download-link::after {
             align-items: center;
     height: 4rem;
     line-height: 4rem;
-    -webkit-transition: background-color 0.3s;
-    transition: background-color 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
   }
   .nav__item:hover .nav__megamenu, .nav__item:active .nav__megamenu {
     display: block;
   }
   .nav__item:hover, .nav__item.is-active {
     background-color: #af1037;
+  }
+  .nav__item:hover > .nav__link, .nav__item.is-active > .nav__link {
+    text-shadow: 0 0 1px currentColor, 0 0 1px currentColor;
   }
   .nav__link {
     padding: 0 2em;
