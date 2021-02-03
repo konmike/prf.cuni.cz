@@ -1366,6 +1366,7 @@ a.download-link::after {
   .nav__link--active {
     background-color: #fff;
     color: #d43241;
+    text-shadow: 0 0 1px currentColor, 0 0 1px currentColor;
   }
   .nav__separator {
     line-height: 3.1rem;

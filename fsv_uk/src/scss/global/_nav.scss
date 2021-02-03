@@ -149,6 +149,7 @@
       &--active {
         background-color: $c1;
         color: $c4;
+        text-shadow: 0 0 1px currentColor, 0 0 1px currentColor;
       }
     }
     &__separator {
