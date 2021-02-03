@@ -1257,14 +1257,14 @@ a.download-link::after {
   }
   .nav__item {
     background-color: #d43241;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
   .nav__link {
     font-size: 1.9rem;
     font-weight: 300;
     color: #fff;
     text-transform: uppercase;
-    padding: .65em 1rem .55em;
+    padding: 0.65em 1rem 0.55em;
     display: block;
     position: relative;
   }
@@ -1273,7 +1273,7 @@ a.download-link::after {
             transform: rotate(180deg);
   }
   .nav__link:after {
-    content: '';
+    content: "";
     background-image: url(../images/icons/triangle.svg);
     display: inline-block;
     width: 15px;
@@ -1283,11 +1283,11 @@ a.download-link::after {
     top: 2rem;
     background-size: cover;
     z-index: 1;
-    opacity: .5;
-    -webkit-transition: -webkit-transform .3s;
-    transition: -webkit-transform .3s;
-    transition: transform .3s;
-    transition: transform .3s, -webkit-transform .3s;
+    opacity: 0.5;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+    transition: transform 0.3s, -webkit-transform 0.3s;
   }
   .nav__megamenu {
     display: none;
@@ -1303,7 +1303,7 @@ a.download-link::after {
     display: block;
     font-weight: 300;
     font-size: 1.6rem;
-    padding: .75em 1rem;
+    padding: 0.75em 1rem;
   }
   .nav__separator {
     display: none;
@@ -1329,18 +1329,27 @@ a.download-link::after {
     position: relative;
   }
   .nav__item {
-    display: inline-block;
-    height: 3.7rem;
-    line-height: 3.7rem;
-    margin-top: .3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 4rem;
+    line-height: 4rem;
   }
   .nav__item:hover .nav__megamenu, .nav__item:active .nav__megamenu {
     display: block;
   }
+  .nav__item:hover, .nav__item.is-active {
+    background: #af1037;
+  }
   .nav__link {
     padding: 0 2em;
+    margin-top: 0.3em;
+    height: 100%;
     font-size: 1.6rem;
-    letter-spacing: .01em;
+    letter-spacing: 0.01em;
     text-transform: uppercase;
     color: #fff;
     display: block;
@@ -1432,9 +1441,9 @@ a.download-link::after {
     margin-right: 0;
     float: right;
   }
-  .nav__megamenu__info--three-col .nav__megamenu__img:nth-child(3n+1),
-  .nav__megamenu__info--three-col .nav__megamenu__text--one-col:nth-child(3n+1),
-  .nav__megamenu__info--three-col .nav__megamenu__address:nth-child(3n+1) {
+  .nav__megamenu__info--three-col .nav__megamenu__img:nth-child(3n + 1),
+  .nav__megamenu__info--three-col .nav__megamenu__text--one-col:nth-child(3n + 1),
+  .nav__megamenu__info--three-col .nav__megamenu__address:nth-child(3n + 1) {
     clear: both;
   }
   .nav__megamenu__info--three-col .nav__megamenu__img:last-child,
@@ -1471,7 +1480,7 @@ a.download-link::after {
     margin-right: 0;
     float: right;
   }
-  .nav__megamenu__img:nth-child(2n+1), .nav__megamenu__text--one-col:nth-child(2n+1), .nav__megamenu__address:nth-child(2n+1) {
+  .nav__megamenu__img:nth-child(2n + 1), .nav__megamenu__text--one-col:nth-child(2n + 1), .nav__megamenu__address:nth-child(2n + 1) {
     clear: both;
   }
   .nav__megamenu__img:last-child, .nav__megamenu__text--one-col:last-child, .nav__megamenu__address:last-child {
@@ -1507,8 +1516,8 @@ a.download-link::after {
     display: block;
     text-decoration: none;
     padding: 1.5rem 1rem;
-    -webkit-transition: color .3s;
-    transition: color .3s;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
   }
   .nav__list-lvl2 {
     -webkit-column-count: 2;
@@ -1529,12 +1538,12 @@ a.download-link::after {
     display: block;
     font-weight: 300;
     font-size: 1.6rem;
-    padding: .75em 1rem;
+    padding: 0.75em 1rem;
     border-bottom: 0.2rem solid #f6f6f6;
-    -webkit-transition: border-color .3s;
-    transition: border-color .3s;
+    -webkit-transition: border-color 0.3s;
+    transition: border-color 0.3s;
   }
-  .nav__link-lvl2:hover {
+  .nav__link-lvl2:hover, .nav__link-lvl2.is-active {
     border-color: #d43241;
   }
 }

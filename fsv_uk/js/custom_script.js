@@ -14,6 +14,15 @@
       $(this).parent().css("padding-bottom", "56.25%");
     });
 
+    if ($(".nav__link-lvl2.is-active")) {
+      // console.log("ANOOOOO");
+      // console.log($(this));
+      // console.log($(this).children());
+      // var it = $(".nav__link-lvl2.is-active");
+      $(this).closest(".nav__item").addClass("is-active");
+      // it.addClass("zdarek");
+    }
+
     let addText = "<span>Zvýraznit</span>";
 
     // let buttonUploadImage = "<div class='upload-button'><span class='upload-button__text'>Nahrát soubor</span></div>";
