@@ -92,6 +92,10 @@
   transition: opacity 0.3s;
 }
 
+.section-title-bold {
+  font-weight: 600;
+}
+
 @media (min-width: 48em) {
   .thirds-row {
     display: -webkit-box;

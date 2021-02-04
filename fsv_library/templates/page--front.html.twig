@@ -10,8 +10,15 @@
 </script>
 
 <div id="jq_cookies" class="cookies">
-    <p>{{ 'Tato stránka používá cookies, aby mohla uchovávat informace ve vašem počítači. Některé cookies zajišťují správnou funkci těchto stránek, jiné nám pomáhají vylepšovat stránky tím, že nám dovolí nahlédnout, jak jsou stránky používány. Tím, že tyto stránky dále používáte, dáváte svůj souhlas s použitím cookies.'|t }}</p>
-    <button id="jq_cookiesClose" class="btn">{{ "I agree"|t}}</button>
+    <p>
+    {{ 'This website uses cookies to store information on your computer. Some cookies ensure the proper functioning of this site, others help us improve the site by allowing us to see how the site is used. By continuing to use this website, you consent to the use of cookies. '|t }}
+    {% if current_language == 'en' %}
+                        <span>— <a href="https://www.prf.cuni.cz/en/cookies">More information?</a></span>
+                    {% else %}
+                      <span>— <a href="https://www.prf.cuni.cz/cookies">Více informací?</a></span>
+                    {% endif %}
+    </p>
+    <button id="jq_cookiesClose" class="btn">{{ "I Agree"|t}}</button>
 </div>
 <div class="layout-container">
     <header class="header" id="jq_header">
@@ -427,7 +434,7 @@ document.getElementById("defaultopen").click();
 
 
 
-                    <h2 class="news-feed__section-title section-title padding">{{ 'Opening hours'|t }}  </h2>
+                    <h2 class="news-feed__section-title section-title padding section-title-bold">{{ 'Opening hours'|t }}  </h2>
                     <!--<h2 class="news-feed__section-title section-title padding">{{ 'Summer opening hours'|t }}  </h2>-->
 
                     <div>
@@ -450,7 +457,7 @@ document.getElementById("defaultopen").click();
   
   </ul>
 
-<h3>{{ 'Contact'|t }}</h3>
+<h3 class="section-title-bold">{{ 'Contact'|t }}</h3>
 
 <ul class="news-feed__list padding knihovnakontakt">
 
