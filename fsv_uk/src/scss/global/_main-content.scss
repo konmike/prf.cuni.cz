@@ -19,8 +19,11 @@
     }
   }
   a {
-    &.link--wrapper-image::after {
-      display: none !important;
+    &.btn,
+    &.link--wrapper-image {
+      &::after {
+        display: none !important;
+      }
     }
     &[href*="//"]:not([href*="prf.cuni.cz"]):after
     {

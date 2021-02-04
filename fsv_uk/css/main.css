@@ -1343,10 +1343,10 @@ a.download-link::after {
   .nav__item:hover .nav__megamenu, .nav__item:active .nav__megamenu {
     display: block;
   }
-  .nav__item:hover, .nav__item.is-active {
+  .nav__item:hover, .nav__item.is-active, .nav__item--active-trail {
     background-color: #af1037;
   }
-  .nav__item:hover > .nav__link, .nav__item.is-active > .nav__link {
+  .nav__item:hover > .nav__link, .nav__item.is-active > .nav__link, .nav__item--active-trail > .nav__link {
     text-shadow: 0 0 1px currentColor, 0 0 1px currentColor;
   }
   .nav__link {
@@ -1679,7 +1679,7 @@ a.download-link::after {
   white-space: pre-line;
 }
 
-.main-content a.link--wrapper-image::after {
+.main-content a.btn::after, .main-content .news-feed__section-title a::after, .news-feed__section-title .main-content a::after, .main-content a.link--wrapper-image::after {
   display: none !important;
 }
 

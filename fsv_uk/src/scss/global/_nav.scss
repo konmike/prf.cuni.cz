@@ -126,7 +126,8 @@
         }
       }
       &:hover,
-      &.is-active {
+      &.is-active,
+      &--active-trail {
         background-color: $c5;
         & > #{$this}__link {
           text-shadow: 0 0 1px currentColor, 0 0 1px currentColor;
