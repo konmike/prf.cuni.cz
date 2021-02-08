@@ -144,11 +144,11 @@
   $("#edit-cat-102").addClass("makrela");
 
   //vlozi mezery v telefonnim cisle
-  var count = $("p.contact__results__phones a.contact__results__link").length;
-  for (q = 0; q < count; q++) {
-    var obsah = $(
-      "p.contact__results__phones:eq(" + q + ") a.contact__results__link"
-    ).text();
+  // var count = $("p.contact__results__phones a.contact__results__link").length;
+  // for (q = 0; q < count; q++) {
+  //   var obsah = $(
+  //     "p.contact__results__phones:eq(" + q + ") a.contact__results__link"
+  //   ).text();
 
     //console.log(count);
     //$('p.contact__results__phones a.contact__results__link').append('<span class="more-info-fake">' + obsah + '</span>');

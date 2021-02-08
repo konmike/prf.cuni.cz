@@ -46,10 +46,20 @@
             {% endif %}
             {% if content.field_telefon[0] is not empty %}
             <p class="contact__results__phones" style="font-size: 16px;">
-                <span class="contact__results__info-title">Telefon: </span>
+                <span class="contact__results__info-title">Telefon:&nbsp;</span>
+                {% set arrayPhoneLength = content.field_telefon['#items']|length %}
+                {% set myVal = 0 %}
+                {% for key, item in content.field_telefon if key|first != '#' %}
+                    {% if (myVal + 1) == arrayPhoneLength %}
+                        <a href="tel:{{ item|render|trim }}" class="contact__results__link {{ item }}">{{ item|render|trim }}</a>
+                    {% else %}
+                        <a href="tel:{{ item|render|trim }}" class="contact__results__link {{ item }}">{{ item|render|trim }},</a>
+                        {% set myVal = myVal + 1 %}
+                    {% endif %}                    
+                {% endfor %}
                 
-		{% if content.field_telefon[0] is not empty %}		
-                	<a href="tel:{{ content.field_telefon[0] }}" class="contact__results__link">{{ content.field_telefon[0] }}</a>{% if content.field_telefon[1] is not empty %},{% endif %}
+		        {# {% if content.field_telefon[0] is not empty %}		
+                	<a href="tel:{{ content.field_telefon[0] }}" class="contact__results__link {{ content.field_telefon['#items'].0.getValue().value }}">{{ content.field_telefon[0] }}</a>{% if content.field_telefon[1] is not empty %},{% endif %}
                 {% endif %}
 
                 {% if content.field_telefon[1] is not empty %}
@@ -58,7 +68,7 @@
 
                 {% if content.field_telefon[2] is not empty %}
                 	<a href="tel:{{ content.field_telefon[2] }}" class="contact__results__link">{{ content.field_telefon[2] }}</a>
-                {% endif %}
+                {% endif %} #}
             </p>
             {% endif %}
             <div style="padding-top:20px">
