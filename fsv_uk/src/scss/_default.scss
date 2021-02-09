@@ -129,6 +129,10 @@ iframe {
   max-width: 50% !important;
 }
 
+.footnote {
+  font-size: 12px;
+}
+
 @media (min-width: $headerBreak * 1em) {
   #content-wrap {
     transform: translateY(183px);

@@ -650,6 +650,10 @@ iframe {
   max-width: 50% !important;
 }
 
+.footnote {
+  font-size: 12px;
+}
+
 @media (min-width: 62.5em) {
   #content-wrap {
     -webkit-transform: translateY(183px);
