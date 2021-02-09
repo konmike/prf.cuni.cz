@@ -104,4 +104,7 @@ main.viewfronthomepage .layout-aside {
   z-index: 999;
   position: relative;
   top: 0;
+  display: block;
+  margin: 0 auto;
+  max-width: 360px;
 }
