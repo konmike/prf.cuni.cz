@@ -50,25 +50,22 @@
                 {% set arrayPhoneLength = content.field_telefon['#items']|length %}
                 {% set myVal = 0 %}
                 {% for key, item in content.field_telefon if key|first != '#' %}
+                    {% set editItem = item|render|trim|replace({' ': ''}) %}
+                    {% if not (editItem starts with '+420') %}
+                        {% set editItem = '+420' ~ editItem %}
+                    {% endif %}
+                    {% set num1 = editItem|slice(0,4) %}
+                    {% set num2 = editItem|slice(4,3) %}
+                    {% set num3 = editItem|slice(7,3) %}
+                    {% set num4 = editItem|slice(10,3) %}
+                    {% set res = num1 ~ " " ~ num2 ~ " " ~ num3 ~ " " ~ num4 %}
                     {% if (myVal + 1) == arrayPhoneLength %}
-                        <a href="tel:{{ item|render|trim }}" class="contact__results__link {{ item }}">{{ item|render|trim }}</a>
+                        <a href="tel:{{ editItem }}" class="contact__results__link">{{ res }}</a>
                     {% else %}
-                        <a href="tel:{{ item|render|trim }}" class="contact__results__link {{ item }}">{{ item|render|trim }},</a>
+                        <a href="tel:{{ editItem }}" class="contact__results__link">{{ res }},</a>
                         {% set myVal = myVal + 1 %}
                     {% endif %}                    
                 {% endfor %}
-                
-		        {# {% if content.field_telefon[0] is not empty %}		
-                	<a href="tel:{{ content.field_telefon[0] }}" class="contact__results__link {{ content.field_telefon['#items'].0.getValue().value }}">{{ content.field_telefon[0] }}</a>{% if content.field_telefon[1] is not empty %},{% endif %}
-                {% endif %}
-
-                {% if content.field_telefon[1] is not empty %}
-                	<a href="tel:{{ content.field_telefon[1] }}" class="contact__results__link">{{ content.field_telefon[1] }}</a>{% if content.field_telefon[2] is not empty %},{% endif %}
-                {% endif %}
-
-                {% if content.field_telefon[2] is not empty %}
-                	<a href="tel:{{ content.field_telefon[2] }}" class="contact__results__link">{{ content.field_telefon[2] }}</a>
-                {% endif %} #}
             </p>
             {% endif %}
             <div style="padding-top:20px">
