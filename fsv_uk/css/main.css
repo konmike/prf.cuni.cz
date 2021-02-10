@@ -7078,7 +7078,6 @@ li.gallery__thumbnail a {
 }
 
 .controls__dod .hero-image {
-  display: block;
   margin-bottom: 0 !important;
   padding-bottom: 38% !important;
 }
@@ -8530,16 +8529,10 @@ li.gallery__thumbnail a {
 }
 
 .hero-image {
-  display: none;
+  display: block;
   padding-bottom: 33.3333%;
   background-position: center;
   background-size: cover;
-}
-
-@media (min-width: 35.5em) {
-  .hero-image {
-    display: block;
-  }
 }
 
 .fields-of-studies__item {
