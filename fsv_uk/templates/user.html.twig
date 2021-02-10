@@ -11,63 +11,12 @@
             {{ content.user_picture }}
         </div>
         <div class="person__info padding">
-            <!--   <p>Působiště (náhled designu):</p>
-            <ul><li>Katedra teorie práva a právních učení</li>
-                <ul>
-                    <li>Místnost: Právnická fakulta UK >> 3. nadzemní podlaží - 2.patro >> 240</li>
-                    <li>Administrativní zařazení: vedoucí</li>
-                    <li>Konzultační a úřední hodiny: Stř.  16.00 - 17.00 místnost 240 konzultační hodiny jsou platné pouze v období výuky  v jinou dobu dohoda mailem</li>
-                </ul>
-            </ul> -->
-            {% if content.field_mail[0] is not empty %}
-            <div>
-                <p class="contact__results__email" style="font-size: 16px;">
-                    <span class="contact__results__info-title">E-mail: </span>
+            {# Nadefinované v template field--field-mail.html.twig #}
+            {{ content.field_mail }}
 
-                    {% if content.field_mail[0] is not empty %}
-                        <a class="contact__results__link" href="mailto:{{ content.field_mail[0] }}">{{ content.field_mail[0] }}</a>{% if content.field_mail[1] is not empty %},{% endif %}
-                    {% endif %}
-
-                    {% if content.field_mail[1] is not empty %}
-                        <a class="contact__results__link" href="mailto:{{ content.field_mail[1] }}">{{ content.field_mail[1] }}</a>{% if content.field_mail[2] is not empty %},{% endif %}
-                    {% endif %}
-
-                    {% if content.field_mail[2] is not empty %}
-                        <a class="contact__results__link" href="mailto:{{ content.field_mail[2] }}">{{ content.field_mail[2] }}</a>{% if content.field_mail[3] is not empty %},{% endif %}
-                    {% endif %}
-
-                    {% if content.field_mail[3] is not empty %}
-                        <a class="contact__results__link" href="mailto:{{ content.field_mail[3] }}">{{ content.field_mail[3] }}</a>{% if content.field_mail[4] is not empty %},{% endif %}
-                    {% endif %}
-
-                    
-                </p>
-            </div>
-            {% endif %}
-            {% if content.field_telefon[0] is not empty %}
-            <p class="contact__results__phones" style="font-size: 16px;">
-                <span class="contact__results__info-title">Telefon:&nbsp;</span>
-                {% set arrayPhoneLength = content.field_telefon['#items']|length %}
-                {% set myVal = 0 %}
-                {% for key, item in content.field_telefon if key|first != '#' %}
-                    {% set editItem = item|render|trim|replace({' ': ''}) %}
-                    {% if not (editItem starts with '+420') %}
-                        {% set editItem = '+420' ~ editItem %}
-                    {% endif %}
-                    {% set num1 = editItem|slice(0,4) %}
-                    {% set num2 = editItem|slice(4,3) %}
-                    {% set num3 = editItem|slice(7,3) %}
-                    {% set num4 = editItem|slice(10,3) %}
-                    {% set res = num1 ~ " " ~ num2 ~ " " ~ num3 ~ " " ~ num4 %}
-                    {% if (myVal + 1) == arrayPhoneLength %}
-                        <a href="tel:{{ editItem }}" class="contact__results__link">{{ res }}</a>
-                    {% else %}
-                        <a href="tel:{{ editItem }}" class="contact__results__link">{{ res }},</a>
-                        {% set myVal = myVal + 1 %}
-                    {% endif %}                    
-                {% endfor %}
-            </p>
-            {% endif %}
+            {# Nadefinované v template field--field-telefon.html.twig #}
+            {{ content.field_telefon }}
+            
             <div style="padding-top:20px">
                 {{ drupal_view('workplace', 'workplaces') }}
                 {% set membership = drupal_view_result('membership', 'membership')|length %}
