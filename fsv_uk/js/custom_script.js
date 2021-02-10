@@ -143,29 +143,27 @@
 
   $("#edit-cat-102").addClass("makrela");
 
-
-    i = 13;
-    j = 1;
-    x = 2;
-    while (i <= obsah.length) {
-      var phoneArray = obsah.slice(j, i);
-      var round = 0;
-      var text = "";
-      for (l = 0; l < phoneArray.length; l++) {
-        text += phoneArray[l];
-        round++;
-        if (round == 3 && l + 1 != phoneArray.length) {
-          round = 0;
-          text += " ";
-        }
+  i = 13;
+  j = 1;
+  x = 2;
+  while (i <= obsah.length) {
+    var phoneArray = obsah.slice(j, i);
+    var round = 0;
+    var text = "";
+    for (l = 0; l < phoneArray.length; l++) {
+      text += phoneArray[l];
+      round++;
+      if (round == 3 && l + 1 != phoneArray.length) {
+        round = 0;
+        text += " ";
       }
-      $("p.contact__results__phones:eq(" + q + ") a:nth-child(" + x + ")").text(
-        "+" + text
-      );
-      i = i + 14;
-      j = j + 14;
-      x = x + 1;
     }
+    $("p.contact__results__phones:eq(" + q + ") a:nth-child(" + x + ")").text(
+      "+" + text
+    );
+    i = i + 14;
+    j = j + 14;
+    x = x + 1;
   }
 
   //zajisti, spravne html rozlozeni tabulky
