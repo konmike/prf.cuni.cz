@@ -7,7 +7,9 @@
 
 <h4><a href="/{{ fields.ID_ORG.content }}/{{ twig_content_variable|replace({ (replace_value_var): replace_with_value_var })|lower|replace({ (replace_value_var_comma): replace_with_value_var_comma })|transliterate() }}">{{ fields.ORG_NAZEV_CS.content }}</a>
 
-{% if fields.funkce_cz.content is not empty %}
+{% if (fields.POHLAVI.content == 'F') and (fields.funkce_cz_zena.content is not empty) %}
+    <div style="font-size:14px; padding-top:5px">{{ fields.funkce_cz_zena.content|capitalize }}</div>
+{% elseif fields.funkce_cz.content is not empty %}
 	<div style="font-size:14px; padding-top:5px">{{ fields.funkce_cz.content|capitalize }}</div>
 {% endif %}
 
