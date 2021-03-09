@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .number {
     background-color: $c1;
     &__wrap {

@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .link-boxes {
     $this: &;
     &__list {

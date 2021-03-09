@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .person {
     &__title {
         text-transform: none;

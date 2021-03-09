@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .news .main-content {
     width: 100% !important;
 }
@@ -17,7 +19,7 @@
             margin: 20px 15px 10px; 
             display: block; 
             text-align: center; 
-            color: white; 
+            color: $c1; 
             text-decoration: none;
         }
     }

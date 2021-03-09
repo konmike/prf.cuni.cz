@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .nav-bottom {
     $this: &;
     @media(max-width: ($headerBreak - .0625) * 1em) {

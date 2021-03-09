@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .toolbar-vertical .header {
     @media(min-width: $headerBreak * 1em) {
         top: 39px;

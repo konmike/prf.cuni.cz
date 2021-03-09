@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .featured-link {
     background-color: $c4;
     color: $c1;

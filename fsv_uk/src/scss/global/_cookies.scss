@@ -1,9 +1,11 @@
+@use '../abstract/var' as *;
+
 .cookies {
     position: fixed;
     width: 100%;
     z-index: -1;
     visibility: hidden;
-    background-color: white;
+    background-color: $c1;
     bottom: 0;
     padding: 2rem;
     display: flex;

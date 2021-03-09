@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .side-nav {
   $this: &;
   display: none;

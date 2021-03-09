@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .loader {
     position: fixed;
     display: flex;
