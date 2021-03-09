@@ -29,6 +29,10 @@
       let it = $(".nav__link-lvl2.is-active");
       it.closest(".nav__item").addClass("is-active");
     }
+    if ($(".nav__link.is-active")) {
+      let it = $(".nav__link.is-active");
+      it.closest(".nav__item").addClass("is-active");
+    }
     /* ******** */
 
     let addText = "<span>Zvýraznit</span>";
