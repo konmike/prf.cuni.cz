@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .controls {
   $this: &;
   &__item {
@@ -100,7 +102,7 @@
     }
   }
   &__dod {
-    background: white;
+    background: $c1;
     .padding {
       padding: 0;
     }

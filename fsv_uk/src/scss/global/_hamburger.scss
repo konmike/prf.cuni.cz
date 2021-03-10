@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .hamburger {
     display: inline-block;
     cursor: pointer;

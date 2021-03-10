@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .viewnews-pagepage-1 .main-content {
     width: 100% !important;
 }
@@ -94,13 +96,13 @@
                     margin-right: 30px; 
                     clear: none;
                 }
-                &:nth-child(undefinedn){
+                /*&:nth-child(undefinedn){
                     margin-right: 0; 
                     float: right;
                 }
                 &:nth-child(undefinedn+1){
                     clear: both;
-                }
+                }*/
                 &:last-child{
                     margin-right: 0;
                 }

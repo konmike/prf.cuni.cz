@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .btn {
   display: inline-block;
   background-color: $c4;

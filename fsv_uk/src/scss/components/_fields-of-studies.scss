@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .fields-of-studies {
     &__item {
         display: flex;

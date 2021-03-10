@@ -1,5 +1,6 @@
-.slider {
+@use '../abstract/var' as *;
 
+.slider {
     border-top: .2rem solid $c4;
 
     &__list {

@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .pager {
     background-color: $c1;
     &__items {

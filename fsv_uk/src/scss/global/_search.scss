@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .search {
     @media(max-width: ($headerBreak - .0625) * 1em) {
         display: none;

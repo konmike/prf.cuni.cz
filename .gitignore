@@ -4,3 +4,4 @@ projekt_migrace/
 uredni_deska/
 .*
 private.ppk
+node_modules/

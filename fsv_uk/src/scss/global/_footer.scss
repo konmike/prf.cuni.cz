@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .footer {
   $this: &;
   color: $c1;
@@ -79,7 +81,7 @@
     }
   }
   ul:not([class]) li:before {
-    background-color: white;
+    background-color: $c1;
   }
 
   &__dod {
