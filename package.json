@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/konmike/prf.cuni.cz/issues"
   },
-  "homepage": "https://github.com/konmike/prf.cuni.cz#readme"
+  "homepage": "https://github.com/konmike/prf.cuni.cz#readme",
+  "devDependencies": {}
 }
