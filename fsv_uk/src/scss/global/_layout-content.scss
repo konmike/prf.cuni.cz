@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .layout-content{
     &--viewnews-pagecourses{
         padding-top: 40px;
@@ -15,7 +17,7 @@
     &--vieweventspage-1 .main-content,
     &--viewjob-offeringspage-1 .main-content,
     &--viewnabidka-pracipage-1 .main-content{
-        background: white; 
+        background: $c1; 
         padding: 15px; 
         margin-top: 20px; 
         margin-bottom: 40px; 
@@ -53,7 +55,7 @@
         padding: 0 15px 10px; 
         border-bottom: .2rem solid #f6f6f6; 
         text-transform: uppercase; 
-        color: #d43241; 
+        color: $c4; 
         text-align: left; 
         margin-bottom: 0; 
         margin-left: -15px; 

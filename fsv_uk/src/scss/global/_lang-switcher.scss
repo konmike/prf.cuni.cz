@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .lang-switcher {
     a {
         border: .1rem solid $c9;

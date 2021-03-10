@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .nav-links {
     &__item {
         display: inline-block;
@@ -16,7 +18,7 @@
     }
 
     &__last {
-        white-space: nowrap;
+        $c1-space: nowrap;
         &:after {
             content: '';
             display: inline-block;

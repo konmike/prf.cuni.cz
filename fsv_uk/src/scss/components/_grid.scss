@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .grid {
   display: grid;
   justify-items: center;

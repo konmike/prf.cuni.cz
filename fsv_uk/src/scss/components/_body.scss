@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .body {
     margin-top: 20px;
     background-color: $c1;

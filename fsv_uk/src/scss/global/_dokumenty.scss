@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 .white-dokumenty-page{
     width: calc(99.9% * 2 / 3 - (30px - 30px * 2 / 3)); 
     margin-right: 0; 
@@ -12,8 +14,8 @@
             text-align: left;
         }
         th{
-            background: #d43241;
-            color: white; 
+            background: $c4;
+            color: $c1; 
             padding: 10px; 
             font-size: 16px; 
             font-weight: normal; 
@@ -23,7 +25,7 @@
 }
 .paragraph--type--dokumenty, 
 .white-dokumenty-page .views-field-field-soubory { 
-    background: white; 
+    background: $c1; 
     padding: 10px; 
     margin: 20px 0 0; 
 }
@@ -43,37 +45,37 @@
 }
 .white-sub-section{ 
     h3 { 
-        background: white; 
+        background: $c1; 
         margin-bottom: 2px; margin-top: 15px; 
         padding: 1.5rem; 
         text-transform: uppercase; 
-        color: #d43241; 
+        color: $c4; 
     }
     .views-view-grid { 
-        background: white; 
+        background: $c1; 
         padding: 20px 40px;
     }
 } 
 .white-section {
-    background: white; 
+    background: $c1; 
     padding: 40px; 
     margin-bottom: 40px; 
 }
 .checked-white { 
-    background: white; 
-    color: #d43241 !important;
+    background: $c1; 
+    color: $c4 !important;
 }
 .special-white-section { 
     margin-bottom: 40px;
     h3 { 
-        background: white; 
+        background: $c1; 
         margin-bottom: 2px; 
         padding: 1.5rem; 
         text-transform: uppercase; 
-        color: #d43241;
+        color: $c4;
     }
     .views-view-grid { 
-        background: white; 
+        background: $c1; 
         padding: 20px 40px;
     }
 }

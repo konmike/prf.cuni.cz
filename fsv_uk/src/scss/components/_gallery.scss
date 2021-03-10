@@ -1,6 +1,8 @@
+@use '../abstract/var' as *;
+
 li.gallery__thumbnail{
     p { 
-        color: white; 
+        color: $c1; 
         text-align: center; 
     }
     a { 

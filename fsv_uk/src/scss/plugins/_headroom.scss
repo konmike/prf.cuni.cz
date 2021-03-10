@@ -1,3 +1,5 @@
+@use '../abstract/var' as *;
+
 @media(max-width: ($headerBreak - .0625) * 1em) {
     .headroom {
         transition: transform 200ms linear;

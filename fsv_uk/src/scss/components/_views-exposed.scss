@@ -1,9 +1,11 @@
+@use '../abstract/var' as *;
+
 .exposed-checked { 
     background: $c4 !important; 
-    color: white;
+    color: $c1;
 }
 .exposed-views-block { 
-    background: white;
+    background: $c1;
     .form-text { 
         height: 5rem; 
         background-color: #f6f6f6; 
@@ -24,7 +26,7 @@
 #views-exposed-form-news-page-block-homepage-news-feed .form-item-cat, 
 #views-exposed-form-news-page-block-homepage-courses-feed .form-item-field-taxonomy-general-tags-target-id { 
     display: inline-block; 
-    color: white; 
+    color: $c1; 
     padding: 12px 12px 14px;
 
     @media (min-width:35.5em) { 
@@ -41,9 +43,9 @@
         padding: 0 10px 0 10px;
     }
     .checked{
-        background: white; 
+        background: $c1; 
         padding: 12px 12px 20px; 
-        color: black;
+        color: $c2;
     }
 }
 #views-exposed-form-news-page-block-homepage-news-feed .form-item-cat label, 

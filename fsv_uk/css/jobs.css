@@ -1,167 +1,108 @@
+@charset "UTF-8";
 .content__job-offer {
   margin-top: 1rem;
 }
-
 .content__job-offer .adresa:before {
-  content: "\f3c5";
+  content: "";
 }
-
 .content__job-offer .email:before {
-  content: "\f0e0";
+  content: "";
 }
-
 .content__job-offer .wrapper--company {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
   background: whitesmoke;
 }
-
 .content__job-offer dl {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
   margin: 0px;
   background: whitesmoke;
   padding: 2rem 0px;
   outline: none;
   border-bottom: 0.2rem solid #f6f6f6;
 }
-
 .content__job-offer dd {
   margin-left: 2rem;
   line-height: 3rem;
 }
-
 .content__job-offer .wrapper--logo {
   display: none;
   width: 300px;
 }
-
 .content__job-offer .topovat {
   display: none;
   background: #d43241;
-  color: white;
+  color: #fff;
   padding: 0.2rem 0.5rem;
   font-weight: 900;
 }
-
-.content__job-offer .spolecnost:before,
-.content__job-offer .adresa:before,
-.content__job-offer .email:before,
-.content__job-offer .telefon:before {
+.content__job-offer .spolecnost:before, .content__job-offer .adresa:before, .content__job-offer .email:before, .content__job-offer .telefon:before {
   font-family: "Font Awesome 5 Free", Arial, Helvetica, sans-serif;
   font-weight: 900;
   padding-right: 0.5rem;
 }
-
 .content__job-offer .spolecnost:before {
-  content: "\f1ad";
+  content: "";
 }
-
 .content__job-offer .wrapper--tags {
   margin: 1rem 0;
   padding: 2rem 0;
   background-color: rgba(255, 255, 255, 0.66);
 }
-
 .content__job-offer .wrapper--tags ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
   padding: 0 2rem;
 }
-
 .content__job-offer .wrapper--tags ul .label {
   padding-right: 0.5rem;
   text-transform: uppercase;
   font-weight: 900;
 }
-
 .content__job-offer .wrapper--tags ul li {
   padding: 0;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  align-items: center;
   list-style-type: none;
   margin-bottom: 0.3rem;
 }
-
 .content__job-offer .wrapper--tags ul li:last-child {
   margin-right: 0;
 }
-
 .content__job-offer .wrapper--tags ul li:after {
   font-family: "Font Awesome 5 Free", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 0.5rem;
   padding: 0 0.8rem;
   color: rgba(0, 0, 0, 0.8);
-  content: "\f111";
+  content: "";
 }
-
 .content__job-offer .wrapper--tags ul li:last-child::after {
   content: "";
 }
-
 .content__job-offer .telefon:before {
-  content: "\f879";
+  content: "";
 }
 
 .wrapper--google-map-iframe {
-  background: white;
+  background: #fff;
   margin: 2rem 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .wrapper--popis-pracovni-pozice {
-  background: white;
+  background: #fff;
   padding: 2rem;
 }
-
 .wrapper--popis-pracovni-pozice p {
   margin: 0;
 }
@@ -181,23 +122,18 @@
   background: #fff;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
   max-width: max-content;
 }
 
 .node-nabidka-prace-nova-form {
-  display: -ms-grid;
   display: grid;
   font: normal 90.3%/1.538em "Open Sans", sans-serif;
 }
-
 .node-nabidka-prace-nova-form .button--primary {
   background-image: none;
   background-color: #d43241;
   border: 0.2rem solid #d43241;
   border-radius: 0;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
   color: #fff;
   text-decoration: none;
@@ -211,56 +147,33 @@
   -webkit-font-smoothing: antialiased;
   position: relative;
   display: inline-block;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 4px 1.5em;
   text-align: center;
   line-height: normal;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
 }
-
 .node-nabidka-prace-nova-form fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
-
 .node-nabidka-prace-nova-form fieldset #edit-field-koho-hledame-list,
 .node-nabidka-prace-nova-form fieldset #edit-field-uvazek-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  flex-direction: row;
+  justify-content: flex-start;
 }
-
 .node-nabidka-prace-nova-form fieldset #edit-field-koho-hledame-list .js-form-type-radio,
 .node-nabidka-prace-nova-form fieldset #edit-field-koho-hledame-list .js-form-type-checkbox,
 .node-nabidka-prace-nova-form fieldset #edit-field-uvazek-list .js-form-type-radio,
 .node-nabidka-prace-nova-form fieldset #edit-field-uvazek-list .js-form-type-checkbox {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   margin-right: 0.5em;
 }
-
 .node-nabidka-prace-nova-form fieldset #edit-field-koho-hledame-list .js-form-type-radio .form-radio,
 .node-nabidka-prace-nova-form fieldset #edit-field-koho-hledame-list .js-form-type-radio .form-checkbox,
 .node-nabidka-prace-nova-form fieldset #edit-field-koho-hledame-list .js-form-type-checkbox .form-radio,
@@ -272,27 +185,20 @@
   margin-right: 0.2em;
   width: 13px;
 }
-
 .node-nabidka-prace-nova-form .fieldset-legend {
   display: block;
   padding-bottom: 1rem;
   font-weight: 900;
   text-transform: uppercase;
 }
-
 .node-nabidka-prace-nova-form .form-submit {
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
+  order: 1;
 }
-
-.node-nabidka-prace-nova-form .form-submit:focus,
-.node-nabidka-prace-nova-form .form-submit:hover {
+.node-nabidka-prace-nova-form .form-submit:focus, .node-nabidka-prace-nova-form .form-submit:hover {
   border-color: #d43241;
   background-color: #fff;
   color: #d43241;
 }
-
 .node-nabidka-prace-nova-form .form-required:after {
   width: 7px;
   height: 7px;
@@ -302,81 +208,55 @@
   content: "*";
   color: red;
 }
-
 .node-nabidka-prace-nova-form .js-form-item {
   margin-bottom: 1rem;
 }
-
 .node-nabidka-prace-nova-form .js-form-type-vertical-tabs .wrapper--end-date-of-publish {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  align-items: center;
 }
-
 .node-nabidka-prace-nova-form .js-form-type-vertical-tabs h4 {
   margin: 0;
   margin-right: 1em;
 }
-
 .node-nabidka-prace-nova-form .js-form-type-vertical-tabs .form-item-unpublish-on-0-value-date {
   margin: 0;
 }
-
 .node-nabidka-prace-nova-form .js-form-type-vertical-tabs .vertical-tabs__menu,
 .node-nabidka-prace-nova-form .js-form-type-vertical-tabs .form-item-unpublish-on-0-value-time {
   display: none;
 }
-
 .node-nabidka-prace-nova-form .js-form-type-vertical-tabs .vertical-tabs {
   margin: 0;
   border: 0;
 }
-
 .node-nabidka-prace-nova-form .js-form-type-vertical-tabs .form-date {
   width: auto;
   border: 0.1em solid rgba(0, 0, 0, 0.5);
   padding: 0.2em;
   border-radius: 0.3em;
 }
-
 .node-nabidka-prace-nova-form .js-text-format-wrapper #edit-body-0-format-help-about {
   display: none;
 }
-
 .node-nabidka-prace-nova-form .js-text-format-wrapper div:nth-child(4) {
   display: none;
 }
-
 .node-nabidka-prace-nova-form label {
   display: table;
   margin: 0 0 0.1em;
   padding: 0;
   font-weight: bold;
 }
-
-.node-nabidka-prace-nova-form input.form-text,
-.node-nabidka-prace-nova-form input.form-email,
-.node-nabidka-prace-nova-form textarea.form-textarea,
-.node-nabidka-prace-nova-form input.form-number {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+.node-nabidka-prace-nova-form input.form-text, .node-nabidka-prace-nova-form input.form-email, .node-nabidka-prace-nova-form textarea.form-textarea, .node-nabidka-prace-nova-form input.form-number {
+  box-shadow: none;
   border-radius: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   max-width: 100%;
   padding: 0.3em 0.4em 0.3em 0.5em;
   -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
-  -webkit-transition: border linear 0.2s, -webkit-box-shadow linear 0.2s;
-  transition: border linear 0.2s, -webkit-box-shadow linear 0.2s;
   transition: border linear 0.2s, box-shadow linear 0.2s;
-  transition: border linear 0.2s, box-shadow linear 0.2s, -webkit-box-shadow linear 0.2s;
   color: #595959;
   border: 1px solid #b8b8b8;
   border-top-color: #999;
@@ -384,44 +264,29 @@
   font-size: 1em;
   width: auto;
 }
-
 .node-nabidka-prace-nova-form textarea.form-textarea {
   display: block;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   margin: 0;
 }
-
 .node-nabidka-prace-nova-form input.form-number {
   width: 100px;
 }
-
 .node-nabidka-prace-nova-form .form-item-field-pocet-dnu-0-value {
   display: none;
 }
 
 .js-form-item-field-topovat-value {
   display: none;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
-
 .js-form-item-field-topovat-value #edit-field-topovat-value--description {
   display: none;
-  -webkit-box-ordinal-group: 0;
-      -ms-flex-order: -1;
-          order: -1;
+  order: -1;
   width: 100%;
   background: #f9fafb;
   color: #000;
@@ -429,32 +294,24 @@
   padding: 2rem;
   margin-bottom: 1rem;
 }
-
-.js-form-item-field-topovat-value #edit-field-topovat-value--description .title-3,
-.js-form-item-field-topovat-value #edit-field-topovat-value--description .title-4 {
+.js-form-item-field-topovat-value #edit-field-topovat-value--description .title-3, .js-form-item-field-topovat-value #edit-field-topovat-value--description .title-4 {
   margin: 0.5rem 0;
 }
-
 .js-form-item-field-topovat-value #edit-field-topovat-value--description .title-3 {
   font-size: 1.7rem;
 }
-
 .js-form-item-field-topovat-value #edit-field-topovat-value--description .title-4 {
   font-size: 1.5rem;
 }
-
 .js-form-item-field-topovat-value #edit-field-topovat-value--description .warning {
   margin: 0;
 }
-
 .js-form-item-field-topovat-value #edit-field-topovat-value--description .price {
   margin: 0;
 }
-
 .js-form-item-field-topovat-value #edit-field-topovat-value--description .price span {
   color: red;
 }
-
 .js-form-item-field-topovat-value input {
   width: auto;
   margin-right: 1rem;
@@ -480,20 +337,15 @@
 
 #edit-field-topovat-value + .option {
   padding: 2px;
-  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   font-family: sans-serif;
-  -webkit-perspective: 100px;
-          perspective: 100px;
-  color: white;
-  cursor: -webkit-grab;
+  perspective: 100px;
+  color: #fff;
   cursor: grab;
   margin-bottom: 1rem;
 }
-
 #edit-field-topovat-value + .option:after, #edit-field-topovat-value + .option:before {
   display: inline-block;
-  -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
   width: 100%;
   text-align: center;
@@ -504,69 +356,50 @@
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   border-radius: 4px;
 }
-
 #edit-field-topovat-value + .option:after {
   content: "ANO";
   background: #02c66f;
-  -webkit-transform: rotateY(-180deg);
-          transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
 }
-
 #edit-field-topovat-value + .option:before {
   background: #d43241;
   content: "NE";
 }
-
 #edit-field-topovat-value + .option:active:before {
-  -webkit-transform: rotateY(-20deg);
-          transform: rotateY(-20deg);
+  transform: rotateY(-20deg);
 }
-
 #edit-field-topovat-value:checked + .option:before {
-  -webkit-transform: rotateY(180deg);
-          transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
-
 #edit-field-topovat-value:checked + .option:after {
-  -webkit-transform: rotateY(0);
-          transform: rotateY(0);
+  transform: rotateY(0);
   left: 0;
   background: #7fc6a6;
 }
-
 #edit-field-topovat-value:checked + .option:active:after {
-  -webkit-transform: rotateY(20deg);
-          transform: rotateY(20deg);
+  transform: rotateY(20deg);
 }
 
 .form-item-field-logo-0 {
   display: none;
 }
-
-.form-item-field-logo-0 .description,
-.form-item-field-logo-0 input[name="field_logo_0_upload_button"] {
+.form-item-field-logo-0 .description, .form-item-field-logo-0 input[name=field_logo_0_upload_button] {
   display: none;
 }
-
 .form-item-field-logo-0 .upload-button {
   padding: 0;
   border: 1px solid #d43241;
   outline: 0;
-  -webkit-transition: 0.25s;
   transition: 0.25s;
   width: 100%;
   text-align: left;
   background-color: #fff;
   cursor: pointer;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .form-item-field-logo-0 .upload-button__text {
   padding: 1rem 1.5rem 1rem 0;
   text-transform: uppercase;
@@ -576,40 +409,29 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 .form-item-field-logo-0 .upload-button__text:before {
-  content: "\f093";
+  content: "";
   font-family: "Font Awesome 5 Free", Arial, Helvetica, sans-serif;
   font-weight: 900;
   background-color: #d43241;
   padding: 1.2rem;
   margin-right: 1rem;
-  color: white;
+  color: #fff;
 }
-
 .form-item-field-logo-0 .upload-button__text:hover {
   color: #d43241;
 }
-
 .form-item-field-logo-0 .image-widget {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 .form-item-field-logo-0 .image-widget img {
   width: 100px;
   margin: 1rem 1rem 1rem 0;
 }
-
-.form-item-field-logo-0 .image-widget input[name="field_logo_0_remove_button"] {
+.form-item-field-logo-0 .image-widget input[name=field_logo_0_remove_button] {
   padding: 1rem;
   font-size: 1.4rem;
   font-weight: 800;
@@ -618,18 +440,14 @@
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  width: -webkit-min-content;
-  width: -moz-min-content;
   width: min-content;
   text-align: center;
   border: 1px solid #d43241;
   background: #d43241;
-  color: white;
+  color: #fff;
   margin-top: 1rem;
 }
-
 .form-item-field-logo-0 .form-managed-file {
   position: relative;
 }
@@ -651,164 +469,105 @@
 }
 
 .layout-content--viewnabidka-pracipage-1 .views-view-grid.vertical {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   padding-top: 1rem;
   width: 70%;
   margin: 0 auto;
 }
-
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-col {
   width: 100% !important;
   border-top: 1px solid #dadada;
   padding: 2rem;
   margin: 0;
-  -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-col:hover {
   background-color: rgba(212, 50, 65, 0.1);
 }
-
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-col:last-child {
   border-bottom: 0;
   margin-bottom: 2rem;
 }
-
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-label {
   padding-right: 0.5rem;
   text-transform: uppercase;
   font-weight: 900;
 }
-
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  align-items: center;
 }
-
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-field-logo {
   display: none;
   margin-right: 2rem;
 }
-
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-nothing {
   width: 100%;
 }
-
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-nothing .group-1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-nothing .group-2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .topovat {
   display: none;
   background: #d43241;
-  color: white;
+  color: #fff;
   padding: 0.2rem 0.5rem;
   margin-right: 0.5rem;
   font-weight: 900;
 }
-
 @media (max-width: 22.5em) {
   .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .topovat {
-    -webkit-box-ordinal-group: -1;
-        -ms-flex-order: -2;
-            order: -2;
+    order: -2;
   }
 }
-
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .created {
   margin-left: auto;
   text-align: right;
   color: #6b6b6b;
 }
-
 @media (max-width: 22.5em) {
   .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .created {
-    -webkit-box-ordinal-group: 0;
-        -ms-flex-order: -1;
-            order: -1;
+    order: -1;
   }
 }
-
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .nazev-spolecnosti,
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .adresa-mista-pracoviste {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .nazev-spolecnosti, .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .adresa-mista-pracoviste {
   width: 100%;
   color: #6b6b6b;
   font-size: 1.4rem;
 }
-
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
-
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags .item {
   padding: 0;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
-  color: black;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  color: #000;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  align-items: center;
   font-size: 1.4rem;
 }
-
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags .item .label_tag {
   font-weight: 900;
   text-transform: uppercase;
   padding-right: 0.5rem;
 }
-
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags .item:after {
   font-family: "Font Awesome 5 Free", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 0.5rem;
   padding: 0 0.8rem;
   color: rgba(0, 0, 0, 0.8);
-  content: "\f111";
+  content: "";
 }
-
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags .item:last-child::after {
   content: "";
 }
