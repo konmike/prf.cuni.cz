@@ -1,14 +1,13 @@
-@use "normalize";
-@use "default";
-@use "print";
-@use "others";
-@use "abstract/helpers";
-
-// global
-@use 'global';
-
 // plugins
-@use "plugins";
+@use "vendors";
+
+// base
+@use "base";
+
+// layout
+@use 'layout';
 
 // components
 @use 'components';
+
+@use 'shame';

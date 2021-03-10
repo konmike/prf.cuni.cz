@@ -1,0 +1,41 @@
+@use '../abstracts/var' as *;
+
+.breadcrumbs {
+    $this: &;
+    padding: 2rem 0;
+    margin: 0;
+    list-style: none;
+    display: none;
+    &__item {
+        display: inline-block;
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        &:not(:last-child) {
+            &:after {
+                content: '>';
+                display: inline-block;
+                margin: 0 1rem;
+            }    
+        }
+        &:first-child {
+            #{$this}__link {
+                vertical-align: middle;
+                width: 1.1rem;
+                height: .9rem;
+                text-indent: -9999px;
+                background-image: url(../images/icons/home.svg);
+            }
+        }
+    }
+    &__link {
+        display: inline-block;
+        &:hover {
+            color: $c4;
+        }
+    }
+
+    @media(min-width: $sm * 1em) {
+        display: flex;
+    }
+}

@@ -1,4 +1,4 @@
-@use '../abstract/var' as *;
+@use '../abstracts/var' as *;
 @use 'btn';
 
 .half-feed li.news-feed__item:nth-child(even) { 
