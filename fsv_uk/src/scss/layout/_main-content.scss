@@ -22,12 +22,15 @@
   }
   a {
     &.btn,
-    &.link--wrapper-image {
+    &.link--wrapper-image,
+    &.logos__link,
+    &[href="#"],
+    &.more-info {
       &::after {
         display: none !important;
       }
     }
-    &[href*="//"]:not([href*="prf.cuni.cz"]):after
+    &[href*="//"]:not([href*="prf.cuni.cz"]):after,
     {
       background-image: url(../images/icons/external.svg);
     }
