@@ -8173,10 +8173,6 @@ li.front-news-item div:last-of-type {
   max-width: 100% !important;
 }
 
-.margin-reset {
-  margin: 0 !important;
-}
-
 /* !!!! END !!!! */
 @media print {
   section {
