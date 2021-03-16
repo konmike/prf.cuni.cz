@@ -2544,7 +2544,7 @@ strong {
  */
 b,
 strong {
-  /* font-weight: bolder; */
+  font-weight: bolder;
 }
 
 /**
@@ -2998,7 +2998,14 @@ a {
 section {
   max-width: 135rem;
   margin: auto;
+  padding-bottom: 1rem;
   background-color: #fff;
+}
+
+.section > .section-title {
+  text-transform: none;
+  color: #000000;
+  border: 0;
 }
 
 ul {
@@ -5718,11 +5725,6 @@ input[type=search] {
   margin-bottom: 2rem;
   border-bottom: 0.2rem solid #f6f6f6;
 }
-.body > .section-title {
-  text-transform: none;
-  color: #000000;
-  border: 0;
-}
 .body iframe {
   width: 100%;
   min-height: 300px;
@@ -7770,7 +7772,7 @@ li.gallery__thumbnail a {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  padding-top: 2rem;
 }
 .logos__item {
   display: flex;
@@ -7780,8 +7782,8 @@ li.gallery__thumbnail a {
   justify-content: center;
 }
 .logos__img {
-  max-width: 9rem;
-  max-height: 5.5rem;
+  max-width: 15rem;
+  max-height: 15rem;
   width: auto !important;
 }
 .logos__link {
@@ -7794,29 +7796,19 @@ li.gallery__thumbnail a {
   max-height: 5.5rem;
 }
 
-.section {
-  padding-bottom: 1rem;
-}
-.section::after {
+.section--logos::after {
   content: "";
   /* This is necessary for the pseudo element to work. */
   display: block;
   /* This will put the pseudo element on its own line. */
   margin: 0 auto;
   /* This will center the border. */
-  width: 90%;
+  width: 96%;
   /* Change this to whatever width you want. */
   padding-top: 20px;
   /* This creates some space between the element and the border. */
   border-bottom: 2px solid #d43241;
   /* This creates the border. Replace black with whatever color you want. */
-}
-.section + .mb {
-  margin: 0;
-}
-.section .logos__img {
-  max-width: 15rem;
-  max-height: 15rem;
 }
 
 #jq_side-nav-toggle {
@@ -8179,6 +8171,10 @@ li.front-news-item div:last-of-type {
 }
 .office-form-page-padding > div {
   max-width: 100% !important;
+}
+
+.margin-reset {
+  margin: 0 !important;
 }
 
 /* !!!! END !!!! */

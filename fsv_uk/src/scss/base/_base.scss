@@ -92,7 +92,13 @@ a {
 section {
   max-width: 135rem;
   margin: auto;
+  padding-bottom: 1rem;
   background-color: $c1;
+}
+.section > .section-title{
+  text-transform: none;
+  color: #000000;
+  border: 0;
 }
 
 ul {

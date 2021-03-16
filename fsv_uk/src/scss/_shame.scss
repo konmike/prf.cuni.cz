@@ -10,12 +10,12 @@ a.file {
   }
 }
 a.file,
-a[type^="application/"],
-a[href*="download"] {
+a[type^='application/'],
+a[href*='download'] {
   color: $c4;
 }
 ul:not([class]) li:before {
-  content: "";
+  content: '';
   display: inline-block;
 }
 .page-title {
@@ -165,7 +165,7 @@ p.nameItemCal {
   margin-bottom: 1.5rem;
 }
 #publications {
-  input[type="text"] {
+  input[type='text'] {
     padding: 1.3em;
   }
   header {
@@ -248,7 +248,7 @@ fieldset#edit-abc--wrapper {
 th#view-nazev-table-column {
   width: 60%;
 }
-[class^="â€nodeâ€"] {
+[class^='â€nodeâ€'] {
   display: none;
 }
 .form-item-field-datum-value {
@@ -271,7 +271,7 @@ li.front-news-item {
     margin-right: 3px;
     float: left;
     &:after {
-      content: " - ";
+      content: ' - ';
     }
   }
   div:last-of-type {
@@ -328,6 +328,9 @@ li.front-news-item {
   & > div {
     max-width: 100% !important;
   }
+}
+.margin-reset{
+  margin: 0!important;
 }
 /* !!!! END !!!! */
 @media print {

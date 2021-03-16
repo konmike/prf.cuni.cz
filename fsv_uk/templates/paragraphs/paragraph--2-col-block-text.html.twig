@@ -39,8 +39,17 @@
  */
 #}
 
+{%
+	set classes = [
+		'section',
+		'section--white-text',
+		('0' in content.field_join_with_next_block[0] or content.field_join_with_next_block[0] is empty) ? 'mt mb',
+		'printable',
+	]
+%}
+
 {% block paragraph %}
-  <section class="body mb printable">
+  <section {{ attributes.addClass(classes) }} id='{{ content.field_join_with_next_block[0] }}'>
     {% block content %}
 
     {% if (content.field_skryt_nadpis['#items'].0.getValue().value) %}{% else %}

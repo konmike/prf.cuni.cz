@@ -1,5 +1,14 @@
+{%
+	set classes = [
+		'section',
+		'section--logos',
+		'printable',
+		('0' in content.field_join_with_next_block[0]) ? 'mb',
+	]
+%}
+
 {% block paragraph %}
-<section class="body printable section"> 
+<section {{ attributes.addClass(classes) }}>
 	{% block content %} 
 
 			<ul class="logos">
