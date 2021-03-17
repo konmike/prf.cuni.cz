@@ -1,10 +1,12 @@
 @use '../abstracts/' as *;
 .logos {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   padding-top: 2rem;
+
   &__item {
     display: flex;
     align-items: center;
@@ -22,6 +24,11 @@
     margin: auto;
     display: block;
     //width: 50%;
+
+    @media screen and (min-width: $lg * 1em) {
+      margin: 0;
+      margin-left: auto;
+    }
   }
 }
 
@@ -37,10 +44,4 @@
   &::after {
     @include border-with-width(96%, 2px, $c4);
   }
-  // .logos {
-  //   &__img {
-  //     max-width: 15rem;
-  //     max-height: 15rem;
-  //   }
-  // }
 }
