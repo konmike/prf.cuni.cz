@@ -197,8 +197,10 @@
             }
         }
 
-        & .views-field-title{
-            width: 75%;
+        & .views-field-field{
+            &-event-title{
+                width: 75%;
+            }
 
             &-datum{
                 width: 25%; 
@@ -206,15 +208,15 @@
                 font-size: 11px; 
                 align-self: flex-end; 
                 padding: 3px; 
-                $c1-space: nowrap;
+                white-space: nowrap;
             }
         }
         > div:last-of-type li:last-of-type{
             padding-bottom: 20px;
         }
-        .views-field.views-field-field-event-title { 
-            width: 100%;
-        }
+        // .views-field.views-field-field-event-title { 
+        //     width: 100%;
+        // }
     }
     @media(min-width: 23.25em) {
         #{$this}__section-title {

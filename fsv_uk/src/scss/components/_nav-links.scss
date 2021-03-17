@@ -18,7 +18,7 @@
     }
 
     &__last {
-        $c1-space: nowrap;
+        white-space: nowrap;
         &:after {
             content: '';
             display: inline-block;
