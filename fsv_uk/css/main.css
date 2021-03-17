@@ -3048,6 +3048,7 @@ iframe {
 @media (min-width: 62.5em) {
   #content-wrap {
     transform: translateY(183px);
+    transition: transform 0.5s ease;
   }
   #content-wrap.header-fixed {
     transform: translateY(40px);

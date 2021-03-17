@@ -145,7 +145,7 @@ iframe {
   #content-wrap {
     transform: translateY(183px);
     // Problém po aktualizaci chromu - nepříjemné probliknutí
-    // transition: transform 0.5s ease;
+    transition: transform 0.5s ease;
     &.header-fixed {
       transform: translateY(40px);
     }
