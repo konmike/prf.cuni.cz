@@ -78,6 +78,11 @@
     // $("#node-nabidka-prace-nova-form .wrapper--end-date-of-publish").append(
     //   date
     // );
+
+    $('a[href$="#"]').click(function (e) {
+      console.log("Zajimavy odakz");
+      e.preventDefault();
+    });
   });
 
   $('.nav__megamenu__featured__item a[href*="/node"]').each(function () {
