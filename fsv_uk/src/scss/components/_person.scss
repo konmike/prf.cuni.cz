@@ -1,0 +1,43 @@
+.person {
+    &__title {
+        text-transform: none;
+    }
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+    }
+    &__img-wrap {
+        width: 17.5rem;
+        min-width: 17.5rem;
+        margin-right: 3.5rem;
+        margin-bottom: 2rem;
+    }
+    &__row {
+        margin: .5em 0;
+    }
+    &__span,
+    &__link {
+        margin-right: -.4rem;
+    }
+    &__link {
+        color: $c4;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &__footer {
+        margin-top: 2rem;
+    }
+    
+    @media (min-width: $md * 1em) {
+        &__wrap {
+            flex-direction: row;
+        }
+    }
+
+    @media(min-width: $lg * 1em) {
+        &--book-detail {
+            lost-column: 2/3;
+        }
+    }
+}

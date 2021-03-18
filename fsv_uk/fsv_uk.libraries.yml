@@ -1,0 +1,10 @@
+global-styling:
+  version: 2.0
+  css:
+    theme:
+      css/main.css: {}
+  js:
+    js/main_script.js: {}
+    js/custom_script.js: {}
+  dependencies:
+    - core/jquery

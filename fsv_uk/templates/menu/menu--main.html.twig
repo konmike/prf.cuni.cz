@@ -1,0 +1,79 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - menu_name: The machine name of the menu.
+ * - items: A nested list of menu items. Each menu item contains:
+ *   - attributes: HTML attributes for the menu item.
+ *   - below: The menu item child items.
+ *   - title: The menu link title.
+ *   - url: The menu link url, instance of \Drupal\Core\Url
+ *   - localized_options: Menu link localized options.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
+ */
+#}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
+  {% if items %}
+  {% if menu_level < 2 %}
+   
+    {% if menu_level > 0 %}
+        <div class="nav__megamenu jq_megamenu">
+          <span class="nav__megamenu__close jq_megamenu-close">✕</span>
+          <div class="nav__megamenu__info">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+
+          <ul class="nav__list-lvl2 sub-menu nav__megamenu__nav reset-ul">
+    {% endif %}
+    
+    {% for item in items %}
+        <li class="{{ menu_level < 1 ? 'nav__item' : 'nav__item-lvl2' }} {{ item.is_expanded ? 'nav__item--expanded' }}{{ item.is_collapsed ? ' nav__item--collapsed' }} {{ item.in_active_trail ? 'nav__item--active-trail' }}">
+          {%
+              set linkClasses = [
+              menu_level < 1 ? 'nav__link' : 'nav__link-lvl2',
+              item.below ? 'dropdown',
+              menu_level == 0 ? 'jq_nav-link'
+              ]    
+          %}
+          {{ link( item.title, item.url, item.attributes.addClass(linkClasses))}}
+        {% if item.below %}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+        {% endif %}
+      </li>
+      {% if menu_level == 0 %}
+        <li aria-hidden="true" class="nav__separator">
+                    <svg height="8" width="8">
+                      <circle cx="4" cy="4" r="1.75" stroke="white" stroke-width="1.5" fill="transparent"></circle>
+                    </svg>
+                  </li>
+      {% endif %}
+    {% endfor %}
+    
+    {% if menu_level > 0 %}
+          </ul>
+        </div>
+    {% endif %}
+    
+  {% endif %} 
+  {% endif %}
+{% endmacro %}

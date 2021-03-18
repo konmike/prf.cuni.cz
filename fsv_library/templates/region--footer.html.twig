@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * Theme override to display a region.
+ *
+ * Available variables:
+ * - content: The content for this region, typically blocks.
+ * - attributes: HTML attributes for the region div.
+ * - region: The name of the region variable as defined in the theme's
+ *   .info.yml file.
+ *
+ * @see template_preprocess_region()
+ */
+#}
+
+{% extends '@fsv_uk/region--footer.html.twig' %}
+{% block footer_content %}
+    <ul class="footer__nav__list footer__nav__list--thirds">
+        {{ content }}
+        <li class="footer__nav__item">
+            <h3 class="footer__nav__title">{{ 'Contact'|t }}</h3>
+            {% trans %}
+            <p>Smetanovo nábřeží 6<br>
+                110 01 Prague 1</p>
+            <p>Hollar:</br>222 112 240, 250</br>knihovna@fsv.cuni.cz</p>
+            <p>Opletalova:</br>222 112 331</br>knihovna_ies@fsv.cuni.cz</p>
+            {% endtrans %}
+        </li>
+        <li class="footer__nav__item">
+            <h3 class="footer__nav__title">{{ 'Facebook'|t }}</h3>
+            <div id="fb-root"></div>
+            <script>(function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) return;
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "//connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v2.9&appId=809587745836211";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));</script>
+
+            <div class="fb-page"
+                 data-href="https://www.facebook.com/KnihovnaPF/"
+                 {#data-adapt-container-width="true"#}
+                 data-width="220"
+                 data-hide-cover="false"
+                 data-show-facepile="false"></div>
+        </li>
+    </ul>
+{% endblock %}

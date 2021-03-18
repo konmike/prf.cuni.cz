@@ -1,0 +1,42 @@
+{% set twig_content_variable = fields.ORG_NAZEV_CS.content %}
+{% set replace_value_var = ' ' %}
+{% set replace_with_value_var = '-' %}
+{% set replace_value_var_comma = ',' %}
+{% set replace_with_value_var_comma = '' %} 
+
+
+<h4><a href="/{{ fields.ID_ORG.content }}/{{ twig_content_variable|replace({ (replace_value_var): replace_with_value_var })|lower|replace({ (replace_value_var_comma): replace_with_value_var_comma })|transliterate() }}">{{ fields.ORG_NAZEV_CS.content }}</a>
+
+{% if fields.funkce_cz.content is not empty %}
+	<div style="font-size:14px; padding-top:5px">{{ fields.funkce_cz.content|capitalize }}</div>
+{% endif %}
+
+</h4>
+
+{% if fields.OZNACENI_MISTNOST.content is not empty %}
+
+<div>
+            <p class="contact__results__email">
+                <span class="contact__results__info-title">Místnost: </span>
+                <a class="contact__results__link" href="/kontakt/mapa-budovy/{{ fields.MISTNOST.content }}">{{ fields.NAZEV_BUDOVA_CS.content }} > {{ fields.PODLAZI.content }} > {{ fields.OZNACENI_MISTNOST.content }} (Mapa)</a>
+            </p>
+        </div> 
+	
+{% endif %}
+
+{% if fields.HODINY_VEREJNOST_CS.content is not empty %}
+
+<div>
+            <p class="contact__results__email">
+                <span class="contact__results__info-title" style="margin-right: 0px;">Konzultace: </span>
+                <span>{{ fields.HODINY_VEREJNOST_CS.content }}</súan>
+            </p>
+        </div> 
+
+	
+{% endif %}
+
+
+
+
+

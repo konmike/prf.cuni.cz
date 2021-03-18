@@ -1,0 +1,45 @@
+.halved-nav-links {
+    background-color: $c4;
+    color: $c1;
+    .section-title {
+        color: $c1;
+        border-color: $c8;
+    }
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 1.25rem;
+        }
+    }
+    &__link {
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-image: url(../images/icons/active_arrow_white.svg);
+            vertical-align: sub;
+            margin-left: 1rem;
+        }
+    }
+    &__footlink {
+        margin-top: auto;
+        padding: 2.5rem 1.5rem;
+        display: block;
+        border-top: .2rem solid $c8;
+        transition: color .3s;
+        color: rgba($c1, .5);
+        &:hover {
+            color: $c1;
+        }
+        &:after {
+            content: '';
+            display: inline-block;
+            vertical-align: sub;
+            margin-left: 1rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-image: url(../images/icons/active_arrow_white.svg);
+            background-size: cover;
+        }
+    }
+}

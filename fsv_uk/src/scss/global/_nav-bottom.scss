@@ -1,0 +1,45 @@
+.nav-bottom {
+    $this: &;
+    @media(max-width: ($headerBreak - .0625) * 1em) {
+        margin-top: 1rem;
+        padding-right: 2rem;
+        &__item {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+
+        }
+        &__heading {
+            margin-bottom: 2rem;
+            font-size: 1.4rem;
+            color: $c4;
+        }
+    }
+    @media(min-width: $headerBreak * 1em) {
+        text-align: right;
+        &__item {
+            display: inline-block;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            font-weight: normal;
+            &:last-child {
+                #{$this}__link {
+                    padding-right: 0;                    
+                }
+            }
+        }
+        &__link {
+            padding: 0 1em;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        &__heading {
+            position:absolute;
+            left:-10000px;
+            top:auto;
+            width:1px;
+            height:1px;
+            overflow:hidden;
+        }
+    }
+}

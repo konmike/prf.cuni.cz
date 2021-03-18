@@ -1,0 +1,170 @@
+<section class="person mb" id="person">
+    <h2 class="person__title section-title padding">
+        {% if content.field_prijmeni[0] is not empty %}
+        {% if content.field_titul[0] is not empty %}{{ content.field_titul }} {% endif %}{{ content.field_jmeno }} {{ content.field_prijmeni }}{% if content.field_titul_za[0] is not empty %}, {{ content.field_titul_za }} {% endif %}
+        {% else %}
+        {{ user.name.0.value }}
+        {% endif %}
+    </h2>
+    <div class="person__wrap padding clearfix">
+        <div class="person__img-wrap padding">
+            {{ content.user_picture }}
+        </div>
+        <div class="person__info padding">
+            <!--   <p>Působiště (náhled designu):</p>
+            <ul><li>Katedra teorie práva a právních učení</li>
+                <ul>
+                    <li>Místnost: Právnická fakulta UK >> 3. nadzemní podlaží - 2.patro >> 240</li>
+                    <li>Administrativní zařazení: vedoucí</li>
+                    <li>Konzultační a úřední hodiny: Stř.  16.00 - 17.00 místnost 240 konzultační hodiny jsou platné pouze v období výuky  v jinou dobu dohoda mailem</li>
+                </ul>
+            </ul> -->
+            {% if content.field_mail[0] is not empty %}
+            <div>
+                <p class="contact__results__email" style="font-size: 16px;">
+                    <span class="contact__results__info-title">E-mail: </span>
+                    <a class="contact__results__link" href="mailto:{{ content.field_mail }}">{{ content.field_mail }}</a>
+                </p>
+            </div>
+            {% endif %}
+            {% if content.field_telefon[0] is not empty %}
+            <p class="contact__results__phones" style="font-size: 16px;">
+                <span class="contact__results__info-title">Telefon: </span>
+                {% if content.field_telefon[0] is not empty %}
+                {% set num = content.field_telefon[0] %}
+                <a href="tel:{{ content.field_telefon[0] }}" class="contact__results__link">{{ num|slice(0, 3) }}</a>{% if content.field_telefon[1] is not empty %},{% endif %}
+                {% endif %}
+                {% if content.field_telefon[1] is not empty %}
+                <a href="tel:{{ content.field_telefon[1] }}" class="contact__results__link">{{ content.field_telefon[1] }}</a>{% if content.field_telefon[2] is not empty %},{% endif %}
+                {% endif %}
+                {% if content.field_telefon[2] is not empty %}
+                <a href="tel:{{ content.field_telefon[2] }}" class="contact__results__link">{{ content.field_telefon[2] }}</a>
+                {% endif %}
+            </p>
+            {% endif %}
+            <div style="padding-top:20px">
+                {{ drupal_view('workplace', 'workplaces') }}
+                {% set membership = drupal_view_result('membership', 'membership')|length %}
+                {% if membership > 0 %}
+                <h4 style="padding-top:20px">{{ 'Membership'|t }}</h4>
+                {{ drupal_view('membership', 'membership', userid) }}
+                {% endif %}
+                {% if membership is not empty %}
+                {% endif %}
+            </div>
+            {{ content.field_detail }}
+
+            <br>Právnidká fakulta
+        </div>
+    </div>
+</section>
+<div class="tabframe mb">
+    <div class="tab">
+        {% if content.field_cv[0] is not empty %}
+        <button class="tablinks" onclick="openTab(event, 'cv')" id="defaultopen">Životopis</button>
+        {% endif %}
+        {% if content.field_id_ucitele[0] is not empty %}
+        <button class="tablinks" onclick="openTab(event, 'publications')">Publikace</button>
+        <button class="tablinks" onclick="openTab(event, 'teaching')">Výuka</button>
+        <button class="tablinks" onclick="openTab(event, 'timetable')">Rozvrh</button>
+        <button class="tablinks" onclick="openTab(event, 'advisor')">Školitel</button>
+        {% endif %}
+    </div>
+    {% if content.field_cv[0] is not empty %}
+    <div id="cv" class="tabcontent padding" style="display: block;">
+        {{ content.field_cv }}
+    </div>
+    {% endif %}
+    {% if content.field_id_ucitele[0] is not empty %}
+    <div id="publications" class="tabcontent padding" style="display: none;">
+        {{ drupal_view('publikace', 'obd') }}
+    </div>
+    <div id="teaching" class="tabcontent padding" style="display: none;">
+        {{ drupal_view('user_integration', 'teaching') }}
+    </div>
+    <div id="timetable" class="tabcontent padding" style="display: none;">
+        {{ drupal_view('user_integration', 'timetable') }}
+    </div>
+    <div id="advisor" class="tabcontent padding" style="display: none;">
+        {{ drupal_view('user_integration', 'advisor') }}
+    </div>
+    {% endif %}
+</div>
+<style>
+.tabcontent {
+    animation: fadeEffect 1s;
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #f6f6f6;
+}
+
+.tab .tablinks {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px;
+    transition: 0.3s;
+    line-height: 16px;
+}
+
+.tab .tablinks:hover {
+    background-color: #ddd;
+}
+
+.tab .tablinks.active {
+    background-color: #cd2021 !important;
+    color: white;
+}
+
+.tabframe {
+    background: white;
+}
+
+.tabcontent {
+    display: none;
+    border: 1px solid #f6f6f6;
+    border-top: none;
+    word-break: break-word;
+}
+
+.tabcontent p {
+    white-space: pre-line;
+}
+
+.person__img-wrap img {
+    height: auto;
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+</style>
+<script>
+function openTab(evt, cityName) {
+    var i,
+        tabcontent,
+        tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+document.getElementById("defaultopen").click();
+</script>

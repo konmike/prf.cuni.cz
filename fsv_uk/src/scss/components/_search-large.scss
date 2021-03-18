@@ -1,0 +1,44 @@
+.search-large {
+    background-color: transparent;
+
+    input[type=search] {
+        height: 8rem;
+        @include flex-prop(13,21);
+        padding: .5em 1.5em;
+        border: none;
+        letter-spacing: .075em;
+    }
+
+    input[type=submit] {
+        width: 8rem;
+        height: 8rem;
+        background-color: transparent;
+        border: none;
+        text-indent: -9999px;
+        background-image: url(../images/icons/search.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    form {
+        max-width: 82.5rem;
+        position: relative;
+        margin: auto;
+    }
+
+    .form-actions {
+        position: absolute;
+        width: 6rem;
+        height: 8rem;
+        right: 0;
+        top: 0;
+    }
+
+    @media(min-width: $sm * 1em) {
+        .form-actions {
+            width: 8rem;
+        }
+    }
+}

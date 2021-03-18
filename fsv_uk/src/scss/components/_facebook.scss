@@ -1,0 +1,25 @@
+.facebook {
+    &__wrap {
+        text-align: center;
+        padding: 1rem 0;
+    }
+    &__footlink {
+        padding: 2.5rem 1.5rem;
+        display: block;
+        border-top: .2rem solid $c7;
+        transition: color .3s;
+        &:hover {
+            color: $c4;
+        }
+        &:after {
+            content: '';
+            display: inline-block;
+            vertical-align: baseline;
+            margin-left: 1rem;
+            width: 1.2rem;
+            height: 1.05rem;
+            background-image: url(../images/icons/external.svg);
+            background-size: cover;
+        }
+    }
+}

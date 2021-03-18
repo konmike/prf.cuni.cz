@@ -1,0 +1,17 @@
+<div class="mt">
+
+<style>.main-content {width: 100%!important;}</style>
+
+{% set site_url = url("<current>")|escape|split('/') | last %}		
+
+<h1 class="padding section-title page-title ">Patro {{ site_url }}</h1>
+
+<h2><a href="/image-map.php?floor=0">Přízemí</a> | <a href="/image-map.php?floor=1">1. patro</a> | <a href="/image-map.php?floor=0">2. patro</a> | <a href="/image-map.php?floor=0">3. patro</a> | <a href="/image-map.php?floor=0">4. patro</a> | <a href="/image-map.php?floor=0">1. suterén</a> | <a href="/image-map.php?floor=0">2. suterén</a></h2>
+
+<div style="height:1100px">
+
+<iframe src="https://WWW.prf.cuni.cz/image-map.php?floor={{ site_url }}" scrolling="no" width="100%" height="1050px" overflow></iframe>
+
+</div>
+
+</div>

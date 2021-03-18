@@ -1,0 +1,73 @@
+<div>
+    <h2 class="section-title contact__filter__title padding">{{ 'Filter'|t }}</h2>
+
+    <div class="contact__filter mb">
+
+        <form class="contact__filter__tabs">
+
+
+            <div class="contact__filter__tabs__item clearfix">
+                <input class="contact__filter__tabs__input" id="tab-1" type="radio" name="tabs" checked>
+                <label class="contact__filter__tabs__label padding" for="tab-1" tabindex="0" role="tab" aria-hidden="false" aria-controls="tab-content-1">
+                    {{ 'By part of FSV UK'|t }}
+                    <span class="contact__filter__tabs__icon"><svg xmlns="http://www.w3.org/2000/svg" width="29" height="21" viewBox="0 0 29 21"><path d="M14.49 20.23L.24.73h28.5z"/></svg></span>
+                </label>
+
+                <div class="contact__filter__tabs__content padding" id="tab-content-1" role="tabpanel" aria-hidden="false">
+                    <ul class="contact__filter__tabs__departments">
+
+                        <li>
+                            <input type="checkbox" value="KES" id="KES" v-model="selectedDepartments">
+                            <label for="KES">{{'Department of European Studies'|t}}</label>
+                        </li>
+
+                        <li>
+                            <input type="checkbox" value="KNRS" id="KNRS" v-model="selectedDepartments">
+                            <label for="KNRS">{{'Department of German and Austrian St.'|t}}</label>
+                        </li>
+
+                        <li>
+                            <input type="checkbox" value="KRVS" id="KRVS" v-model="selectedDepartments">
+                            <label for="KRVS">{{'Department of Russian and East European St.'|t}}</label>
+                        </li>
+
+                        <li>
+                            <input type="checkbox" value="KAS" id="KAS" v-model="selectedDepartments">
+                            <label for="KAS">{{'Department of North American Studies'|t}}</label>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="contact__filter__tabs__item clearfix">
+                <input class="contact__filter__tabs__input" id="tab-2" type="radio" name="tabs">
+                <label class="contact__filter__tabs__label padding" for="tab-2" tabindex="-1" role="tab" aria-hidden="true" aria-controls="tab-content-2">{{ 'By name'|t }}
+                    <span class="contact__filter__tabs__icon"><svg xmlns="http://www.w3.org/2000/svg" width="29" height="21" viewBox="0 0 29 21"><path d="M14.49 20.23L.24.73h28.5z"/></svg></span>
+                </label>
+
+                <div class="contact__filter__tabs__content padding" id="tab-content-2" role="tabpanel" aria-hidden="true">
+
+                    <input type="text" name="name" v-model="selectedName" placeholder="{{ 'Search for name or surname'|t }}" class="contact__filter__search" id="js_people-input">
+
+                    <ul class="contact__filter__letters">
+                        {% for letter in 'a'..'z' %}
+                            <li class="contact__filter__letters__letter">
+                                <input class="visually-hidden contact__filter__letters__input" type="radio" v-model="selectedLetter" value="{{ letter }}" id="letter-{{ letter }}" name="letter"/>
+                                <label class="contact__filter__letters__label" for="letter-{{ letter }}">{{ letter }}</label>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                </div>
+
+            </div>
+
+ 
+
+        </form>
+
+    </div>
+
+</div>

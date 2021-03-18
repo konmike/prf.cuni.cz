@@ -1,0 +1,163 @@
+<?php
+
+use Drupal\Core\Datetime\DateFormatter;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+
+function uredni_deska_preprocess(&$variables) {
+    $variables['theme_path'] = base_path() . $variables['directory'];
+    $variables['current_language'] =  \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $variables['current_uri'] = \Drupal::request()->getRequestUri();
+    $variables['host'] = \Drupal::request()->getHost();
+    $variables['host_scheme'] = \Drupal::request()->getSchemeAndHttpHost();
+    $variables['current_date'] =  \Drupal::service('date.formatter')->format(time(), 'custom', 'F Y');
+}
+
+function uredni_deska_preprocess_page(&$variables) {
+    $route = \Drupal::routeMatch()->getRouteName();
+    $class = 'none';
+
+    if ($route === 'entity.node.canonical') {
+        $class = \Drupal::routeMatch()->getParameter('node')->getType();
+    } else if ($route === 'fsv_contacts.list') {
+        $class = $route;
+    } else if (\substr($route, 0, 5) === 'view.'
+        || \substr($route, 0, 7) === 'search.'
+        || \substr($route, 0, 5) === 'user.'
+    ) {
+        $class = $route;
+    }
+    
+    $variables['page_class_name'] = \Drupal\Component\Utility\Html::cleanCssIdentifier($class);
+}
+
+function uredni_deska_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+    if ($form_id === 'search_form') {
+        $form['advanced']['#access'] = false;
+        $manager = \Drupal::languageManager();
+        $form['advanced']['lang-fieldset']['language']['#default_value'] = [$manager->getCurrentLanguage()->getId()];
+        unset($form['help_link']);
+        $form['basic']['keys']['#attributes']['placeholder'] = t('Search term');
+    } if ($form_id === 'search_block_form') {
+        $build_args = $form_state->getBuildInfo()['args'];
+        if (\count($build_args) > 0 && $build_args[0] === 'homepage') {
+            $form['keys']['#attributes']['placeholder'] = t("Didn't find what you're looking for?");
+        } else {
+            $form['keys']['#attributes']['placeholder'] = t('Search term');
+        }
+        
+        $manager = \Drupal::languageManager();
+        
+        $form['advanced-form'] = [
+            '#type' => 'hidden',
+            '#value' => 1,
+        ];
+        $form['f[0]'] = [
+            '#type' => 'hidden',
+            '#value' => 'language:' . $manager->getCurrentLanguage()->getId(),
+        ];
+    } else if ($form_id === 'user_login_form') {
+        $form['name']['#attributes']['placeholder'] = $form['name']['#title'];
+        $form['pass']['#attributes']['placeholder'] = $form['pass']['#title'];
+    }
+}
+
+function uredni_deska_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+    if ($variables['theme_hook_original'] === 'form') {
+        $suggestions[] = 'form__' . $variables['element']['#form_id'];
+    }
+}
+
+function uredni_deska_preprocess_node(array &$variables) {
+    if ($variables['node']->bundle() === 'basic_page' || $variables['node']->bundle() === 'page_top_level') {
+        $related_news = $variables['node']->get('field_related_news');
+        if ($related_news->count() > 0) {
+            $id_array = [];
+            foreach ($related_news as $term) {
+                $id_array[] = $term->entity->id();
+            }
+            
+            $variables['related_news_tags_ids'] = $id_array;
+        }
+    }
+}
+
+
+function uredni_deska_preprocess_field(&$variables, $hook) {
+    $element = $variables['element'];
+    if ($element['#field_name'] === 'field_gallery_images') {
+        $feature_field = $element['#object']->get('field_gallery_feature_first_img');
+        $variables['gallery_feature_first'] = false;
+        if ($feature_field->count() > 0 && $feature_field->get(0)->getValue()['value']) {
+            $variables['gallery_feature_first'] = true;
+        }
+    }
+}
+
+function uredni_deska_preprocess_menu(&$variables) {
+    if ($variables['menu_name'] === 'bottom-header-navigation' ||
+        $variables['menu_name'] === 'footer') {
+        $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+        
+        foreach ($variables['items'] as $key => $item) {
+            $attributes = $item['url']->getOption('attributes');
+            
+            if (isset($attributes['class'])) {
+                foreach (\explode(' ', $attributes['class']) as $cls) {
+                    if (\preg_match('/^lang-([^-]+)-only$/', $cls, $matches)) {
+                        if ($matches[1] !== $language) {
+                            unset($variables['items'][$key]);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function uredni_deska_preprocess_block(&$variables) {
+  $variables['content']['#attributes']['block'] = $variables['attributes']['id'];
+}
+
+function uredni_deska_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+    if (isset($variables['elements']['content']['#block_content'])) {
+        array_splice($suggestions, 2, 0, 'block__type__' . $variables['elements']['content']['#block_content']->bundle());
+    }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function uredni_deska_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
+  // Remove the block and replace dashes with underscores in the block ID to
+  // use for the hook name.
+  if (isset($variables['attributes']['block'])) {
+    $hook = str_replace(array('block-', '-'), array('', '_'),    $variables['attributes']['block']);
+    $suggestions[] = $variables['theme_hook_original'] . '__' . $hook;
+  }
+}
+
+function uredni_deska_preprocess_item_list__search_results(&$variables) {
+    $url = Url::fromUserInput($variables['current_uri']);
+    
+    $query = $url->getOption('query');
+    if (isset($query['keys'])) {
+        $variables['search_string'] = $query['keys'];
+    }
+
+    $variables['#attached']['library'][] = 'fsv_contacts/fsv_contacts';
+    $variables['#attached']['drupalSettings']['fsv_contacts'] = [
+        'endpoint' => \Drupal\fsv_contacts\Controller\PersonController::API_ENDPOINT_ALL,
+        'person_url' => Url::fromRoute(
+            'fsv_contacts.person',
+            [
+                'person_id' => '-id'
+            ]
+        )->toString(),
+        'search_string' => $query['keys']
+    ];
+}

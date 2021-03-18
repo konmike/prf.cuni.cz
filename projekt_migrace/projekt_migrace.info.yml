@@ -1,0 +1,21 @@
+name: projekt_migrace
+type: theme
+description: projekt_migrace
+core: 8.x
+base theme: fsv_uk
+libraries-override:
+  system/base: false
+libraries:
+  - ims/global-styling
+regions:
+  bottom_header: Bottom Header
+  top_header: Top Header
+  navigation: Navigation
+  mobile_search: Mobile Search
+  breadcrumbs: Breadcrumbs
+  side_navigation: Side Navigation
+  search: Search
+  content: Content  # the content region is required
+  prefooter: Prefooter
+  footer: Footer
+  mob_langswitch: Mobile Language switcher
