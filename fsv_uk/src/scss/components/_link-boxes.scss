@@ -1,3 +1,5 @@
+@use '../abstracts/var' as *;
+
 .link-boxes {
     $this: &;
     &__list {
@@ -5,7 +7,7 @@
         flex-wrap: wrap;
     }
     &__item {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
@@ -83,16 +85,6 @@
     &__title {
         margin-bottom: 0;
         text-align: center;
-        // &:before {
-        //     display: inline-block;
-        //     vertical-align: baseline;
-        //     margin-right: 1rem;
-        //     content: '';
-        //     width: 1.3rem;
-        //     height: 1.3rem;
-        //     border-radius: 50%;
-        //     background-color: currentColor;
-        // }
     }
 
     @media(min-width: $sm * 1em) {

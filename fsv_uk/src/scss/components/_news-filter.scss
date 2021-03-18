@@ -1,5 +1,6 @@
-.news-filter {
+@use '../abstracts/var' as *;
 
+.news-filter {
     background-color: $c1;
 
     &__title {

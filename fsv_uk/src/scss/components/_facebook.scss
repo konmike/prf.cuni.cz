@@ -1,3 +1,5 @@
+@use '../abstracts/var' as *;
+
 .facebook {
     &__wrap {
         text-align: center;

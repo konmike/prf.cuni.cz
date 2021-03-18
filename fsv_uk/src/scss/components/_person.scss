@@ -1,3 +1,5 @@
+@use '../abstracts/var' as *;
+
 .person {
     &__title {
         text-transform: none;
@@ -5,6 +7,14 @@
     &__wrap {
         display: flex;
         flex-direction: column;
+        
+        h4{
+            // line-height: 64px;
+            line-height: 26px;
+        }
+        .contact__results__info-title{
+            min-width: 6rem;
+        }
     }
     &__img-wrap {
         width: 17.5rem;
@@ -37,7 +47,28 @@
 
     @media(min-width: $lg * 1em) {
         &--book-detail {
-            lost-column: 2/3;
+            // lost-column: 2/3;
+            width: calc(99.9% * 2 / 3 - (30px - 30px * 2 / 3));
+            &:nth-child(1n){
+                float: left; 
+                margin-right: 30px; 
+                clear: none;
+            }
+            &:nth-child(3n){
+                margin-right: 0; 
+                float: right;
+            }
+            &:nth-child(3n+1){
+                clear: both;
+            }
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+    }
+    @media (max-width: 62.4375em) {
+        &__title{
+            margin-top: 60px !important;
         }
     }
 }

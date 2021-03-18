@@ -1,0 +1,175 @@
+@use '../abstracts' as *;
+
+.prefooter {
+    $this: &;
+    color: $c4;
+    border-top: .5rem solid $c4;
+    max-width: none;
+    background: #4b4b4b;
+    &__container {
+        padding: 4rem $padMob;
+        background: #4b4b4b; 
+        color: $c1 !important;
+        a{
+            color: $c1 !important;
+        }
+    }
+    &__top,
+    &__left {
+        margin-bottom: 1rem;
+    }
+    &__text {
+        font-size: 1.6rem;
+        margin-bottom: 3rem !important;
+    }
+    &__newsletter {
+        position: relative;
+        form {
+            & > *:not(:last-child) {
+                margin: {
+                    bottom: 16px;
+                }
+            }
+        }
+        input[type=email] {
+            background-color: transparent;
+            border: none;
+            width: 100%;
+            border-bottom: .2rem solid $c13;
+            padding: 1em 0;
+            transition: border-color .3s;
+            position: relative;
+            z-index: 1;
+            font-size: 1.6rem;
+            color: $c4;
+            &:focus, &:valid {
+                border-color: $c4;
+                outline: none;
+            }
+            @include placeholder {
+                color: $c11;
+                font-size: 1.6rem;
+            }
+        }
+        // Honeypot
+        input[name=firstname] {
+            display: none;
+        }
+        input[type=submit] {
+            position: absolute;
+            width: auto;
+            top: 1.3rem;
+            right: 0;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1.6rem;
+            // color: $c4;
+            color: $c1;
+            z-index: 1;
+        }
+
+        input[type=checkbox] {
+            width: auto;
+        }
+        label {
+            position:absolute;
+            left:-10000px;
+            top:auto;
+            width:1px;
+            height:1px;
+            overflow:hidden;
+
+            &.option {
+                position: static;
+                width: auto;
+                height: auto;
+                font-size: 1.2rem;
+                color: $c14;
+                vertical-align: text-bottom;
+
+            }
+        }
+
+        .form-item-checkbox {
+            opacity: 0;
+            transition: 100ms opacity;
+
+            &.show {
+                opacity: 1;
+            }
+        }
+    }
+    &__social {
+        display: flex;
+        &__item {
+            margin-right: 8%;
+        }
+        &__link {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: block;
+            text-indent: -99999px;
+            &[href*='facebook'] {
+                width: 3rem;
+                height: 3rem;
+                background-image: url(../images/icons/fb.svg);
+            }
+            &[href*='twitter'] {
+                width: 3.68rem;
+                height: 3rem;
+                background-image: url(../images/icons/twitter.svg);
+            }
+            &[href*='instagram'] {
+                width: 3rem;
+                height: 3rem;
+                background-image: url(../images/icons/instagram.svg);
+            }
+            &[href*='linkedin'] {
+                width: 3rem;
+                height: 3rem;
+                background-image: url(../images/icons/linkedin.svg);
+            }
+            &[href*='youtube'] {
+                width: 4rem;
+                height: 3rem;
+                background-image: url(../images/icons/youtube.svg);
+            }
+        }
+    }
+
+    @media(min-width: $sm * 1em) {
+        &__newsletter,
+        &__text {
+            max-width: 66.666%;
+        }
+    }
+
+    @media(min-width: $md * 1em) {
+        &__left,
+        &__right {
+            // lost-column: 1/2;
+            width: calc(99.9% * 1 / 2 - (30px - 30px * 1 / 2));
+            margin-bottom: 0;
+            &:nth-child(1n){
+                float: left; 
+                margin-right: 30px; 
+                clear: none
+            }
+            &:nth-child(2n){
+                margin-right: 0;
+                float: right
+            }
+            &:nth-child(2n+1){
+                clear: both;
+            }
+            &:last-child{
+                margin-right: 0;
+            }
+        }
+        &__top{
+            margin-bottom: 0;
+        }
+    }
+}

@@ -1,5 +1,6 @@
+@use '../abstracts/var' as *;
+
 .nav-links {
-    
     &__item {
         display: inline-block;
         width: 100%;

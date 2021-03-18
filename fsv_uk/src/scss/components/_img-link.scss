@@ -1,3 +1,5 @@
+@use '../abstracts/var' as *;
+
 .img-link {
     &__link {
         display: flex;

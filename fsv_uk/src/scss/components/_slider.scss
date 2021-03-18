@@ -1,140 +1,136 @@
+@use '../abstracts/var' as *;
+
 .slider {
+  border-top: 0.2rem solid $c4;
 
-    border-top: .2rem solid $c4;
+  &__list {
+    display: flex;
+    opacity: 0;
+    &--loaded {
+      opacity: 1;
+    }
+  }
 
-    &__list {
-        display: flex;
-        opacity: 0;
-        &--loaded {
-            opacity: 1;
+  &__img {
+    min-height: 40vh;
+    background-image: url(../images/uni.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50%;
+  }
+
+  &__text {
+    padding: 4rem 2rem;
+    background-color: $c4;
+    color: $c1;
+    font-size: 1.8rem;
+    line-height: 1.7;
+    flex: 1;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    color: $c1;
+    text-transform: none;
+    width: 75%;
+    a::after {
+      display: none !important;
+    }
+  }
+
+  &__btn {
+    height: 3.5rem;
+    line-height: 3.5rem;
+    border: 0.1rem solid rgba(246, 246, 246, 0.5);
+    border-radius: 0.4rem;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s;
+    &:hover {
+      background-color: transparent;
+      color: $c1;
+      border-color: $c1;
+    }
+  }
+
+  @media (max-width: ($md - 0.0625) * 1em) {
+    .lSPager {
+      padding: 0;
+      list-style: none;
+      text-align: center;
+      margin: 2rem 0 !important;
+
+      li {
+        width: 2.5rem !important;
+        height: 2.5rem;
+        display: inline-block;
+        text-indent: -99999px;
+        background-image: url(../images/icons/circle.svg);
+        background-size: cover;
+        opacity: 0.5;
+        margin: 0 0.5rem;
+        transition: opacity 0.3s;
+        &.active {
+          opacity: 1;
         }
+      }
+    }
+  }
+
+  @media (min-width: $md * 1em) {
+    border-top: none;
+
+    &__item {
+      display: flex;
+      flex-direction: row;
     }
 
-    &__img {
-        min-height: 40vh;
-        background-image: url(../images/uni.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 50%;
+    &__img,
+    &__text {
+      min-height: 0;
+      width: 50%;
     }
 
     &__text {
-        padding: 4rem 2rem;
-        background-color: $c4;
-        color: $c1;
-        font-size: 1.8rem;
-        line-height: 1.7;
-        flex: 1;
-    }
-
-    &__item {
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__title {
-        color: $c1;
-        text-transform: none;
-    }
-
-    &__btn {
-        height: 3.5rem;
-        line-height: 3.5rem;
-        border: .1rem solid rgba($c7, .5);
-        border-radius: .4rem;
-        color: rgba($c1, .5);
-        transition: all .3s;
-        &:hover {
-            background-color: transparent;
-            color: $c1;
-            border-color: $c1;
-        }
+      padding: 10rem 4rem 6rem;
     }
 
     .lSPager {
+      display: flex;
 
+      li {
+        display: inline-block;
+        border-bottom: 0.2rem solid rgba($c2, 0.1);
+        &:not(:last-child) {
+          border-right: 0.2rem solid rgba($c2, 0.1);
+        }
+        &.active {
+          border-bottom-color: $c4;
+          a {
+            color: $c4;
+          }
+        }
+      }
+
+      a {
+        width: 100%;
+        height: 100%;
+        background-color: $c1;
+        border: none;
+        font-size: 1.4rem;
+        color: $c6;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        cursor: pointer;
+        font-weight: 300;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+      }
     }
-
-    @media(max-width: ($md - .0625) * 1em) {
-        .lSPager {
-            padding: 0;
-            list-style: none;
-            text-align: center;
-            margin: 2rem 0 !important;
-
-            li {
-                width: 2.5rem !important;
-                height: 2.5rem;
-                display: inline-block;
-                text-indent: -99999px;
-                background-image: url(../images/icons/circle.svg);
-                background-size: cover;
-                opacity: .5;
-                margin: 0 .5rem;
-                transition: opacity .3s;
-                &.active {
-                    opacity: 1;
-                }
-            }
-        }
-    }
-
-    @media(min-width: $md * 1em) {
-
-        border-top: none;
-
-        &__item {
-            display: flex;
-            flex-direction: row;
-        }
-
-        &__img,
-        &__text {
-            min-height: 0;
-            width: 50%;
-        }
-
-        &__text {
-            padding: 10rem 4rem 6rem;
-        }
-
-        .lSPager {
-
-            display: flex;
-
-            li {
-                display: inline-block;
-                border-bottom: .2rem solid rgba($c2, .1);
-                &:not(:last-child) {
-                    border-right: .2rem solid rgba($c2, .1);
-                }
-                &.active {
-                    border-bottom-color: $c4;
-                    a {
-                        color: $c4;
-                    }
-                }
-            }
-
-            a {
-                width: 100%;
-                height: 100%;
-                background-color: $c1;
-                border: none;
-                font-size: 1.4rem;
-                color: $c6;
-                padding-top: 1em;
-                padding-bottom: 1em;
-                cursor: pointer;
-                font-weight: 300;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-decoration: none;
-            }
-
-        }
-    }
-
-
+  }
 }
