@@ -7766,6 +7766,16 @@ li.gallery__thumbnail a {
     margin-left: auto;
   }
 }
+.logos .sub-title {
+  max-width: 15rem;
+  text-align: center;
+  font-family: Calibri;
+  font-style: italic;
+  display: block;
+  line-height: 1.7rem;
+  padding-top: 1rem;
+  color: rgba(0, 0, 0, 0.8);
+}
 
 .prefooter__bottom .logos__img {
   max-width: 9rem;

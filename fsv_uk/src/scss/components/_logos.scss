@@ -30,6 +30,16 @@
       margin-left: auto;
     }
   }
+  .sub-title {
+    max-width: 15rem;
+    text-align: center;
+    font-family: Calibri;
+    font-style: italic;
+    display: block;
+    line-height: 1.7rem;
+    padding-top: 1rem;
+    color: rgba($c2, 0.8);
+  }
 }
 
 .prefooter__bottom {

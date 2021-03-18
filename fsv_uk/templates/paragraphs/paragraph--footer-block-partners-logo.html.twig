@@ -40,17 +40,17 @@
 #}
 
 {% block content %}
-    <li class="logos__item">
-    {% if content.field_general_link.0['#url'] is not empty %}
-      {% set link, target = content.field_general_link.0['#url']|render, "_blank" %}
-    {% else %}
-        {% set link, target = "#", "_self" %}
-    {% endif %}
-        <a 
-          href="{{ link }}" 
-          class="logos__link" 
-          target="{{target}}">
-            <img class="logos__img" src="{{ file_url( content.field_partners_block_logo_file.0['#file'].getFileUri() ) }}" alt="{{ content.field_partners_block_logo_file.0['#description'] }}">
-          </a>
-    </li>
+	<li class="logos__item">
+		{% if content.field_general_link.0['#url'] is not empty %}
+			{% set link, target = content.field_general_link.0['#url']|render, "_blank" %}
+		{% else %}
+			{% set link, target = "#", "_self" %}
+		{% endif %}
+		<a href="{{ link }}" class="logos__link" target="{{target}}">
+			<img class="logos__img" src="{{ file_url( content.field_partners_block_logo_file.0['#file'].getFileUri() ) }}" alt="{{ content.field_partners_block_logo_file.0['#description'] }}">
+			{% if content.field_popisek_pod_logo[0] is not empty %}
+				<span class="sub-title">{{content.field_popisek_pod_logo}}</span>
+			{% endif %}
+		</a>
+	</li>
 {% endblock %}
