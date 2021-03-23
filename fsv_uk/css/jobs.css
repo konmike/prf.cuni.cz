@@ -107,10 +107,6 @@
   margin: 0;
 }
 
-.layout-container {
-  margin: 0;
-}
-
 .add-job-title {
   outline: none;
   font-size: 2.4rem;
@@ -468,22 +464,98 @@
   display: none;
 }
 
+.layout-content--viewnabidka-pracipage-1 {
+  width: 70%;
+  margin: 0 auto;
+}
+.layout-content--viewnabidka-pracipage-1 .main-content {
+  margin-left: auto;
+  margin-right: auto;
+}
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 3rem;
+}
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side {
+  margin-top: 1rem;
+  max-width: 45%;
+  width: 45%;
+  margin-right: 2rem;
+}
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side .btn {
+  margin-bottom: 5rem;
+  width: 100%;
+  margin-right: 2rem;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 0rem 1.5rem;
+  height: auto;
+}
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed {
+  background-color: #f2f2f2;
+}
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed h3 {
+  text-align: center;
+  background-color: #d43241;
+  color: white;
+  padding: 1rem;
+  font-size: 1.6rem;
+}
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-type-select {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem 0 2rem;
+}
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-type-select label {
+  color: #d43241;
+  text-transform: uppercase;
+  font-weight: 800;
+  padding-right: 3rem;
+}
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-type-select .form-select {
+  text-align: center;
+  text-align-last: center;
+}
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-submit {
+  padding: 0.7rem;
+  width: min-content;
+  margin: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  background-color: #fff;
+  color: #d43241;
+  border: 2px solid #d43241;
+  transition: all 0.3s;
+}
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-submit:hover {
+  background-color: #d43241;
+  color: #fff;
+}
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .right-side {
+  max-width: 55%;
+  margin-top: 2rem;
+}
 .layout-content--viewnabidka-pracipage-1 .views-view-grid.vertical {
   display: flex;
   flex-direction: column;
   padding-top: 1rem;
-  width: 70%;
-  margin: 0 auto;
+  margin: 1rem 3rem;
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-col {
   width: 100% !important;
-  border-top: 1px solid #dadada;
+  border-top: 1px solid #d43241;
   padding: 2rem;
   margin: 0;
   transition: all 0.3s;
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-col:hover {
   background-color: rgba(212, 50, 65, 0.1);
+}
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-col:first-child {
+  border-top: 0;
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-col:last-child {
   border-bottom: 0;
@@ -508,6 +580,12 @@
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-nothing .group-1 {
   display: flex;
+}
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-nothing .group-1 a {
+  text-decoration: none;
+  color: #d43241;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-nothing .group-2 {
   display: flex;
@@ -538,13 +616,15 @@
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .nazev-spolecnosti, .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .adresa-mista-pracoviste {
   width: 100%;
-  color: #6b6b6b;
-  font-size: 1.4rem;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 800;
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
+  padding-top: 1rem;
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags .item {
   padding: 0;
@@ -553,7 +633,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags .item .label_tag {
   font-weight: 900;
@@ -567,6 +647,7 @@
   padding: 0 0.8rem;
   color: rgba(0, 0, 0, 0.8);
   content: "";
+  display: none;
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags .item:last-child::after {
   content: "";

@@ -1,132 +1,100 @@
 {{ attach_library('fsv_uk/jobs-styling') }}
 
-<div class="controls__print-wrap">
 
-    {% if content.field_control_print['#items'].0.getValue().value %}
+<div class="content__job-offer">
+	{% if (content.field_hide_title['#items'].0.getValue().value) %}
+		{% else %}
 
-        <section class="controls controls--print">        
-            <ul class="controls__list">
-                <li class="controls__item">
-                    <a class="controls__link controls__link--print" href="#" id="jq_print">{{ 'Tisk'|t}}</a>
-                </li>
-            </ul>
-        </section>
+			<h1 class="padding section-title page-title">
+				{{ label }}
+				{% if (node.field_topovat.value == '1') %}
+					<span class="topovat">TOP</span>
+				{% endif %}
+			</h1>
 
-    {% endif %}
-    <div class="content__job-offer">
-    {% if (content.field_hide_title['#items'].0.getValue().value) %}{% else %}
- 
-        <h1 class="padding section-title page-title">
-            {{ label }}
-            {% if (node.field_topovat.value == '1') %}
-                <span class="topovat">TOP</span>
-            {% endif %}
-        </h1>
-
-    {% endif %}
+	{% endif %}
 
 
-    {% block content %}
-        {% if related_news_tags_ids is defined %}
-            {{ drupal_view(
+	{% block content %}
+		{% if related_news_tags_ids is defined %}
+			{{ drupal_view(
             'news_page',
             'block_related_basic_page',
             related_news_tags_ids | join('+')
             ) }}
-        
-        {% endif %}
-        <div class="wrapper--company">
-            <dl>
-                {# <dt>Název společnosti</dt> #}
-                <dt></dt>
-                    <dd class="spolecnost">{{ node.field_nazev_spolecnosti.value }}</dd>
-                {# <dt>Adresa pracoviště</dt> #}
-                <dt></dt>
-                    <dd class="adresa">{{ node.field_adresa_mista_pracoviste.value }}</dd>
-                {# <dt>E-mail</dt> #}
-                <dt></dt>
-                    <dd class="email"><a href="mailto:{{ node.field_e_mail.value }}">{{ node.field_e_mail.value }}</a></dd>
-                {% if (node.field_telefon.value is not empty) %}
-                {# <dt>Telefon</dt> #}
-                <dt></dt>
-                    <dd class="telefon"><a href="tel:{{ node.field_telefon.value | replace({' ': ''}) }}">{{node.field_telefon.value | replace({' ': ''})}}</a></dd>
-                {% endif %}
-            </dl>
 
-            {% if node.field_logo.value is not empty %}
-            <div class="wrapper--logo">
-                <img src='{{ file_url(node.field_logo.entity.uri.value) }}' width="100px"/>
-            </div>
-            {% endif %}
-        </div>
-        {% if ((node.field_hledame.value is not empty) or (node.field_uvazek.value is not empty) or (node.field_mzda.value is not empty)) %}
-        <div class="wrapper--tags">
-            <ul class="tags--list">
-            {% if (node.field_hledame.value is not empty) %}
-                <li><span class="label">Hledáme:</span>{{node.field_hledame.value}}</li>
-            {% endif %}
-            {% if (node.field_uvazek.value is not empty) %}
-                <li><span class="label">Úvazek:</span>{{node.field_uvazek.value}}</li>
-            {% endif %}
-            {% if (node.field_mzda.value is not empty) %}    
-                <li><span class="label">Mzda:</span>{{node.field_mzda.value}}</li>
-            {% endif %}
-            </ul>
-        </div>   
-        {% endif %}
-        <div class="wrapper--popis-pracovni-pozice">
-            <h2>Popis pracovní pozice</h2>
-            {{ node.body.value | raw}}
-        </div>
+		{% endif %}
+		<div class="wrapper--company">
+			<dl>
+				{# <dt>Název společnosti</dt> #}
+				<dt></dt>
+				<dd class="spolecnost">{{ node.field_nazev_spolecnosti.value }}</dd>
+				{# <dt>Adresa pracoviště</dt> #}
+				<dt></dt>
+				<dd class="adresa">{{ node.field_adresa_mista_pracoviste.value }}</dd>
+				{# <dt>E-mail</dt> #}
+				<dt></dt>
+				<dd class="email">
+					<a href="mailto:{{ node.field_e_mail.value }}">{{ node.field_e_mail.value }}</a>
+				</dd>
+				{% if (node.field_telefon.value is not empty) %}
+					{# <dt>Telefon</dt> #}
+					<dt></dt>
+					<dd class="telefon">
+						<a href="tel:{{ node.field_telefon.value | replace({' ': ''}) }}">{{node.field_telefon.value | replace({' ': ''})}}</a>
+					</dd>
+				{% endif %}
+			</dl>
 
-        <div class="wrapper--google-map-iframe">
-            <iframe 
-                    width="100%" 
-                    height="600" 
-                    frameborder="0" 
-                    scrolling="no" 
-                    marginheight="0" 
-                    marginwidth="0" 
-                    src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=cs&amp;q={{ node.field_adresa_mista_pracoviste.value | replace({' ': '+'}) }}&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-            </iframe>
-        </div>
-        
-        {#
-        {{ content|without('field_node_show_controls') }}
-        
-        {% if related_news_tags_ids is defined %}
-            {{ drupal_view(
-            'news_page',
-            'block_related_basic_page',
-            related_news_tags_ids | join('+')
-            ) }}
-        
-        {% endif %} 
-        #}
-        
+			{% if node.field_logo.value is not empty %}
+				<div class="wrapper--logo">
+					<img src='{{ file_url(node.field_logo.entity.uri.value) }}' width="100px"/>
+				</div>
+			{% endif %}
+		</div>
+		{% if ((node.field_hledame.value is not empty) or (node.field_uvazek.value is not empty) or (node.field_mzda.value is not empty)) %}
+			<div class="wrapper--tags">
+				<ul class="tags--list">
+					{% if (node.field_hledame.value is not empty) %}
+						<li>
+							<span class="label">Hledáme:</span>
+							{{node.field_hledame.value}}</li>
+					{% endif %}
+					{% if (node.field_uvazek.value is not empty) %}
+						<li>
+							<span class="label">Úvazek:</span>
+							{{node.field_uvazek.value}}</li>
+					{% endif %}
+					{% if (node.field_mzda.value is not empty) %}
+						<li>
+							<span class="label">Mzda:</span>
+							{{node.field_mzda.value}}</li>
+					{% endif %}
+				</ul>
+			</div>
+		{% endif %}
+		<div class="wrapper--popis-pracovni-pozice">
+			<h2>Popis pracovní pozice</h2>
+			{{ node.body.value | raw}}
+		</div>
 
-    {% endblock %}
-    </div>
+		<div class="wrapper--google-map-iframe">
+			<iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=cs&amp;q={{ node.field_adresa_mista_pracoviste.value | replace({' ': '+'}) }}&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+		</div>
+
+		{#
+								        {{ content|without('field_node_show_controls') }}
+								        
+								        {% if related_news_tags_ids is defined %}
+								            {{ drupal_view(
+								            'news_page',
+								            'block_related_basic_page',
+								            related_news_tags_ids | join('+')
+								            ) }}
+								        
+								        {% endif %} 
+								        #}
+
+
+	{% endblock %}
 </div>
-
-{% block controls %}
-    {% if content.field_node_show_controls['#items'].0.getValue().value %}
-        <section class="controls mb">
-            <h2 class="section-title padding">{{"Ovl�dac� prvky"|t}}</h2>
-            <ul class="controls__list">
-                <li class="controls__item">
-                    <a class="controls__link controls__link--print" href="#" id="jq_print">{{ 'Tisk'|t}}</a>
-                </li>
-                <li class="controls__item">
-                    <a class="controls__link controls__link--mail" href="mailto:?&body={{ host }}{{ current_uri }}" target="_blank">{{'Poslat mailem'|t}}</a>
-                </li>
-                <li class="controls__item">
-                    <a class="controls__link controls__link--fb" href="https://www.facebook.com/sharer/sharer.php?u={{ host }}{{ current_uri }}" target="_blank">{{ 'Sd�let na Facebooku'|t}}</a>
-                </li>
-                <li class="controls__item">
-                    <a class="controls__link controls__link--twitter" href="https://twitter.com/intent/tweet?source={{ host }}{{ current_uri }}" target="_blank">{{ 'Sd�let na Twitteru'|t}}</a>
-                </li>
-            </ul>
-        </section>
-    {% endif %}
-{% endblock controls %}

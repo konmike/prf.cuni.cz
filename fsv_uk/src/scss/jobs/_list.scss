@@ -1,22 +1,106 @@
-@use "../abstract/var" as *;
+@use "../abstracts/var" as *;
 
 .layout-content--viewnabidka-pracipage-1 {
+  width: 70%;
+  margin: 0 auto;
+
+  .main-content {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .views-exposed-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 3rem;
+
+    .left-side {
+      margin-top: 1rem;
+      max-width: 45%;
+      width: 45%;
+      margin-right: 2rem;
+      .btn {
+        margin-bottom: 5rem;
+        width: 100%;
+        margin-right: 2rem;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 0rem 1.5rem;
+        height: auto;
+      }
+      &-exposed {
+        background-color: mix(black, white, 5);
+        h3 {
+          text-align: center;
+          background-color: #d43241;
+          color: white;
+          padding: 1rem;
+          font-size: 1.6rem;
+        }
+        .js-form-type-select {
+          display: flex;
+          justify-content: space-between;
+          padding: 1rem 2rem 0 2rem;
+
+          label {
+            color: #d43241;
+            text-transform: uppercase;
+            font-weight: 800;
+            padding-right: 3rem;
+          }
+          .form-select {
+            text-align: center;
+            text-align-last: center;
+          }
+        }
+        .js-form-submit {
+          padding: 0.7rem;
+          width: min-content;
+          margin: 2rem;
+          font-weight: 800;
+          text-transform: uppercase;
+          font-family: "Open Sans", sans-serif;
+
+          background-color: $c1;
+          color: $c4;
+
+          border: 2px solid $c4;
+          transition: all 0.3s;
+
+          &:hover {
+            background-color: $c4;
+            color: $c1;
+          }
+        }
+      }
+    }
+    .right-side {
+      max-width: 55%;
+      margin-top: 2rem;
+    }
+  }
+
   & .views-view-grid.vertical {
     display: flex;
     flex-direction: column;
     padding-top: 1rem;
-    width: 70%;
-    margin: 0 auto;
+    // width: 70%;
+    // margin: 0 auto;
+    margin: 1rem 3rem;
   }
   & .views-view-grid {
     & .views-col {
       width: 100% !important;
-      border-top: 1px solid #dadada;
+      border-top: 1px solid #d43241;
       padding: 2rem;
       margin: 0;
       transition: all 0.3s;
       &:hover {
         background-color: rgba(212, 50, 65, 0.1);
+      }
+      &:first-child {
+        border-top: 0;
       }
     }
     & .views-col:last-child {
@@ -44,6 +128,12 @@
         width: 100%;
         & .group-1 {
           display: flex;
+          a {
+            text-decoration: none;
+            color: rgb(212, 50, 65);
+            font-weight: 800;
+            text-transform: uppercase;
+          }
         }
         & .group-2 {
           display: flex;
@@ -73,14 +163,19 @@
       }
       & .nazev-spolecnosti,
       & .adresa-mista-pracoviste {
+        // width: 100%;
+        // color: #6b6b6b;
+        // font-size: 1.4rem;
         width: 100%;
-        color: #6b6b6b;
-        font-size: 1.4rem;
+        color: black;
+        font-size: 1.5rem;
+        font-weight: 800;
       }
       & .list-tags {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: wrap;
+        padding-top: 1rem;
 
         & .item {
           //background: #F28F3B;
@@ -92,7 +187,7 @@
           display: flex;
           flex-direction: row;
           align-items: center;
-          font-size: 1.4rem;
+          font-size: 1.3rem;
           & .label_tag {
             font-weight: 900;
             text-transform: uppercase;
@@ -105,6 +200,7 @@
             padding: 0 0.8rem;
             color: rgba(0, 0, 0, 0.8);
             content: "\f111";
+            display: none;
           }
           &:last-child::after {
             content: "";

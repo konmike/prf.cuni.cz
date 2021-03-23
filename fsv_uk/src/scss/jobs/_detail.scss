@@ -1,4 +1,4 @@
-@use "../abstract/var" as *;
+@use "../abstracts/var" as *;
 
 .content__job-offer {
   margin-top: 1rem;
@@ -126,6 +126,6 @@
     margin: 0;
   }
 }
-.layout-container {
-  margin: 0;
-}
+// .layout-container {
+//   margin: 0;
+// }
