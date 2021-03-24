@@ -52,18 +52,18 @@
 				</div>
 			{% endif %}
 		</div>
-		{% if ((node.field_hledame.value is not empty) or (node.field_uvazek.value is not empty) or (node.field_mzda.value is not empty)) %}
+		{% if ((node.field_koho_hledame_list.value is not empty) or (node.field_uvazek_list.value is not empty) or (node.field_mzda.value is not empty)) %}
 			<div class="wrapper--tags">
 				<ul class="tags--list">
-					{% if (node.field_hledame.value is not empty) %}
+					{% if (node.field_koho_hledame_list.value is not empty) %}
 						<li>
 							<span class="label">Hledáme:</span>
-							{{node.field_hledame.value}}</li>
+							{{node.field_koho_hledame_list.value}}</li>
 					{% endif %}
-					{% if (node.field_uvazek.value is not empty) %}
+					{% if (node.field_uvazek_list.value is not empty) %}
 						<li>
 							<span class="label">Úvazek:</span>
-							{{node.field_uvazek.value}}</li>
+							{{node.field_uvazek_list.value}}</li>
 					{% endif %}
 					{% if (node.field_mzda.value is not empty) %}
 						<li>

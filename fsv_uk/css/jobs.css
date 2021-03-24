@@ -536,7 +536,11 @@
 }
 .layout-content--viewnabidka-pracipage-1 .views-exposed-form .right-side {
   max-width: 55%;
+  width: 50%;
+  height: auto;
   margin-top: 2rem;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white), url(/sites/default/files/uploads/images/jobs1.jpg) no-repeat center;
+  background-size: contain;
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid.vertical {
   display: flex;
@@ -546,20 +550,33 @@
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-col {
   width: 100% !important;
-  border-top: 1px solid #d43241;
-  padding: 2rem;
+  padding: 0;
   margin: 0;
   transition: all 0.3s;
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-col:hover {
   background-color: rgba(212, 50, 65, 0.1);
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-col:first-child {
-  border-top: 0;
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-col::after {
+  content: "";
+  /* This is necessary for the pseudo element to work. */
+  display: block;
+  /* This will put the pseudo element on its own line. */
+  margin: 0 auto;
+  /* This will center the border. */
+  width: 100%;
+  /* Change this to whatever width you want. */
+  padding-top: 20px;
+  /* This creates some space between the element and the border. */
+  border-bottom: 1px solid #d43241;
+  /* This creates the border. Replace black with whatever color you want. */
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-col:last-child {
   border-bottom: 0;
   margin-bottom: 2rem;
+}
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-col:last-child::after {
+  display: none;
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-label {
   padding-right: 0.5rem;
@@ -570,6 +587,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding: 20px 32px 0 32px;
+}
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row:last-child {
+  padding-bottom: 20px;
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-field-logo {
   display: none;
@@ -634,6 +655,14 @@
   flex-direction: row;
   align-items: center;
   font-size: 1.3rem;
+  position: relative;
+}
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags .item-student::before {
+  content: url("../images/icons/student.svg");
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: -26px;
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags .item .label_tag {
   font-weight: 900;
