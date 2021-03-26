@@ -57,41 +57,46 @@
     $(".form-item-field-topovat-value").prepend(addText);
     $("#edit-title-0-value").attr("maxlength", "80");
 
-    // $(
-    //   "#node-nabidka-prace-nova-form #edit-scheduler-settings #edit-unpublish-on-0-value"
-    // )
-    //   .get(0)
-    //   .nextSibling.remove();
+    if ($(".layout-content--add-job-offer").length > 0) {
+      console.log("Pridat nabidku");
+      $(
+        "#node-nabidka-prace-nova-form #edit-scheduler-settings #edit-unpublish-on-0-value"
+      )
+        .get(0)
+        .nextSibling.remove();
+      $("#node-nabidka-prace-nova-form #edit-scheduler-settings h4").text(
+        "Nabídka bude skryta dne:"
+      );
+      let h4 = $("#node-nabidka-prace-nova-form #edit-scheduler-settings h4")[0]
+        .outerHTML;
+      let date = $(
+        "#node-nabidka-prace-nova-form #edit-scheduler-settings #edit-unpublish-on-0-value"
+      )[0].outerHTML;
+      let summary = $(
+        "#node-nabidka-prace-nova-form #edit-scheduler-settings summary"
+      )[0].outerHTML;
+      console.log(summary);
+      $("#node-nabidka-prace-nova-form #edit-scheduler-settings").empty();
+      $("#node-nabidka-prace-nova-form #edit-scheduler-settings").prepend(
+        "<div class='wrapper wrapper--end-date-of-publish'></div>"
+      );
+      $("#node-nabidka-prace-nova-form #edit-scheduler-settings").prepend(
+        summary
+      );
+      $(
+        "#node-nabidka-prace-nova-form #edit-scheduler-settings .wrapper"
+      ).after("<p></p>");
+      $("#node-nabidka-prace-nova-form .wrapper--end-date-of-publish").append(
+        h4
+      );
+      $("#node-nabidka-prace-nova-form .wrapper--end-date-of-publish").append(
+        date
+      );
+    }
     // $(
     //   "#node-nabidka-prace-nova-form #edit-scheduler-settings #edit-unpublish-on-0-value"
     // ).after(
     //   "<p>Tady může být vhodný text pro skrývání inzerátu. Nebo taky ne.</p>"
-    // );
-    // $("#node-nabidka-prace-nova-form #edit-scheduler-settings h4").text(
-    //   "Inzerát bude vystaven do dne:"
-    // );
-    // let h4 = $("#node-nabidka-prace-nova-form #edit-scheduler-settings h4")[0]
-    //   .outerHTML;
-    // let date = $(
-    //   "#node-nabidka-prace-nova-form #edit-scheduler-settings #edit-unpublish-on-0-value"
-    // )[0].outerHTML;
-    // let summary = $(
-    //   "#node-nabidka-prace-nova-form #edit-scheduler-settings summary"
-    // )[0].outerHTML;
-    // console.log(summary);
-    // $("#node-nabidka-prace-nova-form #edit-scheduler-settings").empty();
-    // $("#node-nabidka-prace-nova-form #edit-scheduler-settings").prepend(
-    //   "<div class='wrapper wrapper--end-date-of-publish'></div>"
-    // );
-    // $("#node-nabidka-prace-nova-form #edit-scheduler-settings").prepend(
-    //   summary
-    // );
-    // $("#node-nabidka-prace-nova-form #edit-scheduler-settings .wrapper").after(
-    //   "<p>Tady může být vhodný text pro skrývání inzerátu. Nebo taky ne.</p>"
-    // );
-    // $("#node-nabidka-prace-nova-form .wrapper--end-date-of-publish").append(h4);
-    // $("#node-nabidka-prace-nova-form .wrapper--end-date-of-publish").append(
-    //   date
     // );
 
     $('a[href$="#"]').click(function (e) {
@@ -165,29 +170,6 @@
   });
 
   $("#edit-cat-102").addClass("makrela");
-
-  // i = 13;
-  // j = 1;
-  // x = 2;
-  // while (i <= obsah.length) {
-  //   var phoneArray = obsah.slice(j, i);
-  //   var round = 0;
-  //   var text = "";
-  //   for (l = 0; l < phoneArray.length; l++) {
-  //     text += phoneArray[l];
-  //     round++;
-  //     if (round == 3 && l + 1 != phoneArray.length) {
-  //       round = 0;
-  //       text += " ";
-  //     }
-  //   }
-  //   $("p.contact__results__phones:eq(" + q + ") a:nth-child(" + x + ")").text(
-  //     "+" + text
-  //   );
-  //   i = i + 14;
-  //   j = j + 14;
-  //   x = x + 1;
-  // }
 
   //zajisti, spravne html rozlozeni tabulky
   var count = $("table").length;

@@ -1,5 +1,9 @@
 @use "../abstracts/var" as *;
 
+.layout-container {
+  margin: 0;
+}
+
 .add-job-title {
   outline: none;
   font-size: 2.4rem;
@@ -103,6 +107,8 @@
       align-items: center;
     }
     h4 {
+      font: normal 90.3%/1.538em "Open Sans", sans-serif;
+      font-weight: 800;
       margin: 0;
       margin-right: 1em;
     }
