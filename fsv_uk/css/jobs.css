@@ -472,6 +472,12 @@
   margin-left: auto;
   margin-right: auto;
 }
+.layout-content--viewnabidka-pracipage-1 .counter {
+  display: block;
+  margin: 2rem 3rem;
+  font-weight: 800;
+  font-family: "Open Sans", sans-serif;
+}
 .layout-content--viewnabidka-pracipage-1 .views-exposed-form {
   display: flex;
   flex-direction: row;
@@ -495,11 +501,12 @@
 }
 .layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed {
   background-color: #f2f2f2;
+  padding-bottom: 1rem;
 }
 .layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed h3 {
   text-align: center;
-  background-color: #d43241;
-  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
   padding: 1rem;
   font-size: 1.6rem;
 }
@@ -509,7 +516,7 @@
   padding: 1rem 2rem 0 2rem;
 }
 .layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-type-select label {
-  color: #d43241;
+  color: rgba(0, 0, 0, 0.8);
   text-transform: uppercase;
   font-weight: 800;
   padding-right: 3rem;
@@ -519,9 +526,10 @@
   text-align-last: center;
 }
 .layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-submit {
+  display: block;
   padding: 0.7rem;
   width: min-content;
-  margin: 2rem;
+  margin: 2rem 2rem 0 auto;
   font-weight: 800;
   text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
@@ -540,7 +548,7 @@
   height: auto;
   margin-top: 2rem;
   background: linear-gradient(to right, rgba(255, 255, 255, 0), white), url(/sites/default/files/uploads/images/jobs1.jpg) no-repeat center;
-  background-size: contain;
+  background-size: cover;
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid.vertical {
   display: flex;
@@ -554,10 +562,20 @@
   margin: 0;
   transition: all 0.3s;
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-col:hover {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-label {
+  padding-right: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row:hover {
   background-color: rgba(212, 50, 65, 0.1);
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-col::after {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row::after {
   content: "";
   /* This is necessary for the pseudo element to work. */
   display: block;
@@ -571,26 +589,13 @@
   border-bottom: 1px solid #d43241;
   /* This creates the border. Replace black with whatever color you want. */
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-col:last-child {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row:last-child {
   border-bottom: 0;
   margin-bottom: 2rem;
-}
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-col:last-child::after {
-  display: none;
-}
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-label {
-  padding-right: 0.5rem;
-  text-transform: uppercase;
-  font-weight: 900;
-}
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 20px 32px 0 32px;
-}
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row:last-child {
   padding-bottom: 20px;
+}
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row:last-child::after {
+  display: none;
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-field-logo {
   display: none;
@@ -598,6 +603,7 @@
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-nothing {
   width: 100%;
+  padding: 20px 32px 0 32px;
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-nothing .group-1 {
   display: flex;

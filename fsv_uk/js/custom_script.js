@@ -1,5 +1,20 @@
 (function ($) {
   $(document).ready(function () {
+    if ($(".layout-content--viewnabidka-pracipage-1").length > 0) {
+      let rows = document.querySelectorAll(".views-col .views-row");
+      let countItems = document.createElement("span");
+      countItems.classList.add("counter");
+      countItems.innerHTML = "Nalezených nabídek: " + rows.length;
+      document.querySelector(".views-exposed-form").after(countItems);
+
+      addButton("button");
+
+      showItems();
+    }
+
+    $(".btn--show-more").click(function () {
+      showItems();
+    });
     //Pokud je youtube iframe prekryt obrazkem, pak skryj obrazek
     //a zacni prehravat video
     $(".youtube--with-cover .image").click(function (e) {
@@ -20,16 +35,16 @@
      * a prida tridu vyssimu linku v menu,
      * az to probubla uplne nahoru
      */
-    if ($(".side-nav__link--active")) {
+    if ($(".side-nav__link--active").length > 0) {
       let lactive = $(".side-nav__link--active");
       let link = lactive.closest(".side-nav__link--active").attr("href");
       $(".header__nav").find(`[href="${link}"]`).addClass("is-active");
     }
-    if ($(".nav__link-lvl2.is-active")) {
+    if ($(".nav__link-lvl2.is-active").length > 0) {
       let it = $(".nav__link-lvl2.is-active");
       it.closest(".nav__item").addClass("is-active");
     }
-    if ($(".nav__link.is-active")) {
+    if ($(".nav__link.is-active").length > 0) {
       let it = $(".nav__link.is-active");
       it.closest(".nav__item").addClass("is-active");
     }
@@ -80,7 +95,6 @@
     // );
 
     $('a[href$="#"]').click(function (e) {
-      console.log("Zajimavy odakz");
       e.preventDefault();
     });
   });
@@ -152,28 +166,28 @@
 
   $("#edit-cat-102").addClass("makrela");
 
-  i = 13;
-  j = 1;
-  x = 2;
-  while (i <= obsah.length) {
-    var phoneArray = obsah.slice(j, i);
-    var round = 0;
-    var text = "";
-    for (l = 0; l < phoneArray.length; l++) {
-      text += phoneArray[l];
-      round++;
-      if (round == 3 && l + 1 != phoneArray.length) {
-        round = 0;
-        text += " ";
-      }
-    }
-    $("p.contact__results__phones:eq(" + q + ") a:nth-child(" + x + ")").text(
-      "+" + text
-    );
-    i = i + 14;
-    j = j + 14;
-    x = x + 1;
-  }
+  // i = 13;
+  // j = 1;
+  // x = 2;
+  // while (i <= obsah.length) {
+  //   var phoneArray = obsah.slice(j, i);
+  //   var round = 0;
+  //   var text = "";
+  //   for (l = 0; l < phoneArray.length; l++) {
+  //     text += phoneArray[l];
+  //     round++;
+  //     if (round == 3 && l + 1 != phoneArray.length) {
+  //       round = 0;
+  //       text += " ";
+  //     }
+  //   }
+  //   $("p.contact__results__phones:eq(" + q + ") a:nth-child(" + x + ")").text(
+  //     "+" + text
+  //   );
+  //   i = i + 14;
+  //   j = j + 14;
+  //   x = x + 1;
+  // }
 
   //zajisti, spravne html rozlozeni tabulky
   var count = $("table").length;
@@ -268,3 +282,42 @@
     $("#cena-zvyrazneni").text(hodnota * 100 + " Kč");
   });
 })(jQuery);
+
+function showItems() {
+  let items = document.querySelectorAll(".views-col .views-row");
+  let count = 0;
+  let last = items[items.length - 1];
+
+  items.forEach(function (r) {
+    if (r.style.display === "" && count < 1) {
+      // console.log(r + " " + i);
+      r.style.display = "flex";
+      count++;
+    }
+    // console.log(r.style.display);
+  });
+
+  // console.log("Last: " + last);
+  if (last.style.display === "flex") {
+    removeButton();
+    addButton("a");
+  }
+}
+
+function addButton(type) {
+  let newNode = document.createElement(type);
+  if (type === "a") {
+    newNode.href = "/jobs";
+    newNode.innerHTML = "Přejít na starší nabídky";
+  } else {
+    newNode.innerHTML = "Načíst další";
+  }
+  newNode.classList.add("btn", "btn--show-more");
+
+  document.querySelector(".views-col").append(newNode);
+}
+
+function removeButton() {
+  let btn = document.querySelector(".btn--show-more");
+  btn.parentNode.removeChild(btn);
+}

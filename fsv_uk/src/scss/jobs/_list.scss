@@ -9,6 +9,13 @@
     margin-right: auto;
   }
 
+  .counter {
+    display: block;
+    margin: 2rem 3rem;
+    font-weight: 800;
+    font-family: "Open Sans", sans-serif;
+  }
+
   .views-exposed-form {
     display: flex;
     flex-direction: row;
@@ -30,11 +37,12 @@
         height: auto;
       }
       &-exposed {
-        background-color: mix(black, white, 5);
+        background-color: mix($c2, $c1, 5);
+        padding-bottom: 1rem;
         h3 {
           text-align: center;
-          background-color: #d43241;
-          color: white;
+          background-color: rgba($color: $c2, $alpha: 0.8);
+          color: $c1;
           padding: 1rem;
           font-size: 1.6rem;
         }
@@ -44,7 +52,7 @@
           padding: 1rem 2rem 0 2rem;
 
           label {
-            color: #d43241;
+            color: rgba($color: $c2, $alpha: 0.8);
             text-transform: uppercase;
             font-weight: 800;
             padding-right: 3rem;
@@ -55,16 +63,15 @@
           }
         }
         .js-form-submit {
+          display: block;
           padding: 0.7rem;
           width: min-content;
-          margin: 2rem;
+          margin: 2rem 2rem 0 auto;
           font-weight: 800;
           text-transform: uppercase;
           font-family: "Open Sans", sans-serif;
-
           background-color: $c1;
           color: $c4;
-
           border: 2px solid $c4;
           transition: all 0.3s;
 
@@ -86,7 +93,7 @@
           rgba(255, 255, 255, 1)
         ),
         url(/sites/default/files/uploads/images/jobs1.jpg) no-repeat center;
-      background-size: contain;
+      background-size: cover;
     }
   }
 
@@ -101,10 +108,23 @@
   & .views-view-grid {
     & .views-col {
       width: 100% !important;
-      // border-top: 1px solid #d43241;
+      // border-top: 1px solid $c4;
       padding: 0;
       margin: 0;
       transition: all 0.3s;
+    }
+
+    & .views-label {
+      padding-right: 0.5rem;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+    .views-row {
+      display: none;
+      flex-direction: column;
+      //flex-wrap: wrap;
+      align-items: center;
+
       &:hover {
         background-color: rgba(212, 50, 65, 0.1);
       }
@@ -114,26 +134,10 @@
       &:last-child {
         border-bottom: 0;
         margin-bottom: 2rem;
+        padding-bottom: 20px;
         &::after {
           display: none;
         }
-      }
-    }
-
-    & .views-label {
-      padding-right: 0.5rem;
-      text-transform: uppercase;
-      font-weight: 900;
-    }
-    & .views-row {
-      display: flex;
-      flex-direction: row;
-      //flex-wrap: wrap;
-      align-items: center;
-      padding: 20px 32px 0 32px;
-
-      &:last-child {
-        padding-bottom: 20px;
       }
 
       & .views-field-field-logo {
@@ -144,6 +148,8 @@
       }
       & .views-field-nothing {
         width: 100%;
+        padding: 20px 32px 0 32px;
+
         & .group-1 {
           display: flex;
           a {

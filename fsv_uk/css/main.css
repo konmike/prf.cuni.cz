@@ -2978,7 +2978,6 @@ img {
   display: block;
   max-width: 100%;
   width: 100%;
-  /* background: linear-gradient(to right, blue, pink); */
 }
 img.align-center {
   margin: 1em auto;
@@ -4458,9 +4457,7 @@ input[type=search] {
 }
 .prefooter__social {
   display: flex;
-  justify-content: center;
   align-items: center;
-  max-width: 66.666%;
 }
 .prefooter__social__item {
   margin-right: 8%;
