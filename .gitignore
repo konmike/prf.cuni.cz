@@ -5,3 +5,4 @@ uredni_deska/
 .*
 private.ppk
 node_modules/
+sites/*
