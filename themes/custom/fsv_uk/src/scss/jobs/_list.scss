@@ -1,9 +1,12 @@
 @use "../abstracts" as *;
 
 .layout-content--viewnabidka-pracipage-1 {
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
 
+  @media screen and (min-width: $sm * 1em) {
+    width: 70%;
+  }
   .main-content {
     margin-left: auto;
     margin-right: auto;
@@ -24,9 +27,15 @@
 
     .left-side {
       margin-top: 1rem;
-      max-width: 45%;
-      width: 45%;
-      margin-right: 2rem;
+      max-width: 100%;
+      width: 100%;
+      // margin-right: 2rem;
+
+      @media screen and (min-width: $lg * 1em) {
+        max-width: 45%;
+        width: 45%;
+        margin-right: 2rem;
+      }
       .btn {
         margin-bottom: 5rem;
         width: 100%;
@@ -41,7 +50,7 @@
         padding-bottom: 1rem;
         h3 {
           text-align: center;
-          background-color: rgba($color: $c2, $alpha: 0.8);
+          background-color: rgba($color: $c2, $alpha: 0.6);
           color: $c1;
           padding: 1rem;
           font-size: 1.6rem;
@@ -49,6 +58,7 @@
         .js-form-type-select {
           display: flex;
           justify-content: space-between;
+          flex-wrap: wrap;
           padding: 1rem 2rem 0 2rem;
 
           label {
@@ -83,17 +93,22 @@
       }
     }
     .right-side {
-      max-width: 55%;
-      width: 50%;
-      height: auto;
-      margin-top: 2rem;
-      background: linear-gradient(
-          to right,
-          rgba(255, 255, 255, 0),
-          rgba(255, 255, 255, 1)
-        ),
-        url(/sites/default/files/uploads/images/jobs1.jpg) no-repeat center;
-      background-size: cover;
+      display: none;
+
+      @media screen and (min-width: $lg * 1em) {
+        display: block;
+        max-width: 55%;
+        width: 50%;
+        height: auto;
+        margin-top: 2rem;
+        background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 1)
+          ),
+          url(/sites/default/files/uploads/images/jobs1.jpg) no-repeat center;
+        background-size: cover;
+      }
     }
   }
 

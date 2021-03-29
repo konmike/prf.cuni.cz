@@ -271,7 +271,7 @@ function showItems() {
   let last = items[items.length - 1];
 
   items.forEach(function (r) {
-    if (r.style.display === "" && count < 1) {
+    if (r.style.display === "" && count < 2) {
       // console.log(r + " " + i);
       r.style.display = "flex";
       count++;

@@ -54,9 +54,14 @@
 }
 .content__job-offer .wrapper--tags ul {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
   padding: 0 2rem;
+}
+@media screen and (min-width: 35.5em) {
+  .content__job-offer .wrapper--tags ul {
+    flex-direction: row;
+  }
 }
 .content__job-offer .wrapper--tags ul .label {
   padding-right: 0.5rem;
@@ -76,12 +81,18 @@
   margin-right: 0;
 }
 .content__job-offer .wrapper--tags ul li:after {
+  display: none;
   font-family: "Font Awesome 5 Free", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 0.5rem;
   padding: 0 0.8rem;
   color: rgba(0, 0, 0, 0.8);
   content: "";
+}
+@media screen and (min-width: 35.5em) {
+  .content__job-offer .wrapper--tags ul li:after {
+    display: block;
+  }
 }
 .content__job-offer .wrapper--tags ul li:last-child::after {
   content: "";
@@ -471,8 +482,13 @@
 }
 
 .layout-content--viewnabidka-pracipage-1 {
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
+}
+@media screen and (min-width: 35.5em) {
+  .layout-content--viewnabidka-pracipage-1 {
+    width: 70%;
+  }
 }
 .layout-content--viewnabidka-pracipage-1 .main-content {
   margin-left: auto;
@@ -492,9 +508,15 @@
 }
 .layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side {
   margin-top: 1rem;
-  max-width: 45%;
-  width: 45%;
-  margin-right: 2rem;
+  max-width: 100%;
+  width: 100%;
+}
+@media screen and (min-width: 64em) {
+  .layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side {
+    max-width: 45%;
+    width: 45%;
+    margin-right: 2rem;
+  }
 }
 .layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side .btn {
   margin-bottom: 5rem;
@@ -511,7 +533,7 @@
 }
 .layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed h3 {
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
   padding: 1rem;
   font-size: 1.6rem;
@@ -519,6 +541,7 @@
 .layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-type-select {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 1rem 2rem 0 2rem;
 }
 .layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-type-select label {
@@ -549,12 +572,18 @@
   color: #fff;
 }
 .layout-content--viewnabidka-pracipage-1 .views-exposed-form .right-side {
-  max-width: 55%;
-  width: 50%;
-  height: auto;
-  margin-top: 2rem;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), white), url(/sites/default/files/uploads/images/jobs1.jpg) no-repeat center;
-  background-size: cover;
+  display: none;
+}
+@media screen and (min-width: 64em) {
+  .layout-content--viewnabidka-pracipage-1 .views-exposed-form .right-side {
+    display: block;
+    max-width: 55%;
+    width: 50%;
+    height: auto;
+    margin-top: 2rem;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white), url(/sites/default/files/uploads/images/jobs1.jpg) no-repeat center;
+    background-size: cover;
+  }
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid.vertical {
   display: flex;

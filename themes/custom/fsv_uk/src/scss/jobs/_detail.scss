@@ -68,9 +68,13 @@
 
     & ul {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: flex-start;
       padding: 0 2rem;
+
+      @media screen and (min-width: $sm * 1em) {
+        flex-direction: row;
+      }
 
       & .label {
         padding-right: 0.5rem;
@@ -93,12 +97,17 @@
           margin-right: 0;
         }
         &:after {
+          display: none;
           font-family: "Font Awesome 5 Free", Arial, Helvetica, sans-serif;
           font-weight: 400;
           font-size: 0.5rem;
           padding: 0 0.8rem;
           color: rgba(0, 0, 0, 0.8);
           content: "\f111";
+
+          @media screen and (min-width: $sm * 1em) {
+            display: block;
+          }
         }
         &:last-child::after {
           content: "";
