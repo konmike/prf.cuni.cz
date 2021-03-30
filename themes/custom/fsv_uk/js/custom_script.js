@@ -5,11 +5,12 @@
       let countItems = document.createElement("span");
       countItems.classList.add("counter");
       countItems.innerHTML = "Nalezených nabídek: " + rows.length;
-      document.querySelector(".views-exposed-form").after(countItems);
 
-      addButton("button");
-
-      showItems();
+      if (rows.length) {
+        document.querySelector(".views-exposed-form").after(countItems);
+        addButton("button");
+        showItems();
+      }
     }
 
     $(".btn--show-more").click(function () {
@@ -271,7 +272,7 @@ function showItems() {
   let last = items[items.length - 1];
 
   items.forEach(function (r) {
-    if (r.style.display === "" && count < 2) {
+    if (r.style.display === "" && count < 8) {
       // console.log(r + " " + i);
       r.style.display = "flex";
       count++;
@@ -282,7 +283,7 @@ function showItems() {
   // console.log("Last: " + last);
   if (last.style.display === "flex") {
     removeButton();
-    addButton("a");
+    if (!isFilterRunning()) addButton("a");
   }
 }
 
@@ -302,4 +303,17 @@ function addButton(type) {
 function removeButton() {
   let btn = document.querySelector(".btn--show-more");
   btn.parentNode.removeChild(btn);
+}
+
+function isFilterRunning() {
+  if (
+    document.getElementById("edit-field-koho-hledame-list-value").value ===
+      "All" &&
+    document.getElementById("edit-field-kraj-value").value === "All" &&
+    document.getElementById("edit-field-uvazek-list-value").value === "All"
+  ) {
+    return false;
+  }
+
+  return true;
 }
