@@ -27,45 +27,43 @@
 #}
 
 {% block content %}
-    <section class="prefooter">
-        <div class="prefooter__container container">
-            <div class="prefooter__top clearfix">
+	<section class="prefooter">
+		<div class="prefooter__container container">
+			<div class="prefooter__top clearfix">
 
-{% if current_language == 'cs' %}
+				{% if current_language == 'cs' %}
 
-                <div class="prefooter__left">
-                    <h2>Newsletter</h2>
-                    <div class="prefooter__text"><p>Zajímá vás dění&nbsp;na fakultě? Pak nám zadejte e-mail do pole níže a budete od nás dostávat nejčerstvější novinky a aktuality.</p>
-</div>
-                    <div class="prefooter__newsletter">
+					<div class="prefooter__left">
+						<h2>{{ content.field_footer_block_head_news.0['#context'].value }}</h2>
+						<div class="prefooter__text">{{ content.field_footer_block_body_news.0['#text']|raw }}</div>
+						<div class="prefooter__newsletter">
 
-                    
 
-                    <script type="text/javascript" src="//news.prf.cuni.cz/form/generate.js?id=4"></script>
-<!-- 
-                    Campaign form for future progress
-                    <script type="text/javascript" src="//news.prf.cuni.cz/form/generate.js?id=4"></script>
- -->
+							<script type="text/javascript" src="//news.prf.cuni.cz/form/generate.js?id=4"></script>
+							<!-- 
+							                    Campaign form for future progress
+							                    <script type="text/javascript" src="//news.prf.cuni.cz/form/generate.js?id=4"></script>
+							 -->
 
-                    </div>
-                </div>
+						</div>
+					</div>
 
-{% endif %}
+				{% endif %}
 
-                <div class="prefooter__right">
-                    <h2>{{ content.field_footer_block_head_contact.0['#context'].value }}</h2>
-                    <div class="prefooter__text">{{ content.field_footer_block_body_contact.0['#text']|raw }}</div>
-                    <ul class="prefooter__social">
-                        {{ content.field_footer_block_cont_social }}
-                    </ul>
-                </div>
-            </div>
-            <div class="prefooter__bottom">
-                <h2>{{ content.field_footer_block_head_partners.0['#context'].value }}</h2>
-                <ul class="logos">
-                    {{ content.field_footer_block_logos_partner }}
-                </ul>
-            </div>
-        </div>
-    </section>
+				<div class="prefooter__right">
+					<h2>{{ content.field_footer_block_head_contact.0['#context'].value }}</h2>
+					<div class="prefooter__text">{{ content.field_footer_block_body_contact.0['#text']|raw }}</div>
+					<ul class="prefooter__social">
+						{{ content.field_footer_block_cont_social }}
+					</ul>
+				</div>
+			</div>
+			<div class="prefooter__bottom">
+				<h2>{{ content.field_footer_block_head_partners.0['#context'].value }}</h2>
+				<ul class="logos">
+					{{ content.field_footer_block_logos_partner }}
+				</ul>
+			</div>
+		</div>
+	</section>
 {% endblock %}
