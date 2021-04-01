@@ -7130,9 +7130,6 @@ li.gallery__thumbnail a {
 .contact__results__email:not(:first-of-type) {
   padding-left: 5rem;
 }
-.contact__results__phones:not(:first-of-type) {
-  padding-left: 5rem;
-}
 .contact__results__link {
   color: #d43241;
 }
