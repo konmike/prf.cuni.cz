@@ -36,21 +36,18 @@
  * @see template_preprocess_field()
  */
 #}
-<p class="contact__results__phones" style="font-size: 16px;">
-    <span class="contact__results__info-title">Telefon:&nbsp;</span>
 
-    {% for item in items %}
-        {% set editItem = item.content|render|trim|replace({' ': ''}) %}
-        {% if not (editItem starts with '+420') %}
-            {% set editItem = '+420' ~ editItem %}
-        {% endif %}
-        {% set num1, num2, num3, num4 = editItem|slice(0,4), editItem|slice(4,3), editItem|slice(7,3), editItem|slice(10,3) %}
-        
-        {% if loop.last %}
-            <a href="tel:{{ editItem }}" class="contact__results__link">{{ num1 }}&nbsp;{{ num2 }}&nbsp;{{ num3 }}&nbsp;{{ num4 }}</a>
-        {% else %}
-            <a href="tel:{{ editItem }}" class="contact__results__link">{{ num1 }}&nbsp;{{ num2 }}&nbsp;{{ num3 }}&nbsp;{{ num4 }}</a>,
-        {% endif %}
+{% for item in items %}
+	{% set editItem = item.content|render|trim|replace({' ': ''}) %}
+	{% if not (editItem starts with '+420') %}
+		{% set editItem = '+420' ~ editItem %}
+	{% endif %}
+	{% set num1, num2, num3, num4 = editItem|slice(0,4), editItem|slice(4,3), editItem|slice(7,3), editItem|slice(10,3) %}
 
-    {% endfor %}
-</p>
+	{% if loop.last %}
+		<a href="tel:{{ editItem }}" class="contact__results__link">{{ num1 }}&nbsp;{{ num2 }}&nbsp;{{ num3 }}&nbsp;{{ num4 }}</a>
+	{% else %}
+		<a href="tel:{{ editItem }}" class="contact__results__link">{{ num1 }}&nbsp;{{ num2 }}&nbsp;{{ num3 }}&nbsp;{{ num4 }}</a>,
+	{% endif %}
+
+{% endfor %}

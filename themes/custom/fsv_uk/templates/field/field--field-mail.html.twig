@@ -37,16 +37,11 @@
  */
 #}
 
-<div>
-    <p class="contact__results__email" style="font-size: 16px;">
-        <span class="contact__results__info-title">E-mail: </span>
 
-        {% for item in items %}
-            {% if loop.last %}
-                <a class="contact__results__link" href="mailto:{{ item }}">{{ item }}</a>
-            {% else %}
-                <a class="contact__results__link" href="mailto:{{ item }}">{{ item }}</a>,
-            {% endif %}
-        {% endfor %}
-    </p>
-</div>
+{% for item in items %}
+	{% if loop.last %}
+		<a class="contact__results__link" href="mailto:{{ item }}">{{ item }}</a>
+	{% else %}
+		<a class="contact__results__link" href="mailto:{{ item }}">{{ item }}</a>,
+	{% endif %}
+{% endfor %}
