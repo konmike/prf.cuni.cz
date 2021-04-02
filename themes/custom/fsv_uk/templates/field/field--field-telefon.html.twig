@@ -45,9 +45,9 @@
 	{% set num1, num2, num3, num4 = editItem|slice(0,4), editItem|slice(4,3), editItem|slice(7,3), editItem|slice(10,3) %}
 
 	{% if loop.last %}
-		<a href="tel:{{ editItem }}" class="contact__results__link">{{ num1 }}&nbsp;{{ num2 }}&nbsp;{{ num3 }}&nbsp;{{ num4 }}</a>
+		<a href="tel:{{ editItem }}" class="link">{{ num1 }}&nbsp;{{ num2 }}&nbsp;{{ num3 }}&nbsp;{{ num4 }}</a>
 	{% else %}
-		<a href="tel:{{ editItem }}" class="contact__results__link">{{ num1 }}&nbsp;{{ num2 }}&nbsp;{{ num3 }}&nbsp;{{ num4 }}</a>,
+		<a href="tel:{{ editItem }}" class="link">{{ num1 }}&nbsp;{{ num2 }}&nbsp;{{ num3 }}&nbsp;{{ num4 }}</a>,
 	{% endif %}
 
 {% endfor %}

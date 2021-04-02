@@ -28,20 +28,20 @@
 			<dl>
 				{# <dt>Název společnosti</dt> #}
 				<dt></dt>
-				<dd class="spolecnost">{{ node.field_nazev_spolecnosti.value }}</dd>
+				<dd class="spolecnost">{{ content.field_nazev_spolecnosti }}</dd>
 				{# <dt>Adresa pracoviště</dt> #}
 				<dt></dt>
-				<dd class="adresa">{{ node.field_adresa_mista_pracoviste.value }}</dd>
+				<dd class="adresa">{{ content.field_adresa_mista_pracoviste }}</dd>
 				{# <dt>E-mail</dt> #}
 				<dt></dt>
 				<dd class="email">
-					<a href="mailto:{{ node.field_e_mail.value }}">{{ node.field_e_mail.value }}</a>
+					{{ content.field_mail }}
 				</dd>
 				{% if (node.field_telefon.value is not empty) %}
 					{# <dt>Telefon</dt> #}
 					<dt></dt>
 					<dd class="telefon">
-						<a href="tel:{{ node.field_telefon.value | replace({' ': ''}) }}">{{node.field_telefon.value | replace({' ': ''})}}</a>
+						{{ content.field_telefon }}
 					</dd>
 				{% endif %}
 			</dl>
@@ -84,17 +84,17 @@
 		</div>
 
 		{#
-																										        {{ content|without('field_node_show_controls') }}
-																										        
-																										        {% if related_news_tags_ids is defined %}
-																										            {{ drupal_view(
-																										            'news_page',
-																										            'block_related_basic_page',
-																										            related_news_tags_ids | join('+')
-																										            ) }}
-																										        
-																										        {% endif %} 
-																										        #}
+																																																														        {{ content|without('field_node_show_controls') }}
+																																																														        
+																																																														        {% if related_news_tags_ids is defined %}
+																																																														            {{ drupal_view(
+																																																														            'news_page',
+																																																														            'block_related_basic_page',
+																																																														            related_news_tags_ids | join('+')
+																																																														            ) }}
+																																																														        
+																																																														        {% endif %} 
+																																																														        #}
 
 
 	{% endblock %}

@@ -7127,6 +7127,12 @@ li.gallery__thumbnail a {
   font-size: 1.2rem;
   margin: 0;
 }
+.contact__results__email .link, .contact__results__phones .link {
+  color: #d43241;
+}
+.contact__results__email .link:hover, .contact__results__phones .link:hover {
+  text-decoration: underline;
+}
 .contact__results__email:not(:first-of-type) {
   padding-left: 5rem;
 }
