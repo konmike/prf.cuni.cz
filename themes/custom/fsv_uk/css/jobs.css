@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0px;
+  margin: 0;
   background: whitesmoke;
   padding: 2rem 0px;
   outline: none;
@@ -27,6 +27,14 @@
 .content__job-offer dd {
   margin-left: 2rem;
   line-height: 3rem;
+  display: flex;
+}
+.content__job-offer dd .link {
+  color: #d43241;
+  transition: all 200ms;
+}
+.content__job-offer dd .link:hover {
+  text-decoration: underline;
 }
 .content__job-offer .wrapper--logo {
   display: none;
@@ -39,10 +47,15 @@
   padding: 0.2rem 0.5rem;
   font-weight: 900;
 }
-.content__job-offer .spolecnost:before, .content__job-offer .adresa:before, .content__job-offer .email:before, .content__job-offer .telefon:before {
+.content__job-offer .spolecnost:before,
+.content__job-offer .adresa:before,
+.content__job-offer .email:before,
+.content__job-offer .telefon:before {
   font-family: "Font Awesome 5 Free", Arial, Helvetica, sans-serif;
   font-weight: 900;
   padding-right: 0.5rem;
+  width: 25px;
+  display: inline-block;
 }
 .content__job-offer .spolecnost:before {
   content: "";
@@ -645,7 +658,8 @@
   padding: 20px 32px 0 32px;
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-nothing .group-1 {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-nothing .group-1 a {
   text-decoration: none;

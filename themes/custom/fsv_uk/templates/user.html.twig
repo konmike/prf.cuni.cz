@@ -17,14 +17,19 @@
 		<div class="person__img-wrap padding">
 			{{ content.user_picture }}
 		</div>
-		<div
-			class="person__info padding">
-			{# Nadefinované v template field--field-mail.html.twig #}
-			{{ content.field_mail }}
 
-			{# Nadefinované v template field--field-telefon.html.twig #}
-			{{ content.field_telefon }}
+		<div class="person__info padding">
+			<p class="contact__results__email" style="font-size: 16px;">
+				<span class="contact__results__info-title">E-mail:</span>
+				{# Nadefinované v template field--field-mail.html.twig #}
+				{{ content.field_mail }}
+			</p>
 
+			<p class="contact__results__phones" style="font-size: 16px;">
+				<span class="contact__results__info-title">Telefon:&nbsp;</span>
+				{# Nadefinované v template field--field-telefon.html.twig #}
+				{{ content.field_telefon }}
+			</p>
 
 			<div style="padding-top:20px">
 				{{ drupal_view('workplace', 'workplaces') }}

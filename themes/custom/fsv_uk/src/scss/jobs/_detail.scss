@@ -15,19 +15,27 @@
     justify-content: space-between;
     background: whitesmoke;
   }
-  & dl {
+  dl {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 0px;
+    margin: 0;
     background: rgb(245, 245, 245);
     padding: 2rem 0px;
     outline: none;
     border-bottom: 0.2rem solid #f6f6f6;
   }
-  & dd {
+  dd {
     margin-left: 2rem;
     line-height: 3rem;
+    display: flex;
+    .link {
+      color: $c4;
+      transition: all 200ms;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
   // & p{
   //     background: rgb(255, 255, 255);
@@ -35,13 +43,13 @@
   //     outline: none;
   // }
 
-  & .wrapper--logo {
+  .wrapper--logo {
     //PRO verze
     display: none;
 
     width: 300px;
   }
-  & .topovat {
+  .topovat {
     //PRO verze
     display: none;
 
@@ -50,23 +58,25 @@
     padding: 0.2rem 0.5rem;
     font-weight: 900;
   }
-  & .spolecnost:before,
-  & .adresa:before,
-  & .email:before,
-  & .telefon:before {
+  .spolecnost:before,
+  .adresa:before,
+  .email:before,
+  .telefon:before {
     font-family: "Font Awesome 5 Free", Arial, Helvetica, sans-serif;
     font-weight: 900;
     padding-right: 0.5rem;
+    width: 25px;
+    display: inline-block;
   }
-  & .spolecnost:before {
+  .spolecnost:before {
     content: "\f1ad";
   }
-  & .wrapper--tags {
+  .wrapper--tags {
     margin: 1rem 0;
     padding: 2rem 0;
     background-color: rgba(255, 255, 255, 0.66);
 
-    & ul {
+    ul {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -76,12 +86,12 @@
         flex-direction: row;
       }
 
-      & .label {
+      .label {
         padding-right: 0.5rem;
         text-transform: uppercase;
         font-weight: 900;
       }
-      & li {
+      li {
         //background: #F28F3B;
         padding: 0;
         width: fit-content;
@@ -115,7 +125,7 @@
       }
     }
   }
-  & .telefon:before {
+  .telefon:before {
     content: "\f879";
   }
 }
