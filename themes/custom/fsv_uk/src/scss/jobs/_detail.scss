@@ -28,7 +28,7 @@
   dd {
     margin-left: 2rem;
     line-height: 3rem;
-
+    display: flex;
     .link {
       color: $c4;
       transition: all 200ms;
