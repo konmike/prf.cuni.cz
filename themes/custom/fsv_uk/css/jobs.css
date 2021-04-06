@@ -660,6 +660,7 @@
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-nothing .group-1 {
   display: grid;
   grid-template-columns: auto auto;
+  column-gap: 0.5rem;
 }
 .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-nothing .group-1 a {
   text-decoration: none;
