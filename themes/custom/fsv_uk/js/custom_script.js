@@ -290,7 +290,7 @@ function showItems() {
 function addButton(type) {
   let newNode = document.createElement(type);
   if (type === "a") {
-    newNode.href = "/jobs";
+    newNode.href = "/jobs-old-2020";
     newNode.innerHTML = "Přejít na starší nabídky";
   } else {
     newNode.innerHTML = "Načíst další";
