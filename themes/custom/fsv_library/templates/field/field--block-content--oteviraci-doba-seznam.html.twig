@@ -1,0 +1,23 @@
+{%
+  set title_classes = [
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+  
+  {% set count = "now"|date('l') %}
+  {% set nCount = count|replace({'Monday':'Pondělí','Tuesday':'Úterý','Thursday':'Čtvrtek'}) %}
+
+    {% if label is same as (nCount) %}
+        <li{{ title_attributes.addClass(title_classes, "today") }}>{{ label }}</li>
+    {% else %}
+        <li{{ title_attributes.addClass(title_classes) }}>{{ label }}</li>
+    {% endif %}
+    {% for item in items %}
+    
+    {% if label is same as (nCount) %}
+        <li{{ item.attributes }} {{ item.attributes.addClass("today") }}>{{ item.content }}</li>
+    {% else %}
+        <li{{ item.attributes }}>{{ item.content }}</li>
+    {% endif %}
+    {% endfor %}

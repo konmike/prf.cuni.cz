@@ -1,0 +1,12 @@
+<div class="controls__print-wrap mt">
+  
+  <h1 class="padding section-title page-title"><span>{{ rows }}</span></h1>
+   {% set site_url = url("<current>")|escape|split('/') | last %}
+
+  
+    {{ drupal_view('osoby', 'block_2', site_url) }}
+  
+
+
+
+</div>

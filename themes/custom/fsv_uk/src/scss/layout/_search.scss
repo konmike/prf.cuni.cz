@@ -1,0 +1,28 @@
+@use '../abstracts/var' as *;
+
+.search {
+    @media(max-width: ($headerBreak - .0625) * 1em) {
+        display: none;
+    }
+    form {
+        text-align: right;
+        display: flex;
+        font-size: 1.2rem;
+
+        > .form-item,
+        > .form-wrapper {
+            display: inline-block;
+        }
+        input[type=search] {
+            min-width: 20rem;
+            padding: 0 1.5rem;
+        }
+        input[type=submit] {
+            font-size: 1.2rem;
+            min-height: 3.2rem;
+            border: .1rem solid $c9;
+            border-left: none;
+            background-color: transparent;
+        }
+    }
+}

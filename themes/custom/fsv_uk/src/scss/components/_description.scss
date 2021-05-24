@@ -1,0 +1,31 @@
+@use '../abstracts/var' as *;
+
+.description {
+    background-color: $c4;
+    color: $c1;
+
+    &__title {
+        text-transform: uppercase;
+    }
+
+    &__content {
+        a.arrow-link {
+            &:after {
+                background-image: url(../images/icons/active_arrow_white.svg);
+            }
+        }
+
+        a.external-link {
+            color: $c1;
+            &:after {
+                background-image: url(../images/icons/external-white.svg);
+            }
+        }
+
+        a.download-link {
+            &:after {
+                background-image: url(../images/icons/download-white.svg);
+            }
+        }
+    }
+}

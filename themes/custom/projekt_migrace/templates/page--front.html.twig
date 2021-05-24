@@ -1,0 +1,56 @@
+<div id="jq_cookies" class="cookies">
+    <p>{{ 'Tato stránka používá cookies, aby mohla uchovávat informace ve vašem počítači. Některé cookies zajišťují správnou funkci těchto stránek, jiné nám pomáhají vylepšovat stránky tím, že nám dovolí nahlédnout, jak jsou stránky používány. Tím, že tyto stránky dále používáte, dáváte svůj souhlas s použitím cookies.'|t }}</p>
+    <button id="jq_cookiesClose" class="btn">{{ "I agree"|t}}</button>
+</div>
+
+<div class="layout-container">
+    <header class="header" id="jq_header">
+        <div class="header__container container">
+            {{ page.mobile_search }}
+            <div class="header__left">
+                <a class="header__logo" href="{{ path('<front>') }}" title="{{ 'Domů'|t }}" rel="home">
+                    {% if current_language == 'en' %}
+                    <img class="header__logo-img" src="{{ theme_path }}/favicons/logo.png" alt="{{ site_name }}" />
+                    {% else %}
+                    <img class="header__logo-img" src="{{ theme_path }}/favicons/logo.png" alt="{{ site_name }}" />
+                    {% endif %}
+                    <img class="header__logo-img header__logo-mobile" src="{{ theme_path }}/favicons/mstile-70x70.png" alt="{{ site_name }}" />
+                </a>
+                <div class="header__mobile-btns">
+                    <div class="header__mobile-lang">
+                        {{ page.mob_langswitch }}
+                    </div>
+                    <button class="header__search-toggle" type="button" id="jq_search-toggle">{{ "Search"|t}}</button>
+                    <button class="header__hamburger hamburger hamburger--slider" type="button" id="jq_hamburger"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+                </div>
+            </div>
+            <div class="header__inner-wrap" id="jq_nav">
+                <div class="header__right clearfix">
+                    {{ page.top_header }}
+                    <div class="header__search">
+                        {{ page.search }}
+                    </div>
+                    {{ page.bottom_header }}
+                </div>
+                {{ page.navigation }}
+            </div>
+        </div>
+    </header>
+    <div id="content-wrap">
+        <main class="{{ page_class_name }}" id="{{ page_class_name }}">
+            <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+            <div class="layout-content layout-content--{{ page_class_name }} container clearfix">
+                {{ page.breadcrumbs }}
+                {{ page.side_navigation }}
+       
+            </div>
+            <div class="container news-block">
+                {{ drupal_view('news', 'articles') }}
+            </div>
+        
+        </main>
+        {{ page.prefooter }}
+        {{ page.footer }}
+    </div>
+</div>{# /.layout-container #}
+

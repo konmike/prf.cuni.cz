@@ -1,0 +1,47 @@
+.gallery {
+    background: $c4;
+
+    &__wrap {
+        padding: 0 2rem;
+        padding-bottom: 2rem;
+    }
+
+    &__list {
+        height: auto !important;
+        margin-top: 2rem;
+        margin-bottom: -1.5rem;
+        lost-utility: clearfix;
+        display: flex;
+    }
+    &__thumbnail {
+        lost-column: 1/2 auto 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__img {
+        // width: auto;
+        margin: auto;
+        min-width: 280px;
+        &--tall {
+            width: auto;
+        }
+    }
+
+    @media(min-width: 22em) {
+        &__thumbnail {
+            lost-column: 1/3 auto 1.5rem;
+        }
+    }
+
+    @media(min-width: $md * 1em) {
+        &__thumbnail {
+            lost-column: 1/4 auto 1.5rem;
+        }
+    }
+}

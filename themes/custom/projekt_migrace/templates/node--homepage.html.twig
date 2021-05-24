@@ -1,0 +1,33 @@
+{% extends 'node.html.twig' %}
+
+{% block content %}
+    
+    {{ content.field_homepage_slider }}
+
+    {{ drupal_view('news_page', 'block_homepage_news_feed') }}
+
+    {{ drupal_view('full_calendar', 'block_1') }}
+    
+
+    <section class="news-feed news-feed--dark mb">
+    {{ content.field_homepage_institutions }}
+    </section>
+
+    <section class="news-feed news-feed--dark mb">
+        <div class="news-feed__header">
+            <h2 class="news-feed__section-title section-title padding">{{ content.field_homepage_info_blocks_head.0['#context'].value }}<a class="btn btn--light news-feed__btn" href="{{ content.field_homepage_info_blocks_link.0['#url'] }}">{{ content.field_homepage_info_blocks_link.0['#title'] }}</a></h2>
+        </div>
+        <ul class="news-feed__list">
+            {{ content.field_homepage_info_blocks }}
+        </ul>
+    </section>
+    
+    <section class="search-large mb">
+        {{ drupal_form('Drupal\\search\\Form\\SearchBlockForm', 'homepage') }}
+    </section>
+    
+{% endblock %}
+
+
+
+

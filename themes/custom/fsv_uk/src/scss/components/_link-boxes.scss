@@ -1,0 +1,107 @@
+@use '../abstracts/var' as *;
+
+.link-boxes {
+    $this: &;
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item {
+        font-size: 1.6rem;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 100%;
+        color: $c1;
+        border-bottom: .2rem solid currentColor;
+        &:nth-child(1) {
+            color: $c10a;
+            #{$this}__link:after {
+                background-color: $c10a;
+            }
+        }
+        &:nth-child(2) {
+            color: $c10b;
+            #{$this}__link:after {
+                background-color: $c10b;
+            }
+        }
+        &:nth-child(3) {
+            color: $c10c;
+            #{$this}__link:after {
+                background-color: $c10c;
+            }
+        }
+        &:nth-child(4) {
+            color: $c10d;
+            #{$this}__link:after {
+                background-color: $c10d;
+            }
+        }
+        &:nth-child(5) {
+            color: $c10e;
+            #{$this}__link:after {
+                background-color: $c10e;
+            }
+        }
+    }
+    &__link {
+        position: relative;
+        padding-left: 2rem;
+        padding-right: 1rem;
+        height: 6.5rem;
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        margin-top: 1em;
+        margin-top: auto;
+        &:hover:after {
+            opacity: 1;
+        }
+        &:after {
+            display: flex;
+            padding-left: 2rem;
+            padding-right: 4rem;
+            align-items: center;
+            content: attr(data-text);
+            color: $c1;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            background-image: url(../images/icons/external-white.svg);
+            background-repeat: no-repeat;
+            background-position: right 2rem center;
+            background-size: 12px 11px;
+            line-height: $lineheightSm;
+            transition: opacity .3s;
+        }
+    }
+    &__text {
+        margin-bottom: 1em !important;
+    }
+    &__title {
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    @media(min-width: $sm * 1em) {
+        &__item {
+            width: 50%
+        }
+    }
+
+    @media(min-width: $lg * 1em) {
+        &__list {
+            justify-content: center;
+        }
+        &__item {
+            width: 20%;
+            &:not(:last-child) {
+                border-right: .2rem solid $c7;                
+            }
+        }
+    }
+}

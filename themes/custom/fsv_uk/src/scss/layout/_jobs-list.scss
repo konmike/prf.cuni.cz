@@ -1,0 +1,270 @@
+@use "../abstracts" as *;
+
+.layout-content--viewnabidka-pracipage-1 {
+  width: 100%;
+  margin: 0 auto;
+
+  @media screen and (min-width: $sm * 1em) {
+    width: 70%;
+  }
+
+  .no-results {
+    text-align: center;
+    margin: 3rem 1rem;
+  }
+  .main-content {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .counter {
+    display: block;
+    margin: 2rem 3rem;
+    font-weight: 800;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .views-exposed-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 3rem;
+
+    .left-side {
+      margin-top: 1rem;
+      max-width: 100%;
+      width: 100%;
+      // margin-right: 2rem;
+
+      @media screen and (min-width: $lg * 1em) {
+        max-width: 45%;
+        width: 45%;
+        margin-right: 2rem;
+      }
+      .btn {
+        margin-bottom: 5rem;
+        width: 100%;
+        margin-right: 2rem;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 0rem 1.5rem;
+        height: auto;
+      }
+      &-exposed {
+        background-color: mix($c2, $c1, 5);
+        padding-bottom: 1rem;
+        h3 {
+          text-align: center;
+          background-color: rgba($color: $c2, $alpha: 0.6);
+          color: $c1;
+          padding: 1rem;
+          font-size: 1.6rem;
+        }
+        .js-form-type-select {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          padding: 1rem 2rem 0 2rem;
+
+          label {
+            color: rgba($color: $c2, $alpha: 0.8);
+            text-transform: uppercase;
+            font-weight: 800;
+            padding-right: 3rem;
+          }
+          .form-select {
+            text-align: center;
+            text-align-last: center;
+          }
+        }
+        .js-form-submit {
+          display: block;
+          padding: 0.7rem;
+          width: min-content;
+          margin: 2rem 2rem 0 auto;
+          font-weight: 800;
+          text-transform: uppercase;
+          font-family: "Open Sans", sans-serif;
+          background-color: $c1;
+          color: $c4;
+          border: 2px solid $c4;
+          transition: all 0.3s;
+
+          &:hover {
+            background-color: $c4;
+            color: $c1;
+          }
+        }
+      }
+    }
+    .right-side {
+      display: none;
+
+      @media screen and (min-width: $lg * 1em) {
+        display: block;
+        max-width: 55%;
+        width: 50%;
+        height: auto;
+        margin-top: 2rem;
+        background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 1)
+          ),
+          url(/sites/default/files/uploads/images/jobs1.jpg) no-repeat center;
+        background-size: cover;
+      }
+    }
+  }
+
+  & .views-view-grid.vertical {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    // width: 70%;
+    // margin: 0 auto;
+    margin: 1rem 3rem;
+  }
+  & .views-view-grid {
+    & .views-col {
+      width: 100% !important;
+      // border-top: 1px solid $c4;
+      padding: 0;
+      margin: 0;
+      transition: all 0.3s;
+    }
+
+    & .views-label {
+      padding-right: 0.5rem;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+    .views-row {
+      display: none;
+      flex-direction: column;
+      //flex-wrap: wrap;
+      align-items: center;
+
+      &:hover {
+        background-color: rgba(212, 50, 65, 0.1);
+      }
+      &::after {
+        @include border-with-width(100%, 1px, $c4);
+      }
+      &:last-child {
+        border-bottom: 0;
+        margin-bottom: 2rem;
+        padding-bottom: 20px;
+        &::after {
+          display: none;
+        }
+      }
+
+      & .views-field-field-logo {
+        //PRO verze
+        display: none;
+
+        margin-right: 2rem;
+      }
+      & .views-field-nothing {
+        width: 100%;
+        padding: 20px 32px 0 32px;
+
+        & .group-1 {
+          display: grid;
+          grid-template-columns: auto auto;
+          column-gap: 0.5rem;
+          a {
+            text-decoration: none;
+            color: rgb(212, 50, 65);
+            font-weight: 800;
+            text-transform: uppercase;
+          }
+        }
+        & .group-2 {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      & .topovat {
+        //PRO verze
+        display: none;
+
+        background: $c4;
+        color: $c1;
+        padding: 0.2rem 0.5rem;
+        margin-right: 0.5rem;
+        font-weight: 900;
+        @media (max-width: $mini * 1em) {
+          order: -2;
+        }
+      }
+      & .created {
+        margin-left: auto;
+        text-align: right;
+        color: #6b6b6b;
+        @media (max-width: $mini * 1em) {
+          order: -1;
+        }
+      }
+      & .nazev-spolecnosti,
+      & .adresa-mista-pracoviste {
+        // width: 100%;
+        // color: #6b6b6b;
+        // font-size: 1.4rem;
+        width: 100%;
+        color: black;
+        font-size: 1.5rem;
+        font-weight: 800;
+      }
+      & .list-tags {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding-top: 1rem;
+
+        & .item {
+          //background: #F28F3B;
+          //padding: 0 0.3rem;
+          padding: 0;
+          width: fit-content;
+          //color: $c1;
+          color: $c2;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          font-size: 1.3rem;
+          position: relative;
+
+          &-student {
+            &::before {
+              content: url("../images/icons/student.svg");
+              width: 18px;
+              height: 18px;
+              position: absolute;
+              left: -26px;
+            }
+          }
+
+          & .label_tag {
+            font-weight: 900;
+            text-transform: uppercase;
+            padding-right: 0.5rem;
+          }
+          &:after {
+            font-family: "Font Awesome 5 Free", Arial, Helvetica, sans-serif;
+            font-weight: 400;
+            font-size: 0.5rem;
+            padding: 0 0.8rem;
+            color: rgba(0, 0, 0, 0.8);
+            content: "\f111";
+            display: none;
+          }
+          &:last-child::after {
+            content: "";
+          }
+        }
+      }
+    }
+  }
+}

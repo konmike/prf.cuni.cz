@@ -1,0 +1,11 @@
+<?php
+
+function fsv_library_preprocess(&$variables)
+{
+    $variables['theme_path'] = base_path() . $variables['directory'];
+    $variables['current_language'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $variables['current_uri'] = \Drupal::request()->getRequestUri();
+    $variables['host'] = \Drupal::request()->getHost();
+    $variables['host_scheme'] = \Drupal::request()->getSchemeAndHttpHost();
+    $variables['current_date'] = \Drupal::service('date.formatter')->format(time(), 'custom', 'F Y');
+}

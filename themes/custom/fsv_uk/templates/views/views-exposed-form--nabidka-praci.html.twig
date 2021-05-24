@@ -1,0 +1,43 @@
+{#
+/**
+ * @file
+ * Theme override of a views exposed form.
+ *
+ * Available variables:
+ * - form: A render element representing the form.
+ *
+ * @see template_preprocess_views_exposed_form()
+ */
+#}
+{% if q is not empty %}
+	{#
+												    This ensures that, if clean URLs are off, the 'q' is added first,
+												    as a hidden form element, so that it shows up first in the POST URL.
+												  #}
+	{{ q }}
+{% endif %}
+
+
+<div class="left-side">
+	<a class="btn" href="/node/add/nabidka_prace_nova">Přidat vlastní nabídku práce</a>
+
+	<div class="left-side-exposed">
+		<h3>Jakou práci hledáte?</h3>
+
+		{{ form.field_koho_hledame_list_value }}
+		{{ form.field_kraj_value }}
+		{{ form.field_uvazek_list_value }}
+
+
+		{{ form|without('field_koho_hledame_list_value', 'field_kraj_value', 'field_uvazek_list_value') }}
+	</div>
+</div>
+<div class="right-side">
+	{# <img src="/sites/default/files/uploads/images/jobs1.jpg"> #}
+</div>
+
+{# {% set view = drupal_view_result('nabidka_praci', 'block_1')|length %}
+{% if view > 0 %}
+	<span class="pocet-nalezenych">Pocet zaznamu je:
+		{{ view }}</span>
+{% endif %} #}

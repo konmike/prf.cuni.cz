@@ -1,0 +1,336 @@
+@use '../abstracts/var' as *;
+
+.footer {
+  $this: &;
+  color: $c1;
+  &__nav {
+    &__item {
+      font-size: 1.6rem;
+    }
+
+    &__title {
+      font-size: 2.1rem;
+      text-transform: uppercase;
+    }
+  }
+
+  &__outer {
+    background-color: $c4;
+  }
+
+  &__container {
+    padding: 0 $padMob;
+  }
+
+  &__copyright {
+    background-color: $c4;
+    padding: 2rem 0;
+    font-size: 1.6rem;
+    margin-top: 0.5rem;
+
+    &__right {
+      margin-left: auto;
+    }
+    &__links {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__link {
+      display: block;
+      text-align: center;
+    }
+    &__logo-arts {
+      display: flex;
+
+      span,
+      a {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+      img {
+        width: auto;
+        float: left;
+        padding: 0 1px 0 5px;
+      }
+    }
+    &__item {
+      &:not(:last-child) {
+        border-right: 0.2rem solid rgba(251, 251, 251, 0.1);
+      }
+      &:last-child {
+        #{$this}__copyright__link {
+          &:after {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 1rem;
+            width: 1.2rem;
+            height: 1.05rem;
+            background-image: url(../images/icons/external-white.svg);
+            background-size: cover;
+          }
+        }
+      }
+    }
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  ul:not([class]) li:before {
+    background-color: $c1;
+  }
+
+  &__dod {
+    color: rgba(0, 0, 0, 0.8);
+    // border-top: 2px solid rgba(0, 0, 0, 0.3);
+    margin: 0 0.5rem;
+    box-sizing: border-box;
+    padding: 2rem 0;
+    .hidden {
+      display: none;
+    }
+    .list {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 0 1em;
+
+      .list__item {
+        margin-right: 0.7em;
+        margin-bottom: 0;
+        width: auto;
+        display: block;
+        &:first-child,
+        &:nth-child(2) {
+          @media screen and (max-width: $md * 1em) {
+            width: 100%;
+            display: flex;
+            flex-direction: revert;
+            justify-content: center;
+            margin-bottom: 0.5em;
+            margin-right: 0;
+          }
+          .link::before {
+            margin-right: 0.3em;
+          }
+        }
+        &:nth-child(3) {
+          margin-left: auto;
+          @media screen and (max-width: $md * 1em) {
+            margin-left: 0;
+          }
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    .link {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-weight: 800;
+
+      &::before {
+        display: block;
+        content: "";
+        width: 40px;
+        height: 40px;
+        background-size: contain;
+        margin-right: 0;
+      }
+      &::after {
+        width: auto !important;
+        height: auto !important;
+        margin: 0 !important;
+      }
+      &__mail {
+        &::before {
+          background: url("/sites/default/files/uploads/images/logo_email.png")
+            no-repeat;
+          background-size: contain;
+        }
+      }
+      &__phone {
+        &::before {
+          background: url("/sites/default/files/uploads/images/logo_tel.png")
+            no-repeat;
+          background-size: contain;
+        }
+      }
+      &__youtube {
+        &::before {
+          background: url("/sites/default/files/uploads/images/logo_YT.png")
+            no-repeat;
+          background-size: contain;
+        }
+      }
+      &__instagram {
+        &::before {
+          background: url("/sites/default/files/uploads/images/logo_IN.png")
+            no-repeat;
+          background-size: contain;
+        }
+      }
+      &__facebook {
+        &::before {
+          background: url("/sites/default/files/uploads/images/logo_fb.png")
+            no-repeat;
+          background-size: contain;
+        }
+      }
+    }
+    .link__phone {
+      &::before {
+        content: url("");
+      }
+    }
+    .link__youtube {
+      &::before {
+        content: url("");
+      }
+    }
+    .link__instagram {
+      &::before {
+        content: url("");
+      }
+    }
+    .link__facebook {
+      &::before {
+        content: url("");
+      }
+    }
+  }
+  @media (max-width: 40.5625em) {
+    &__nav {
+      padding: 2rem 0;
+      &__list {
+        position: relative;
+        z-index: 1;
+      }
+      &__title {
+        margin-bottom: 0;
+        padding: 0.65em 0 0.55em;
+      }
+      &__sublist {
+        display: none;
+      }
+      &__subitem {
+        border-top: 0.1rem solid rgba(251, 251, 251, 0.1);
+      }
+      &__link {
+        color: $c1;
+        display: block;
+        font-weight: 300;
+        font-size: 1.6rem;
+        padding: 0.75em 0;
+      }
+      &__item {
+        position: relative;
+        z-index: 1;
+        &:not(:last-child) {
+          border-bottom: 0.2rem solid rgba(251, 251, 251, 0.1);
+          &:after {
+            content: "";
+            background-image: url(../images/icons/triangle.svg);
+            display: inline-block;
+            width: 15px;
+            height: 10px;
+            position: absolute;
+            right: 1.5rem;
+            top: 2rem;
+            background-size: cover;
+            z-index: 1;
+            opacity: 0.5;
+            transition: transform 0.3s;
+          }
+        }
+        &:last-child {
+          margin-top: 2rem;
+          #{$this}__nav__title {
+            margin-bottom: 0.5em;
+          }
+        }
+      }
+    }
+    &__copyright {
+      &__item {
+        flex-grow: 1;
+        flex-basis: 0;
+      }
+      &__left {
+        text-align: center;
+      }
+      &__right {
+        max-width: 40rem;
+        margin: auto;
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  @media (min-width: 40.625em) {
+    &__nav {
+      padding: 4rem 0;
+      &__sublist {
+        display: block !important;
+      }
+      &__list {
+        font-size: 0;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      &__item {
+        display: inline-block;
+        width: 33.333%;
+        padding-left: 2rem;
+        margin-bottom: 3rem;
+      }
+      &__subitem {
+        margin-bottom: 0.5em;
+      }
+      &__title {
+        margin-bottom: 0.75em;
+      }
+      &__link {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    &__copyright {
+      &__container {
+        display: flex;
+        align-items: center;
+      }
+      &__item {
+        padding-left: 3rem;
+        padding-top: 0.7rem;
+        padding-bottom: 0.7rem;
+        &:not(:last-child) {
+          padding-right: 3rem;
+        }
+      }
+    }
+  }
+
+  @media (min-width: $lg * 1em) {
+    &__nav {
+      &__list {
+        &:not(.footer__nav__list--thirds) {
+          #{$this}__nav__item {
+            width: 33%;
+            // margin-bottom: 2.1875rem;
+            margin-bottom: 35px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,147 @@
+@use "../abstracts/var" as *;
+
+.content__job-offer {
+  margin-top: 1rem;
+
+  & .adresa:before {
+    content: "\f3c5";
+  }
+  & .email:before {
+    content: "\f0e0";
+  }
+  & .wrapper--company {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: whitesmoke;
+  }
+  dl {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    background: rgb(245, 245, 245);
+    padding: 2rem 0px;
+    outline: none;
+    border-bottom: 0.2rem solid #f6f6f6;
+  }
+  dd {
+    margin-left: 2rem;
+    line-height: 3rem;
+    display: flex;
+    .link {
+      color: $c4;
+      transition: all 200ms;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  // & p{
+  //     background: rgb(255, 255, 255);
+  //     padding: 1rem 1rem 2rem 2rem;
+  //     outline: none;
+  // }
+
+  .wrapper--logo {
+    //PRO verze
+    display: none;
+
+    width: 300px;
+  }
+  .topovat {
+    //PRO verze
+    display: none;
+
+    background: $c4;
+    color: $c1;
+    padding: 0.2rem 0.5rem;
+    font-weight: 900;
+  }
+  .spolecnost:before,
+  .adresa:before,
+  .email:before,
+  .telefon:before {
+    font-family: "Font Awesome 5 Free", Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    padding-right: 0.5rem;
+    width: 25px;
+    display: inline-block;
+  }
+  .spolecnost:before {
+    content: "\f1ad";
+  }
+  .wrapper--tags {
+    margin: 1rem 0;
+    padding: 2rem 0;
+    background-color: rgba(255, 255, 255, 0.66);
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 0 2rem;
+
+      @media screen and (min-width: $sm * 1em) {
+        flex-direction: row;
+      }
+
+      .label {
+        padding-right: 0.5rem;
+        text-transform: uppercase;
+        font-weight: 900;
+      }
+      li {
+        //background: #F28F3B;
+        padding: 0;
+        width: fit-content;
+        //color: white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        //margin-right: 1rem;
+        list-style-type: none;
+        //font-size: 1.4rem;
+        margin-bottom: 0.3rem;
+        &:last-child {
+          margin-right: 0;
+        }
+        &:after {
+          display: none;
+          font-family: "Font Awesome 5 Free", Arial, Helvetica, sans-serif;
+          font-weight: 400;
+          font-size: 0.5rem;
+          padding: 0 0.8rem;
+          color: rgba(0, 0, 0, 0.8);
+          content: "\f111";
+
+          @media screen and (min-width: $sm * 1em) {
+            display: block;
+          }
+        }
+        &:last-child::after {
+          content: "";
+        }
+      }
+    }
+  }
+  .telefon:before {
+    content: "\f879";
+  }
+  .wrapper--google-map-iframe {
+    background: $c1;
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrapper--popis-pracovni-pozice {
+    background: $c1;
+    padding: 2rem;
+
+    & p {
+      margin: 0;
+    }
+  }
+}

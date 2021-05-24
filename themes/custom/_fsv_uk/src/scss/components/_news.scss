@@ -1,0 +1,52 @@
+.viewnews-pagepage-1 .main-content {
+    width: 100% !important;
+}
+
+.news {
+
+    &__pagination {
+        &__list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $c1;           
+        }
+        &__item {
+            width: 6rem;
+            height: 6rem;            
+        }
+        &__next,
+        &__prev {
+            width: 6rem;
+            height: 6rem;
+            display: block;
+            background-color: $c1;
+            display: inline-block;
+            border: none;
+            border-left: .2rem solid $c7;
+            cursor: pointer;
+            background-image: url(../images/icons/triangle-red.svg);
+            background-size: 8px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        &__prev {
+            transform: rotate(180deg);
+        }
+        &__current {
+            padding: 0 2rem;
+        }
+    }
+
+    @media(min-width: $md * 1em) {
+        &__filter {
+            lost-column: 1/3;
+        }
+        &__feed {
+            lost-column: 2/3;
+            &--full {
+                lost-column: 1;
+            }
+        }
+    }
+}
