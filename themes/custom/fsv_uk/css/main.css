@@ -3045,6 +3045,31 @@ iframe {
   font-size: 12px;
 }
 
+.side-nav__link-lvl2.czech-flag,
+.side-nav__link-lvl2.british-flag {
+  display: inline-flex;
+  align-items: center;
+}
+.side-nav__link-lvl2.czech-flag::after,
+.side-nav__link-lvl2.british-flag::after {
+  display: inline-block;
+  content: "";
+  margin-left: 0.5rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  background-size: 2.4rem;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.czech-flag::after {
+  background-image: url("../images/icons/cs.svg");
+}
+
+.british-flag::after {
+  background-image: url("../images/icons/en.svg");
+}
+
 @media (min-width: 62.5em) {
   #content-wrap {
     transform: translateY(183px);
@@ -5432,48 +5457,57 @@ input[type=search] {
     float: right;
   }
 }
-.layout-content--viewnabidka-pracipage-1 {
+.layout-content--viewnabidka-pracipage-1,
+.layout-content--viewjob-offeringspage-3 {
   width: 100%;
   margin: 0 auto;
 }
 @media screen and (min-width: 35.5em) {
-  .layout-content--viewnabidka-pracipage-1 {
+  .layout-content--viewnabidka-pracipage-1,
+.layout-content--viewjob-offeringspage-3 {
     width: 70%;
   }
 }
-.layout-content--viewnabidka-pracipage-1 .no-results {
+.layout-content--viewnabidka-pracipage-1 .no-results,
+.layout-content--viewjob-offeringspage-3 .no-results {
   text-align: center;
   margin: 3rem 1rem;
 }
-.layout-content--viewnabidka-pracipage-1 .main-content {
+.layout-content--viewnabidka-pracipage-1 .main-content,
+.layout-content--viewjob-offeringspage-3 .main-content {
   margin-left: auto;
   margin-right: auto;
 }
-.layout-content--viewnabidka-pracipage-1 .counter {
+.layout-content--viewnabidka-pracipage-1 .counter,
+.layout-content--viewjob-offeringspage-3 .counter {
   display: block;
   margin: 2rem 3rem;
   font-weight: 800;
   font-family: "Open Sans", sans-serif;
 }
-.layout-content--viewnabidka-pracipage-1 .views-exposed-form {
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form,
+.layout-content--viewjob-offeringspage-3 .views-exposed-form {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 0 3rem;
 }
-.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side {
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side,
+.layout-content--viewjob-offeringspage-3 .views-exposed-form .left-side {
   margin-top: 1rem;
   max-width: 100%;
   width: 100%;
 }
 @media screen and (min-width: 64em) {
-  .layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side {
+  .layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side,
+.layout-content--viewjob-offeringspage-3 .views-exposed-form .left-side {
     max-width: 45%;
     width: 45%;
     margin-right: 2rem;
   }
 }
-.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side .btn {
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side .btn,
+.layout-content--viewjob-offeringspage-3 .views-exposed-form .left-side .btn {
   margin-bottom: 5rem;
   width: 100%;
   margin-right: 2rem;
@@ -5482,34 +5516,40 @@ input[type=search] {
   padding: 0rem 1.5rem;
   height: auto;
 }
-.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed {
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed,
+.layout-content--viewjob-offeringspage-3 .views-exposed-form .left-side-exposed {
   background-color: #f2f2f2;
   padding-bottom: 1rem;
 }
-.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed h3 {
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed h3,
+.layout-content--viewjob-offeringspage-3 .views-exposed-form .left-side-exposed h3 {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
   padding: 1rem;
   font-size: 1.6rem;
 }
-.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-type-select {
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-type-select,
+.layout-content--viewjob-offeringspage-3 .views-exposed-form .left-side-exposed .js-form-type-select {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 1rem 2rem 0 2rem;
 }
-.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-type-select label {
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-type-select label,
+.layout-content--viewjob-offeringspage-3 .views-exposed-form .left-side-exposed .js-form-type-select label {
   color: rgba(0, 0, 0, 0.8);
   text-transform: uppercase;
   font-weight: 800;
   padding-right: 3rem;
 }
-.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-type-select .form-select {
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-type-select .form-select,
+.layout-content--viewjob-offeringspage-3 .views-exposed-form .left-side-exposed .js-form-type-select .form-select {
   text-align: center;
   text-align-last: center;
 }
-.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-submit {
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-submit,
+.layout-content--viewjob-offeringspage-3 .views-exposed-form .left-side-exposed .js-form-submit {
   display: block;
   padding: 0.7rem;
   width: min-content;
@@ -5522,15 +5562,18 @@ input[type=search] {
   border: 2px solid #d43241;
   transition: all 0.3s;
 }
-.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-submit:hover {
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-submit:hover,
+.layout-content--viewjob-offeringspage-3 .views-exposed-form .left-side-exposed .js-form-submit:hover {
   background-color: #d43241;
   color: #fff;
 }
-.layout-content--viewnabidka-pracipage-1 .views-exposed-form .right-side {
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .right-side,
+.layout-content--viewjob-offeringspage-3 .views-exposed-form .right-side {
   display: none;
 }
 @media screen and (min-width: 64em) {
-  .layout-content--viewnabidka-pracipage-1 .views-exposed-form .right-side {
+  .layout-content--viewnabidka-pracipage-1 .views-exposed-form .right-side,
+.layout-content--viewjob-offeringspage-3 .views-exposed-form .right-side {
     display: block;
     max-width: 55%;
     width: 50%;
@@ -5540,32 +5583,38 @@ input[type=search] {
     background-size: cover;
   }
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid.vertical {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid.vertical,
+.layout-content--viewjob-offeringspage-3 .views-view-grid.vertical {
   display: flex;
   flex-direction: column;
   padding-top: 1rem;
   margin: 1rem 3rem;
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-col {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-col,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-col {
   width: 100% !important;
   padding: 0;
   margin: 0;
   transition: all 0.3s;
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-label {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-label,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-label {
   padding-right: 0.5rem;
   text-transform: uppercase;
   font-weight: 900;
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row {
   display: none;
   flex-direction: column;
   align-items: center;
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row:hover {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row:hover,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row:hover {
   background-color: rgba(212, 50, 65, 0.1);
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row::after {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row::after,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row::after {
   content: "";
   /* This is necessary for the pseudo element to work. */
   display: block;
@@ -5579,38 +5628,46 @@ input[type=search] {
   border-bottom: 1px solid #d43241;
   /* This creates the border. Replace black with whatever color you want. */
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row:last-child {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row:last-child,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row:last-child {
   border-bottom: 0;
   margin-bottom: 2rem;
   padding-bottom: 20px;
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row:last-child::after {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row:last-child::after,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row:last-child::after {
   display: none;
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-field-logo {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-field-logo,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row .views-field-field-logo {
   display: none;
   margin-right: 2rem;
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-nothing {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-nothing,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row .views-field-nothing {
   width: 100%;
   padding: 20px 32px 0 32px;
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-nothing .group-1 {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-nothing .group-1,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row .views-field-nothing .group-1 {
   display: grid;
   grid-template-columns: auto auto;
   column-gap: 0.5rem;
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-nothing .group-1 a {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-nothing .group-1 a,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row .views-field-nothing .group-1 a {
   text-decoration: none;
   color: #d43241;
   font-weight: 800;
   text-transform: uppercase;
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-nothing .group-2 {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .views-field-nothing .group-2,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row .views-field-nothing .group-2 {
   display: flex;
   flex-direction: column;
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .topovat {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .topovat,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row .topovat {
   display: none;
   background: #d43241;
   color: #fff;
@@ -5619,33 +5676,40 @@ input[type=search] {
   font-weight: 900;
 }
 @media (max-width: 22.5em) {
-  .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .topovat {
+  .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .topovat,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row .topovat {
     order: -2;
   }
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .created {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .created,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row .created {
   margin-left: auto;
   text-align: right;
   color: #6b6b6b;
 }
 @media (max-width: 22.5em) {
-  .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .created {
+  .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .created,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row .created {
     order: -1;
   }
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .nazev-spolecnosti, .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .adresa-mista-pracoviste {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .nazev-spolecnosti, .layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .adresa-mista-pracoviste,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row .nazev-spolecnosti,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row .adresa-mista-pracoviste {
   width: 100%;
   color: black;
   font-size: 1.5rem;
   font-weight: 800;
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row .list-tags {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   padding-top: 1rem;
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags .item {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags .item,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row .list-tags .item {
   padding: 0;
   width: fit-content;
   color: #000;
@@ -5655,19 +5719,22 @@ input[type=search] {
   font-size: 1.3rem;
   position: relative;
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags .item-student::before {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags .item-student::before,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row .list-tags .item-student::before {
   content: url("../images/icons/student.svg");
   width: 18px;
   height: 18px;
   position: absolute;
   left: -26px;
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags .item .label_tag {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags .item .label_tag,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row .list-tags .item .label_tag {
   font-weight: 900;
   text-transform: uppercase;
   padding-right: 0.5rem;
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags .item:after {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags .item:after,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row .list-tags .item:after {
   font-family: "Font Awesome 5 Free", Arial, Helvetica, sans-serif;
   font-weight: 400;
   font-size: 0.5rem;
@@ -5676,7 +5743,8 @@ input[type=search] {
   content: "";
   display: none;
 }
-.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags .item:last-child::after {
+.layout-content--viewnabidka-pracipage-1 .views-view-grid .views-row .list-tags .item:last-child::after,
+.layout-content--viewjob-offeringspage-3 .views-view-grid .views-row .list-tags .item:last-child::after {
   content: "";
 }
 

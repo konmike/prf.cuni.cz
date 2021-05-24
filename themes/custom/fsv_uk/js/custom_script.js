@@ -16,6 +16,7 @@
     $(".btn--show-more").click(function () {
       showItems();
     });
+
     //Pokud je youtube iframe prekryt obrazkem, pak skryj obrazek
     //a zacni prehravat video
     $(".youtube--with-cover .image").click(function (e) {

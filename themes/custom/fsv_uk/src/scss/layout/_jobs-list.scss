@@ -140,7 +140,9 @@
       font-weight: 900;
     }
     .views-row {
+      //++ zmeneno z none
       display: none;
+
       flex-direction: column;
       //flex-wrap: wrap;
       align-items: center;
