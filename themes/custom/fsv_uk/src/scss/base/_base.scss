@@ -141,6 +141,27 @@ iframe {
 .footnote {
   font-size: 12px;
 }
+.side-nav__link-lvl2.czech-flag,
+.side-nav__link-lvl2.british-flag {
+  display: inline-flex;
+  align-items: center;
+  &::after {
+    display: inline-block;
+    content: "";
+    margin-left: 0.5rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    background-size: 2.4rem;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+.czech-flag::after {
+  background-image: url("../images/icons/cs.svg");
+}
+.british-flag::after {
+  background-image: url("../images/icons/en.svg");
+}
 
 @media (min-width: $headerBreak * 1em) {
   #content-wrap {

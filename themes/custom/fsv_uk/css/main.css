@@ -3046,6 +3046,31 @@ iframe {
   font-size: 12px;
 }
 
+.side-nav__link-lvl2.czech-flag,
+.side-nav__link-lvl2.british-flag {
+  display: inline-flex;
+  align-items: center;
+}
+.side-nav__link-lvl2.czech-flag::after,
+.side-nav__link-lvl2.british-flag::after {
+  display: inline-block;
+  content: "";
+  margin-left: 0.5rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  background-size: 2.4rem;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.czech-flag::after {
+  background-image: url("../images/icons/cs.svg");
+}
+
+.british-flag::after {
+  background-image: url("../images/icons/en.svg");
+}
+
 @media (min-width: 62.5em) {
   #content-wrap {
     transform: translateY(183px);
@@ -4468,7 +4493,7 @@ input[type=search] {
 }
 .prefooter__social__link {
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   display: block;
   text-indent: -99999px;
