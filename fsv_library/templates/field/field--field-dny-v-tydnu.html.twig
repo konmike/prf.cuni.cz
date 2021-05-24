@@ -1,9 +1,0 @@
-{% for item in items %}
-	<li>
-        {% set den_v_tydnu %}
-            {{ item.content }}
-        {% endset %}	
-
-        {{ den_v_tydnu|striptags }}
-    </li>
-{% endfor %}

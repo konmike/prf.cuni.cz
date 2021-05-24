@@ -1,8 +1,8 @@
-adminimal*/
-_fsv_uk/
-projekt_migrace/
-uredni_deska/
 .*
 private.ppk
 node_modules/
 sites/*
+/*
+!themes/
+themes/*
+!themes/custom/
