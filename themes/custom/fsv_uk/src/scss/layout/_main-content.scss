@@ -5,6 +5,9 @@
     font-size: 13px;
     margin-bottom: 40px;
     width: 100%;
+    &.kpd-people {
+      margin-bottom: 0;
+    }
     td {
       padding: 10px 10px 0 0;
       text-align: left;
