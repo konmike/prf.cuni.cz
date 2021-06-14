@@ -5522,21 +5522,29 @@ input[type=search] {
   padding: 1rem;
   font-size: 1.6rem;
 }
-.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-type-select {
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-type-select,
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-item-title {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 1rem 2rem 0 2rem;
 }
-.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-type-select label {
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-type-select label,
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-item-title label {
   color: rgba(0, 0, 0, 0.8);
   text-transform: uppercase;
   font-weight: 800;
   padding-right: 3rem;
 }
-.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-type-select .form-select {
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-type-select .form-select,
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-item-title .form-select {
   text-align: center;
   text-align-last: center;
+}
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-type-select .form-text,
+.layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-item-title .form-text {
+  max-width: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.6);
 }
 .layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-submit {
   display: block;

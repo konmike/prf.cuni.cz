@@ -60,7 +60,8 @@
           padding: 1rem;
           font-size: 1.6rem;
         }
-        .js-form-type-select {
+        .js-form-type-select,
+        .js-form-item-title {
           display: flex;
           justify-content: space-between;
           flex-wrap: wrap;
@@ -75,6 +76,10 @@
           .form-select {
             text-align: center;
             text-align-last: center;
+          }
+          .form-text {
+            max-width: 50%;
+            border: 1px solid rgba($color: $c2, $alpha: 0.6);
           }
         }
         .js-form-submit {
