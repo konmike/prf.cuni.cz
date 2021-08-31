@@ -60,29 +60,14 @@
                 {{ page.breadcrumbs }}
                 {{ page.side_navigation }}
                 <div class="main-content articles">
-                	<div class="mb">
-                    	
 
 <div class="tabframe mb" style="border: 5px solid #cd2021;">
   <div class="tab">
 
-{% if current_language == 'en' %}
+
 
     <button class="tablinks active" onclick="openTab(event, 'ukaz')" id="defaultopen" style="">UKAŽ</button>
-    <!-- <button class="tablinks" onclick="openTab(event, 'katalog')" style="">Our catalogue</button>
-    <button class="tablinks" onclick="openTab(event, 'soubor')" style="">Union Catalogue of CR</button>
-    <button class="tablinks" onclick="openTab(event, 'casopisy')" style="">E-journals</button>
-    <button class="tablinks" onclick="openTab(event, 'knihy')" style="">E-books</button> -->
-
-{% else %}
-
-    <button class="tablinks active" onclick="openTab(event, 'ukaz')" id="defaultopen" style="">UKAŽ</button>
-    <!-- <button class="tablinks" onclick="openTab(event, 'katalog')" style="">Katalog PF</button>
-    <button class="tablinks" onclick="openTab(event, 'soubor')" style="">Souborný katalog ČR</button>
-    <button class="tablinks" onclick="openTab(event, 'casopisy')" style="">E-časopisy</button>
-    <button class="tablinks" onclick="openTab(event, 'knihy')" style="">E-knihy</button> -->
-
-{% endif %}
+    
 
   </div>
   <div id="ukaz" class="tabcontent padding" style="display: block;">
@@ -92,8 +77,6 @@
 <!-- UKAŽ START -->
 
 
-<!-- EBSCOhost Custom Search Box Begins -->
-{# <script src="https://support.ebsco.com/eit/scripts/ebscohostsearch.js" type="text/javascript"></script> #}
 <script type="text/javascript">
 function searchPrimo() {
 document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
@@ -127,108 +110,7 @@ onsubmit="searchPrimo()">
 <div style="clear:both;"></div>
 </form>
 
-{# 
-<form id="ebscohostCustomSearchBox" action="" onsubmit="return ebscoHostSearchGo(this);" method="post">
-<input id="ebscohostwindow" name="ebscohostwindow" type="hidden" value="1">
-<input id="ebscohosturl" name="ebscohosturl" type="hidden" value="https://search.ebscohost.com/login.aspx?direct=true&amp;site=eds-live&amp;scope=site&amp;type=0&amp;custid=s1240919&amp;groupid=pf&amp;profid=eds&amp;mode=bool&amp;lang=cs&amp;authtype=ip,guest">
-<input id="ebscohostsearchsrc" name="ebscohostsearchsrc" type="hidden" value="db">
-<input id="ebscohostsearchmode" name="ebscohostsearchmode" type="hidden" value="+">
-<input id="ebscohostkeywords" name="ebscohostkeywords" type="hidden" value="">
 
-<div>
-<span class="ebscohost-title "></span>
-
-<div>
-<label class="i_text">
-<input id="ebscohostsearchtext" class="" name="ebscohostsearchtext" type="search" size="23" placeholder="{{ 'Search'|t }}">
-</label>
-<input type="submit" value="{{ 'Search'|t }}" class="ebscohost-search-button i_btn">
-
-<div id="guidedFieldSelectors" style="padding-top:5px;"> #}
-<!-- <label class="i_radio">
-<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_0" value="" checked="checked">
-<span>{{ 'Keywords'|t }}</span>
-</label>
-<label class="i_radio">
-<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_1" value="TI">
-<span>{{ 'Title'|t }}</span>
-</label>
-<label class="i_radio">
-<input class="radio" type="radio" name="searchFieldSelector" id="guidedField_2" value="AU">
-<span>{{ 'Author'|t }}</span>
-</label> -->
-{# </div>
-
-</div>
-</div>
-
-<div style="padding-top:20px;"> #}
-<!-- <div class="limiter">
-<label class="i_check">
-<input type="checkbox" id="chkFullText" name="chkFullText">
-<span>{{ 'Full text'|t }}</span>
-</label>
-</div>
-<div class="limiter">
-<label class="i_check">
-<input type="checkbox" id="chkLibraryCollection" name="chkLibraryCollection" checked="checked">
-<span> -->
-
-{# {% if current_language == 'en' %}
-
-{{ 'At the University'|t }}
-
-{% else %}
-
-Mohu získat na UK
-
-{% endif %} #}
-
-<!-- </span>
-</label>
-</div>
-<div class="limiter">
-<label class="i_check">
-<input type="checkbox" id="chkPeerReviewed" name="chkPeerReviewed">
-<span> -->
-
-{# {% if current_language == 'en' %}
-
-Reviewed journals 
-
-{% else %}
-
-Recenzované časopisy
-
-{% endif %} #}
-<!--
-</span>
-</label>
-</div>
-
-<div class="limiter">
-<label class="i_check">
-<input type="checkbox" id="chkCatalogOnly" name="chkCatalogOnly"> -->
-
-{# {% if current_language == 'en' %}
-
-<span>Charles university catalogue</span> 
-
-{% else %}
-
-<span>Katalog UK</span>
-
-{% endif %} #}
-
-
-
-
-<!-- </label>
-</div> -->
-{# <div style="clear:both;"></div>
-</div>
-</form> #}
-<!-- EBSCOhost Custom Search Box Ends -->
 
 <!-- UKAZ KONEC -->
 
@@ -236,170 +118,9 @@ Recenzované časopisy
 
     
   </div>
-  <div id="katalog" class="tabcontent padding" style="display: none;">
-
-<form action="https://ckis.cuni.cz/F/" method="get" target="_blank">
-<input name="local_base" value="pf" type="hidden">
-<input name="func" value="find-e" type="hidden">
-
-<div>
-<label class="i_text">
-<!--<span>Kl&iacute;čov&aacute; slova:</span>-->
-<input name="request" type="search" placeholder="{{ 'Search'|t }}">
-</label>
-<input class="i_btn" value="{{ 'Search'|t }}" type="submit">
-</div>
-
-<div style="padding-top:5px;">
-<label class="i_select">
-<span>{{ 'Search'|t }}</span>
-<select name="find_scan_code">
-<option value="FIND_WRD" selected="selected">{{ 'All'|t }}</option>
-<option value="FIND_WTI">{{ 'Title'|t }}</option>
-<option value="SCAN_TIT">{{ 'First word from title'|t }}</option>
-<option value="FIND_WAU">{{ 'Author'|t }}</option>
-<option value="SCAN_AUT">{{ 'Author index'|t }}</option>
-<option value="FIND_WKW">{{ 'Subject'|t }}</option>
-<option value="SCAN_SUB">{{ 'Subject index'|t }}</option>
-<option value="FIND_ISN">ISBN/ISSN</option>
-</select>
-</label>
-</div>
-</form>
-    
-  </div>
-  <div id="soubor" class="tabcontent padding" style="display: none;">
-
-
-<form action="https://aleph.nkp.cz/F/" method="get" target="_blank">
-<input name="local_base" value="skc" type="hidden">
-<input name="func" value="find-e" type="hidden">
-
-<div>
-<label class="i_text">
-<!--<span>Kl&iacute;čov&aacute; slova:</span>-->
-<input name="request" type="search"  placeholder="{{ 'Search'|t }}">
-</label>
-<input class="i_btn" value="{{ 'Search'|t }}" type="submit">
-</div>
-
-<div style="padding-top:5px;">
-<label class="i_select">
-<span>{{ 'Search'|t }}</span>
-<select name="find_scan_code">
-<option value="FIND_WRD" selected="selected">{{ 'All'|t }}</option>
-<option value="FIND_WTI">{{ 'Title'|t }}</option>
-<option value="SCAN_TIT">{{ 'First word from title'|t }}</option>
-<option value="FIND_WAU">{{ 'Author'|t }}</option>
-<option value="SCAN_AUT">{{ 'Author index'|t }}</option>
-<option value="FIND_WKW">{{ 'Subject'|t }}</option>
-<option value="SCAN_SUB">{{ 'Subject index'|t }}</option>
-<option value="FIND_ISN">ISBN/ISSN</option>
-</select>
-</label>
-</div>
-</form>
-
-
-  </div>
-  <div id="casopisy" class="tabcontent padding" style="display: none;">
-
-
-    <form method="get" action="https://sfx.is.cuni.cz/sfxlcl3/journalsearch/ukall?&amp;lang=cze" target="_blank">
-
-<input name="param_locate_category_save" value="14" type="hidden">
-<input name="param_perform_save" value="locate" type="hidden">
-<input name="param_perform_value" value="searchTitle" type="hidden">
-<input name="param_jumpToPage_value" value="" type="hidden">
-<input name="param_type_value" value="textSearch" type="hidden">
-<input name="param_chinese_checkbox_active" value="1" type="hidden">
-<input name="param_chinese_checkbox_value" id="param_chinese_checkbox_value1" value="0" type="hidden">
-
-<div>
-<label class="i_text">
-<!--<span>Vyhledávání časopisů</span>-->
-<input name="param_pattern_value" id="param_pattern_value1" type="search"  placeholder="{{ 'Search'|t }}">
-</label>
-<input class="i_btn" value="{{ 'Search'|t }}" type="submit">
-</div>
-
-<div style="padding-top:5px;">
-<label class="i_radio">
-<input name="param_textSearchType_value" id="startsWith" value="startsWith" type="radio">
-<span>{{ 'Starts with'|t }}</span>
-</label>
-<label class="i_radio">
-<input name="param_textSearchType_value" id="contains" value="contains" type="radio" checked="checked">
-<span>{{ 'Contains'|t }}</span>
-</label>
-<label class="i_radio">
-<input name="param_textSearchType_value" id="exactMatch" value="exactMatch" type="radio">
-<span>{{ 'Exact title'|t }}</span>
-</label>
-</div>
-
-<div style="padding-top:5px;">
-<label class="i_radio">
-<input class="library_search_journals_licence" name="param_textSearchType_licence" value="licence_magazines" type="radio" checked="checked" data-url="http://sfx.is.cuni.cz/sfxlcl3/az/ukall?&amp;lang=cze">
-<span>{{ 'Licenced'|t }}</span>
-</label>
-<label class="i_radio">
-<input class="library_search_journals_licence" name="param_textSearchType_licence" value="free_magazines" type="radio" data-url="http://sfx.jib.cz/sfxlcl3/az/default?lang=cze">
-<span>{{ 'Free'|t }}</span>
-</label>
-</div>
-
-</form>
-    
-  </div>
-  <div id="knihy" class="tabcontent padding" style="display: none;">
-
-    <form method="get" action="https://sfx.is.cuni.cz/sfxlcl3/azbook/ukall" target="_blank">
-
-<input type="hidden" name="param_perform_value" value="ebook">
-<input type="hidden" name="param_perform_value" value="searchTitle">
-<input type="hidden" name="param_jumpToPage_value" value="">
-<input type="hidden" name="param_type_value" value="textSearch">
-<input type="hidden" name="param_chinese_checkbox_active" value="1">
-<input type="hidden" name="param_chinese_checkbox_value" id="param_chinese_checkbox_value2" value="0">
-
-<div>
-<label class="i_text">
-<!--<span>Vyhledávání e-knih</span>-->
-<input type="search" name="param_pattern_value" id="param_pattern_value2"  placeholder="{{ 'Search'|t }}">
-</label>
-<input class="i_btn" value="{{ 'Search'|t }}" type="submit">
-</div>
-
-<div style="padding-top:5px;">
-<label class="i_radio">
-<input type="radio" name="param_textSearchType_value" id="startsWith2" value="startsWith">
-<span>{{ 'Starts with'|t }}</span>
-</label>
-<label class="i_radio">
-<input type="radio" name="param_textSearchType_value" id="contains2" value="contains" checked="checked">
-<span>{{ 'Contains'|t }}</span>
-</label>
-<label class="i_radio">
-<input type="radio" name="param_textSearchType_value" id="exactMatch2" value="exactMatch">
-<span>{{ 'Exact title'|t }}</span>
-</label>
-</div>
-
-<div style="padding-top:5px;">
-<label class="i_radio">
-<input class="library_search_ebooks_licence" id="param_textSearchType_licence_licence" name="param_textSearchType_licence" value="licence" type="radio" checked="checked" data-url="https://sfx.is.cuni.cz/sfxlcl3/azbook/ukall">
-<span>{{ 'Licenced'|t }}</span>
-</label>
-<label class="i_radio">
-<input class="library_search_ebooks_licence" id="param_textSearchType_licence_free" name="param_textSearchType_licence" value="free" type="radio"  data-url="https://sfx.is.cuni.cz/sfxlcl3/azbook/default">
-<span>{{ 'Free'|t }}</span>
-</label>
-</div>
-
-</form>
-    
-  </div>
+  
+  
+  
 </div>
 
 
@@ -456,7 +177,7 @@ document.getElementById("defaultopen").click();
 </script>
 
 
-                	</div>
+
 
                     
                  
