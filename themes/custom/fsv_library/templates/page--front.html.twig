@@ -112,7 +112,7 @@
 <input type="submit" value="{{ 'Search'|t }}" class="ebscohost-search-button i_btn">
 
 <div id="guidedFieldSelectors" style="padding-top:5px;">
-<label class="i_radio">
+<!-- <label class="i_radio">
 <input class="radio" type="radio" name="searchFieldSelector" id="guidedField_0" value="" checked="checked">
 <span>{{ 'Keywords'|t }}</span>
 </label>
@@ -123,14 +123,14 @@
 <label class="i_radio">
 <input class="radio" type="radio" name="searchFieldSelector" id="guidedField_2" value="AU">
 <span>{{ 'Author'|t }}</span>
-</label>
+</label> -->
 </div>
 
 </div>
 </div>
 
 <div style="padding-top:20px;">
-<div class="limiter">
+<!-- <div class="limiter">
 <label class="i_check">
 <input type="checkbox" id="chkFullText" name="chkFullText">
 <span>{{ 'Full text'|t }}</span>
@@ -139,9 +139,9 @@
 <div class="limiter">
 <label class="i_check">
 <input type="checkbox" id="chkLibraryCollection" name="chkLibraryCollection" checked="checked">
-<span>
+<span> -->
 
-{% if current_language == 'en' %}
+{# {% if current_language == 'en' %}
 
 {{ 'At the University'|t }}
 
@@ -149,17 +149,17 @@
 
 Mohu získat na UK
 
-{% endif %}
+{% endif %} #}
 
-</span>
+<!-- </span>
 </label>
 </div>
 <div class="limiter">
 <label class="i_check">
 <input type="checkbox" id="chkPeerReviewed" name="chkPeerReviewed">
-<span>
+<span> -->
 
-{% if current_language == 'en' %}
+{# {% if current_language == 'en' %}
 
 Reviewed journals 
 
@@ -167,17 +167,17 @@ Reviewed journals
 
 Recenzované časopisy
 
-{% endif %}
-
+{% endif %} #}
+<!--
 </span>
 </label>
 </div>
 
 <div class="limiter">
 <label class="i_check">
-<input type="checkbox" id="chkCatalogOnly" name="chkCatalogOnly">
+<input type="checkbox" id="chkCatalogOnly" name="chkCatalogOnly"> -->
 
-{% if current_language == 'en' %}
+{# {% if current_language == 'en' %}
 
 <span>Charles university catalogue</span> 
 
@@ -185,13 +185,13 @@ Recenzované časopisy
 
 <span>Katalog UK</span>
 
-{% endif %}
+{% endif %} #}
 
 
 
 
-</label>
-</div>
+<!-- </label>
+</div> -->
 <div style="clear:both;"></div>
 </div>
 </form>
