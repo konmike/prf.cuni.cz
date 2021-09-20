@@ -4014,7 +4014,7 @@ nav {
   font-weight: normal;
   white-space: pre-line;
 }
-.main-content a.btn::after, .main-content a.link--wrapper-image::after, .main-content a.logos__link::after, .main-content a[href="#"]::after, .main-content a.more-info::after {
+.main-content a.btn::after, .main-content a.link--wrapper-image::after, .main-content a.logos__link::after, .main-content a[href="#"]::after, .main-content a.more-info::after, .main-content a.featured-link__link::after {
   display: none !important;
 }
 .main-content a[href*="//"]:not([href*="prf.cuni.cz"]):after {
@@ -5543,7 +5543,7 @@ input[type=search] {
 }
 .layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-type-select .form-text,
 .layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-item-title .form-text {
-  max-width: 50%;
+  max-width: 40%;
   border: 1px solid rgba(0, 0, 0, 0.6);
 }
 .layout-content--viewnabidka-pracipage-1 .views-exposed-form .left-side-exposed .js-form-submit {

@@ -28,12 +28,13 @@
     &.link--wrapper-image,
     &.logos__link,
     &[href="#"],
-    &.more-info {
+    &.more-info,
+    &.featured-link__link {
       &::after {
         display: none !important;
       }
     }
-    &[href*="//"]:not([href*="prf.cuni.cz"]):after,
+    &[href*="//"]:not([href*="prf.cuni.cz"]):after
     {
       background-image: url(../images/icons/external.svg);
     }
