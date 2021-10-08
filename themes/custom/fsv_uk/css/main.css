@@ -4514,9 +4514,9 @@ input[type=search] {
   background-image: url(../images/icons/instagram.svg);
 }
 .prefooter__social__link[href*=linkedin] {
-  width: 3rem;
-  height: 3rem;
-  background-image: url(../images/icons/linkedin.svg);
+  width: 4rem;
+  height: 4rem;
+  background-image: url(../images/icons/linkedin-white.png);
 }
 .prefooter__social__link[href*=youtube] {
   width: 5rem;
