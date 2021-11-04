@@ -1,4 +1,4 @@
-@use '../abstracts/var' as *;
+@use "../abstracts/var" as *;
 
 .main-content {
   table {
@@ -31,7 +31,10 @@
     &.more-info,
     &.featured-link__link {
       &::after {
-        display: none !important;
+        background-image: none !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: auto !important;
       }
     }
     &[href*="//"]:not([href*="prf.cuni.cz"]):after

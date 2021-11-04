@@ -4015,7 +4015,10 @@ nav {
   white-space: pre-line;
 }
 .main-content a.btn::after, .main-content a.link--wrapper-image::after, .main-content a.logos__link::after, .main-content a[href="#"]::after, .main-content a.more-info::after, .main-content a.featured-link__link::after {
-  display: none !important;
+  background-image: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: auto !important;
 }
 .main-content a[href*="//"]:not([href*="prf.cuni.cz"]):after {
   background-image: url(../images/icons/external.svg);
@@ -4135,6 +4138,14 @@ main.viewfronthomepage .layout-aside {
 .layout-content--viewfronthomepage .articles .news-feed__footer .dash, .layout-content--viewfronthomepage .articles .news-feed__footer a {
   display: none;
 }
+.layout-content--podcast {
+  display: flex;
+  flex-direction: column;
+  max-width: 1024px;
+}
+.layout-content--podcast .main-content {
+  width: 100%;
+}
 
 @media (max-width: 62.4375em) {
   .search {
@@ -4198,6 +4209,30 @@ main.viewfronthomepage .layout-aside {
   font-family: "Amatic SC", "Open Sans", sans-serif;
   font-size: 4rem;
   padding: 0.5em;
+}
+.btn--arrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: transparent;
+  border-color: #d43241;
+  color: #d43241;
+  font-weight: 800;
+  text-transform: uppercase;
+  width: fit-content;
+  padding: 0 1em;
+}
+.btn--arrow:hover {
+  background-color: #d43241;
+  color: #fff;
+}
+.btn--arrow::after {
+  content: "" !important;
+  display: inline-block;
+  padding-left: 0.5em;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 800;
+  font-size: 2.5rem;
 }
 
 .search-mobile {
@@ -8568,6 +8603,79 @@ li.gallery__thumbnail a {
   /* This creates some space between the element and the border. */
   border-bottom: 2px solid #d43241;
   /* This creates the border. Replace black with whatever color you want. */
+}
+
+.paragraph {
+  max-width: 135rem;
+  margin: auto;
+  padding-bottom: 1rem;
+  background-color: #fff;
+}
+.paragraph--customizable {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.paragraph--customizable .logo {
+  max-width: 350px;
+  margin-left: auto;
+}
+.paragraph--red-white {
+  color: #ffffff;
+}
+.paragraph--red-white a {
+  font-weight: 800;
+  border-color: #ffffff;
+}
+.paragraph--red-white a::after {
+  background-image: url("../images/icons/external-white.svg") !important;
+}
+.paragraph--red-white a:hover {
+  border: 0;
+}
+
+.btn-box {
+  display: flex;
+  gap: 1em;
+}
+
+.episode-feed {
+  width: 100%;
+  float: right;
+  margin-left: 0;
+  background-color: white;
+  padding-top: 1em;
+}
+.episode-feed li:nth-child(2n) .episode {
+  background-color: #d43241;
+  color: white;
+}
+.episode-feed li:last-child .episode {
+  margin-bottom: 0;
+}
+
+.episode {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+  margin-bottom: 2em;
+  padding: 2em;
+}
+.episode h3 {
+  width: 100%;
+  margin-bottom: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  outline: none;
+}
+.episode--description {
+  max-width: 50%;
+  padding-right: 1em;
+}
+.episode--iframe {
+  max-width: calc(50% - 1rem);
+  margin-top: 0;
 }
 
 #jq_side-nav-toggle {

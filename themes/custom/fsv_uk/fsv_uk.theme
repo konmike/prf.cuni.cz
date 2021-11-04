@@ -29,6 +29,8 @@ function fsv_uk_preprocess_page(&$variables) {
     }
     
     $variables['page_class_name'] = \Drupal\Component\Utility\Html::cleanCssIdentifier($class);
+    $variables['#attached']['drupalSettings']['clientId'] = "bbbd83fa44d54c3d8b831bcb1965ed8c";
+    $variables['#attached']['drupalSettings']['clientSecret'] = "8e75c8134566401a92e4c57cf33edbc3";
 }
 
 function fsv_uk_form_alter(&$form, FormStateInterface $form_state, $form_id) {

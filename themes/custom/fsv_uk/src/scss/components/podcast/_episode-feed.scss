@@ -1,0 +1,18 @@
+@use "../../abstracts/var" as *;
+.episode-feed {
+  //   width: calc(99.9% * 2 / 3 - (30px - 30px * 2 / 3));
+  width: 100%;
+  float: right;
+  margin-left: 0;
+  background-color: white;
+  padding-top: 1em;
+
+  li:nth-child(2n) .episode {
+    background-color: $c4;
+    color: white;
+  }
+
+  li:last-child .episode {
+    margin-bottom: 0;
+  }
+}
