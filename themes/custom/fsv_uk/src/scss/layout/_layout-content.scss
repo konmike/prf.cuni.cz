@@ -1,69 +1,78 @@
-@use '../abstracts/var' as *;
+@use "../abstracts/var" as *;
 
-.layout-content{
-    &--viewnews-pagecourses{
-        padding-top: 40px;
-        .main-content{
-            width: 100%;
-        }
-        .layout-aside,
-        .news-feed__bg{
-            display: none;
-        }
+.layout-content {
+  &--viewnews-pagecourses {
+    padding-top: 40px;
+    .main-content {
+      width: 100%;
     }
-    &--viewsearch-userspage{
-        padding-top: 40px;
+    .layout-aside,
+    .news-feed__bg {
+      display: none;
     }
-    &--vieweventspage-1 .main-content,
-    &--viewjob-offeringspage-1 .main-content,
-    &--viewnabidka-pracipage-1 .main-content{
-        background: $c1; 
-        padding: 15px; 
-        margin-top: 20px; 
-        margin-bottom: 40px; 
-        width: 100%;
+  }
+  &--viewsearch-userspage {
+    padding-top: 40px;
+  }
+  &--vieweventspage-1 .main-content,
+  &--viewjob-offeringspage-1 .main-content,
+  &--viewnabidka-pracipage-1 .main-content {
+    background: $c1;
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  &--vieweventspage-1 .main-content {
+    thead {
+      display: none;
     }
-    &--vieweventspage-1 .main-content{
-        thead{
-            display: none;
-        }
-        td a{
-            list-style-type: decimal-leading-zero; 
-            font-size: 14px; 
-            text-decoration: none;
-        }
-        td.views-field.views-field-field-datum{
-            width: 25%;
-        }
-        .views-exposed-form { 
-            display: flex; 
-            margin-bottom: 20px;
-            div.form-item { 
-                width: 70%;
-            }
-        }
-        .pager__items { 
-            margin-left: -15px;
-            margin-right: -15px; 
-            margin-bottom: -15px;
-        }
+    td a {
+      list-style-type: decimal-leading-zero;
+      font-size: 14px;
+      text-decoration: none;
     }
-    &--vieweventspage-1 .main-content caption, 
-    &--viewjob-offeringspage-1 .main-content h1, 
-    &--viewnabidka-pracipage-1 .main-content h1 { 
-        font-size: 2rem; 
-        padding: 0 15px 10px; 
-        border-bottom: .2rem solid #f6f6f6; 
-        text-transform: uppercase; 
-        color: $c4; 
-        text-align: left; 
-        margin-bottom: 0; 
-        margin-left: -15px; 
-        margin-right: -30px; 
-        font-weight: normal; 
+    td.views-field.views-field-field-datum {
+      width: 25%;
     }
-    &--viewfronthomepage .articles .news-feed__footer .dash, 
-    &--viewfronthomepage .articles .news-feed__footer a { 
-        display: none; 
+    .views-exposed-form {
+      display: flex;
+      margin-bottom: 20px;
+      div.form-item {
+        width: 70%;
+      }
     }
+    .pager__items {
+      margin-left: -15px;
+      margin-right: -15px;
+      margin-bottom: -15px;
+    }
+  }
+  &--vieweventspage-1 .main-content caption,
+  &--viewjob-offeringspage-1 .main-content h1,
+  &--viewnabidka-pracipage-1 .main-content h1 {
+    font-size: 2rem;
+    padding: 0 15px 10px;
+    border-bottom: 0.2rem solid #f6f6f6;
+    text-transform: uppercase;
+    color: $c4;
+    text-align: left;
+    margin-bottom: 0;
+    margin-left: -15px;
+    margin-right: -30px;
+    font-weight: normal;
+  }
+  &--viewfronthomepage .articles .news-feed__footer .dash,
+  &--viewfronthomepage .articles .news-feed__footer a {
+    display: none;
+  }
+
+  &--podcast {
+    display: flex;
+    flex-direction: column;
+    max-width: 1024px;
+  }
+  &--podcast .main-content {
+    width: 100%;
+  }
 }

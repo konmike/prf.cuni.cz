@@ -1,0 +1,27 @@
+.episode {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0 1rem;
+  margin-bottom: 2em;
+  padding: 2em;
+
+  h3 {
+    width: 100%;
+    margin-bottom: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    outline: none;
+  }
+
+  &--description {
+    max-width: 50%;
+    padding-right: 1em;
+  }
+
+  &--iframe {
+    max-width: calc(50% - 1rem);
+    margin-top: 0;
+  }
+}

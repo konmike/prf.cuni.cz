@@ -1,4 +1,4 @@
-@use '../abstracts/var' as *;
+@use "../abstracts/var" as *;
 
 .btn {
   display: inline-block;
@@ -37,5 +37,32 @@
     font-family: "Amatic SC", "Open Sans", sans-serif;
     font-size: 4rem;
     padding: 0.5em;
+  }
+
+  &--arrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: transparent;
+    border-color: $c4;
+    color: $c4;
+    font-weight: 800;
+    text-transform: uppercase;
+    width: fit-content;
+    padding: 0 1em;
+
+    &:hover {
+      background-color: $c4;
+      color: $c1;
+    }
+
+    &::after {
+      content: "\f30b" !important;
+      display: inline-block;
+      padding-left: 0.5em;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 800;
+      font-size: 2.5rem;
+    }
   }
 }

@@ -9,10 +9,11 @@ global-styling:
   dependencies:
     - core/jquery
 
-jobs-styling:
-  css:
-    theme:
-      css/jobs.css: {}
+podcast:
+  js:
+    js/podcast.js: {}
+  dependencies:
+    - core/drupalSettings    
 
 css-job-offer:
   css:
