@@ -50,9 +50,11 @@
 
 {% block paragraph %}
   <section {{ attributes.addClass(classes) }} id='{{ content.field_join_with_next_block[0] }}'>
+  
     {% block content %}
 
-    {% if (content.field_skryt_nadpis['#items'].0.getValue().value) %}{% else %}
+    {% if (content.field_skryt_nadpis['#items'].0.getValue().value) %}
+    {% else %}
         {{ content.field_title }}
     {% endif %}
 

@@ -1,0 +1,31 @@
+.paragraph {
+  $this: &;
+  max-width: 135rem;
+  margin: auto;
+  padding-bottom: 1rem;
+  background-color: #fff;
+
+  &--customizable {
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .logo {
+      max-width: 350px;
+      margin-left: auto;
+    }
+  }
+  &--red-white {
+    color: #ffffff;
+    a {
+      font-weight: 800;
+      border-color: #ffffff;
+      &::after {
+        background-image: url("../images/icons/external-white.svg") !important;
+      }
+
+      &:hover {
+        border: 0;
+      }
+    }
+  }
+}
