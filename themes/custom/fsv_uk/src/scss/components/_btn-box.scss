@@ -1,4 +1,19 @@
 .btn-box {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 1em;
+
+  li:last-child img {
+    max-height: 4rem;
+  }
+
+  img {
+    max-height: 6rem;
+    width: auto;
+  }
+
+  a::after {
+    display: none !important;
+  }
 }

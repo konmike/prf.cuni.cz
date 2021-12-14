@@ -1,3 +1,5 @@
+@use "../../abstracts/var" as *;
+
 .episode {
   display: flex;
   flex-direction: row;
@@ -18,10 +20,18 @@
   &--description {
     max-width: 50%;
     padding-right: 1em;
+
+    @media (max-width: ($md * 1em)) {
+      max-width: 100%;
+    }
   }
 
   &--iframe {
     max-width: calc(50% - 1rem);
     margin-top: 0;
+
+    @media (max-width: ($md * 1em)) {
+      max-width: 100%;
+    }
   }
 }
