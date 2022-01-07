@@ -92,7 +92,11 @@ onsubmit="searchPrimo()">
 <input type="hidden" name="vid" value="420CKIS_INST:UKAZ">
 <input type="hidden" name="tab" value="Everything">
 <input type="hidden" name="search_scope" value="MyInst_and_CI">
+{% if current_language == 'en' %}
+<input type="hidden" name="lang" value="en">
+{% else %}
 <input type="hidden" name="lang" value="cs">
+{% endif %}
 <input type="hidden" name="mode" value="basic">
 <!-- Fixed parameters -->
 <input type="hidden" name="query" id="primoQuery">
