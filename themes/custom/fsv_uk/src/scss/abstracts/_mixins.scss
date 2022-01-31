@@ -1,3 +1,5 @@
+@use "var" as *;
+
 @mixin flex-prop($min, $max, $property: font-size, $start: 320, $end: 1200) {
   $multiplier: ($max - $min) / ($end - $start) * 100;
   $adder: ($min/10 * $end - $max/10 * $start) / ($end - $start);
@@ -44,4 +46,15 @@
   width: $length; /* Change this to whatever width you want. */
   padding-top: 20px; /* This creates some space between the element and the border. */
   border-bottom: $width solid $color; /* This creates the border. Replace black with whatever color you want. */
+}
+
+@mixin mq($key) {
+  $size: map-get(
+    $map: $breakpoints,
+    $key: $key,
+  );
+
+  @media only screen and (max-width: $size) {
+    @content;
+  }
 }

@@ -1,0 +1,25 @@
+@use "../../abstracts" as *;
+
+.paragraph--circle-video-gallery {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  min-height: 500px;
+  position: relative;
+
+  @include mq(mobile) {
+    gap: 1em;
+    margin-bottom: 1em;
+  }
+}
+
+.paragraph--circle-video-gallery.view-open {
+  min-height: 400px;
+  margin-top: -2em;
+  align-items: flex-start;
+
+  @include mq(mobile) {
+    margin-top: 0;
+    padding-inline: 1em;
+  }
+}

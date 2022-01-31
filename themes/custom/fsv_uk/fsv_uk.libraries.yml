@@ -9,6 +9,10 @@ global-styling:
   dependencies:
     - core/jquery
 
+circle-video-gallery:
+  js:
+    js/circle-video-gallery.js: {}
+    
 podcast:
   js:
     js/podcast.js: {}

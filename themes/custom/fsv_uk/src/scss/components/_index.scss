@@ -1,6 +1,6 @@
 @forward "slider";
 @forward "link-boxes";
-
+@forward "body";
 @forward "description";
 @forward "nav-links";
 @forward "halved-nav-links";
@@ -32,3 +32,9 @@
 
 @forward "podcast/episode-feed";
 @forward "podcast/episode";
+
+@forward "circle-video-gallery/view";
+@forward "circle-video-gallery/circle";
+@forward "circle-video-gallery/gallery";
+@forward "circle-video-gallery/galleryItem";
+@forward "circle-video-gallery/galleryItemsPositions";

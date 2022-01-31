@@ -1,0 +1,49 @@
+@use "../../abstracts" as *;
+
+.paragraph--view {
+  padding-block: 2em 0;
+}
+.view {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em;
+  padding-bottom: 2.5em;
+  margin-inline: auto;
+  height: 0;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+
+  z-index: 2;
+  scroll-margin-top: 200px;
+  transition: all 150ms;
+
+  /* outline: 1px solid aqua; */
+
+  &.show {
+    display: flex;
+    height: auto;
+    opacity: 1;
+    max-width: min-content;
+    position: relative;
+
+    @include mq(mobile) {
+      max-width: 100%;
+      border-radius: 10px 10px 0 0;
+      padding-bottom: 0.5em;
+      margin-inline: 1em;
+    }
+
+    & > .iframe {
+      border-radius: 5px;
+      width: auto;
+      aspect-ratio: 16/9;
+
+      @include mq(mobile) {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

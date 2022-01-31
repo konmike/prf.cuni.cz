@@ -24,7 +24,6 @@ $c7: #f6f6f6;
 $c8: #af1037;
 $c9: #dcdcdc;
 
-
 $c10a: #e85626;
 $c10b: #2f92cc;
 $c10c: #ff9900;
@@ -35,3 +34,8 @@ $c11: #a0a0a0;
 $c12: #fafafa;
 $c13: #dddddd;
 $c14: #777777;
+
+$breakpoints: (
+  mobile: 40em,
+  one-column: 27.5em,
+);
