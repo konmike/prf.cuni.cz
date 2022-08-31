@@ -1,0 +1,42 @@
+@use "../abstracts/var" as *;
+
+.list--lower-alpha {
+  counter-reset: list;
+}
+.list--lower-alpha > li {
+  list-style: none;
+}
+.list--lower-alpha > li:before {
+  content: counter(list, lower-alpha) ") ";
+  counter-increment: list;
+}
+
+.list--nested {
+  list-style-type: none;
+  counter-reset: item;
+  padding-right: 40px;
+
+  @media screen and (max-width: ($sm * 1em)) {
+    padding-inline: 0;
+  }
+}
+
+.list--nested > li {
+  display: table;
+  counter-increment: item;
+  margin-bottom: 0.6em;
+}
+
+.list--nested > li:before {
+  content: counters(item, ".") ". ";
+  display: table-cell;
+  padding-right: 0.6em;
+}
+
+.list--nested > li .list--nested > li {
+  margin: 0;
+}
+
+.list--nested > li .list--nested > li:before {
+  content: counters(item, ".") " ";
+}

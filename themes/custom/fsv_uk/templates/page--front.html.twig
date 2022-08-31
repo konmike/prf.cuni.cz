@@ -77,7 +77,7 @@
                 </div>
                 <div class="layout-aside news-feed news-feed-events padding-bottom">
 
-{% if current_language == 'cs' %}
+                {% if current_language == 'cs' %}
 
                     <h2 class="news-feed__section-title section-title padding">{{ 'Events'|t }} <a class="" href="events">{{ 'All events'|t }}</a> </h2>
                     {{ drupal_view('events', 'today') }}
@@ -85,13 +85,33 @@
                     {{ drupal_view('events', 'soon') }}
                     {{ drupal_view('events', 'recomend') }}
 
-<div style="margin-bottom:30px;"></div>
+                    <div style="margin-bottom:30px;"></div>
 
-                    {% endif %}
+                    
+
+                {% endif %}
 
 					
 
                     {{ page.front_aside }}
+
+                {% if current_language == 'cs' %}
+
+                    <div style="margin-bottom:30px;"></div>
+                    
+                    <div class="jobs-teaser">
+                        <header>
+                            <h2 class="news-feed__section-title section-title padding">
+                                Desítky pracovních pozic pro právníky
+                            </h2>
+                            <h3 class="">Vyberte si</h3>
+                        </header>
+
+                        {{ drupal_view('nabidka_praci', 'jobs_teaser') }}
+                    </div>
+
+                    
+                {% endif %}
 
                 </div>
             </div>

@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .prefooter {
   $this: &;
@@ -142,14 +142,14 @@
     }
   }
 
-  @media (min-width: $sm * 1em) {
+  @media (min-width: ($sm * 1em)) {
     &__newsletter,
     &__text {
       max-width: 66.666%;
     }
   }
 
-  @media (min-width: $md * 1em) {
+  @media (min-width: ($md * 1em)) {
     &__left,
     &__right {
       // lost-column: 1/2;

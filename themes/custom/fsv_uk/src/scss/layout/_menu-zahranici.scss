@@ -1,0 +1,209 @@
+@use "../abstracts" as *;
+
+[data-url^="/zahranici-nova"],
+[data-url="/zahranici-mgr-studenti"],
+[data-url="/zahranici-mgr-studenti-erasmus"],
+[data-url="/zahranici-mgr-studenti-mezifakultni-smlouvy"],
+[data-url="/zahranici-mgr-studenti-meziuniverzitni-smlouvy"],
+[data-url="/zahranici-mgr-studenti-ostatni"],
+[data-url="/zahranici-phd-studenti"],
+[data-url="/zahranici-phd-studenti-erasmus"],
+[data-url="/zahranici-phd-studenti-mezifakultni-smlouvy"],
+[data-url="/zahranici-phd-studenti-meziuniverzitni-smlouvy"],
+[data-url="/zahranici-phd-studenti-sylff"],
+[data-url="/zahranici-phd-studenti-ostatni"],
+[data-url="/zahranici-absolventi"],
+[data-url="/zahranici-absolventi-erasmus"],
+[data-url="/zahranici-absolventi-llm"],
+[data-url="/zahranici-absolventi-ostatni"],
+[data-url="/zahranici-zamestnanci"],
+[data-url="/zahranici-zamestnanci-akademici"],
+[data-url="/zahranici-zamestnanci-administrativni-pracovnici"],
+[data-url="/zahranici-zamestnanci-formulare"],
+[data-url="/partnerske-univerzity"],
+[data-url="/zahranici-faq"],
+[data-url^="/zahranici/aktuality"] {
+  .side-nav__list {
+    display: grid;
+    row-gap: 1em;
+  }
+  .side-nav__list-lvl2 {
+    padding: 0;
+    padding-top: 0.5em;
+  }
+
+  .side-nav__item {
+    border: 0;
+    &:nth-last-child(3),
+    &:last-child {
+      border: 2px solid var(--clr-light-gray);
+    }
+    &:nth-last-child(3) {
+      @media screen and (min-width: ($lg * 1em)) {
+        margin-top: 4em;
+      }
+    }
+  }
+
+  .side-nav__item-lvl2 {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 0.5em 0.5em 0.5em 0;
+    transition: background-color 250ms;
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &::before {
+      content: "";
+      display: block;
+      min-width: 0.75em;
+      min-height: 0.75em;
+      margin-inline: 1.25em 0.75em;
+      background-color: transparent;
+      transition: background-color 250ms;
+    }
+  }
+
+  .side-nav__link-lvl2.is-active,
+  .side-nav__link-lvl2.side-nav__link-lvl2--active {
+    color: $c2;
+    font-weight: 600;
+    &::after {
+      display: none;
+    }
+  }
+
+  .side-nav__link {
+    text-align: center;
+    border-left: 0;
+    border-bottom: 0;
+    // border: 1px solid rgba(0, 0, 0, 0.4);
+
+    font-family: var(--calibri);
+    font-size: 2rem;
+    font-weight: 500;
+    color: $c2;
+    padding-block: 0.4em;
+  }
+
+  .side-nav__link-lvl2 {
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  .side-nav__link--mgr,
+  .side-nav__link--phd,
+  .side-nav__link--absolventi,
+  .side-nav__link--zamestnanci {
+    color: $c1;
+    border: 0;
+    font-weight: 400;
+
+    &:hover {
+      border: 0;
+    }
+
+    + .side-nav__toggle::after {
+      color: $c1;
+    }
+  }
+
+  .side-nav__link--mgr {
+    background-color: var(--clr-mgr);
+
+    ~ .side-nav__list-lvl2 .side-nav__item-lvl2 {
+      &:hover,
+      &.side-nav__item--active {
+        background-color: var(--clr-light-mgr);
+        &::before {
+          background-color: var(--clr-mgr);
+        }
+      }
+    }
+  }
+  .side-nav__link--phd {
+    background-color: var(--clr-phd);
+    ~ .side-nav__list-lvl2 .side-nav__item-lvl2 {
+      &:hover,
+      &.side-nav__item--active {
+        background-color: var(--clr-light-phd);
+        &::before {
+          background-color: var(--clr-phd);
+        }
+      }
+    }
+  }
+  .side-nav__link--absolventi {
+    background-color: var(--clr-absolventi);
+    ~ .side-nav__list-lvl2 .side-nav__item-lvl2 {
+      &:hover,
+      &.side-nav__item--active {
+        background-color: var(--clr-light-absolventi);
+        &::before {
+          background-color: var(--clr-absolventi);
+        }
+      }
+    }
+  }
+  .side-nav__link--zamestnanci {
+    background-color: var(--clr-zamestnanci);
+    ~ .side-nav__list-lvl2 .side-nav__item-lvl2 {
+      &:hover,
+      &.side-nav__item--active {
+        background-color: var(--clr-light-zamestnanci);
+        &::before {
+          background-color: var(--clr-zamestnanci);
+        }
+      }
+    }
+  }
+}
+
+[data-url^="/zahranici-nova"] .side-nav__toggle,
+[data-url="/zahranici-mgr-studenti"] .side-nav__toggle,
+[data-url="/zahranici-mgr-studenti-erasmus"] .side-nav__toggle,
+[data-url="/zahranici-mgr-studenti-mezifakultni-smlouvy"] .side-nav__toggle,
+[data-url="/zahranici-mgr-studenti-meziuniverzitni-smlouvy"] .side-nav__toggle,
+[data-url="/zahranici-mgr-studenti-ostatni"] .side-nav__toggle,
+[data-url="/zahranici-phd-studenti"] .side-nav__toggle,
+[data-url="/zahranici-phd-studenti-erasmus"] .side-nav__toggle,
+[data-url="/zahranici-phd-studenti-mezifakultni-smlouvy"] .side-nav__toggle,
+[data-url="/zahranici-phd-studenti-meziuniverzitni-smlouvy"] .side-nav__toggle,
+[data-url="/zahranici-phd-studenti-sylff"] .side-nav__toggle,
+[data-url="/zahranici-phd-studenti-ostatni"] .side-nav__toggle,
+[data-url="/zahranici-absolventi"] .side-nav__toggle,
+[data-url="/zahranici-absolventi-erasmus"] .side-nav__toggle,
+[data-url="/zahranici-absolventi-llm"] .side-nav__toggle,
+[data-url="/zahranici-absolventi-ostatni"] .side-nav__toggle,
+[data-url="/zahranici-zamestnanci"] .side-nav__toggle,
+[data-url="/zahranici-zamestnanci-akademici"] .side-nav__toggle,
+[data-url="/zahranici-zamestnanci-administrativni-pracovnici"]
+  .side-nav__toggle,
+[data-url="/zahranici-zamestnanci-formulare"] .side-nav__toggle,
+[data-url="/partnerske-univerzity"] .side-nav__toggle,
+[data-url="/zahranici-faq"] .side-nav__toggle,
+[data-url^="/zahranici/aktuality"] .side-nav__toggle {
+  color: transparent;
+  &::after {
+    content: "\f078";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 600;
+    color: $c2;
+    font-size: 1.4rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    opacity: 0.5;
+    transition: opacity 250ms;
+  }
+
+  &:hover::after {
+    opacity: 0.9;
+  }
+
+  &--active {
+    color: transparent;
+  }
+}

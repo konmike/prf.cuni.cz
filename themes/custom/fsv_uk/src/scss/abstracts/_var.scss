@@ -39,3 +39,21 @@ $breakpoints: (
   mobile: 40em,
   one-column: 27.5em,
 );
+
+:root {
+  --clr-light-gray: #f6f6f6;
+  --clr-dark-gray: #706f6f;
+  --clr-mgr: #669bbc;
+  --clr-light-mgr: hsl(204, 39%, 85%);
+  --clr-phd: #0c3148;
+  // --clr-light-phd: #bedff4;
+  --clr-light-phd: #c6c6c6;
+  --clr-dark-red: #c0161f;
+  --clr-absolventi: var(--clr-dark-red);
+  --clr-light-absolventi: #fad1d3;
+  --clr-zamestnanci: #77160e;
+  --clr-light-zamestnanci: #ffe3e0;
+  --clr-dark-red-hsl: 357, 79%, 42%;
+  --clr-light-gray-hsl: 0, 0%, 96%;
+  --calibri: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+}

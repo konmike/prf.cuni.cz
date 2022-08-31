@@ -7,6 +7,8 @@ libraries-override:
 libraries:
   - fsv_uk/global-styling
   - fsv_uk/font-awesome
+ckeditor_stylesheets:
+  - css/ckeditor/custom.css
 regions:
   bottom_header: Bottom Header
   top_header: Top Header

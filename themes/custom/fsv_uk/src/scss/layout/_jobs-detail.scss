@@ -12,7 +12,9 @@
   & .wrapper--company {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     background: whitesmoke;
   }
   dl {
@@ -37,26 +39,29 @@
       }
     }
   }
-  // & p{
-  //     background: rgb(255, 255, 255);
-  //     padding: 1rem 1rem 2rem 2rem;
-  //     outline: none;
-  // }
 
   .wrapper--logo {
     //PRO verze
-    display: none;
+    display: block;
+    margin: 1em;
+    max-width: 150px;
+    > img {
+      height: auto;
+    }
 
-    width: 300px;
+    @media screen and (max-width: ($sm * 1em)) {
+      order: -2;
+      margin-inline: auto;
+    }
   }
   .topovat {
     //PRO verze
-    display: none;
-
+    display: block;
+    padding: 0.1em 0.75em;
     background: $c4;
     color: $c1;
-    padding: 0.2rem 0.5rem;
     font-weight: 900;
+    border-radius: 5px;
   }
   .spolecnost:before,
   .adresa:before,
@@ -82,7 +87,7 @@
       justify-content: flex-start;
       padding: 0 2rem;
 
-      @media screen and (min-width: $sm * 1em) {
+      @media screen and (min-width: ($sm * 1em)) {
         flex-direction: row;
       }
 
@@ -115,7 +120,7 @@
           color: rgba(0, 0, 0, 0.8);
           content: "\f111";
 
-          @media screen and (min-width: $sm * 1em) {
+          @media screen and (min-width: ($sm * 1em)) {
             display: block;
           }
         }

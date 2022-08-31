@@ -48,9 +48,21 @@
     </section>
     <section id="circle-video-gallery" class="paragraph paragraph--circle-video-gallery printable"> 
         {% block content %}
-        <div id="circle" class="circle shadow">
+
+        {% if content.field_general_image['#items'].value is not empty %}
+            <div id="circle" class="circle shadow" style="background-image: url({{ file_url(content.field_general_image['#items'].entity.uri.value) }})">
+        {% else %}
+            <div id="circle" class="circle shadow">
+        {% endif %}
+        
+        {% if (content.field_skryt_nadpis['#items'].0.getValue().value) %}
+            <h1 id="title" class="title" style="opacity: 0;">{{ content.field_title.0 }}</h1>
+        {% else %}
             <h1 id="title" class="title">{{ content.field_title.0 }}</h1>
+        {% endif %}
+    
             <h3 id="video-label" class="video-label"></h3>
+
         </div>
         
         {{ content.field_video_link }}

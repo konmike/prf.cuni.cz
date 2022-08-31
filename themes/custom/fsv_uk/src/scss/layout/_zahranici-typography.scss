@@ -1,0 +1,79 @@
+[data-url="/zahranici-nova-verze"] + .main-content,
+[data-url="/zahranici-mgr-studenti"] + .main-content,
+[data-url="/zahranici-mgr-studenti-erasmus"] + .main-content,
+[data-url="/zahranici-mgr-studenti-mezifakultni-smlouvy"] + .main-content,
+[data-url="/zahranici-mgr-studenti-meziuniverzitni-smlouvy"] + .main-content,
+[data-url="/zahranici-mgr-studenti-ostatni"] + .main-content,
+[data-url="/zahranici-phd-studenti"] + .main-content,
+[data-url="/zahranici-phd-studenti-erasmus"] + .main-content,
+[data-url="/zahranici-phd-studenti-mezifakultni-smlouvy"] + .main-content,
+[data-url="/zahranici-phd-studenti-meziuniverzitni-smlouvy"] + .main-content,
+[data-url="/zahranici-phd-studenti-sylff"] + .main-content,
+[data-url="/zahranici-phd-studenti-ostatni"] + .main-content,
+[data-url="/zahranici-absolventi"] + .main-content,
+[data-url="/zahranici-absolventi-erasmus"] + .main-content,
+[data-url="/zahranici-absolventi-llm"] + .main-content,
+[data-url="/zahranici-absolventi-ostatni"] + .main-content,
+[data-url="/zahranici-zamestnanci"] + .main-content,
+[data-url="/zahranici-zamestnanci-akademici"] + .main-content,
+[data-url="/zahranici-zamestnanci-administrativni-pracovnici"] + .main-content,
+[data-url="/zahranici-zamestnanci-formulare"] + .main-content,
+[data-url="/partnerske-univerzity"] + .main-content,
+[data-url="/zahranici-faq"] + .main-content,
+[data-url^="/zahranici/aktuality"] + .main-content {
+  .section--white-text,
+  #bodycontent {
+    hr {
+      border-bottom: 1px solid #c0161f;
+      margin-block: 2rem;
+    }
+    p,
+    a,
+    span,
+    b,
+    i {
+      font-family: var(--calibri) !important;
+      font-size: 1.6rem !important;
+      line-height: 1.35 !important;
+      margin-left: 0 !important;
+    }
+    ol:not([class]) > li > ul:not([class]),
+    ul:not([class]) > li > ol:not([class]),
+    ol:not([class]) > li > ol:not([class]),
+    ul:not([class]) > li > ul:not([class]) {
+      margin-top: 0.3em;
+    }
+    ol:not([class]),
+    ul:not([class]) {
+      li {
+        margin-left: 0 !important;
+        line-height: 1.35;
+        margin-bottom: 0.1em !important;
+        &:last-child {
+          margin-bottom: 0.5em;
+        }
+        &:empty {
+          display: none;
+        }
+      }
+    }
+    ul:not([class]) {
+      //   margin-left: 0.5em;
+      padding-left: 40px;
+      list-style: initial;
+      li {
+        list-style: inherit;
+        text-indent: 0;
+        padding-left: 0;
+
+        &::before {
+          display: none;
+        }
+
+        &.paragraph {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}

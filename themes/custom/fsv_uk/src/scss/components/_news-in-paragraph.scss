@@ -1,0 +1,194 @@
+@use "../abstracts" as *;
+
+.paragraph--news-in-par {
+  --clr-important-red: #c11720;
+  padding-inline: 1em;
+
+  .news__filter {
+    display: none;
+  }
+  .news__feed {
+    width: 100%;
+    margin-block: 0;
+  }
+  .section-title {
+    border: 0;
+    margin: 0;
+    margin-left: 0.5em;
+    padding-bottom: 0.3em;
+    padding-left: 0;
+    text-transform: uppercase;
+    color: $c2;
+    font-size: 1.7rem;
+    font-family: var(--calibri);
+  }
+
+  > a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: var(--calibri);
+    margin: 0.5em 1em 2em 0.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    color: hsl(0, 0%, 10%, 90%);
+    transition: color 250ms;
+
+    &:hover,
+    &:focus {
+      color: hsl(0, 0%, 10%);
+    }
+
+    &::after {
+      content: "\f0da";
+      font-family: "Font Awesome 5 Free";
+      color: var(--clr-important-red);
+      font-weight: 600;
+      font-size: 3.5rem;
+      padding-left: 0.5em;
+      text-decoration: none;
+    }
+  }
+}
+
+.news-list {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 1em 1.5em;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  list-style: none;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+
+    padding: 1em;
+    background-color: $c7;
+
+    position: relative;
+    z-index: 1;
+
+    &:hover,
+    &:focus,
+    &:focus-within {
+      .more {
+        transform: translateX(0px);
+        opacity: 1;
+      }
+    }
+
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   inset: -2px;
+    //   z-index: -2;
+    //   background: $c5;
+    //   transform: skew(2deg, 2deg);
+    // }
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   inset: 0;
+    //   z-index: -1;
+    //   background: white;
+    //   border: 1px solid rgb(175, 16, 55, 0.1);
+    // }
+
+    .link {
+      line-height: 1.3;
+      font-family: Calibri, "Gill Sans", "Gill Sans MT", "Trebuchet MS",
+        sans-serif;
+      font-size: 1.9rem;
+      // font-weight: 600;
+    }
+  }
+
+  .item__header {
+    margin-bottom: 1em;
+  }
+
+  .item__header .news--tags-colors {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 0.5em;
+    width: min-content;
+  }
+
+  .item__header ul > li {
+    height: 1em;
+    width: 1em;
+  }
+  .item__header .tag--mgr {
+    background-color: var(--clr-mgr);
+  }
+  .item__header .tag--phd {
+    background-color: var(--clr-phd);
+  }
+  .item__header .tag--absolventi {
+    background-color: var(--clr-absolventi);
+  }
+  .item__header .tag--zamestnanci {
+    background-color: var(--clr-zamestnanci);
+  }
+
+  .item__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 1em;
+
+    .more {
+      display: flex;
+      align-items: center;
+      padding: 0;
+
+      font-size: 1.2rem;
+      color: #b7b7b7;
+      letter-spacing: 2px;
+      line-height: 1;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 250ms ease-in-out;
+      opacity: 0;
+
+      position: relative;
+      transform: translateX(-20px);
+      overflow: hidden;
+      cursor: pointer;
+
+      &:hover {
+        color: #000;
+      }
+
+      // &::after {
+      //   content: "\f0da";
+      //   font-family: "Font Awesome 5 Free";
+      //   color: var(--clr-important-red);
+      //   font-weight: 600;
+      //   padding-left: 0.3em;
+      //   font-size: 2rem;
+      // }
+    }
+
+    .date {
+      display: flex;
+      align-items: center;
+
+      font-size: 1.2rem;
+
+      position: relative;
+
+      // &::before {
+      //   content: "\f783";
+      //   font-family: "Font Awesome 5 Free";
+      //   font-weight: 800;
+      //   opacity: 0.5;
+      //   margin-right: 0.3em;
+      //   font-size: 1.5rem;
+      // }
+    }
+  }
+}

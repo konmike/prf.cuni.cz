@@ -164,20 +164,7 @@ p.nameItemCal {
   line-height: 20px;
   margin-bottom: 1.5rem;
 }
-#publications {
-  input[type="text"] {
-    padding: 1.3em;
-  }
-  header {
-    margin-bottom: 10px;
-  }
-  td.views-field.views-field-puty {
-    white-space: nowrap;
-  }
-  .views-exposed-form {
-    margin-bottom: 15px;
-  }
-}
+
 #block-views-block-osoby-block-3 td {
   width: 50%;
   vertical-align: top;
@@ -230,6 +217,10 @@ fieldset#edit-abc--wrapper {
   padding: 0 0 20px;
   margin: 0;
 }
+fieldset#edit-cat--wrapper {
+  border: none;
+  padding: 0;
+}
 #vieweventspage-1 aside {
   display: none;
 }
@@ -245,9 +236,7 @@ fieldset#edit-abc--wrapper {
 .font-normal * {
   font-size: 16px;
 }
-th#view-nazev-table-column {
-  width: 60%;
-}
+
 [class^="â€nodeâ€"] {
   display: none;
 }

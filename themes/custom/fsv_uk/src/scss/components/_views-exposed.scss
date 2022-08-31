@@ -1,91 +1,88 @@
-@use '../abstracts/var' as *;
+@use "../abstracts/var" as *;
 
-.exposed-checked { 
-    background: $c4 !important; 
-    color: $c1;
+.exposed-checked {
+  background: $c4 !important;
+  color: $c1;
 }
-.exposed-views-block { 
-    background: $c1;
-    .form-text { 
-        height: 5rem; 
-        background-color: #f6f6f6; 
-        border: none; 
-        padding: 1rem; 
-        margin-bottom: .5rem; 
-    }
+.exposed-views-block {
+  background: $c1;
+  .form-text {
+    height: 5rem;
+    background-color: #f6f6f6;
+    border: none;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+  }
 }
 
-#publications .views-exposed-form { 
-    margin-bottom: 15px;
-}
-// #views-exposed-form-news-page-block-homepage-courses-feed { 
-//     border: none; 
-//     padding: 0; 
+// #views-exposed-form-news-page-block-homepage-courses-feed {
+//     border: none;
+//     padding: 0;
 //     margin: 0;
 // }
-#views-exposed-form-news-page-block-homepage-news-feed .form-item-cat, 
-#views-exposed-form-news-page-block-homepage-courses-feed .form-item-field-taxonomy-general-tags-target-id { 
-    display: inline-block; 
-    color: $c1; 
-    padding: 12px 12px 14px;
+#views-exposed-form-news-page-block-homepage-news-feed .form-item-cat,
+#views-exposed-form-news-page-block-homepage-courses-feed
+  .form-item-field-taxonomy-general-tags-target-id {
+  display: inline-block;
+  color: $c1;
+  padding: 12px 12px 14px;
 
-    @media (min-width:35.5em) { 
-            cursor: pointer;
-    }
-}
-#views-exposed-form-news-page-block-homepage-news-feed, 
-#views-exposed-form-news-page-block-homepage-courses-feed { 
-    background: $c4;
-    input{
-        display: none;
-    }
-    .form-radios{
-        padding: 0 10px 0 10px;
-    }
-    .checked{
-        background: $c1; 
-        padding: 12px 12px 20px; 
-        color: $c2;
-    }
-}
-#views-exposed-form-news-page-block-homepage-news-feed .form-item-cat label, 
-#views-exposed-form-news-page-block-homepage-courses-feed label { 
+  @media (min-width: 35.5em) {
     cursor: pointer;
+  }
 }
-#views-exposed-form-news-page-block-homepage-courses-feed .item-list { 
-    width: 100%;
+#views-exposed-form-news-page-block-homepage-news-feed,
+#views-exposed-form-news-page-block-homepage-courses-feed {
+  background: $c4;
+  input {
+    display: none;
+  }
+  .form-radios {
+    padding: 0 10px 0 10px;
+  }
+  .checked {
+    background: $c1;
+    padding: 12px 12px 20px;
+    color: $c2;
+  }
 }
-#views-exposed-form-events-page-1{
-    .form-submit { 
-        background-color: $c4; 
-        font-size: 1.6rem; 
-        height: 3.6rem; 
-        line-height: 3.6rem; 
-        color: #fff; 
-        padding: 5px; 
-        margin-left: 15px; 
-        border: .2rem solid $c4; 
-        cursor: pointer; 
-        box-sizing: content-box; 
-        width: 33%; 
-        transition: all .3s;
-    }
-    .form-item-field-datum-value { 
-        width: auto;
-    }
-    .form-item-title input { 
-        height: 5rem; 
-        background-color: #f6f6f6; 
-        border: none; 
-        padding: 1rem; 
-        margin-bottom: .5rem;
-    }
+#views-exposed-form-news-page-block-homepage-news-feed .form-item-cat label,
+#views-exposed-form-news-page-block-homepage-courses-feed label {
+  cursor: pointer;
+}
+#views-exposed-form-news-page-block-homepage-courses-feed .item-list {
+  width: 100%;
+}
+#views-exposed-form-events-page-1 {
+  .form-submit {
+    background-color: $c4;
+    font-size: 1.6rem;
+    height: 3.6rem;
+    line-height: 3.6rem;
+    color: #fff;
+    padding: 5px;
+    margin-left: 15px;
+    border: 0.2rem solid $c4;
+    cursor: pointer;
+    box-sizing: content-box;
+    width: 33%;
+    transition: all 0.3s;
+  }
+  .form-item-field-datum-value {
+    width: auto;
+  }
+  .form-item-title input {
+    height: 5rem;
+    background-color: #f6f6f6;
+    border: none;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+  }
 }
 
-
-@media (max-width:62.4375em) {  
-    #views-exposed-form-news-page-block-homepage-news-feed .form-radios, 
-    #views-exposed-form-news-page-block-homepage-courses-feed  .form-radios { 
-        padding: 10px;
-    }
+@media (max-width: 62.4375em) {
+  #views-exposed-form-news-page-block-homepage-news-feed .form-radios,
+  #views-exposed-form-news-page-block-homepage-courses-feed .form-radios {
+    padding: 10px;
+  }
 }

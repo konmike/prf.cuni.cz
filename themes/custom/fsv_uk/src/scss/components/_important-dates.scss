@@ -1,0 +1,59 @@
+@use "../abstracts" as *;
+
+.paragraph--dulezita-data-group {
+  padding-inline: 1em;
+  .section-title {
+    border: 0;
+    margin: 0;
+    padding-left: 0;
+    text-transform: none;
+    color: $c5;
+  }
+}
+
+.important-dates {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  .item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    &:first-child {
+      .date {
+        background-color: $c1;
+        color: $c5;
+      }
+    }
+    &:nth-child(4n + 4) {
+      + .item {
+        .date {
+          background-color: $c1;
+          color: $c5;
+        }
+      }
+      .date {
+        background-color: $c1;
+        color: $c5;
+      }
+    }
+  }
+  .date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+    width: 7rem;
+    height: 7rem;
+    aspect-ratio: 1/1;
+    font-weight: 800;
+    background-color: $c5;
+    color: $c1;
+    border: 2px solid #af1037;
+    border-radius: 50%;
+  }
+  .title {
+    margin: 0.3em 0.5em;
+    font-size: 1.5rem;
+  }
+}

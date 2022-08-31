@@ -9,15 +9,35 @@ global-styling:
   dependencies:
     - core/jquery
 
-circle-video-gallery:
-  js:
-    js/circle-video-gallery.js: {}
-    
 podcast:
   js:
     js/podcast.js: {}
   dependencies:
-    - core/drupalSettings    
+    - core/drupalSettings
+
+circle-video-gallery:
+  js:
+    js/circle-video-gallery.js: {}
+
+jobs-form:
+  js:
+    js/jobs-form.js: {}
+
+select2:
+  css:
+    theme:
+      css/_select2.min.css: {}
+  js:
+    js/select2.min.js: {}  
+    js/custom-select.js: {}
+
+calendar:
+  css:
+    theme:
+      css/_simple-calendar.css: {}
+  js:
+    js/simple-calendar.min.js: {}
+    js/simple-calendar-custom.js: {}
 
 css-job-offer:
   css:
@@ -32,4 +52,4 @@ list-job-offer:
 font-awesome:
   css:
     theme:
-      'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css': {type:external}
+      //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css: {type: external}

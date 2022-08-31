@@ -1,0 +1,114 @@
+.header_page {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  padding: 1.5em;
+  box-sizing: border-box;
+}
+
+.background_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.background_image img {
+  object-fit: cover;
+  object-position: top;
+  width: 100%;
+  height: 99%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.header_page .background_image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.7) 0%,
+    white 100%
+  );
+}
+
+.right_side {
+  display: grid;
+  grid-auto-flow: row;
+  justify-items: flex-end;
+  row-gap: 1em;
+  width: fit-content;
+  margin-left: auto;
+  position: relative;
+}
+.right_side .social_links,
+.right_side .header_submenu {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 1em;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.right_side .social_links {
+  width: min-content;
+}
+
+.right_side .social_links a {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: transparent;
+  &::after {
+    display: none !important;
+  }
+}
+.right_side .social_links .fb {
+  background-image: url(../images/icons/fb.svg);
+}
+.right_side .social_links .ig {
+  background-image: url(../images/icons/instagram.svg);
+}
+
+.right_side .header_submenu a {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5em;
+  line-height: 1.5;
+  color: #000000;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  text-decoration: none;
+}
+
+.right_side .header_submenu .uni::before {
+  content: "";
+  background-image: url(../images/icons/uni.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.headers-wrapper {
+  position: relative;
+  text-align: center;
+  padding-top: 1em;
+  color: #575757;
+}
+.headers-wrapper .title {
+  font-weight: 800;
+  margin-top: 0.7em;
+}
+.headers-wrapper .subtitle {
+  font-weight: normal;
+}

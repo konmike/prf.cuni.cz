@@ -1,0 +1,39 @@
+@use "../abstracts/var" as *;
+
+.section-menu {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  padding: 1em 1.5em;
+  padding-bottom: 0;
+
+  li {
+    &::after {
+      content: "|";
+      color: var(--clr-dark-red);
+      padding-inline: 0.3em;
+    }
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  .link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $c2 !important;
+    font-weight: 500;
+    font-family: var(--calibri);
+    transition: font-weight 185ms ease-in-out;
+
+    &:hover,
+    &.active {
+      font-weight: 600;
+    }
+
+    // &.active {
+    //   border-bottom: 1px solid;
+    //   color: $c5;
+    // }
+  }
+}

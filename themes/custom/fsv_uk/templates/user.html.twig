@@ -48,23 +48,31 @@
 <div class="tabframe mb">
 	<div class="tab">
 		{% if content.field_cv[0] is not empty %}
-			<button class="tablinks" onclick="openTab(event, 'cv')" id="defaultopen">Životopis</button>
+			<button class="tablinks" onclick="openTab(event, 'cv')" id="defaultopen">{{ 'Curriculum Vitae'|t }}</button>
 		{% endif %}
 		{% if content.field_id_ucitele[0] is not empty %}
-			<button class="tablinks" onclick="openTab(event, 'publications')" {% if content.field_cv[0] is empty %} id="defaultopen" {% endif %}>Publikace</button>
-			<button class="tablinks" onclick="openTab(event, 'teaching')">Výuka</button>
-			<button class="tablinks" onclick="openTab(event, 'timetable')">Rozvrh</button>
-			<button class="tablinks" onclick="openTab(event, 'advisor')">Školitel</button>
+			<button class="tablinks" onclick="openTab(event, 'publications')" {% if content.field_cv[0] is empty %} id="defaultopen" {% endif %}>{{ 'Publications'|t }}</button>
+			<button class="tablinks" onclick="openTab(event, 'teaching')">{{ 'Teaching'|t }}</button>
+			<button class="tablinks" onclick="openTab(event, 'timetable')">{{ 'Timetable'|t }}</button>
+			<button class="tablinks" onclick="openTab(event, 'advisor')">{{ 'Advisor'|t }}</button>
 		{% endif %}
 	</div>
-	{% if content.field_cv[0] is not empty %}
+	{% if content.field_cv[0] is not empty or content.field_cv_en[0] is not empty %}
 		<div id="cv" class="tabcontent padding" style="display: block;">
-			{{ content.field_cv }}
+			{% if current_language == 'en' and content.field_cv_en[0] is not empty %}
+				{{ content.field_cv_en }}
+			{% else %}
+				{{ content.field_cv }}
+			{% endif %}				
 		</div>
 	{% endif %}
 	{% if content.field_id_ucitele[0] is not empty %}
 		<div id="publications" class="tabcontent padding" style="display: none;">
-			{{ drupal_view('publikace', 'obd') }}
+			{% if current_language == 'en' %}
+				{{ drupal_view('publikace', 'obd_eng') }}
+			{% else %}
+				{{ drupal_view('publikace', 'obd_cz') }}
+			{% endif %}
 		</div>
 		<div id="teaching" class="tabcontent padding" style="display: none;">
 			{{ drupal_view('user_integration', 'teaching') }}

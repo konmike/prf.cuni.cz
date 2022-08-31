@@ -1,0 +1,74 @@
+@use "../abstracts" as *;
+
+#publications {
+  header {
+    margin-bottom: 10px;
+  }
+  th#view-nazev-table-column,
+  th[id^="view-nazev-table-column--"] {
+    width: 50%;
+  }
+
+  input[type="text"] {
+    padding: 1.3em;
+  }
+  .views-field-rok,
+  .views-field-puty,
+  .views-field-PUISBN {
+    white-space: nowrap;
+  }
+
+  .views-field-nazev,
+  .views-field-rok,
+  .views-field-puty,
+  .views-field-PUISBN {
+    &::before {
+      display: none;
+      text-transform: uppercase;
+      font-weight: 800;
+
+      @include mq(mobile) {
+        display: inline-block;
+        min-width: 25%;
+      }
+    }
+  }
+  .views-field-nazev::before {
+    content: "Publikace";
+  }
+  .views-field-rok::before {
+    content: "Rok";
+  }
+
+  .views-field-puty::before {
+    content: "Typ";
+  }
+  .views-field-PUISBN::before {
+    content: "ISBN/ISSN";
+  }
+  .views-exposed-form {
+    margin-bottom: 15px;
+  }
+
+  @include mq(mobile) {
+    thead {
+      display: none;
+    }
+
+    tr {
+      display: flex;
+      flex-direction: column;
+      max-width: 100%;
+      margin-bottom: 2em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    td {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}

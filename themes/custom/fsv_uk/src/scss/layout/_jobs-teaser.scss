@@ -1,0 +1,58 @@
+@use "../abstracts/var" as *;
+
+.jobs-teaser {
+  background-color: $c1;
+}
+
+.jobs-teaser .views-col {
+  float: none;
+}
+
+.jobs-teaser .views-view-grid {
+  padding-inline: 15px;
+}
+
+.jobs-teaser .views-row {
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+  padding-block: 0.7em;
+  font-size: 14px;
+}
+
+.jobs-teaser .views-row a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.jobs-teaser .views-row .group-2 {
+  display: grid;
+  grid-template-columns: calc(80% - 1em) 20%;
+  column-gap: 1em;
+  align-items: center;
+  font-size: 11px;
+  margin-top: 0.2em;
+}
+
+.jobs-teaser > div > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-inline: auto;
+  width: 100%;
+  padding-block: 0.5em;
+  opacity: 0.8;
+  transition: opacity 150ms;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &::after {
+    content: "\f30b";
+    font-family: "Font Awesome 5 Free";
+    color: $c4;
+    font-weight: 600;
+    font-size: 2.5rem;
+    padding-left: 0.5em;
+    text-decoration: none;
+  }
+}

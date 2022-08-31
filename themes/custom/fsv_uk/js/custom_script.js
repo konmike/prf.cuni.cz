@@ -13,9 +13,40 @@
       }
     }
 
+    if (
+      $(".layout-content--basic-page").length &&
+      $(".layout-aside .side-nav__list li").length === 0
+    ) {
+      $(".layout-aside").css("display", "none");
+      $(".main-content").css({ float: "none", "margin-inline": "auto" });
+    }
+
     $(".btn--show-more").click(function () {
       showItems();
     });
+
+    if ($(".section-menu").length) {
+      // $(".section-menu").addClass("here");
+      let menus = $(".section-menu");
+      menus.each(function () {
+        // console.log(index);
+        let title_id = $(this)
+          .closest("[class^='js-view']")
+          .next(".section-title")
+          .attr("id");
+        $("#" + title_id).addClass(title_id);
+
+        $(this)
+          .find("[href*='" + title_id + "']")
+          .addClass("active");
+      });
+      // let title_id = $(".section-menu")
+      //   .closest("[class^='js-view']")
+      //   .next(".section-title")
+      //   .attr("id");
+
+      // $("#" + title_id).addClass("succes");
+    }
 
     //Pokud je youtube iframe prekryt obrazkem, pak skryj obrazek
     //a zacni prehravat video
@@ -51,55 +82,6 @@
       it.closest(".nav__item").addClass("is-active");
     }
     /* ******** */
-
-    let addText = "<span>Zvýraznit</span>";
-
-    // let buttonUploadImage = "<div class='upload-button'><span class='upload-button__text'>Nahrát soubor</span></div>";
-    // $('#edit-field-logo-0--label').append(buttonUploadImage);
-    $(".form-item-field-topovat-value").prepend(addText);
-    $("#edit-title-0-value").attr("maxlength", "80");
-
-    if ($(".layout-content--add-job-offer").length > 0) {
-      console.log("Pridat nabidku");
-      $(
-        "#node-nabidka-prace-nova-form #edit-scheduler-settings #edit-unpublish-on-0-value"
-      )
-        .get(0)
-        .nextSibling.remove();
-      $("#node-nabidka-prace-nova-form #edit-scheduler-settings h4").text(
-        "Nabídka bude skryta dne:"
-      );
-      let h4 = $("#node-nabidka-prace-nova-form #edit-scheduler-settings h4")[0]
-        .outerHTML;
-      let date = $(
-        "#node-nabidka-prace-nova-form #edit-scheduler-settings #edit-unpublish-on-0-value"
-      )[0].outerHTML;
-      let summary = $(
-        "#node-nabidka-prace-nova-form #edit-scheduler-settings summary"
-      )[0].outerHTML;
-      console.log(summary);
-      $("#node-nabidka-prace-nova-form #edit-scheduler-settings").empty();
-      $("#node-nabidka-prace-nova-form #edit-scheduler-settings").prepend(
-        "<div class='wrapper wrapper--end-date-of-publish'></div>"
-      );
-      $("#node-nabidka-prace-nova-form #edit-scheduler-settings").prepend(
-        summary
-      );
-      $(
-        "#node-nabidka-prace-nova-form #edit-scheduler-settings .wrapper"
-      ).after("<p></p>");
-      $("#node-nabidka-prace-nova-form .wrapper--end-date-of-publish").append(
-        h4
-      );
-      $("#node-nabidka-prace-nova-form .wrapper--end-date-of-publish").append(
-        date
-      );
-    }
-    // $(
-    //   "#node-nabidka-prace-nova-form #edit-scheduler-settings #edit-unpublish-on-0-value"
-    // ).after(
-    //   "<p>Tady může být vhodný text pro skrývání inzerátu. Nebo taky ne.</p>"
-    // );
 
     $('a[href$="#"]').click(function (e) {
       e.preventDefault();
@@ -174,7 +156,7 @@
   $("#edit-cat-102").addClass("makrela");
 
   //zajisti, spravne html rozlozeni tabulky
-  var count = $("table").length;
+  var count = $("table:not(.no-head)").length;
 
   for (q = 0; q < count; q++) {
     if ($("table:eq(" + q + ") thead").length > 0) {
@@ -234,36 +216,6 @@
     //console.log(addressValue);
     $("html").scrollTop(pos.top);
     event.preventDefault();
-  });
-
-  let wrapper = "";
-  $("#edit-field-topovat-value").click(function () {
-    if ($(this).is(":checked")) {
-      $("div[id^='ajax-wrapper']").show();
-      $(".form-item-field-pocet-dnu-0-value").show();
-      wrapper = $("div[id='ajax-wrapper']");
-      // if( $("#edit-field-logo-0-upload").get(0).files.length === 0 ){
-      //     console.log("no files selected");
-      // }
-    } else {
-      //$("div[id^='ajax-wrapper']").remove();
-      //console.log(wrapper);
-      $("input[data-drupal-selector=edit-field-logo-0-fids").val("");
-      //$("input[name='field_logo_0_remove_button']").click();
-      // $('.form-item-field-topovat-value').after(wrapper);
-      $("div[id^='ajax-wrapper']").hide();
-      $(".form-item-field-pocet-dnu-0-value").hide();
-      // $('#ajax-wrapper').hide();
-    }
-  });
-
-  $(".form-item-field-pocet-dnu-0-value").append(
-    '<span class="cena-label">Cena: </span><span id="cena-zvyrazneni">100 Kč</span>'
-  );
-  $("#edit-field-pocet-dnu-0-value").change(function () {
-    let hodnota = $(this).val();
-    //console.log(hodnota);
-    $("#cena-zvyrazneni").text(hodnota * 100 + " Kč");
   });
 })(jQuery);
 

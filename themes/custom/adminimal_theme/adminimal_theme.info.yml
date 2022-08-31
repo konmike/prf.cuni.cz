@@ -7,6 +7,8 @@ base theme: seven
 libraries:
   - adminimal_theme/global-styling
 
+ckeditor_stylesheets:
+  - css/ckeditor/ckeditor.css
 regions:
   header: 'Header'
   pre_content: 'Pre-content'

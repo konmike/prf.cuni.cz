@@ -4,8 +4,9 @@ window.addEventListener("load", function () {
   let label = document.getElementById("video-label");
   let headline = document.getElementById("title");
   let last_active = "";
+  let circle = document.getElementById("circle");
 
-  document.getElementById("circle").classList.remove("shadow");
+  circle.classList.remove("shadow");
 
   gallery.classList.add(`v${videos.length}`);
 
@@ -14,6 +15,7 @@ window.addEventListener("load", function () {
       let curr = e.target.closest(".item");
       let d = curr.children[0].innerText;
 
+      circle.classList.add("darker");
       headline.classList.add("move-up");
       last_active = label.innerText;
       label.innerText = d;
@@ -24,6 +26,7 @@ window.addEventListener("load", function () {
       if (activeItem === "") {
         headline.classList.remove("move-up");
         label.classList.remove("move-up");
+        circle.classList.remove("darker");
       }
       label.innerText = last_active;
     });

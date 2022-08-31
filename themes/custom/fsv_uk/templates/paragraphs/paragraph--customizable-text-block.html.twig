@@ -81,11 +81,21 @@
 {% block paragraph %}
   <section {{ attributes.addClass(classes).setAttribute('style', section_style) }}>
   
+    
+
     {% block content %}
 
+    {% if (not content.field_skryt_nadpis['#items'].0.getValue().value) and (content.field_anchor is not empty) %}
+      {% set view = drupal_view_result('test_smooth_menu', 'block_1', page_id)|length %}
+        {% if view > 0 %}
+          {{ drupal_view('test_smooth_menu', 'block_1', page_id) }}
+        {% endif %}
+    {% endif %}
+      
     {% if (content.field_skryt_nadpis['#items'].0.getValue().value) %}
     {% else %}
-        <h2 class="padding section-title" {{ attributes.setAttribute('style', title_style) }}>{{ content.field_title.0 }}</h2>
+    
+        <h2 id="{{ content.field_anchor.0 }}" class="padding section-title" {{ attributes.setAttribute('style', title_style) }}>{{ content.field_title.0 }}</h2>
     {% endif %}
 
 

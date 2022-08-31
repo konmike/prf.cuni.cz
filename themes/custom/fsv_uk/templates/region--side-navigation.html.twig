@@ -14,7 +14,14 @@
 #}
 {% if content %}
 
-    <aside class="layout-aside mb">
+    {% set site_url = path("<current>") %}
+
+    <aside data-url="{{ path('<current>') }}" class="layout-aside mb">
         {{ content }}
+
+        {% if '/zahranici-nova-verze' in site_url|render|render %}
+            {{ drupal_view('events', 'soon') }}
+        {% endif %}
+
     </aside>
 {% endif %}

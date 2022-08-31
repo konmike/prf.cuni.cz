@@ -87,6 +87,17 @@ function fsv_uk_preprocess_node(array &$variables) {
     }
 }
 
+function fsv_uk_preprocess_paragraph(&$variables) {
+    // $node = \Drupal::request()-  >attributes->get('node');
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node instanceof \Drupal\node\NodeInterface) {
+        // You can get nid and anything else you need from the node object.
+        $nid = $node->id();
+        $variables['page_id'] = $nid;
+    }
+    
+  }
+
 
 function fsv_uk_preprocess_field(&$variables, $hook) {
     $element = $variables['element'];

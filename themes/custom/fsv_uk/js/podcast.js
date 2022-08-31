@@ -30,7 +30,7 @@ const APIController = (function () {
     );
 
     const data = await result.json();
-    return data.items.reverse();
+    return data.items;
   };
 
   return {
