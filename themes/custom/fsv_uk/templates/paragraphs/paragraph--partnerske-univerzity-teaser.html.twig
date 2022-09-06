@@ -70,18 +70,29 @@
       <h2 id="mapa" {{ custom_title_classes.addClass(title_classes) }}>{{ content.field_title.0 }}</h2>
   {% endif %}
 
-  <ul data-active="map--all" id="select-map" class="list list--map-filter-option">
+  
+  {# <ul data-active="map--all" id="select-map" class="list list--map-filter-option">
     <li id="btn-map-mgr" data-show-map="map--mgr" class="mgr">Mgr studenti</li>
     <li id="btn-map-phd" data-show-map="map--phd" class="phd">Phd studenti</li>
     <li id="btn-map-zam" data-show-map="map--zam" class="zam">Zaměstnanci</li>
     <li id="btn-map-filter" data-show-map="map--all" class="filter">Filtrovat</li>
-  </ul>
+  </ul> #}
     {% block content %}
       {# {% set cat_id = content.field_news[0]['#plain_text'] %} #}
-      {{ drupal_view('partnerske_univerzity', 'block_map_all') }}
-      {{ drupal_view('partnerske_univerzity', 'block_map_mgr') }}
+      
+      {% if (content.field_s_filtraci['#items'].0.getValue().value) %}
+        {{ drupal_view('partnerske_univerzity', 'block_map_all_with_filter') }}
+      {% else %}
+        {{ drupal_view('partnerske_univerzity', 'block_map_all_no_filter') }}
+      {% endif %}
+
+      {% if content.field_general_link[0] is not empty %}
+     <a href="{{ content.field_general_link[0]['#url'] }}">Přehled všech univerzit</a>
+    {% endif %}
+  
+      {# {{ drupal_view('partnerske_univerzity', 'block_map_mgr') }}
       {{ drupal_view('partnerske_univerzity', 'block_map_phd') }}
-      {{ drupal_view('partnerske_univerzity', 'block_map_zam') }}
+      {{ drupal_view('partnerske_univerzity', 'block_map_zam') }} #}
     {% endblock %}
   </section>
 {% endblock paragraph %}

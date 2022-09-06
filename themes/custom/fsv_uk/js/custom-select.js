@@ -13,7 +13,7 @@
     }
 
     $("#btn-map-filter").click(function () {
-      console.log("test");
+      // console.log("test");
       // field.css("display", displayType).hide().fadeIn();
       $(".paragraph--partnerske-univerzity-teaser .views-exposed-form")
         .css("display", "grid")
@@ -71,10 +71,16 @@
     let show = $("#" + id).attr("data-show-map");
 
     if (active !== show) {
-      $("." + active).fadeOut(500);
-      $("." + show)
-        .delay(500)
-        .fadeIn();
+      console.log(active);
+      console.log(show);
+
+      // $("." + active).fadeOut(500);
+      // $("." + show)
+      //   .delay(500)
+      //   .fadeIn();
+
+      $("." + active).css("display", "none");
+      $("." + show).css("display", "block");
 
       $("#select-map").attr("data-active", show);
     }
