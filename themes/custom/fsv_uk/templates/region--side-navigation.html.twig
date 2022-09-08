@@ -19,8 +19,16 @@
     <aside data-url="{{ path('<current>') }}" class="layout-aside mb">
         {{ content }}
 
-        {% if '/zahranici-nova-verze' in site_url|render|render %}
-            {{ drupal_view('events', 'soon') }}
+        {% if '/zahranici' in site_url|render|render %}
+
+            {{ attach_library('fsv_uk/calendar') }}
+            <div class="events-container">
+            <h3 class="events__title">Kalendář</h3>
+            <div id="calendar-container"></div>
+            {{ drupal_view('events', 'block_events_zahranici_data') }}
+            </div>
+
+            
         {% endif %}
 
     </aside>

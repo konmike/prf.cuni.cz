@@ -1,5 +1,18 @@
 (function ($) {
   $(document).ready(function () {
+    console.log($(".no-dropdown"));
+    $(".no-dropdown").removeClass("dropdown");
+    let megaMenu = $(".no-dropdown").siblings(".nav__megamenu");
+    megaMenu.remove();
+
+    $(".no-dropdown").click(function (e) {
+      // let href = $(this);
+      let href = $(this).attr("href");
+      // console.log(href);
+      window.location.href = href;
+      e.stopPropagation();
+    });
+
     if ($(".layout-content--viewnabidka-pracipage-1").length > 0) {
       let rows = document.querySelectorAll(".views-col .views-row");
       let countItems = document.createElement("span");

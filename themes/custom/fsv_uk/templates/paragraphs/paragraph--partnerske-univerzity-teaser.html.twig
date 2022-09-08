@@ -44,8 +44,10 @@
 {%
   set classes = [
     'paragraph',
+    'paragraph-test',
     'paragraph--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    ('1' in content.field_s_filtraci[0]) ? 'filter',
   ]
 %}
 
@@ -58,16 +60,17 @@
     ('1' in content.field_kapitalky[0] or content.field_kapitalky[0] is empty) ? 'text-uppercase',
     ('1' in content.field_zmensit[0] or content.field_zmensit[0] is empty) ? 'font-calibri-smaller',
 		('1' in content.field_oddelit_tenkou_linkou[0] or content.field_oddelit_tenkou_linkou[0] is empty) ? 'border-bottom',
+		
 	]
 %}
 
 {% block paragraph %}
-  <section{{ attributes.addClass(classes) }}>
+  <section{{ attributes.addClass(classes) }} id="mapa">
   {# <h3 id="mapa" class="section-title">Nabídky výjezdů</h3> #}
 
   {% if (content.field_skryt_nadpis['#items'].0.getValue().value) %}
   {% else %}        
-      <h2 id="mapa" {{ custom_title_classes.addClass(title_classes) }}>{{ content.field_title.0 }}</h2>
+      <h2 {{ custom_title_classes.addClass(title_classes) }}>{{ content.field_title.0 }}</h2>
   {% endif %}
 
   
@@ -80,12 +83,8 @@
     {% block content %}
       {# {% set cat_id = content.field_news[0]['#plain_text'] %} #}
       
-      {% if (content.field_s_filtraci['#items'].0.getValue().value) %}
         {{ drupal_view('partnerske_univerzity', 'block_map_all_with_filter') }}
-      {% else %}
-        {{ drupal_view('partnerske_univerzity', 'block_map_all_no_filter') }}
-      {% endif %}
-
+    
       {% if content.field_general_link[0] is not empty %}
      <a href="{{ content.field_general_link[0]['#url'] }}">Přehled všech univerzit</a>
     {% endif %}
