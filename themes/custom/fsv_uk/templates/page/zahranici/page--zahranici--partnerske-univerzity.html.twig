@@ -113,11 +113,11 @@
           <li class="breadcrumbs__item">
                   <a class="breadcrumbs__link" href="/">Domů</a>
               </li>
-               <li class="breadcrumbs__item">
-                  <a class="breadcrumbs__link" href="/node/8254">Zahraničí</a>
-              </li>
           <li class="breadcrumbs__item">
-                  Aktuality
+                  <a class="breadcrumbs__link" href="/zahranici-nova-verze">Zahraničí</a>
+              </li>
+          <li class="breadcrumbs__item" style="outline: none;">
+                  Partnerské univerzity
               </li>
         </ol>
   </nav>
@@ -127,7 +127,7 @@
                 
                 {# {{ page.side_navigation }} #}
 
-                {% set site_url = path("<current>") %}
+              {% set site_url = path("<current>") %}
 
 
 
@@ -158,7 +158,9 @@
                                 <a href="/node/8238" class="side-nav__link side-nav__link--mgr" data-drupal-link-system-path="node/8238" style="">MGR STUDENTI</a>
                                     <a class="side-nav__toggle jq_side-navToggle" tabindex="0">+</a>
                                 <ul class="side-nav__list-lvl2 jq_side-navSubmenu">
-        
+    
+                
+      
     
                     <li class="side-nav__item-lvl2 ">
                                 <a href="/node/8272" class="side-nav__link-lvl2" data-drupal-link-system-path="node/8272">Erasmus+</a>
@@ -195,7 +197,7 @@
                                 <ul class="side-nav__list-lvl2 jq_side-navSubmenu">
         
     
-   
+ 
     
                     <li class="side-nav__item-lvl2 ">
                                 <a href="/node/8278" class="side-nav__link-lvl2" data-drupal-link-system-path="node/8278">Erasmus+</a>
@@ -329,18 +331,6 @@
 
       </ul>
   </nav>
-
-  
-        {% if '/zahranici' in site_url|render|render %}
-
-            {{ attach_library('fsv_uk/calendar') }}
-            <div class="events-container">
-            <h3 class="events__title">Kalendář</h3>
-            <div id="calendar-container"></div>
-            {{ drupal_view('events', 'block_events_zahranici_data') }}
-            </div>
-
-        {% endif %}
 
     </aside>
 

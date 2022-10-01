@@ -1,27 +1,27 @@
 @use "../abstracts" as *;
 
-[data-url^="/zahranici-nova"],
-[data-url="/zahranici-mgr-studenti"],
-[data-url="/zahranici-mgr-studenti-erasmus"],
-[data-url="/zahranici-mgr-studenti-mezifakultni-smlouvy"],
-[data-url="/zahranici-mgr-studenti-meziuniverzitni-smlouvy"],
-[data-url="/zahranici-mgr-studenti-ostatni"],
-[data-url="/zahranici-phd-studenti"],
-[data-url="/zahranici-phd-studenti-erasmus"],
-[data-url="/zahranici-phd-studenti-mezifakultni-smlouvy"],
-[data-url="/zahranici-phd-studenti-meziuniverzitni-smlouvy"],
-[data-url="/zahranici-phd-studenti-sylff"],
-[data-url="/zahranici-phd-studenti-ostatni"],
-[data-url="/zahranici-absolventi"],
-[data-url="/zahranici-absolventi-erasmus"],
-[data-url="/zahranici-absolventi-llm"],
-[data-url="/zahranici-absolventi-ostatni"],
-[data-url="/zahranici-zamestnanci"],
-[data-url="/zahranici-zamestnanci-akademici"],
-[data-url="/zahranici-zamestnanci-administrativni-pracovnici"],
-[data-url="/zahranici-zamestnanci-formulare"],
-[data-url="/partnerske-univerzity"],
-[data-url="/zahranici-faq"],
+// [data-url^="/zahranici-nova"],
+// [data-url="/zahranici-mgr-studenti"],
+// [data-url="/zahranici-mgr-studenti-erasmus"],
+// [data-url="/zahranici-mgr-studenti-mezifakultni-smlouvy"],
+// [data-url="/zahranici-mgr-studenti-meziuniverzitni-smlouvy"],
+// [data-url="/zahranici-mgr-studenti-ostatni"],
+// [data-url="/zahranici-phd-studenti"],
+// [data-url="/zahranici-phd-studenti-erasmus"],
+// [data-url="/zahranici-phd-studenti-mezifakultni-smlouvy"],
+// [data-url="/zahranici-phd-studenti-meziuniverzitni-smlouvy"],
+// [data-url="/zahranici-phd-studenti-sylff"],
+// [data-url="/zahranici-phd-studenti-ostatni"],
+// [data-url="/zahranici-absolventi"],
+// [data-url="/zahranici-absolventi-erasmus"],
+// [data-url="/zahranici-absolventi-llm"],
+// [data-url="/zahranici-absolventi-ostatni"],
+// [data-url="/zahranici-zamestnanci"],
+// [data-url="/zahranici-zamestnanci-akademici"],
+// [data-url="/zahranici-zamestnanci-administrativni-pracovnici"],
+// [data-url="/zahranici-zamestnanci-formulare"],
+// [data-url="/partnerske-univerzity"],
+[data-url^="/zahranici"],
 [data-url^="/zahranici/aktuality"] {
   .side-nav__list {
     display: grid;
@@ -34,6 +34,7 @@
 
   .side-nav__item {
     border: 0;
+    text-transform: uppercase;
     &:nth-last-child(3),
     &:last-child {
       border: 2px solid var(--clr-light-gray);
@@ -161,29 +162,29 @@
   }
 }
 
-[data-url^="/zahranici-nova"] .side-nav__toggle,
-[data-url="/zahranici-mgr-studenti"] .side-nav__toggle,
-[data-url="/zahranici-mgr-studenti-erasmus"] .side-nav__toggle,
-[data-url="/zahranici-mgr-studenti-mezifakultni-smlouvy"] .side-nav__toggle,
-[data-url="/zahranici-mgr-studenti-meziuniverzitni-smlouvy"] .side-nav__toggle,
-[data-url="/zahranici-mgr-studenti-ostatni"] .side-nav__toggle,
-[data-url="/zahranici-phd-studenti"] .side-nav__toggle,
-[data-url="/zahranici-phd-studenti-erasmus"] .side-nav__toggle,
-[data-url="/zahranici-phd-studenti-mezifakultni-smlouvy"] .side-nav__toggle,
-[data-url="/zahranici-phd-studenti-meziuniverzitni-smlouvy"] .side-nav__toggle,
-[data-url="/zahranici-phd-studenti-sylff"] .side-nav__toggle,
-[data-url="/zahranici-phd-studenti-ostatni"] .side-nav__toggle,
-[data-url="/zahranici-absolventi"] .side-nav__toggle,
-[data-url="/zahranici-absolventi-erasmus"] .side-nav__toggle,
-[data-url="/zahranici-absolventi-llm"] .side-nav__toggle,
-[data-url="/zahranici-absolventi-ostatni"] .side-nav__toggle,
-[data-url="/zahranici-zamestnanci"] .side-nav__toggle,
-[data-url="/zahranici-zamestnanci-akademici"] .side-nav__toggle,
-[data-url="/zahranici-zamestnanci-administrativni-pracovnici"]
-  .side-nav__toggle,
-[data-url="/zahranici-zamestnanci-formulare"] .side-nav__toggle,
+// [data-url^="/zahranici-nova"] .side-nav__toggle,
+// [data-url="/zahranici-mgr-studenti"] .side-nav__toggle,
+// [data-url="/zahranici-mgr-studenti-erasmus"] .side-nav__toggle,
+// [data-url="/zahranici-mgr-studenti-mezifakultni-smlouvy"] .side-nav__toggle,
+// [data-url="/zahranici-mgr-studenti-meziuniverzitni-smlouvy"] .side-nav__toggle,
+// [data-url="/zahranici-mgr-studenti-ostatni"] .side-nav__toggle,
+// [data-url="/zahranici-phd-studenti"] .side-nav__toggle,
+// [data-url="/zahranici-phd-studenti-erasmus"] .side-nav__toggle,
+// [data-url="/zahranici-phd-studenti-mezifakultni-smlouvy"] .side-nav__toggle,
+// [data-url="/zahranici-phd-studenti-meziuniverzitni-smlouvy"] .side-nav__toggle,
+// [data-url="/zahranici-phd-studenti-sylff"] .side-nav__toggle,
+// [data-url="/zahranici-phd-studenti-ostatni"] .side-nav__toggle,
+// [data-url="/zahranici-absolventi"] .side-nav__toggle,
+// [data-url="/zahranici-absolventi-erasmus"] .side-nav__toggle,
+// [data-url="/zahranici-absolventi-llm"] .side-nav__toggle,
+// [data-url="/zahranici-absolventi-ostatni"] .side-nav__toggle,
+// [data-url="/zahranici-zamestnanci"] .side-nav__toggle,
+// [data-url="/zahranici-zamestnanci-akademici"] .side-nav__toggle,
+// [data-url="/zahranici-zamestnanci-administrativni-pracovnici"]
+//   .side-nav__toggle,
+// [data-url="/zahranici-zamestnanci-formulare"] .side-nav__toggle,
 [data-url="/partnerske-univerzity"] .side-nav__toggle,
-[data-url="/zahranici-faq"] .side-nav__toggle,
+[data-url^="/zahranici"] .side-nav__toggle,
 [data-url^="/zahranici/aktuality"] .side-nav__toggle {
   color: transparent;
   &::after {

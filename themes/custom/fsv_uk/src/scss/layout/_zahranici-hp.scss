@@ -1,54 +1,6 @@
 @use "../abstracts" as *;
 
-// main[data-url^="/zahranici-nova"],
-// main[data-url="/zahranici-mgr-studenti"],
-// main[data-url="/zahranici-mgr-studenti-erasmus"],
-// main[data-url="/zahranici-mgr-studenti-mezifakultni-smlouvy"],
-// main[data-url="/zahranici-mgr-studenti-meziuniverzitni-smlouvy"],
-// main[data-url="/zahranici-mgr-studenti-ostatni"],
-// main[data-url="/zahranici-phd-studenti"],
-// main[data-url="/zahranici-phd-studenti-erasmus"],
-// main[data-url="/zahranici-phd-studenti-mezifakultni-smlouvy"],
-// main[data-url="/zahranici-phd-studenti-meziuniverzitni-smlouvy"],
-// main[data-url="/zahranici-phd-studenti-sylff"],
-// main[data-url="/zahranici-phd-studenti-ostatni"],
-// main[data-url="/zahranici-absolventi"],
-// main[data-url="/zahranici-absolventi-erasmus"],
-// main[data-url="/zahranici-absolventi-llm"],
-// main[data-url="/zahranici-absolventi-ostatni"],
-// main[data-url="/zahranici-zamestnanci"],
-// main[data-url="/zahranici-zamestnanci-akademici"],
-// main[data-url="/zahranici-zamestnanci-administrativni-pracovnici"],
-// main[data-url="/zahranici-zamestnanci-formulare"],
-// main[data-url="/partnerske-univerzity"],
-// main[data-url="/zahranici-faq"],
-// main[data-url^="/zahranici/aktuality"] {
-//   background-image: none;
-// }
-
-aside[data-url^="/zahranici-nova"],
-aside[data-url="/zahranici-mgr-studenti"],
-aside[data-url="/zahranici-mgr-studenti-erasmus"],
-aside[data-url="/zahranici-mgr-studenti-mezifakultni-smlouvy"],
-aside[data-url="/zahranici-mgr-studenti-meziuniverzitni-smlouvy"],
-aside[data-url="/zahranici-mgr-studenti-ostatni"],
-aside[data-url="/zahranici-phd-studenti"],
-aside[data-url="/zahranici-phd-studenti-erasmus"],
-aside[data-url="/zahranici-phd-studenti-mezifakultni-smlouvy"],
-aside[data-url="/zahranici-phd-studenti-meziuniverzitni-smlouvy"],
-aside[data-url="/zahranici-phd-studenti-sylff"],
-aside[data-url="/zahranici-phd-studenti-ostatni"],
-aside[data-url="/zahranici-absolventi"],
-aside[data-url="/zahranici-absolventi-erasmus"],
-aside[data-url="/zahranici-absolventi-llm"],
-aside[data-url="/zahranici-absolventi-ostatni"],
-aside[data-url="/zahranici-zamestnanci"],
-aside[data-url="/zahranici-zamestnanci-akademici"],
-aside[data-url="/zahranici-zamestnanci-administrativni-pracovnici"],
-aside[data-url="/zahranici-zamestnanci-formulare"],
-aside[data-url="/partnerske-univerzity"],
-aside[data-url="/zahranici-faq"],
-aside[data-url^="/zahranici/aktuality"] {
+aside[data-url^="/zahranici"] {
   @media screen and (min-width: ($lg * 1em)) {
     width: calc(99.9% * 1 / 4 - (50px - 30px * 1 / 4));
     // width: auto;
@@ -146,43 +98,7 @@ aside[data-url^="/zahranici/aktuality"] {
   }
 }
 
-// [data-url^="/zahranici-"] + .main-content .tip {
-//   padding-inline: 1em;
-
-//   .tip__content {
-//     padding-block: 1.5em;
-//   }
-// }
-// [data-url^="/zahranici-mgr-studenti"] + .main-content .tip {
-//   background-color: var(--clr-light-mgr);
-//   border-left: 1.5em solid var(--clr-mgr);
-//   .tip__content {
-//     color: var(--clr-mgr);
-//   }
-// }
-// [data-url^="/zahranici-phd-studenti"] + .main-content .tip {
-//   background-color: var(--clr-light-phd);
-//   border-left: 1.5em solid var(--clr-phd);
-//   .tip__content {
-//     color: var(--clr-phd);
-//   }
-// }
-// [data-url^="/zahranici-absolventi"] + .main-content .tip {
-//   background-color: var(--clr-light-absolventi);
-//   border-left: 1.5em solid var(--clr-absolventi);
-//   .tip__content {
-//     color: var(--clr-absolventi);
-//   }
-// }
-// [data-url^="/zahranici-zamestnanci"] + .main-content .tip {
-//   background-color: var(--clr-light-zamestnanci);
-//   border-left: 1.5em solid var(--clr-zamestnanci);
-//   .tip__content {
-//     color: var(--clr-zamestnanci);
-//   }
-// }
-
-[data-url^="/zahranici-"] + .main-content .tip {
+[data-url^="/zahranici"] + .main-content .tip {
   display: grid;
   grid-template-columns: 85px auto;
   padding-right: 1em;
@@ -211,7 +127,7 @@ aside[data-url^="/zahranici/aktuality"] {
     opacity: 0;
   }
 }
-[data-url^="/zahranici-mgr-studenti"] + .main-content .tip {
+[data-url^="/zahranici/mgr-studenti"] + .main-content .tip {
   background-color: var(--clr-light-mgr);
   .image-wrap::after {
     background-image: url(/sites/default/files/uploads/images/tip_mgr.svg);
@@ -220,7 +136,7 @@ aside[data-url^="/zahranici/aktuality"] {
     color: var(--clr-mgr);
   }
 }
-[data-url^="/zahranici-phd-studenti"] + .main-content .tip {
+[data-url^="/zahranici/phd-studenti"] + .main-content .tip {
   background-color: var(--clr-light-phd);
   .image-wrap::after {
     background-image: url(/sites/default/files/uploads/images/tip_phd.svg);
@@ -229,7 +145,7 @@ aside[data-url^="/zahranici/aktuality"] {
     color: var(--clr-phd);
   }
 }
-[data-url^="/zahranici-absolventi"] + .main-content .tip {
+[data-url^="/zahranici/absolventi"] + .main-content .tip {
   background-color: var(--clr-light-absolventi);
   .image-wrap::after {
     background-image: url(/sites/default/files/uploads/images/tip_absolventi.svg);
@@ -238,7 +154,7 @@ aside[data-url^="/zahranici/aktuality"] {
     color: var(--clr-absolventi);
   }
 }
-[data-url^="/zahranici-zamestnanci"] + .main-content .tip {
+[data-url^="/zahranici/zamestnanci"] + .main-content .tip {
   background-color: var(--clr-light-zamestnanci);
   .image-wrap::after {
     background-image: url(/sites/default/files/uploads/images/tip_zamestnanci.svg);
@@ -248,34 +164,12 @@ aside[data-url^="/zahranici/aktuality"] {
   }
 }
 
-[data-url^="/zahranici-nova"] .line,
-[data-url^="/zahranici-nova"] + .main-content .line {
+[data-url^="/zahranici"] .line,
+[data-url^="/zahranici"] + .main-content .line {
   border-bottom: 1px solid var(--clr-dark-red);
 }
 
-[data-url="/zahranici-nova-verze"] + .main-content,
-[data-url="/zahranici-mgr-studenti"] + .main-content,
-[data-url="/zahranici-mgr-studenti-erasmus"] + .main-content,
-[data-url="/zahranici-mgr-studenti-mezifakultni-smlouvy"] + .main-content,
-[data-url="/zahranici-mgr-studenti-meziuniverzitni-smlouvy"] + .main-content,
-[data-url="/zahranici-mgr-studenti-ostatni"] + .main-content,
-[data-url="/zahranici-phd-studenti"] + .main-content,
-[data-url="/zahranici-phd-studenti-erasmus"] + .main-content,
-[data-url="/zahranici-phd-studenti-mezifakultni-smlouvy"] + .main-content,
-[data-url="/zahranici-phd-studenti-meziuniverzitni-smlouvy"] + .main-content,
-[data-url="/zahranici-phd-studenti-sylff"] + .main-content,
-[data-url="/zahranici-phd-studenti-ostatni"] + .main-content,
-[data-url="/zahranici-absolventi"] + .main-content,
-[data-url="/zahranici-absolventi-erasmus"] + .main-content,
-[data-url="/zahranici-absolventi-llm"] + .main-content,
-[data-url="/zahranici-absolventi-ostatni"] + .main-content,
-[data-url="/zahranici-zamestnanci"] + .main-content,
-[data-url="/zahranici-zamestnanci-akademici"] + .main-content,
-[data-url="/zahranici-zamestnanci-administrativni-pracovnici"] + .main-content,
-[data-url="/zahranici-zamestnanci-formulare"] + .main-content,
-[data-url="/partnerske-univerzity"] + .main-content,
-[data-url="/zahranici-faq"] + .main-content,
-[data-url^="/zahranici/aktuality"] + .main-content {
+[data-url^="/zahranici"] + .main-content {
   .section--white-text .section-title {
     border: 0;
     margin: 0;
@@ -459,11 +353,11 @@ aside[data-url^="/zahranici/aktuality"] {
   }
 }
 
-[data-url^="/zahranici-mgr-studenti"] + .main-content,
-[data-url^="/zahranici-phd-studenti"] + .main-content,
-[data-url^="/zahranici-absolventi"] + .main-content,
-[data-url^="/zahranici-zamestnanci"] + .main-content,
-aside[data-url="/zahranici-faq"] + .main-content {
+[data-url^="/zahranici/mgr-studenti"] + .main-content,
+[data-url^="/zahranici/phd-studenti"] + .main-content,
+[data-url^="/zahranici/absolventi"] + .main-content,
+[data-url^="/zahranici/zamestnanci"] + .main-content,
+aside[data-url="/zahranici/faq"] + .main-content {
   ul:not([class]) li a,
   p a,
   span a {
@@ -473,8 +367,8 @@ aside[data-url="/zahranici-faq"] + .main-content {
     }
   }
 }
-aside[data-url="/zahranici-faq"] + .main-content,
-aside[data-url^="/zahranici-mgr-studenti"] + .main-content {
+aside[data-url="/zahranici/faq"] + .main-content,
+aside[data-url^="/zahranici/mgr-studenti"] + .main-content {
   .page-title {
     background-color: var(--clr-mgr);
   }
@@ -490,13 +384,14 @@ aside[data-url^="/zahranici-mgr-studenti"] + .main-content {
     background-color: var(--clr-mgr);
   }
 }
-aside[data-url^="/zahranici-phd-studenti"] + .main-content {
+aside[data-url^="/zahranici/phd-studenti"] + .main-content {
   .page-title {
     background-color: var(--clr-phd);
   }
   ul:not([class]) li a,
   p a,
-  span a {
+  span a,
+  a span {
     color: var(--clr-phd) !important;
   }
   .check-list ol li {
@@ -506,7 +401,7 @@ aside[data-url^="/zahranici-phd-studenti"] + .main-content {
     background-color: var(--clr-phd);
   }
 }
-aside[data-url^="/zahranici-absolventi"] + .main-content {
+aside[data-url^="/zahranici/absolventi"] + .main-content {
   .page-title {
     background-color: var(--clr-absolventi);
   }
@@ -522,7 +417,7 @@ aside[data-url^="/zahranici-absolventi"] + .main-content {
     background-color: var(--clr-absolventi);
   }
 }
-aside[data-url^="/zahranici-zamestnanci"] + .main-content {
+aside[data-url^="/zahranici/zamestnanci"] + .main-content {
   .page-title {
     background-color: var(--clr-zamestnanci);
   }
