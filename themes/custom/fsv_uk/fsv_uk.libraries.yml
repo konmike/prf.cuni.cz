@@ -3,9 +3,10 @@ global-styling:
   css:
     theme:
       css/main.css: {}
+      css/custom.css: {}
   js:
     js/main_script.js: {}
-    js/custom_script.js: {}
+    js/custom_script_v1.0.js: {}
   dependencies:
     - core/jquery
 
@@ -28,7 +29,7 @@ select2:
     theme:
       css/_select2.min.css: {}
   js:
-    js/select2.min.js: {}  
+    js/select2.min.js: {}
     js/custom-select.js: {}
 
 calendar:
