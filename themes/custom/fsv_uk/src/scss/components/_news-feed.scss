@@ -26,6 +26,14 @@
   .section-title {
     background-color: $c1;
   }
+  .front-news-ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: $c1;
+    margin-bottom: 0;
+    padding: 40px;
+  }
   &__section-title {
     display: flex;
     flex-wrap: wrap;

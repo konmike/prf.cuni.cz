@@ -64,6 +64,11 @@
 	]
 %}
 
+
+  {% set mgr = content.field_mapa_pro_mgr[0] %}
+  {% set phd = content.field_mapa_pro_phd[0] %}
+  {% set zam = content.field_mapa_pro_zamestance[0] %}
+
 {% block paragraph %}
   <section{{ attributes.addClass(classes) }} id="mapa">
   {# <h3 id="mapa" class="section-title">Nabídky výjezdů</h3> #}
@@ -73,13 +78,19 @@
       <h2 {{ custom_title_classes.addClass(title_classes) }}>{{ content.field_title.0 }}</h2>
   {% endif %}
 
-  
-  {# <ul data-active="map--all" id="select-map" class="list list--map-filter-option">
-    <li id="btn-map-mgr" data-show-map="map--mgr" class="mgr">Mgr studenti</li>
-    <li id="btn-map-phd" data-show-map="map--phd" class="phd">Phd studenti</li>
-    <li id="btn-map-zam" data-show-map="map--zam" class="zam">Zaměstnanci</li>
-    <li id="btn-map-filter" data-show-map="map--all" class="filter">Filtrovat</li>
-  </ul> #}
+
+  <ul data-active="" id="select-map" class="list list--map-filter-option" style="display: none;">
+    {% if '1' in mgr %}
+      <li id="btn-map-mgr" data-show-map="map--mgr" class="mgr">Mgr. studenti</li>
+    {% endif %}
+    {% if '1' in phd %}
+      <li id="btn-map-phd" data-show-map="map--phd" class="phd">Ph.D. studenti</li>
+    {% endif %}
+    {% if '1' in zam %}
+      <li id="btn-map-zam" data-show-map="map--zam" class="zam">Zaměstnanci</li>
+    {% endif %}
+      <li id="btn-map-filter" data-show-map="map--all" class="filter">Filtrovat</li>
+  </ul>
     {% block content %}
       {# {% set cat_id = content.field_news[0]['#plain_text'] %} #}
       

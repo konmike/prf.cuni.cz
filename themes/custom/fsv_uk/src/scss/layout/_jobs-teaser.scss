@@ -22,6 +22,23 @@
   text-decoration: none;
   text-transform: uppercase;
 }
+
+.jobs-teaser .views-row .group-1 {
+  display: flex;
+  flex-flow: column nowrap;
+
+  .topovat {
+    display: block;
+    padding: 0.2rem 0.5rem;
+    margin-bottom: 0.5em;
+    width: calc(15px + 1rem + 32px);
+    background: $c4;
+    color: $c1;
+    font-weight: 900;
+    text-align: center;
+    border-radius: 5px;
+  }
+}
 .jobs-teaser .views-row .group-2 {
   display: grid;
   grid-template-columns: calc(80% - 1em) 20%;

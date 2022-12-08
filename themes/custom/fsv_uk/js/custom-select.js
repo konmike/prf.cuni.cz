@@ -16,7 +16,7 @@
       // console.log("test");
       // field.css("display", displayType).hide().fadeIn();
       $(".paragraph--partnerske-univerzity-teaser .views-exposed-form")
-        .css("display", "grid")
+        .css("display", "flex")
         .hide()
         .fadeIn();
     });
@@ -71,14 +71,6 @@
     let show = $("#" + id).attr("data-show-map");
 
     if (active !== show) {
-      console.log(active);
-      console.log(show);
-
-      // $("." + active).fadeOut(500);
-      // $("." + show)
-      //   .delay(500)
-      //   .fadeIn();
-
       $("." + active).css("display", "none");
       $("." + show).css("display", "block");
 
