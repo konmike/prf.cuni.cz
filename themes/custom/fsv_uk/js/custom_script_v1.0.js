@@ -229,6 +229,12 @@
     $("html").scrollTop(pos.top);
     event.preventDefault();
   });
+
+  document.querySelectorAll(".akordeon__header").forEach(function (akordeon) {
+    akordeon.addEventListener("click", () => {
+      openAkordeonTab(akordeon);
+    });
+  });
 })(jQuery);
 
 function showItems() {
@@ -281,4 +287,14 @@ function isFilterRunning() {
   }
 
   return true;
+}
+
+function openAkordeonTab(tab) {
+  tab.classList.toggle("akordeon__header--active");
+  let content = tab.nextElementSibling;
+  if (content.style.maxHeight) {
+    content.style.maxHeight = null;
+  } else {
+    content.style.maxHeight = content.scrollHeight + 32 + "px";
+  }
 }
