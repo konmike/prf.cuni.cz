@@ -1,54 +1,55 @@
 @use "../abstracts/var" as *;
 
-.akordeon{
-    &.bc-white{
-        background-color: $c1;
-        color: $c2;
-    }
-    &.bc-gray{
-        background-color: var(--clr-dark-gray);
-        color: $c1;
-    }
-    
+.akordeon {
+  &.bc-white .akordeon__header,
+  &.bc-white .akordeon__content {
+    background-color: $c1;
+    color: $c2;
+  }
+  &.bc-gray .akordeon__header,
+  &.bc-gray .akordeon__content {
+    background-color: var(--clr-dark-gray);
+    color: $c1;
+  }
 }
-.akordeon .akordeon__header{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1em;
-    color: inherit;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: all 150ms ease-in-out;
+.akordeon .akordeon__header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  color: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 150ms ease-in-out;
 }
 // .akordeon .akordeon__header:hover{
 //     background-color: rgba(118, 118, 177, 0.8);
 // }
-.akordeon .akordeon__header::after{
-    content: "\f078";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 700;
-    color: inherit;
+.akordeon .akordeon__header::after {
+  content: "\f078";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  color: inherit;
 }
-.akordeon .akordeon__header--active{
-    text-decoration: none;
-    // background-color: rgba(118, 118, 177, 1);
+.akordeon .akordeon__header--active {
+  text-decoration: none;
+  // background-color: rgba(118, 118, 177, 1);
 }
-.akordeon .akordeon__header--active::after{
-    content: "\f077";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 700;
-    color: inherit;
+.akordeon .akordeon__header--active::after {
+  content: "\f077";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 700;
+  color: inherit;
 }
-.akordeon .akordeon__header--active + .akordeon__content{
-    padding-block: 1em;
+.akordeon .akordeon__header--active + .akordeon__content {
+  padding-block: 1em;
 }
 .akordeon .akordeon__content {
-    max-height: 0;
-    padding-block: 0;
-    padding-inline: 1em;
-    overflow: hidden;
-    transition: all 150ms ease-in-out;
+  max-height: 0;
+  padding-block: 0;
+  padding-inline: 1em;
+  overflow: hidden;
+  transition: all 150ms ease-in-out;
 }
 /* *** END Akordeon *** */
