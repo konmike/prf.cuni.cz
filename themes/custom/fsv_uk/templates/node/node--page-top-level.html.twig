@@ -1,4 +1,11 @@
-<div class="controls__print-wrap">
+{%
+	set classes = [
+		'controls__print-wrap',
+		'bc-' ~ content.field_barva_pozadi_obsahu[0]|render,
+	]
+%}
+
+<div {{ attributes.addClass(classes) }}>
 
     {% if content.field_control_print['#items'].0.getValue().value %}
 
@@ -21,7 +28,7 @@
 
     {% block content %} 
         
-        {{ content|without('field_node_show_controls') }}
+        {{ content|without('field_node_show_controls', 'field_barva_pozadi_obsahu') }}
         
         {% if related_news_tags_ids is defined %}
             {{ drupal_view(
