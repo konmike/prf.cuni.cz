@@ -1,0 +1,22 @@
+@use "../abstracts" as *;
+
+.call-to-action {
+  --height: 100px;
+  margin-inline: auto;
+  max-width: 100%;
+}
+.call-to-action__header {
+  max-width: 100%;
+  margin-inline: auto;
+  height: var(--height);
+  background-color: var(--clr-dark-gray);
+}
+.call-to-action__content {
+  max-width: 70%;
+  margin-inline: auto;
+  margin-top: calc(-1 * var(--height) / 2);
+  padding: 1em;
+  background-color: var(--clr-light-gray);
+  color: var(--clr-dark-gray);
+  box-shadow: 5px 5px 30px 0px rgba(0, 0, 0, 0.5);
+}
