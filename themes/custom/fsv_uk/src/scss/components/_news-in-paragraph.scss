@@ -78,23 +78,6 @@
       }
     }
 
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   inset: -2px;
-    //   z-index: -2;
-    //   background: $c5;
-    //   transform: skew(2deg, 2deg);
-    // }
-    // &::after {
-    //   content: "";
-    //   position: absolute;
-    //   inset: 0;
-    //   z-index: -1;
-    //   background: white;
-    //   border: 1px solid rgb(175, 16, 55, 0.1);
-    // }
-
     .link {
       line-height: 1;
       font-family: var(--calibri);
