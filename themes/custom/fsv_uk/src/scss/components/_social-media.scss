@@ -1,0 +1,19 @@
+.social-media {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  padding-block: 1em 2em;
+}
+
+.social-media .img--social-icon {
+  width: 3.5em;
+  height: 3.5em;
+}
+
+.social-media a {
+  &::after {
+    display: none !important;
+  }
+}
