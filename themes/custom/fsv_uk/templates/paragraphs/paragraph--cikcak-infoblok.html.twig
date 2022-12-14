@@ -41,49 +41,22 @@
 
 {%
 	set section_classes = [
-		'section',
-		'section--white-text',
-		('0' in content.field_join_with_next_block[0] or content.field_join_with_next_block[0] is empty) ? 'mt mb',
-		'printable',
-    'pt-' ~ content.field_horni_odsazeni[0]|render,
+		'cikcak',
+		'pt-' ~ content.field_horni_odsazeni[0]|render,
 		'pb-' ~ content.field_spodni_odsazeni[0]|render,
-	]
-%}
-
-{% set custom_title_classes = create_attribute() %}
-
-{%
-	set title_classes = [
-    'padding',
-    'section-title',
-    ('1' in content.field_kapitalky[0] or content.field_kapitalky[0] is empty) ? 'text-uppercase',
-    ('1' in content.field_zmensit[0] or content.field_zmensit[0] is empty) ? 'font-calibri-smaller',
-		('1' in content.field_oddelit_tenkou_linkou[0] or content.field_oddelit_tenkou_linkou[0] is empty) ? 'border-bottom',
+    'cikcak--' ~ content.field_pozice_galerie[0]|render,
 	]
 %}
 
 {% block paragraph %}
-  <section {{ attributes.addClass(section_classes) }}>
-  
+  <div {{ attributes.addClass(section_classes) }}>
     {% block content %}
-
-    {% if (not content.field_skryt_nadpis['#items'].0.getValue().value) and (content.field_anchor is not empty) %}
-      {% set view = drupal_view_result('test_smooth_menu', 'block_1', page_id)|length %}
-        {% if view > 0 %}
-          {{ drupal_view('test_smooth_menu', 'block_1', page_id) }}
-        {% endif %}
-    {% endif %}
-
-    {% if (content.field_skryt_nadpis['#items'].0.getValue().value) %}
-    {% else %}
-        {# {{ content.field_title }} #}
-        <h2 id="{{ content.field_anchor.0 }}" {{ custom_title_classes.addClass(title_classes) }}>{{ content.field_title.0 }}</h2>
-        {# <h2 id="{{ content.field_anchor.0 }}" class="padding section-title">{{ content.field_title.0 }}</h2> #}
-    {% endif %}
-
-
-    {{ content.field_wysiwyg_body }}
-    
+      <div class="cikcak__content">
+          {{ content.field_wysiwyg_body.0 }}
+      </div>
+      <div class="cikcak__gallery">
+          {{ content.field_obrazky.0 }}            
+      </div>
     {% endblock %}
-  </section>
+  </div>
 {% endblock paragraph %}

@@ -38,9 +38,16 @@
  * @ingroup themeable
  */
 #}
+{%
+	set section_classes = [
+		'paragraph--youtube-video',
+		'pt-' ~ content.field_horni_odsazeni[0]|render,
+		'pb-' ~ content.field_spodni_odsazeni[0]|render,
+	]
+%}
 
 {% block paragraph %}
-  <section class="body mb printable paragraph--youtube-video"> 
+  <div {{ attributes.addClass(section_classes) }}> 
     {% block content %}
     {% if (content.field_skryt_nadpis['#items'].0.getValue().value) %}{% else %}
         <h2 class="padding section-title">{{ content.field_nazev }}</h2>
@@ -78,5 +85,5 @@
 
     </div>
     {% endblock %}
-  </section>
+  </div>
 {% endblock paragraph %}

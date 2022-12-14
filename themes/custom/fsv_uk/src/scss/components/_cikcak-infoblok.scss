@@ -1,0 +1,21 @@
+.cikcak {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr 1fr;
+  padding-inline: 2em;
+}
+
+.cikcak--gallery-left .cikcak__gallery {
+  order: -1;
+}
+
+.cikcak__content {
+  padding: 1em;
+}
+.cikcak__gallery {
+  align-self: center;
+}
+.cikcak__gallery img {
+  object-fit: contain;
+  height: auto;
+}
