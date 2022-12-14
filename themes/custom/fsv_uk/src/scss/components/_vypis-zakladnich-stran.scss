@@ -1,0 +1,51 @@
+@use "../abstracts" as *;
+
+.vypis-zakladnich-stran {
+  --articles-gap: 1.5em;
+  max-width: 100%;
+  padding-inline: 3em;
+}
+.vypis-zakladnich-stran__item {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  column-gap: 2em;
+  margin-top: var(--articles-gap);
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+.vypis-zakladnich-stran__icon {
+  grid-column: 1/2;
+  opacity: 0.4;
+  img {
+    height: auto;
+  }
+}
+.vypis-zakladnich-stran__header,
+.vypis-zakladnich-stran__content,
+.vypis-zakladnich-stran__link-more {
+  grid-column: 2/3;
+}
+.vypis-zakladnich-stran__header {
+}
+.vypis-zakladnich-stran__content {
+}
+.vypis-zakladnich-stran__link-more {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding-bottom: var(--articles-gap);
+  border-bottom: 2px solid var(--clr-light-gray);
+  color: var(--clr-dark-gray);
+  font-size: 1.5rem;
+
+  &::before {
+    content: "\f054";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    font-size: 2rem;
+    color: $c4;
+    padding-right: 0.25em;
+  }
+}
