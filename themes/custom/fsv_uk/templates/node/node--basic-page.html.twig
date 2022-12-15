@@ -3,8 +3,14 @@
 <div id="fullmenu"></div>
 {% endif %}
 
+{%
+	set classes = [
+		'controls__print-wrap',
+		'bc-' ~ content.field_barva_pozadi_obsahu[0]|render,
+	]
+%}
 
-<div class="controls__print-wrap">
+<div  {{ attributes.addClass(classes) }}>
 
     {% if content.field_control_print['#items'].0.getValue().value %}
 
@@ -27,7 +33,7 @@
 
     {% block content %} 
         
-        {{ content|without('field_node_show_controls','field_fullmenu') }}
+        {{ content|without('field_node_show_controls','field_fullmenu','field_barva_pozadi_obsahu') }}
         
         {% if related_news_tags_ids is defined %}
             {{ drupal_view(
