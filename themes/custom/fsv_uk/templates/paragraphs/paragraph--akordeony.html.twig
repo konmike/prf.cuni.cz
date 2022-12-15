@@ -42,18 +42,17 @@
 
 {%
 	set section_classes = [
-		'akordeon',
+		'akordeony',
+		'pt-' ~ content.field_horni_odsazeni[0]|render,
+		'pb-' ~ content.field_spodni_odsazeni[0]|render,
+        'bc-' ~ content.field_barevne_pozadi[0]|render,
 	]
 %}
-{% set formatId = content.field_title[0]|render|lower|replace({ ' ': '-', 'á':'a', 'é':'e', 'í':'i', 'ó':'o', 'ú':'u', 'ů':'u', 'č':'c', 'ď':'d','ř':'r','š':'s','ť':'t','ž':'z' }) %}
 
 {% block paragraph %}
-	<li {{ attributes.addClass(section_classes) }}>
+	<ul {{ attributes.addClass(section_classes) }}>
 		{% block content %}
-			<a href="#{{formatId}}" id="{{ formatId }}" class="akordeon__header">{{ content.field_title.0 }}</a>
-			<div class="akordeon__content">
-				{{ content.field_wysiwyg_body.0 }}
-			</div>
+			{{ content.field_polozka_akordeonu }}
 		{% endblock %}
-	</li>
+	</ul>
 {% endblock paragraph %}

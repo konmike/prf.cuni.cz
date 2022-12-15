@@ -440,3 +440,30 @@
   left: -1.5em;
   top: calc(50% - (var(--dimension) / 2));
 }
+.article-signature {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  outline: 2px solid limegreen;
+}
+.article-signature__text {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 1em;
+  outline: 1px dotted limegreen;
+}
+.article-signature__text span {
+  outline: 1px solid limegreen;
+  padding: 0.5em 1em;
+}
+.article-signature__img {
+  outline: 1px solid limegreen;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0px 0px 10px 8px rgb(0, 0, 0, 0.6);
+}
+.article-signature__img img {
+  max-width: 100px;
+}

@@ -182,5 +182,21 @@ CKEDITOR.addTemplates("default", {
         '<li class="faq__item"><article><h3 class="faq__title"><strong>Zde přijde otázka</strong></h3><p class="faq__content">Zde přijde odpověď na otázku.</p></article></li><hr class="delimiter--faq-item" />' +
         "</ul>",
     },
+    {
+      title: "Podpis a fotografie",
+      image: "",
+      description:
+        "V levém sloupci jméno a popis/funkce osoby, v pravém sloupci fotografie.",
+      html:
+        '<div class="article-signature">' +
+        '<div class="article-signature__text">' +
+        "<span>Jméno a příjmení</span>" +
+        "<span>Popisek / funkce</span>" +
+        "</div>" +
+        '<div class="article-signature__img">' +
+        '<img alt="TIP" class="image" data-entity-type="" data-entity-uuid="" src="/sites/default/files/uploads/images/tip_black.svg" />' +
+        "</div>" +
+        "</div>",
+    },
   ],
 });
