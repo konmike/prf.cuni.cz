@@ -198,5 +198,25 @@ CKEDITOR.addTemplates("default", {
         "</div>" +
         "</div>",
     },
+    {
+      title: "Tutor and credits",
+      image: "",
+      description:
+        "Na prvním řádku jméno vyučujícího, na druhém pak počet kreditů.",
+      html:
+        '<div class="tutor-and-credits">' +
+        '<div class="tutor-and-credits__tutor">' +
+        '<div class="tutor-and-credits__tutor-title">' +
+        "Tutor:" +
+        "</div>" +
+        '<div class="tutor-and-credits__tutor-content">' +
+        "Jméno a příjmení" +
+        "</div>" +
+        "</div>" +
+        '<div class="tutor-and-credits__credits">' +
+        "25 credits" +
+        "</div>" +
+        "</div>",
+    },
   ],
 });
