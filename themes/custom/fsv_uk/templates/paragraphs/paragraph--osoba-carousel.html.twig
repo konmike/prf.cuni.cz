@@ -1,0 +1,12 @@
+{% block paragraph %} 
+	{% block content %}
+		{% set parentNode = paragraph.parentEntity %}
+
+		{# {{ parentNode.field_styl_rozlozeni.value }} - vypis hodnoty pole z rodicovskeho paragrafu #}
+		<li class="osoby__item">
+
+			{{ drupal_view('user_card', 'carousel', paragraph.id()) }}
+
+		</li>
+	{% endblock %}
+{% endblock paragraph %}

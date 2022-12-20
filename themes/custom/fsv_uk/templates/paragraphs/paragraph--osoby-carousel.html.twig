@@ -1,0 +1,26 @@
+{%
+	set section_classes = [
+		'osoby',
+        'osoby--' ~ content.field_styl_rozlozeni[0]|render,
+		'pt-' ~ content.field_horni_odsazeni[0]|render,
+		'pb-' ~ content.field_spodni_odsazeni[0]|render,
+	]
+%}
+
+{% block paragraph %} 
+	{% block content %} 
+
+		<div {{ attributes.addClass(section_classes) }}>
+
+			{% if content.field_title[0] is not empty %}
+				<h3 class="osoby__title">{{ content.field_title.0 }}</h3>
+			{% endif %} 
+
+			<ul class="osoby__list" data-slick='{"slidesToShow": 3, "slidesToScroll": 3, "centerMode": true}'>
+				{{ content.field_osoba_carousel }}
+			</ul>
+
+		</div>
+
+	{% endblock %} 
+{% endblock paragraph %}

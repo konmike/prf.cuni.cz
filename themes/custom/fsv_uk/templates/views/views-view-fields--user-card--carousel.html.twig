@@ -1,0 +1,18 @@
+<div class="osoby__img-wrap">
+	<a href="{{ fields.view_user_1.content }}">
+		<div class="osoby__img" style="background-image: url({{ fields.user_picture.content }});"></div>
+	</a>
+</div>
+<div class="osoby__text">
+	<h4 class="osoby__name nospace">
+			{{ fields.field_titul.content }}{{ fields.field_jmeno.content }}
+			{{ fields.field_prijmeni.content }}{{ fields.field_titul_za.content }}
+	</h4>
+
+	{% if fields.field_osoby_popis.content is not empty %}
+		<div class="osoby__description">{{ fields.field_osoby_popis.content }}</div>
+	{% endif %}
+</div>
+<div class="osoby__footer">
+	{{ fields.view_user.content }}
+</div>

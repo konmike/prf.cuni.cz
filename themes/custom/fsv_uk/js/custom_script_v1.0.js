@@ -25,6 +25,18 @@
       }
     }
 
+    $(".osoby--carousel .osoby__list").slick();
+
+    if ($(".osoby--carousel").length > 0) {
+      let itemsDisplayed = [];
+      $(".osoby__list .osoby__item")
+        .not(":visible")
+        .each(function () {
+          itemsDisplayed.push($(this));
+        });
+      console.log(itemsDisplayed);
+    }
+
     if (
       $(".layout-content--basic-page").length &&
       $(".layout-aside .side-nav__list li").length === 0

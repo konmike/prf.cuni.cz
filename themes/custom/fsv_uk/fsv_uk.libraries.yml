@@ -7,6 +7,7 @@ global-styling:
   js:
     js/main_script.js: {}
     js/custom_script_v1.0.js: {}
+    js/slick.min.js: {}
   dependencies:
     - core/jquery
 
@@ -53,4 +54,5 @@ list-job-offer:
 font-awesome:
   css:
     theme:
-      //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css: {type: external}
+      //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css:
+        { type: external }
