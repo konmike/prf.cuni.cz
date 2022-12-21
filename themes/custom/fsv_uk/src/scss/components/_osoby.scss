@@ -50,9 +50,13 @@
 .osoby__item {
   display: flex;
   flex-flow: column nowrap;
-  width: 200px !important;
+  //   width: 200px !important;
   margin-inline: 1em;
   background-color: $c1;
+
+  &:first-child {
+    margin-left: calc(3rem + 2em);
+  }
 }
 .osoby__img-wrap,
 .osoby__text {

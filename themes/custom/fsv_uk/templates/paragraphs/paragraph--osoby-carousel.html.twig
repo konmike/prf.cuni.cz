@@ -16,7 +16,7 @@
 				<h3 class="osoby__title">{{ content.field_title.0 }}</h3>
 			{% endif %} 
 
-			<ul class="osoby__list" data-slick='{"slidesToShow": 3, "slidesToScroll": 3, "centerMode": true}'>
+			<ul class="osoby__list" {% if content.field_styl_rozlozeni['#items'].0.getValue().value == "carousel" %}data-slick='{"slidesToShow": {{ content.field_slides_to_show }}, "slidesToScroll": 1, "infinite":false}'{% endif %}>
 				{{ content.field_osoba_carousel }}
 			</ul>
 
