@@ -153,6 +153,7 @@ body.adminimal { font: normal 90.3%/1.538em "Open Sans", sans-serif; }
 .adminimal .toolbar-icon-system-admin-config:active:before, .adminimal .toolbar-icon-system-admin-config.is-active:before { background-image: url(/core/themes/stable/images/core/icons/787878/wrench.svg); }
 .adminimal .toolbar-icon-system-admin-reports:active:before, .adminimal .toolbar-icon-system-admin-reports.is-active:before { background-image: url(/core/themes/stable/images/core/icons/787878/barchart.svg); }
 .adminimal .toolbar-icon-help-main:active:before, .adminimal .toolbar-icon-help-main.is-active:before { background-image: url(/core/themes/stable/images/core/icons/787878/questionmark-disc.svg); }
+.adminimal .toolbar-icon-documentation:active:before, .adminimal .toolbar-icon-documentation.is-active:before { background-image: url(/core/themes/stable/images/core/icons/787878/puzzlepiece.svg); }
 
 /* Main menu icons end. */
 .adminimal.path-batch .layout-container { padding-top: 1.3rem; }

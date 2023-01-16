@@ -6,3 +6,4 @@ sites/*
 !themes/
 themes/*
 !themes/custom/
+!modules
