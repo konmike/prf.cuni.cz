@@ -19,17 +19,21 @@
 		</div>
 
 		<div class="person__info padding">
+		{% if content.field_mail is not empty %}
 			<p class="contact__results__email" style="font-size: 16px;">
-				<span class="contact__results__info-title">E-mail:</span>
+				<span class="contact__results__info-title">{{ 'E-mail'|t }}:</span>
 				{# Nadefinované v template field--field-mail.html.twig #}
 				{{ content.field_mail }}
 			</p>
+		{% endif %}
 
+		{% if content.field_telefon is not empty %}
 			<p class="contact__results__phones" style="font-size: 16px;">
-				<span class="contact__results__info-title">Telefon:&nbsp;</span>
+				<span class="contact__results__info-title">{{ 'Phone number'|t }}:&nbsp;</span>
 				{# Nadefinované v template field--field-telefon.html.twig #}
 				{{ content.field_telefon }}
 			</p>
+		{% endif %}
 
 			<div style="padding-top:20px">
 				{{ drupal_view('workplace', 'workplaces') }}
@@ -38,7 +42,6 @@
 					<h4 style="padding-top:20px">{{ 'Membership'|t }}</h4>
 					{{ drupal_view('membership', 'membership', userid) }}
 				{% endif %}
-				{% if membership is not empty %}{% endif %}
 			</div>
 			{{ content.field_detail }}
 

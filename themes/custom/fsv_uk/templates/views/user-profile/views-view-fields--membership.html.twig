@@ -1,1 +1,7 @@
-<div style="font-size: 1.2rem;">{{ fields.ORG_NAZEV_CS.content }}</div>
+<div style="font-size: 1.2rem;">
+    {% if current_language == 'cs' %}
+        {{ fields.ORG_NAZEV_CS.content }}
+    {% else %}
+        {{ fields.ORG_NAZEV_EN.content }}
+    {% endif %}
+</div>
