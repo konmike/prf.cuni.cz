@@ -28,11 +28,12 @@
 
 .layout-node-form fieldset:not(.fieldgroup) > legend {
     top: 0;
-    width: 98%;
+    width: 100%;
     left: 0;
     background: #fcf9e0;
     padding: 1%;
     border-bottom: 2px dashed #fad5c2;
+    border-collapse: initial;
 }
 
 .layout-node-form fieldset:not(.fieldgroup) {padding: 50px 18px 18px;}
