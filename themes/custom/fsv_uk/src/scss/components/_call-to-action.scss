@@ -4,10 +4,11 @@
   --height: 100px;
   margin-inline: auto;
   max-width: 100%;
+  background-color: $c1;
 }
 .call-to-action--light {
   .call-to-action__header {
-    background-color: var(--clr-dark-gray);
+    background-color: $c4;
   }
   .call-to-action__content {
     background-color: var(--clr-light-gray);

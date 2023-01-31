@@ -7,6 +7,7 @@
   max-width: 100%;
   overflow: hidden;
   background-color: var(--clr-light-gray);
+  // background-color: $c1;
 }
 .osoby__title {
   color: $c4;
@@ -63,7 +64,7 @@
   padding: 1em 25px;
 }
 .osoby__img-wrap {
-  background-color: var(--clr-dark-gray);
+  background-color: $c13;
 }
 .osoby__img {
   margin-inline: auto;
