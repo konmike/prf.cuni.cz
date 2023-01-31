@@ -17,7 +17,7 @@
         <section class="controls controls--print">        
             <ul class="controls__list">
                 <li class="controls__item">
-                    <a class="controls__link controls__link--print" href="#" id="jq_print">{{ 'Tisk'|t}}</a>
+                    <a class="controls__link controls__link--print" id="jq_print">{{ 'Tisk'|t}}</a>
                 </li>
             </ul>
         </section>
@@ -50,11 +50,11 @@
 
 {% block controls %}
     {% if content.field_node_show_controls['#items'].0.getValue().value %}
-        <section class="controls mb">
+        <section id="controls" class="controls mb">
             <h2 class="section-title padding">{{"Ovládací prvky"|t}}</h2>
             <ul class="controls__list">
                 <li class="controls__item">
-                    <a class="controls__link controls__link--print" href="#" id="jq_print">{{ 'Tisk'|t}}</a>
+                    <a class="controls__link controls__link--print" id="jq_print">{{ 'Tisk'|t}}</a>
                 </li>
                 <li class="controls__item">
                     <a class="controls__link controls__link--mail" href="mailto:?&body={{ host }}{{ current_uri }}" target="_blank">{{'Poslat mailem'|t}}</a>

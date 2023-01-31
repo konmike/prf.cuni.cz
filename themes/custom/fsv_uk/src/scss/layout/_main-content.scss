@@ -27,6 +27,7 @@
     &.btn,
     &.link--wrapper-image,
     &.logos__link,
+    &[href="#"]:not(.controls__link--print),
     &[href="#"],
     &.more-info,
     &.featured-link__link {
