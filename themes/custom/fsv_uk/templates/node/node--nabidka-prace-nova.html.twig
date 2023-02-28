@@ -3,6 +3,9 @@
 		{% else %}
 
 			<h1 class="padding section-title page-title">
+				{% if (node.field_topovat.value == '1') %}
+					<span class="topovat">TOP</span>
+				{% endif %}
 				{{ label }}
 			</h1>
 
@@ -49,11 +52,6 @@
 		{% if ((node.field_koho_hledame_list.value is not empty) or (node.field_uvazek_list.value is not empty) or (node.field_mzda.value is not empty)) %}
 			<div class="wrapper--tags">
 				<ul class="tags--list">
-				{% if (node.field_topovat.value == '1') %}
-						<li>
-							<span class="topovat">TOP</span>
-						</li>
-				{% endif %}
 					{% if (node.field_koho_hledame_list.value is not empty) %}
 						<li>
 							<span class="label">Vhodné pro:</span>

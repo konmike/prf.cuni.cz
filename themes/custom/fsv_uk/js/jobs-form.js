@@ -42,6 +42,16 @@
       );
     }
 
+    let inpDate = document.getElementById("edit-unpublish-on-0-value-date");
+    inpDate.value = addDaysToDate();
+
+    inpDate.addEventListener("change", () => {
+      let val = inpDate.value;
+      if (!checkDate(val)) {
+        inpDate.value = addDaysToDate();
+      }
+    });
+
     $("#edit-field-topovat-value").click(function () {
       let fieldToggle = [
         "div[id^='ajax-wrapper']",
@@ -87,7 +97,24 @@
 function delay(time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
-
 function animateShow(field, displayType) {
   field.css("display", displayType).hide().fadeIn();
+}
+function checkDate(date) {
+  const today = new Date();
+  const inputDate = new Date(date);
+  const timeDiff = inputDate.getTime() - today.getTime(); // rozdíl času v milisekundách
+  const diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); // převod milisekund na dny a zaokrouhlení nahoru
+  return diffDays <= 30 && diffDays >= 0 ? true : false;
+}
+
+//Funkce pripocte 30 dnu k aktualnimu datu.
+function addDaysToDate() {
+  const today = new Date(); // aktuální datum a čas
+  const futureDate = new Date(today.getTime() + 30 * 24 * 60 * 60 * 1000); // nové datum přičtením 30 dnů
+  const year = futureDate.getFullYear();
+  const month = ("0" + (futureDate.getMonth() + 1)).slice(-2); // měsíc začíná na indexu 0
+  const day = ("0" + futureDate.getDate()).slice(-2); // číslo dne v měsíci
+  const formattedDate = year + "-" + month + "-" + day; // sestavení datumu ve formátu "YYYY-MM-DD"
+  return formattedDate; // vrácení nového data
 }

@@ -3,6 +3,13 @@
 .content__job-offer {
   margin-top: 1rem;
 
+  .section-title {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.5em;
+    align-items: center;
+  }
+
   & .adresa:before {
     content: "\f3c5";
   }
@@ -57,6 +64,7 @@
   .topovat {
     //PRO verze
     display: block;
+    max-width: min-content;
     padding: 0.1em 0.75em;
     background: $c4;
     color: $c1;
@@ -83,12 +91,12 @@
 
     ul {
       display: flex;
-      flex-direction: column;
+      flex-flow: column wrap;
       justify-content: flex-start;
       padding: 0 2rem;
 
       @media screen and (min-width: ($sm * 1em)) {
-        flex-direction: row;
+        flex-flow: row wrap;
       }
 
       .label {
@@ -102,7 +110,7 @@
         width: fit-content;
         //color: white;
         display: flex;
-        flex-direction: row;
+        flex-flow: row wrap;
         align-items: center;
         //margin-right: 1rem;
         list-style-type: none;
