@@ -49,6 +49,9 @@
       let val = inpDate.value;
       if (!checkDate(val)) {
         inpDate.value = addDaysToDate();
+        if (!checkDateInvalidMsg()) addDateInvalidMsg();
+      } else {
+        if (checkDateInvalidMsg()) removeDateInvalidMsg();
       }
     });
 
@@ -117,4 +120,29 @@ function addDaysToDate() {
   const day = ("0" + futureDate.getDate()).slice(-2); // číslo dne v měsíci
   const formattedDate = year + "-" + month + "-" + day; // sestavení datumu ve formátu "YYYY-MM-DD"
   return formattedDate; // vrácení nového data
+}
+function checkDateInvalidMsg() {
+  return document.getElementById("date-invalid-msg") ? true : false;
+}
+function addDateInvalidMsg() {
+  let tmpDate = new Date(addDaysToDate());
+  let invalidMsg = document.createElement("span");
+  invalidMsg.id = "date-invalid-msg";
+  invalidMsg.classList.add("msg-error");
+  invalidMsg.textContent =
+    "Inzerát může být na webu maximálně po dobu 30 dní od založení, tzn. nejpozději " +
+    tmpDate.getDate() +
+    "." +
+    (tmpDate.getMonth() + 1) +
+    "." +
+    tmpDate.getFullYear() +
+    " bude odstraněn.";
+  let wrapperDate = document.getElementsByClassName(
+    "wrapper--end-date-of-publish"
+  )[0];
+  wrapperDate.appendChild(invalidMsg);
+}
+function removeDateInvalidMsg() {
+  let msg = document.getElementById("date-invalid-msg");
+  msg.remove();
 }
