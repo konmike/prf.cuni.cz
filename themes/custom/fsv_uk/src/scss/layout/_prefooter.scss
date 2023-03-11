@@ -170,6 +170,9 @@
       &:last-child {
         margin-right: 0;
       }
+      &:only-child {
+        margin-bottom: 2em;
+      }
     }
     &__top {
       margin-bottom: 0;
