@@ -1,0 +1,85 @@
+@use "../abstracts/var" as *;
+
+.pager {
+  background-color: $c1;
+  width: 100%;
+
+  // kvuli vysoke specificite tady - .news-block ul li a:not([class])
+  .pager__items .pager__item {
+    a {
+      text-decoration: none;
+      padding: 0.5em;
+      color: $c2;
+    }
+
+    &--active {
+      a {
+        color: $c4;
+      }
+    }
+  }
+  &__items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 0.2rem solid $c7;
+  }
+  &__item {
+    &--last,
+    &--first {
+      display: none;
+    }
+    &--next,
+    &--previous {
+      width: 4rem;
+      height: 4rem;
+      display: block;
+      background-color: $c1;
+      display: inline-block;
+      border: none;
+      border-left: 0.2rem solid $c7;
+      cursor: pointer;
+      background-image: url(../images/icons/triangle-red.svg);
+      background-size: 8px;
+      background-repeat: no-repeat;
+      background-position: center;
+      text-indent: -9999px;
+      a {
+        display: block;
+      }
+    }
+    &--previous {
+      margin-right: auto;
+      border-left: none;
+      border-right: 0.2rem solid $c7;
+      background-image: url(../images/icons/triangle-red-left.svg);
+    }
+    &--next {
+      margin-left: auto;
+    }
+    &--empty {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /*
+     * Duplicitni viz vyse - vysoka specificita
+     * 
+    a {
+      text-decoration: none;
+      padding: 0.5em;
+      color: $c2;
+    }
+    */
+  }
+
+  @media (min-width: ($md * 1em)) {
+    &__item {
+      &--next,
+      &--previous {
+        width: 6rem;
+        height: 6rem;
+      }
+    }
+  }
+}

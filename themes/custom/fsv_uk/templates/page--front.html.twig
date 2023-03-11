@@ -66,9 +66,9 @@
                     
                     <div class="news-feed">
                         <h2 class="news-feed__section-title section-title padding">{{ 'Articles'|t }}<a class="" href="/articles">{{ 'All articles'|t }}</a></h2>
+                        {{ drupal_view('news', 'articles') }}
                     </div>
                     
-                    {{ drupal_view('news', 'articles') }}
 
                 </div>
                 <div class="layout-aside news-feed news-feed-events padding-bottom">
@@ -111,16 +111,15 @@
 
                 </div>
             </div>
-            <div class="container news-block">
-                {{ drupal_view('news_page', 'block_homepage_news_feed') }}
-            </div>
 
 			{% if current_language == 'cs' %}
+                <div class="container news-block">
+                    {{ drupal_view('news_page', 'block_homepage_news_feed') }}
+                </div>
 
-           <!--  <div class="container courses-block">
-                {{ drupal_view('news_page', 'block_homepage_courses_feed') }}
-            </div> -->
-
+                 <!--  <div class="container courses-block">
+                    {{ drupal_view('news_page', 'block_homepage_courses_feed') }}
+                </div> -->
 			{% endif %}
 
             <section class="search-large" style="padding-bottom:40px">
