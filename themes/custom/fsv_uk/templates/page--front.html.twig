@@ -11,12 +11,12 @@
 
 <div id="jq_cookies" class="cookies">
     <p>
-    {{ 'This website uses cookies to store information on your computer. Some cookies ensure the proper functioning of this site, others help us improve the site by allowing us to see how the site is used. By continuing to use this website, you consent to the use of cookies. '|t }}
-    {% if current_language == 'en' %}
-                        <span>— <a href="https://www.prf.cuni.cz/en/cookies">More information?</a></span>
-                    {% else %}
-                      <span>— <a href="https://www.prf.cuni.cz/cookies">Více informací?</a></span>
-                    {% endif %}
+        {{ 'This website uses cookies to store information on your computer. Some cookies ensure the proper functioning of this site, others help us improve the site by allowing us to see how the site is used. By continuing to use this website, you consent to the use of cookies. '|t }}
+        {% if current_language == 'en' %}
+        <span>— <a href="https://www.prf.cuni.cz/en/cookies">More information?</a></span>
+        {% else %}
+        <span>— <a href="https://www.prf.cuni.cz/cookies">Více informací?</a></span>
+        {% endif %}
     </p>
     <button id="jq_cookiesClose" class="btn">{{ "I Agree"|t}}</button>
 </div>
@@ -68,31 +68,18 @@
                         <h2 class="news-feed__section-title section-title padding">{{ 'Articles'|t }}<a class="" href="/articles">{{ 'All articles'|t }}</a></h2>
                         {{ drupal_view('news', 'articles') }}
                     </div>
-                    
-
                 </div>
                 <div class="layout-aside news-feed news-feed-events padding-bottom">
-
-                {% if current_language == 'cs' %}
-
-                    <h2 class="news-feed__section-title section-title padding">{{ 'Events'|t }} <a class="" href="events">{{ 'All events'|t }}</a> </h2>
+                    <h2 class="news-feed__section-title section-title padding">{{ 'Events'|t }} <a class="" href="{% if current_language == 'en' %}/en/{% endif %}events">{{ 'All events'|t }}</a> </h2>
                     {{ drupal_view('events', 'today') }}
                     {{ drupal_view('events', 'tomorrow') }}
                     {{ drupal_view('events', 'soon') }}
                     {{ drupal_view('events', 'recomend') }}
 
                     <div style="margin-bottom:30px;"></div>
-
-                    
-
-                {% endif %}
-
-					
-
                     {{ page.front_aside }}
 
-                {% if current_language == 'cs' %}
-
+                    {% if current_language == 'cs' %}
                     <div style="margin-bottom:30px;"></div>
                     
                     <div class="jobs-teaser">
@@ -105,22 +92,15 @@
 
                         {{ drupal_view('nabidka_praci', 'jobs_teaser') }}
                     </div>
-
-                    
-                {% endif %}
-
+                    {% endif %}
                 </div>
             </div>
 
-			{% if current_language == 'cs' %}
-                <div class="container news-block">
-                    {{ drupal_view('news_page', 'block_homepage_news_feed') }}
-                </div>
-
-                 <!--  <div class="container courses-block">
-                    {{ drupal_view('news_page', 'block_homepage_courses_feed') }}
-                </div> -->
-			{% endif %}
+            {% if current_language == 'cs' %}
+            <div class="container news-block">
+                {{ drupal_view('news_page', 'block_homepage_news_feed') }}
+            </div>
+            {% endif %}
 
             <section class="search-large" style="padding-bottom:40px">
                 {{ drupal_form('Drupal\\search\\Form\\SearchBlockForm', 'homepage') }}
