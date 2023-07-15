@@ -3,7 +3,12 @@
 .side-nav {
   $this: &;
   display: none;
+
   &__item {
+    display: grid;
+    grid-template-areas: 'title toggle'
+      'submenu submenu';
+    grid-template-columns: 1fr min-content;
     font-size: 1.6rem;
     background-color: $c1;
     border-bottom: 0.2rem solid $c7;
@@ -13,6 +18,10 @@
       #{$this}__list-lvl2 {
         display: block;
       }
+
+      >#{$this}__link--wrap {
+        background-color: $c12;
+      }
     }
   }
 
@@ -21,6 +30,7 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
     cursor: pointer;
+
     &:after {
       content: "";
       background-image: url(../images/icons/triangle-red.svg);
@@ -38,29 +48,49 @@
   }
 
   &__toggle {
-    content: "+";
-    width: 5rem;
-    height: 5rem;
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: 3rem;
-    text-align: center;
-    line-height: 100%;
-    line-height: 5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    grid-area: toggle;
     cursor: pointer;
     color: $c11;
-    font-weight: 100;
+
+    &::after {
+      content: '\f078';
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: inherit;
+      padding-right: 1.5rem;
+    }
+
+    &.sub-is-open::after {
+      content: '\f077';
+    }
+
     &--active {
       color: $c4;
+      background-color: $c12;
+
+      &::after {
+        content: '\f078';
+      }
+
+      &.sub-is-open::after {
+        content: '\f077';
+        color: $c4;
+      }
     }
   }
 
   &__link {
-    padding: 1.5rem;
     display: block;
+    grid-area: title;
+    padding: 1.5rem;
     border-left: 0.2em solid rgba(255, 255, 255, 1);
     transition: all 0.3s;
+
     &:hover,
     &--active {
       background-color: $c12;
@@ -69,6 +99,7 @@
   }
 
   &__list-lvl2 {
+    grid-area: submenu;
     padding: 1rem;
     padding-left: 4rem;
     padding-right: 1.75rem;
@@ -83,46 +114,140 @@
   }
 
   &__link-lvl2 {
-    display: inline;
-    //position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     transition: color 0.3s;
     border-left: 0;
+
     &:hover {
       color: $c4;
       background-color: transparent;
       border-left: 0;
     }
+
     &.is-active {
       color: $c4;
+
+      &::after {
+        content: "";
+        width: 1.5rem;
+        height: 1.5rem;
+        background-image: url(../images/icons/active_arrow.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 1rem;
+        margin-inline: 0.5rem;
+      }
     }
+
     &#{$this}__link--active {
       color: $c4;
       background-color: transparent;
       border-left: 0;
-      &:after {
-        content: "";
-        // display: block;
-        position: absolute;
-        width: 1.5rem;
-        height: 1.5rem;
-        background-image: url(../images/icons/active_arrow.svg);
-        right: 10px;
-        margin: 6px 0 0 0;
-        //top: .2rem;
-      }
     }
   }
 
-  @media (min-width: $sm * 1em) {
+  @media (min-width: ($sm * 1em)) {
     &__mobile-toggle {
       margin-top: 0;
     }
   }
 
-  @media (min-width: $lg * 1em) {
+  @media (min-width: ($lg * 1em)) {
     display: block !important;
+
     &__mobile-toggle {
       display: none !important;
+    }
+  }
+}
+
+// Na anglické verzi je menu lehce modifikované, podobně jako na /zahranici
+[data-url^="/en"] {
+  .side-nav__list {
+    display: grid;
+    row-gap: 1em;
+  }
+
+  .side-nav__list-lvl2 {
+    padding: 0;
+    padding-top: 0.5em;
+  }
+
+  .side-nav__item {
+    border: 0;
+  }
+
+  .side-nav__item-lvl2 {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 0.5em 0.5em 0.5em 0;
+    transition: background-color 250ms;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: block;
+      min-width: 0.75em;
+      min-height: 0.75em;
+      margin-inline: 1.25em 0.75em;
+      background-color: transparent;
+      transition: background-color 250ms;
+    }
+  }
+
+  .side-nav__link-lvl2.is-active,
+  .side-nav__link-lvl2.side-nav__link-lvl2--active {
+    color: $c2;
+    font-weight: 600;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .side-nav__link-lvl2 {
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  .side-nav__link {
+    --clr-dark-red: #c0161f;
+    --clr-light-absolventi: #fad1d3;
+
+    background-color: var(--clr-dark-red);
+    color: $c1;
+    border: 0;
+    font-weight: 400;
+    padding-block: 1.15rem;
+
+    &:hover {
+      border: 0;
+    }
+
+    +.side-nav__toggle {
+      background-color: #c0161f;
+
+      &::after {
+        color: $c1;
+      }
+    }
+
+    ~.side-nav__list-lvl2 .side-nav__item-lvl2 {
+
+      &:hover,
+      &.side-nav__item--active {
+        background-color: #fad1d3;
+
+        &::before {
+          background-color: #c0161f;
+        }
+      }
     }
   }
 }

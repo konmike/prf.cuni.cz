@@ -18,6 +18,7 @@
 
 a:not([class]) {
   text-decoration: underline;
+
   &:hover {
     text-decoration: none;
   }
@@ -26,6 +27,7 @@ a:not([class]) {
 .lazyfade {
   transition: 0.25s;
   opacity: 0;
+
   &.lazyloaded {
     opacity: 1 !important;
   }
@@ -113,9 +115,11 @@ a:not([class]) {
   border-radius: 0.4rem;
   white-space: nowrap;
   transition: background-color 0.3s;
+
   &:not(:first-child) {
     margin-left: 0.5rem;
   }
+
   &:hover {
     background-color: rgba($c7, 0.4);
   }
@@ -131,13 +135,14 @@ hr {
 ul:not([class]) {
   padding-left: 2rem;
   margin-bottom: 1rem;
+
   li {
     text-indent: -1em;
     padding-left: 1em;
     list-style: none;
 
     &:before,
-    > ul li:before {
+    >ul li:before {
       width: 6px;
       height: 6px;
       background-color: $c3;
@@ -146,7 +151,7 @@ ul:not([class]) {
       margin-bottom: 0.1em;
     }
 
-    > ul li:before {
+    >ul li:before {
       background-color: $c1;
       border: 1px solid $c3;
     }
@@ -156,9 +161,11 @@ ul:not([class]) {
 a.arrow-link {
   transition: color 0.3s;
   text-decoration: underline;
+
   &:hover {
     text-decoration: none;
   }
+
   &:after {
     content: "";
     display: inline-block;
@@ -173,9 +180,11 @@ a.arrow-link {
 a.external-link,
 a.download-link {
   text-decoration: underline;
+
   &:hover {
     text-decoration: none;
   }
+
   &:after {
     content: "";
     display: inline-block;
@@ -186,9 +195,11 @@ a.download-link {
     background-size: cover;
   }
 }
+
 a.external-link::after {
   background-image: url(../images/icons/external.svg);
 }
+
 a.download-link::after {
   background-image: url(../images/icons/download.svg);
 }
@@ -200,40 +211,49 @@ a.download-link::after {
     max-width: calc(#{$container} + 8%);
     margin: auto;
   }
+
   main.viewfronthomepage {
     padding-top: 10.5rem;
   }
 
   .padding {
     padding: 1.5rem;
+
     &--large {
       padding: 3rem;
     }
   }
+
   .two-col-slot {
     // lost-column: 1/2 auto 3rem;
     width: calc(99.9% * 1 / 2 - (3rem - 3rem * 1 / 2));
     display: flex;
     flex-direction: column;
+
     &:nth-child(1n) {
       float: left;
       margin-right: 3rem;
       clear: none;
     }
+
     &:nth-child(2n) {
       margin-right: 0;
       float: right;
     }
+
     &:nth-child(2n + 1) {
       clear: both;
     }
+
     &:last-child {
       margin-right: 0;
     }
   }
+
   .row {
     display: flex;
   }
+
   .section-title {
     font-size: 2.4rem;
   }
@@ -243,6 +263,7 @@ a.download-link::after {
   main {
     padding-top: 0;
   }
+
   main.viewfronthomepage {
     padding-top: 3.5rem;
   }
@@ -255,22 +276,27 @@ a.download-link::after {
     top: 50px;
     width: calc(99.9% * 1 / 3 - (30px - 30px * 1 / 3));
     max-width: 360px;
+
     &:nth-child(1n) {
       float: left;
       margin-right: 3rem;
       clear: none;
     }
+
     &:nth-child(3n) {
       margin-right: 0;
       float: right;
     }
+
     &:nth-child(3n + 1) {
       clear: both;
     }
+
     &:last-child {
       margin-right: 0;
     }
   }
+
   // .main-content {
   //     // lost-column: 2/3;
   //     width: calc(99.9% * 1 / 3 - (30px - 30px * 1 / 3));
@@ -320,42 +346,75 @@ a.download-link::after {
 .text-align-justify {
   text-align: justify;
 }
+
 .pt-0 {
   padding-top: var(--p-0);
 }
+
 .pt-sm {
   padding-top: var(--p-sm);
 }
+
 .pt-md {
   padding-top: var(--p-md);
 }
+
 .pt-lg {
   padding-top: var(--p-lg);
 }
+
 .pt-xl {
   padding-top: var(--p-xl);
 }
+
 .pb-0 {
   padding-bottom: var(--p-0);
 }
+
 .pb-sm {
   padding-bottom: var(--p-sm);
 }
+
 .pb-md {
   padding-bottom: var(--p-md);
 }
+
 .pb-lg {
   padding-bottom: var(--p-lg);
 }
+
 .pb-xl {
   padding-bottom: var(--p-xl);
 }
+
 .bc-white {
   background-color: #ffffff;
 }
+
 .bc-transparent {
   background-color: transparent;
 }
+
 .mb-reset-hero-image .hero-image {
   margin-bottom: 0;
 }
+
+// .side-nav__item > .side-nav__link--dark-red {
+//   background-color: var(--clr-dark-red) !important;
+//   color: $c1 !important;
+//   font-weight: 400;
+//   border-left-color: var(--clr-dark-red) !important;
+
+//   &:hover {
+//     background: $c4 !important;
+//   }
+
+//   + .side-nav__toggle--active {
+//     color: $c1;
+//   }
+// }
+// .side-nav__item > .side-nav__link--dark-red.is-active{
+//   font-weight: 800;
+//   background-color: $c4 !important;
+//   border-left-color: var(--clr-dark-red) !important;
+// }

@@ -16,5 +16,7 @@
     "url": "https://github.com/konmike/prf.cuni.cz/issues"
   },
   "homepage": "https://github.com/konmike/prf.cuni.cz#readme",
-  "dependencies": {}
+  "dependencies": {
+    "sass": "^1.63.6"
+  }
 }

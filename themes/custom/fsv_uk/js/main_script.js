@@ -8,8 +8,8 @@ function removeDiacritics(e) {
   "function" == typeof define && define.amd
     ? define([], t)
     : "object" == typeof exports
-    ? (module.exports = t())
-    : (e.Headroom = t());
+      ? (module.exports = t())
+      : (e.Headroom = t());
 })(this, function () {
   "use strict";
   function e(e) {
@@ -53,7 +53,7 @@ function removeDiacritics(e) {
       (this.onNotBottom = t.onNotBottom);
   }
   var l = {
-    bind: !!function () {}.bind,
+    bind: !!function () { }.bind,
     classList: "classList" in document.documentElement,
     rAF: !!(
       window.requestAnimationFrame ||
@@ -76,7 +76,7 @@ function removeDiacritics(e) {
           (requestAnimationFrame(
             this.rafCallback || (this.rafCallback = this.update.bind(this))
           ),
-          (this.ticking = !0));
+            (this.ticking = !0));
       },
       handleEvent: function () {
         this.requestTick();
@@ -107,64 +107,64 @@ function removeDiacritics(e) {
       attachEvent: function () {
         this.initialised ||
           ((this.lastKnownScrollY = this.getScrollY()),
-          (this.initialised = !0),
-          this.scroller.addEventListener("scroll", this.debouncer, !1),
-          this.debouncer.handleEvent());
+            (this.initialised = !0),
+            this.scroller.addEventListener("scroll", this.debouncer, !1),
+            this.debouncer.handleEvent());
       },
       unpin: function () {
         var e = this.elem.classList,
           t = this.classes;
         (!e.contains(t.pinned) && e.contains(t.unpinned)) ||
           (e.add(t.unpinned),
-          e.remove(t.pinned),
-          this.onUnpin && this.onUnpin.call(this));
+            e.remove(t.pinned),
+            this.onUnpin && this.onUnpin.call(this));
       },
       pin: function () {
         var e = this.elem.classList,
           t = this.classes;
         e.contains(t.unpinned) &&
           (e.remove(t.unpinned),
-          e.add(t.pinned),
-          this.onPin && this.onPin.call(this));
+            e.add(t.pinned),
+            this.onPin && this.onPin.call(this));
       },
       top: function () {
         var e = this.elem.classList,
           t = this.classes;
         e.contains(t.top) ||
           (e.add(t.top),
-          e.remove(t.notTop),
-          this.onTop && this.onTop.call(this));
+            e.remove(t.notTop),
+            this.onTop && this.onTop.call(this));
       },
       notTop: function () {
         var e = this.elem.classList,
           t = this.classes;
         e.contains(t.notTop) ||
           (e.add(t.notTop),
-          e.remove(t.top),
-          this.onNotTop && this.onNotTop.call(this));
+            e.remove(t.top),
+            this.onNotTop && this.onNotTop.call(this));
       },
       bottom: function () {
         var e = this.elem.classList,
           t = this.classes;
         e.contains(t.bottom) ||
           (e.add(t.bottom),
-          e.remove(t.notBottom),
-          this.onBottom && this.onBottom.call(this));
+            e.remove(t.notBottom),
+            this.onBottom && this.onBottom.call(this));
       },
       notBottom: function () {
         var e = this.elem.classList,
           t = this.classes;
         e.contains(t.notBottom) ||
           (e.add(t.notBottom),
-          e.remove(t.bottom),
-          this.onNotBottom && this.onNotBottom.call(this));
+            e.remove(t.bottom),
+            this.onNotBottom && this.onNotBottom.call(this));
       },
       getScrollY: function () {
         return void 0 !== this.scroller.pageYOffset
           ? this.scroller.pageYOffset
           : void 0 !== this.scroller.scrollTop
-          ? this.scroller.scrollTop
-          : (
+            ? this.scroller.scrollTop
+            : (
               document.documentElement ||
               document.body.parentNode ||
               document.body
@@ -229,13 +229,13 @@ function removeDiacritics(e) {
           i = this.toleranceExceeded(e, t);
         this.isOutOfBounds(e) ||
           (e <= this.offset ? this.top() : this.notTop(),
-          e + this.getViewportHeight() >= this.getScrollerHeight()
-            ? this.bottom()
-            : this.notBottom(),
-          this.shouldUnpin(e, i)
-            ? this.unpin()
-            : this.shouldPin(e, i) && this.pin(),
-          (this.lastKnownScrollY = e));
+            e + this.getViewportHeight() >= this.getScrollerHeight()
+              ? this.bottom()
+              : this.notBottom(),
+            this.shouldUnpin(e, i)
+              ? this.unpin()
+              : this.shouldPin(e, i) && this.pin(),
+            (this.lastKnownScrollY = e));
       },
     }),
     (n.options = {
@@ -259,20 +259,20 @@ function removeDiacritics(e) {
   (function (e, t) {
     "function" == typeof define && define.amd
       ? define(["jquery"], function (e) {
-          return t(e);
-        })
+        return t(e);
+      })
       : "object" == typeof exports
-      ? (module.exports = t(require("jquery")))
-      : t(e.jQuery);
+        ? (module.exports = t(require("jquery")))
+        : t(e.jQuery);
   })(this, function (e) {
     !(function () {
       "use strict";
       function t(t, s) {
         if (
           ((this.el = t),
-          (this.$el = e(t)),
-          (this.s = e.extend({}, i, s)),
-          this.s.dynamic &&
+            (this.$el = e(t)),
+            (this.s = e.extend({}, i, s)),
+            this.s.dynamic &&
             "undefined" !== this.s.dynamicEl &&
             this.s.dynamicEl.constructor === Array &&
             !this.s.dynamicEl.length)
@@ -288,12 +288,12 @@ function removeDiacritics(e) {
           this.s.dynamic
             ? (this.$items = this.s.dynamicEl)
             : "this" === this.s.selector
-            ? (this.$items = this.$el)
-            : "" !== this.s.selector
-            ? this.s.selectWithin
-              ? (this.$items = e(this.s.selectWithin).find(this.s.selector))
-              : (this.$items = this.$el.find(e(this.s.selector)))
-            : (this.$items = this.$el.children()),
+              ? (this.$items = this.$el)
+              : "" !== this.s.selector
+                ? this.s.selectWithin
+                  ? (this.$items = e(this.s.selectWithin).find(this.s.selector))
+                  : (this.$items = this.$el.find(e(this.s.selector)))
+                : (this.$items = this.$el.children()),
           (this.$slide = ""),
           (this.$outer = ""),
           this.init(),
@@ -347,30 +347,30 @@ function removeDiacritics(e) {
         var i = window.location.hash;
         i.indexOf("lg=" + this.s.galleryId) > 0 &&
           ((t.index = parseInt(i.split("&slide=")[1], 10)),
-          e("body").addClass("lg-from-hash"),
-          e("body").hasClass("lg-on") ||
+            e("body").addClass("lg-from-hash"),
+            e("body").hasClass("lg-on") ||
             (setTimeout(function () {
               t.build(t.index);
             }),
-            e("body").addClass("lg-on"))),
+              e("body").addClass("lg-on"))),
           t.s.dynamic
             ? (t.$el.trigger("onBeforeOpen.lg"),
               (t.index = t.s.index || 0),
               e("body").hasClass("lg-on") ||
-                setTimeout(function () {
-                  t.build(t.index), e("body").addClass("lg-on");
-                }))
+              setTimeout(function () {
+                t.build(t.index), e("body").addClass("lg-on");
+              }))
             : t.$items.on("click.lgcustom", function (i) {
-                try {
-                  i.preventDefault(), i.preventDefault();
-                } catch (e) {
-                  i.returnValue = !1;
-                }
-                t.$el.trigger("onBeforeOpen.lg"),
-                  (t.index = t.s.index || t.$items.index(this)),
-                  e("body").hasClass("lg-on") ||
-                    (t.build(t.index), e("body").addClass("lg-on"));
-              });
+              try {
+                i.preventDefault(), i.preventDefault();
+              } catch (e) {
+                i.returnValue = !1;
+              }
+              t.$el.trigger("onBeforeOpen.lg"),
+                (t.index = t.s.index || t.$items.index(this)),
+                e("body").hasClass("lg-on") ||
+                (t.build(t.index), e("body").addClass("lg-on"));
+            });
       }),
         (t.prototype.build = function (t) {
           var i = this;
@@ -387,8 +387,8 @@ function removeDiacritics(e) {
                 }, 50),
                 i.s.mousewheel && i.mousewheel())
               : i.$slide.on("click.lg", function () {
-                  i.$el.trigger("onSlideClick.lg");
-                }),
+                i.$el.trigger("onSlideClick.lg");
+              }),
             i.counter(),
             i.closeGallery(),
             i.$el.trigger("onAfterOpen.lg"),
@@ -410,11 +410,11 @@ function removeDiacritics(e) {
             o = this;
           for (
             e("body").append('<div class="lg-backdrop"></div>'),
-              e(".lg-backdrop").css(
-                "transition-duration",
-                this.s.backdropDuration + "ms"
-              ),
-              n = 0;
+            e(".lg-backdrop").css(
+              "transition-duration",
+              this.s.backdropDuration + "ms"
+            ),
+            n = 0;
             n < this.$items.length;
             n++
           )
@@ -428,46 +428,46 @@ function removeDiacritics(e) {
                 '</button><button class="lg-next lg-icon">' +
                 this.s.nextHtml +
                 "</button></div>"),
-            ".lg-sub-html" === this.s.appendSubHtmlTo &&
+              ".lg-sub-html" === this.s.appendSubHtmlTo &&
               (l = '<div class="lg-sub-html"></div>'),
-            (t =
-              '<div class="lg-outer ' +
-              this.s.addClass +
-              " " +
-              this.s.startClass +
-              '"><div class="lg" style="width:' +
-              this.s.width +
-              "; height:" +
-              this.s.height +
-              '"><div class="lg-inner">' +
-              i +
-              '</div><div class="lg-toolbar lg-group"><span class="lg-close lg-icon"></span></div>' +
-              s +
-              l +
-              "</div></div>"),
-            e("body").append(t),
-            (this.$outer = e(".lg-outer")),
-            (this.$slide = this.$outer.find(".lg-item")),
-            this.s.useLeft
-              ? (this.$outer.addClass("lg-use-left"),
-                (this.s.mode = "lg-slide"))
-              : this.$outer.addClass("lg-use-css3"),
-            o.setTop(),
-            e(window).on("resize.lg orientationchange.lg", function () {
-              setTimeout(function () {
-                o.setTop();
-              }, 100);
-            }),
-            this.$slide.eq(this.index).addClass("lg-current"),
-            this.doCss()
-              ? this.$outer.addClass("lg-css3")
-              : (this.$outer.addClass("lg-css"), (this.s.speed = 0)),
-            this.$outer.addClass(this.s.mode),
-            this.s.enableDrag &&
+              (t =
+                '<div class="lg-outer ' +
+                this.s.addClass +
+                " " +
+                this.s.startClass +
+                '"><div class="lg" style="width:' +
+                this.s.width +
+                "; height:" +
+                this.s.height +
+                '"><div class="lg-inner">' +
+                i +
+                '</div><div class="lg-toolbar lg-group"><span class="lg-close lg-icon"></span></div>' +
+                s +
+                l +
+                "</div></div>"),
+              e("body").append(t),
+              (this.$outer = e(".lg-outer")),
+              (this.$slide = this.$outer.find(".lg-item")),
+              this.s.useLeft
+                ? (this.$outer.addClass("lg-use-left"),
+                  (this.s.mode = "lg-slide"))
+                : this.$outer.addClass("lg-use-css3"),
+              o.setTop(),
+              e(window).on("resize.lg orientationchange.lg", function () {
+                setTimeout(function () {
+                  o.setTop();
+                }, 100);
+              }),
+              this.$slide.eq(this.index).addClass("lg-current"),
+              this.doCss()
+                ? this.$outer.addClass("lg-css3")
+                : (this.$outer.addClass("lg-css"), (this.s.speed = 0)),
+              this.$outer.addClass(this.s.mode),
+              this.s.enableDrag &&
               this.$items.length > 1 &&
               this.$outer.addClass("lg-grab"),
-            this.s.showAfterLoad && this.$outer.addClass("lg-show-after-load"),
-            this.doCss())
+              this.s.showAfterLoad && this.$outer.addClass("lg-show-after-load"),
+              this.doCss())
           ) {
             var a = this.$outer.find(".lg-inner");
             a.css("transition-timing-function", this.s.cssEasing),
@@ -480,11 +480,11 @@ function removeDiacritics(e) {
               o.$outer.addClass("lg-visible");
             }, this.s.backdropDuration),
             this.s.download &&
-              this.$outer
-                .find(".lg-toolbar")
-                .append(
-                  '<a id="lg-download" target="_blank" download class="lg-download lg-icon"></a>'
-                ),
+            this.$outer
+              .find(".lg-toolbar")
+              .append(
+                '<a id="lg-download" target="_blank" download class="lg-download lg-icon"></a>'
+              ),
             (this.prevScrollTop = e(window).scrollTop());
         }),
         (t.prototype.setTop = function () {
@@ -500,13 +500,13 @@ function removeDiacritics(e) {
         (t.prototype.doCss = function () {
           return !!(function () {
             var e = [
-                "transition",
-                "MozTransition",
-                "WebkitTransition",
-                "OTransition",
-                "msTransition",
-                "KhtmlTransition",
-              ],
+              "transition",
+              "MozTransition",
+              "WebkitTransition",
+              "OTransition",
+              "msTransition",
+              "KhtmlTransition",
+            ],
               t = document.documentElement,
               i = 0;
             for (i = 0; i < e.length; i++) if (e[i] in t.style) return !0;
@@ -518,19 +518,19 @@ function removeDiacritics(e) {
             ((i = this.s.dynamic
               ? this.s.dynamicEl[t].html
               : this.$items.eq(t).attr("data-html")),
-            !e)
+              !e)
           )
             return i
               ? { html5: !0 }
               : (console.error(
-                  "lightGallery :- data-src is not pvovided on slide item " +
-                    (t + 1) +
-                    ". Please make sure the selector property is properly configured. More info - http://sachinchoolur.github.io/lightGallery/demos/html-markup.html"
-                ),
+                "lightGallery :- data-src is not pvovided on slide item " +
+                (t + 1) +
+                ". Please make sure the selector property is properly configured. More info - http://sachinchoolur.github.io/lightGallery/demos/html-markup.html"
+              ),
                 !1);
           var s = e.match(
-              /\/\/(?:www\.)?youtu(?:\.be|be\.com)\/(?:watch\?v=|embed\/)?([a-z0-9\-\_\%]+)/i
-            ),
+            /\/\/(?:www\.)?youtu(?:\.be|be\.com)\/(?:watch\?v=|embed\/)?([a-z0-9\-\_\%]+)/i
+          ),
             n = e.match(/\/\/(?:www\.)?vimeo.com\/([0-9a-z\-_]+)/i),
             l = e.match(/\/\/(?:www\.)?dai.ly\/([0-9a-z\-_]+)/i),
             o = e.match(
@@ -539,21 +539,21 @@ function removeDiacritics(e) {
           return s
             ? { youtube: s }
             : n
-            ? { vimeo: n }
-            : l
-            ? { dailymotion: l }
-            : o
-            ? { vk: o }
-            : void 0;
+              ? { vimeo: n }
+              : l
+                ? { dailymotion: l }
+                : o
+                  ? { vk: o }
+                  : void 0;
         }),
         (t.prototype.counter = function () {
           this.s.counter &&
             e(this.s.appendCounterTo).append(
               '<div id="lg-counter"><span id="lg-counter-current">' +
-                (parseInt(this.index, 10) + 1) +
-                '</span> / <span id="lg-counter-all">' +
-                this.$items.length +
-                "</span></div>"
+              (parseInt(this.index, 10) + 1) +
+              '</span> / <span id="lg-counter-all">' +
+              this.$items.length +
+              "</span></div>"
             );
         }),
         (t.prototype.addHtml = function (t) {
@@ -566,12 +566,12 @@ function removeDiacritics(e) {
                 ? (i = this.s.dynamicEl[t].subHtmlUrl)
                 : (n = this.s.dynamicEl[t].subHtml)
               : (s = this.$items.eq(t)).attr("data-sub-html-url")
-              ? (i = s.attr("data-sub-html-url"))
-              : ((n = s.attr("data-sub-html")),
-                this.s.getCaptionFromTitleOrAlt &&
+                ? (i = s.attr("data-sub-html-url"))
+                : ((n = s.attr("data-sub-html")),
+                  this.s.getCaptionFromTitleOrAlt &&
                   !n &&
                   (n = s.attr("title") || s.find("img").first().attr("alt"))),
-            !i)
+              !i)
           )
             if (void 0 !== n && null !== n) {
               var l = n.substring(0, 1);
@@ -586,17 +586,17 @@ function removeDiacritics(e) {
               ? this.$outer.find(this.s.appendSubHtmlTo).load(i)
               : this.$outer.find(this.s.appendSubHtmlTo).html(n)
             : i
-            ? this.$slide.eq(t).load(i)
-            : this.$slide.eq(t).append(n),
+              ? this.$slide.eq(t).load(i)
+              : this.$slide.eq(t).append(n),
             void 0 !== n &&
-              null !== n &&
-              ("" === n
-                ? this.$outer
-                    .find(this.s.appendSubHtmlTo)
-                    .addClass("lg-empty-html")
-                : this.$outer
-                    .find(this.s.appendSubHtmlTo)
-                    .removeClass("lg-empty-html")),
+            null !== n &&
+            ("" === n
+              ? this.$outer
+                .find(this.s.appendSubHtmlTo)
+                .addClass("lg-empty-html")
+              : this.$outer
+                .find(this.s.appendSubHtmlTo)
+                .removeClass("lg-empty-html")),
             this.$el.trigger("onAfterAppendSubHtml.lg", [t]);
         }),
         (t.prototype.preload = function (e) {
@@ -633,20 +633,20 @@ function removeDiacritics(e) {
             };
           c.s.dynamic
             ? (c.s.dynamicEl[t].poster &&
-                ((u = !0), (o = c.s.dynamicEl[t].poster)),
+              ((u = !0), (o = c.s.dynamicEl[t].poster)),
               (d = c.s.dynamicEl[t].html),
               (l = c.s.dynamicEl[t].src),
               c.s.dynamicEl[t].responsive &&
-                h(c.s.dynamicEl[t].responsive.split(",")),
+              h(c.s.dynamicEl[t].responsive.split(",")),
               (a = c.s.dynamicEl[t].srcset),
               (r = c.s.dynamicEl[t].sizes))
             : (c.$items.eq(t).attr("data-poster") &&
-                ((u = !0), (o = c.$items.eq(t).attr("data-poster"))),
+              ((u = !0), (o = c.$items.eq(t).attr("data-poster"))),
               (d = c.$items.eq(t).attr("data-html")),
               (l =
                 c.$items.eq(t).attr("href") || c.$items.eq(t).attr("data-src")),
               c.$items.eq(t).attr("data-responsive") &&
-                h(c.$items.eq(t).attr("data-responsive").split(",")),
+              h(c.$items.eq(t).attr("data-responsive").split(",")),
               (a = c.$items.eq(t).attr("data-srcset")),
               (r = c.$items.eq(t).attr("data-sizes")));
           var g = !1;
@@ -660,10 +660,10 @@ function removeDiacritics(e) {
                 .eq(t)
                 .prepend(
                   '<div class="lg-video-cont lg-has-iframe" style="max-width:' +
-                    c.s.iframeMaxWidth +
-                    '"><div class="lg-video"><iframe class="lg-object" frameborder="0" src="' +
-                    l +
-                    '"  allowfullscreen="true"></iframe></div></div>'
+                  c.s.iframeMaxWidth +
+                  '"><div class="lg-video"><iframe class="lg-object" frameborder="0" src="' +
+                  l +
+                  '"  allowfullscreen="true"></iframe></div></div>'
                 );
             else if (u) {
               var m = "";
@@ -671,37 +671,37 @@ function removeDiacritics(e) {
                 f && f.youtube
                   ? "lg-has-youtube"
                   : f && f.vimeo
-                  ? "lg-has-vimeo"
-                  : "lg-has-html5"),
+                    ? "lg-has-vimeo"
+                    : "lg-has-html5"),
                 c.$slide
                   .eq(t)
                   .prepend(
                     '<div class="lg-video-cont ' +
-                      m +
-                      ' "><div class="lg-video"><span class="lg-video-play"></span><img class="lg-object lg-has-poster" src="' +
-                      o +
-                      '" /></div></div>'
+                    m +
+                    ' "><div class="lg-video"><span class="lg-video-play"></span><img class="lg-object lg-has-poster" src="' +
+                    o +
+                    '" /></div></div>'
                   );
             } else
               f
                 ? (c.$slide
-                    .eq(t)
-                    .prepend(
-                      '<div class="lg-video-cont "><div class="lg-video"></div></div>'
-                    ),
+                  .eq(t)
+                  .prepend(
+                    '<div class="lg-video-cont "><div class="lg-video"></div></div>'
+                  ),
                   c.$el.trigger("hasVideo.lg", [t, l, d]))
                 : c.$slide
-                    .eq(t)
-                    .prepend(
-                      '<div class="lg-img-wrap"><img class="lg-object lg-image" src="' +
-                        l +
-                        '" /></div>'
-                    );
+                  .eq(t)
+                  .prepend(
+                    '<div class="lg-img-wrap"><img class="lg-object lg-image" src="' +
+                    l +
+                    '" /></div>'
+                  );
             if (
               (c.$el.trigger("onAferAppendSlide.lg", [t]),
-              (n = c.$slide.eq(t).find(".lg-object")),
-              r && n.attr("sizes", r),
-              a)
+                (n = c.$slide.eq(t).find(".lg-object")),
+                r && n.attr("sizes", r),
+                a)
             ) {
               n.attr("srcset", a);
               try {
@@ -728,14 +728,14 @@ function removeDiacritics(e) {
             }),
             f && f.html5 && !u && c.$slide.eq(t).addClass("lg-complete"),
             !0 === i &&
-              (c.$slide.eq(t).hasClass("lg-complete")
-                ? c.preload(t)
-                : c.$slide
-                    .eq(t)
-                    .find(".lg-object")
-                    .on("load.lg error.lg", function () {
-                      c.preload(t);
-                    }));
+            (c.$slide.eq(t).hasClass("lg-complete")
+              ? c.preload(t)
+              : c.$slide
+                .eq(t)
+                .find(".lg-object")
+                .on("load.lg error.lg", function () {
+                  c.preload(t);
+                }));
         }),
         (t.prototype.slide = function (t, i, s, n) {
           var l = this.$outer.find(".lg-current").index(),
@@ -748,26 +748,26 @@ function removeDiacritics(e) {
                 var d;
                 (d = o.s.dynamic
                   ? !1 !== o.s.dynamicEl[t].downloadUrl &&
-                    (o.s.dynamicEl[t].downloadUrl || o.s.dynamicEl[t].src)
+                  (o.s.dynamicEl[t].downloadUrl || o.s.dynamicEl[t].src)
                   : "false" !== o.$items.eq(t).attr("data-download-url") &&
-                    (o.$items.eq(t).attr("data-download-url") ||
-                      o.$items.eq(t).attr("href") ||
-                      o.$items.eq(t).attr("data-src")))
+                  (o.$items.eq(t).attr("data-download-url") ||
+                    o.$items.eq(t).attr("href") ||
+                    o.$items.eq(t).attr("data-src")))
                   ? (e("#lg-download").attr("href", d),
                     o.$outer.removeClass("lg-hide-download"))
                   : o.$outer.addClass("lg-hide-download");
               }
               if (
                 (this.$el.trigger("onBeforeSlide.lg", [l, t, i, s]),
-                (o.lgBusy = !0),
-                clearTimeout(o.hideBartimeout),
-                ".lg-sub-html" === this.s.appendSubHtmlTo &&
+                  (o.lgBusy = !0),
+                  clearTimeout(o.hideBartimeout),
+                  ".lg-sub-html" === this.s.appendSubHtmlTo &&
                   setTimeout(function () {
                     o.addHtml(t);
                   }, r),
-                this.arrowDisable(t),
-                n || (t < l ? (n = "prev") : t > l && (n = "next")),
-                i)
+                  this.arrowDisable(t),
+                  n || (t < l ? (n = "prev") : t > l && (n = "next")),
+                  i)
               ) {
                 this.$slide.removeClass(
                   "lg-prev-slide lg-current lg-next-slide"
@@ -799,8 +799,8 @@ function removeDiacritics(e) {
                   }, 50);
               o.lGalleryOn
                 ? (setTimeout(function () {
-                    o.loadContent(t, !0, 0);
-                  }, this.s.speed + 50),
+                  o.loadContent(t, !0, 0);
+                }, this.s.speed + 50),
                   setTimeout(function () {
                     (o.lgBusy = !1),
                       o.$el.trigger("onAfterSlide.lg", [l, t, i, s]);
@@ -818,17 +818,17 @@ function removeDiacritics(e) {
             i = t.s.loop;
           e && t.$slide.length < 3 && (i = !1),
             t.lgBusy ||
-              (t.index + 1 < t.$slide.length
-                ? (t.index++,
-                  t.$el.trigger("onBeforeNextSlide.lg", [t.index]),
-                  t.slide(t.index, e, !1, "next"))
-                : i
+            (t.index + 1 < t.$slide.length
+              ? (t.index++,
+                t.$el.trigger("onBeforeNextSlide.lg", [t.index]),
+                t.slide(t.index, e, !1, "next"))
+              : i
                 ? ((t.index = 0),
                   t.$el.trigger("onBeforeNextSlide.lg", [t.index]),
                   t.slide(t.index, e, !1, "next"))
                 : t.s.slideEndAnimatoin &&
-                  !e &&
-                  (t.$outer.addClass("lg-right-end"),
+                !e &&
+                (t.$outer.addClass("lg-right-end"),
                   setTimeout(function () {
                     t.$outer.removeClass("lg-right-end");
                   }, 400)));
@@ -838,17 +838,17 @@ function removeDiacritics(e) {
             i = t.s.loop;
           e && t.$slide.length < 3 && (i = !1),
             t.lgBusy ||
-              (t.index > 0
-                ? (t.index--,
-                  t.$el.trigger("onBeforePrevSlide.lg", [t.index, e]),
-                  t.slide(t.index, e, !1, "prev"))
-                : i
+            (t.index > 0
+              ? (t.index--,
+                t.$el.trigger("onBeforePrevSlide.lg", [t.index, e]),
+                t.slide(t.index, e, !1, "prev"))
+              : i
                 ? ((t.index = t.$items.length - 1),
                   t.$el.trigger("onBeforePrevSlide.lg", [t.index, e]),
                   t.slide(t.index, e, !1, "prev"))
                 : t.s.slideEndAnimatoin &&
-                  !e &&
-                  (t.$outer.addClass("lg-left-end"),
+                !e &&
+                (t.$outer.addClass("lg-left-end"),
                   setTimeout(function () {
                     t.$outer.removeClass("lg-left-end");
                   }, 400)));
@@ -859,15 +859,15 @@ function removeDiacritics(e) {
             e(window).on("keyup.lg", function (e) {
               t.$items.length > 1 &&
                 (37 === e.keyCode && (e.preventDefault(), t.goToPrevSlide()),
-                39 === e.keyCode && (e.preventDefault(), t.goToNextSlide()));
+                  39 === e.keyCode && (e.preventDefault(), t.goToNextSlide()));
             }),
             e(window).on("keydown.lg", function (e) {
               !0 === t.s.escKey &&
                 27 === e.keyCode &&
                 (e.preventDefault(),
-                t.$outer.hasClass("lg-thumb-open")
-                  ? t.$outer.removeClass("lg-thumb-open")
-                  : t.destroy());
+                  t.$outer.hasClass("lg-thumb-open")
+                    ? t.$outer.removeClass("lg-thumb-open")
+                    : t.destroy());
             });
         }),
         (t.prototype.arrow = function () {
@@ -884,19 +884,19 @@ function removeDiacritics(e) {
             this.s.hideControlOnEnd &&
             (e + 1 < this.$slide.length
               ? this.$outer
-                  .find(".lg-next")
-                  .removeAttr("disabled")
-                  .removeClass("disabled")
+                .find(".lg-next")
+                .removeAttr("disabled")
+                .removeClass("disabled")
               : this.$outer
-                  .find(".lg-next")
-                  .attr("disabled", "disabled")
-                  .addClass("disabled"),
-            e > 0
-              ? this.$outer
+                .find(".lg-next")
+                .attr("disabled", "disabled")
+                .addClass("disabled"),
+              e > 0
+                ? this.$outer
                   .find(".lg-prev")
                   .removeAttr("disabled")
                   .removeClass("disabled")
-              : this.$outer
+                : this.$outer
                   .find(".lg-prev")
                   .attr("disabled", "disabled")
                   .addClass("disabled"));
@@ -905,24 +905,24 @@ function removeDiacritics(e) {
           this.s.useLeft
             ? e.css("left", t)
             : e.css({
-                transform: "translate3d(" + t + "px, " + i + "px, 0px)",
-              });
+              transform: "translate3d(" + t + "px, " + i + "px, 0px)",
+            });
         }),
         (t.prototype.touchMove = function (t, i) {
           var s = i - t;
           Math.abs(s) > 15 &&
             (this.$outer.addClass("lg-dragging"),
-            this.setTranslate(this.$slide.eq(this.index), s, 0),
-            this.setTranslate(
-              e(".lg-prev-slide"),
-              -this.$slide.eq(this.index).width() + s,
-              0
-            ),
-            this.setTranslate(
-              e(".lg-next-slide"),
-              this.$slide.eq(this.index).width() + s,
-              0
-            ));
+              this.setTranslate(this.$slide.eq(this.index), s, 0),
+              this.setTranslate(
+                e(".lg-prev-slide"),
+                -this.$slide.eq(this.index).width() + s,
+                0
+              ),
+              this.setTranslate(
+                e(".lg-next-slide"),
+                this.$slide.eq(this.index).width() + s,
+                0
+              ));
         }),
         (t.prototype.touchEnd = function (e) {
           var t = this;
@@ -935,8 +935,8 @@ function removeDiacritics(e) {
                 e < 0 && Math.abs(e) > t.s.swipeThreshold
                   ? t.goToNextSlide(!0)
                   : e > 0 && Math.abs(e) > t.s.swipeThreshold
-                  ? t.goToPrevSlide(!0)
-                  : Math.abs(e) < 5 && t.$el.trigger("onSlideClick.lg"),
+                    ? t.goToPrevSlide(!0)
+                    : Math.abs(e) < 5 && t.$el.trigger("onSlideClick.lg"),
                 t.$slide.removeAttr("style");
             }),
             setTimeout(function () {
@@ -957,22 +957,22 @@ function removeDiacritics(e) {
               e.$outer.hasClass("lg-zoomed") ||
                 e.lgBusy ||
                 (i.preventDefault(),
-                e.manageSwipeClass(),
-                (t = i.originalEvent.targetTouches[0].pageX));
+                  e.manageSwipeClass(),
+                  (t = i.originalEvent.targetTouches[0].pageX));
             }),
-            e.$slide.on("touchmove.lg", function (n) {
-              e.$outer.hasClass("lg-zoomed") ||
-                (n.preventDefault(),
-                (i = n.originalEvent.targetTouches[0].pageX),
-                e.touchMove(t, i),
-                (s = !0));
-            }),
-            e.$slide.on("touchend.lg", function () {
-              e.$outer.hasClass("lg-zoomed") ||
-                (s
-                  ? ((s = !1), e.touchEnd(i - t))
-                  : e.$el.trigger("onSlideClick.lg"));
-            }));
+              e.$slide.on("touchmove.lg", function (n) {
+                e.$outer.hasClass("lg-zoomed") ||
+                  (n.preventDefault(),
+                    (i = n.originalEvent.targetTouches[0].pageX),
+                    e.touchMove(t, i),
+                    (s = !0));
+              }),
+              e.$slide.on("touchend.lg", function () {
+                e.$outer.hasClass("lg-zoomed") ||
+                  (s
+                    ? ((s = !1), e.touchEnd(i - t))
+                    : e.$el.trigger("onSlideClick.lg"));
+              }));
         }),
         (t.prototype.enableDrag = function () {
           var t = this,
@@ -988,32 +988,32 @@ function removeDiacritics(e) {
                 ((e(s.target).hasClass("lg-object") ||
                   e(s.target).hasClass("lg-video-play")) &&
                   (s.preventDefault(),
-                  t.lgBusy ||
+                    t.lgBusy ||
                     (t.manageSwipeClass(),
-                    (i = s.pageX),
-                    (n = !0),
-                    (t.$outer.scrollLeft += 1),
-                    (t.$outer.scrollLeft -= 1),
-                    t.$outer.removeClass("lg-grab").addClass("lg-grabbing"),
-                    t.$el.trigger("onDragstart.lg"))));
+                      (i = s.pageX),
+                      (n = !0),
+                      (t.$outer.scrollLeft += 1),
+                      (t.$outer.scrollLeft -= 1),
+                      t.$outer.removeClass("lg-grab").addClass("lg-grabbing"),
+                      t.$el.trigger("onDragstart.lg"))));
             }),
-            e(window).on("mousemove.lg", function (e) {
-              n &&
-                ((l = !0),
-                (s = e.pageX),
-                t.touchMove(i, s),
-                t.$el.trigger("onDragmove.lg"));
-            }),
-            e(window).on("mouseup.lg", function (o) {
-              l
-                ? ((l = !1), t.touchEnd(s - i), t.$el.trigger("onDragend.lg"))
-                : (e(o.target).hasClass("lg-object") ||
+              e(window).on("mousemove.lg", function (e) {
+                n &&
+                  ((l = !0),
+                    (s = e.pageX),
+                    t.touchMove(i, s),
+                    t.$el.trigger("onDragmove.lg"));
+              }),
+              e(window).on("mouseup.lg", function (o) {
+                l
+                  ? ((l = !1), t.touchEnd(s - i), t.$el.trigger("onDragend.lg"))
+                  : (e(o.target).hasClass("lg-object") ||
                     e(o.target).hasClass("lg-video-play")) &&
                   t.$el.trigger("onSlideClick.lg"),
-                n &&
+                  n &&
                   ((n = !1),
-                  t.$outer.removeClass("lg-grabbing").addClass("lg-grab"));
-            }));
+                    t.$outer.removeClass("lg-grabbing").addClass("lg-grab"));
+              }));
         }),
         (t.prototype.manageSwipeClass = function () {
           var e = this.index + 1,
@@ -1032,7 +1032,7 @@ function removeDiacritics(e) {
           e.$outer.on("mousewheel.lg", function (t) {
             t.deltaY &&
               (t.deltaY > 0 ? e.goToPrevSlide() : e.goToNextSlide(),
-              t.preventDefault());
+                t.preventDefault());
           });
         }),
         (t.prototype.closeGallery = function () {
@@ -1042,13 +1042,13 @@ function removeDiacritics(e) {
             t.destroy();
           }),
             t.s.closable &&
-              (t.$outer.on("mousedown.lg", function (t) {
-                i = !!(
-                  e(t.target).is(".lg-outer") ||
-                  e(t.target).is(".lg-item ") ||
-                  e(t.target).is(".lg-img-wrap")
-                );
-              }),
+            (t.$outer.on("mousedown.lg", function (t) {
+              i = !!(
+                e(t.target).is(".lg-outer") ||
+                e(t.target).is(".lg-item ") ||
+                e(t.target).is(".lg-img-wrap")
+              );
+            }),
               t.$outer.on("mouseup.lg", function (s) {
                 (e(s.target).is(".lg-outer") ||
                   e(s.target).is(".lg-item ") ||
@@ -1060,9 +1060,9 @@ function removeDiacritics(e) {
           var i = this;
           t ||
             (i.$el.trigger("onBeforeClose.lg"),
-            e(window).scrollTop(i.prevScrollTop)),
+              e(window).scrollTop(i.prevScrollTop)),
             t &&
-              (i.s.dynamic || this.$items.off("click.lg click.lgcustom"),
+            (i.s.dynamic || this.$items.off("click.lg click.lgcustom"),
               e.removeData(i.el, "lightGallery")),
             this.$el.off(".lg.tm"),
             e.each(e.fn.lightGallery.modules, function (e) {
@@ -1133,12 +1133,12 @@ function removeDiacritics(e) {
       freeMove: !0,
       swipeThreshold: 40,
       responsive: [],
-      onBeforeStart: function (e) {},
-      onSliderLoad: function (e) {},
-      onBeforeSlide: function (e, t) {},
-      onAfterSlide: function (e, t) {},
-      onBeforeNextSlide: function (e, t) {},
-      onBeforePrevSlide: function (e, t) {},
+      onBeforeStart: function (e) { },
+      onSliderLoad: function (e) { },
+      onBeforeSlide: function (e, t) { },
+      onAfterSlide: function (e, t) { },
+      onBeforeNextSlide: function (e, t) { },
+      onBeforePrevSlide: function (e, t) { },
     };
     e.fn.lightSlider = function (t) {
       if (0 === this.length) return this;
@@ -1179,7 +1179,7 @@ function removeDiacritics(e) {
             var t;
             if (
               (!1 === n.autoWidth && (t = n.item),
-              r < n.responsive[0].breakpoint)
+                r < n.responsive[0].breakpoint)
             )
               for (var i = 0; i < n.responsive.length; i++)
                 r < n.responsive[i].breakpoint &&
@@ -1188,7 +1188,7 @@ function removeDiacritics(e) {
               for (var s in c.settings)
                 c.settings.hasOwnProperty(s) &&
                   ((void 0 !== l[s] && null !== l[s]) || (l[s] = n[s]),
-                  (n[s] = c.settings[s]));
+                    (n[s] = c.settings[s]));
             if (!e.isEmptyObject(l) && r > n.responsive[0].breakpoint)
               for (var o in l) l.hasOwnProperty(o) && (n[o] = l[o]);
             !1 === n.autoWidth &&
@@ -1219,15 +1219,15 @@ function removeDiacritics(e) {
               !(function () {
                 for (
                   var e = [
-                      "transition",
-                      "MozTransition",
-                      "WebkitTransition",
-                      "OTransition",
-                      "msTransition",
-                      "KhtmlTransition",
-                    ],
-                    t = document.documentElement,
-                    i = 0;
+                    "transition",
+                    "MozTransition",
+                    "WebkitTransition",
+                    "OTransition",
+                    "msTransition",
+                    "KhtmlTransition",
+                  ],
+                  t = document.documentElement,
+                  i = 0;
                   i < e.length;
                   i++
                 )
@@ -1240,32 +1240,32 @@ function removeDiacritics(e) {
               e(document).on("keyup.lightslider", function (t) {
                 e(":focus").is("input, textarea") ||
                   (t.preventDefault ? t.preventDefault() : (t.returnValue = !1),
-                  37 === t.keyCode
-                    ? o.goToPrevSlide()
-                    : 39 === t.keyCode && o.goToNextSlide());
+                    37 === t.keyCode
+                      ? o.goToPrevSlide()
+                      : 39 === t.keyCode && o.goToNextSlide());
               });
           },
           controls: function () {
             n.controls &&
               (o.after(
                 '<div class="lSAction"><a class="lSPrev">' +
-                  n.prevHtml +
-                  '</a><a class="lSNext">' +
-                  n.nextHtml +
-                  "</a></div>"
+                n.prevHtml +
+                '</a><a class="lSNext">' +
+                n.nextHtml +
+                "</a></div>"
               ),
-              n.autoWidth
-                ? z.calWidth(!1) < f && m.find(".lSAction").hide()
-                : u <= n.item && m.find(".lSAction").hide(),
-              m.find(".lSAction a").on("click", function (t) {
-                return (
-                  t.preventDefault ? t.preventDefault() : (t.returnValue = !1),
-                  "lSPrev" === e(this).attr("class")
-                    ? o.goToPrevSlide()
-                    : o.goToNextSlide(),
-                  !1
-                );
-              }));
+                n.autoWidth
+                  ? z.calWidth(!1) < f && m.find(".lSAction").hide()
+                  : u <= n.item && m.find(".lSAction").hide(),
+                m.find(".lSAction a").on("click", function (t) {
+                  return (
+                    t.preventDefault ? t.preventDefault() : (t.returnValue = !1),
+                    "lSPrev" === e(this).attr("class")
+                      ? o.goToPrevSlide()
+                      : o.goToNextSlide(),
+                    !1
+                  );
+                }));
           },
           initialStyle: function () {
             var e = this;
@@ -1280,8 +1280,8 @@ function removeDiacritics(e) {
                 .addClass("lightSlider")
                 .wrap(
                   '<div class="lSSlideOuter ' +
-                    n.addClass +
-                    '"><div class="lSSlideWrapper"></div></div>'
+                  n.addClass +
+                  '"><div class="lSSlideWrapper"></div></div>'
                 ),
               (m = o.parent(".lSSlideWrapper")),
               !0 === n.rtl && m.parent().addClass("lSrtl"),
@@ -1292,8 +1292,8 @@ function removeDiacritics(e) {
                 : (f = o.outerWidth()),
               a.addClass("lslide"),
               !0 === n.loop &&
-                "slide" === n.mode &&
-                (z.calSW(),
+              "slide" === n.mode &&
+              (z.calSW(),
                 (z.clone = function () {
                   if (z.calWidth(!0) > f) {
                     for (
@@ -1302,8 +1302,8 @@ function removeDiacritics(e) {
                       ((t +=
                         parseInt(o.find(".lslide").eq(s).width()) +
                         n.slideMargin),
-                      i++,
-                      !(t >= f + n.slideMargin));
+                        i++,
+                        !(t >= f + n.slideMargin));
                       s++
                     );
                     var l = !0 === n.autoWidth ? i : n.item;
@@ -1352,9 +1352,9 @@ function removeDiacritics(e) {
                   (h = z.calWidth(!1)),
                   o.css(v, h + "px"),
                   !0 === n.loop &&
-                    "slide" === n.mode &&
-                    !1 === g &&
-                    (p = o.find(".clone.left").length);
+                  "slide" === n.mode &&
+                  !1 === g &&
+                  (p = o.find(".clone.left").length);
               }),
               (z.calL = function () {
                 (a = o.children()), (u = a.length);
@@ -1389,32 +1389,32 @@ function removeDiacritics(e) {
                   "slide" === n.mode &&
                     (n.autoWidth
                       ? (a +=
-                          (parseInt(t.eq(s).width()) + n.slideMargin) *
-                          n.slideMove)
+                        (parseInt(t.eq(s).width()) + n.slideMargin) *
+                        n.slideMove)
                       : (a = s * ((w + n.slideMargin) * n.slideMove)));
                   var r = t.eq(s * n.slideMove).attr("data-thumb");
                   if (
                     (!0 === n.gallery
                       ? (l +=
-                          '<li style="width:100%;' +
-                          v +
-                          ":" +
-                          S +
-                          "px;" +
-                          b +
-                          ":" +
-                          n.thumbMargin +
-                          'px"><a href="#"><img src="' +
-                          r +
-                          '" /></a></li>')
+                        '<li style="width:100%;' +
+                        v +
+                        ":" +
+                        S +
+                        "px;" +
+                        b +
+                        ":" +
+                        n.thumbMargin +
+                        'px"><a href="#"><img src="' +
+                        r +
+                        '" /></a></li>')
                       : (l += '<li><a href="#">' + (s + 1) + "</a></li>"),
-                    "slide" === n.mode && a >= h - f - n.slideMargin)
+                      "slide" === n.mode && a >= h - f - n.slideMargin)
                   ) {
                     s += 1;
                     var d = 2;
                     n.autoWidth &&
                       ((l += '<li><a href="#">' + (s + 1) + "</a></li>"),
-                      (d = 1)),
+                        (d = 1)),
                       s < d
                         ? ((l = null), m.parent().addClass("noPager"))
                         : m.parent().removeClass("noPager");
@@ -1424,20 +1424,20 @@ function removeDiacritics(e) {
                 var c = m.parent();
                 c.find(".lSPager").html(l),
                   !0 === n.gallery &&
-                    (!0 === n.vertical &&
-                      c.find(".lSPager").css("width", n.vThumbWidth + "px"),
+                  (!0 === n.vertical &&
+                    c.find(".lSPager").css("width", n.vThumbWidth + "px"),
                     (C = s * (n.thumbMargin + S) + 0.5),
                     c.find(".lSPager").css({
                       property: C + "px",
                       "transition-duration": n.speed + "ms",
                     }),
                     !0 === n.vertical &&
-                      m
-                        .parent()
-                        .css(
-                          "padding-right",
-                          n.vThumbWidth + n.galleryMargin + "px"
-                        ),
+                    m
+                      .parent()
+                      .css(
+                        "padding-right",
+                        n.vThumbWidth + n.galleryMargin + "px"
+                      ),
                     c.find(".lSPager").css(v, C + "px"));
                 var u = c.find(".lSPager").find("li");
                 u.first().addClass("active"),
@@ -1445,8 +1445,8 @@ function removeDiacritics(e) {
                     return (
                       !0 === n.loop && "slide" === n.mode
                         ? (p +=
-                            u.index(this) -
-                            c.find(".lSPager").find("li.active").index())
+                          u.index(this) -
+                          c.find(".lSPager").find("li.active").index())
                         : (p = u.index(this)),
                       o.mode(!1),
                       !0 === n.gallery && e.slideThumb(),
@@ -1454,7 +1454,7 @@ function removeDiacritics(e) {
                     );
                   });
               }),
-              n.pager)
+                n.pager)
             ) {
               var t = "lSpg";
               n.gallery && (t = "lSGallery"),
@@ -1486,10 +1486,10 @@ function removeDiacritics(e) {
                 ? i.find("img")[0].complete
                   ? (l(), $ || s.auto())
                   : i.find("img").on("load", function () {
-                      setTimeout(function () {
-                        l(), $ || s.auto();
-                      }, 100);
-                    })
+                    setTimeout(function () {
+                      l(), $ || s.auto();
+                    }, 100);
+                  })
                 : $ || s.auto();
           },
           active: function (e, t) {
@@ -1498,53 +1498,53 @@ function removeDiacritics(e) {
             if (p * n.slideMove < u) {
               e.removeClass("active"),
                 this.doCss() ||
-                  "fade" !== n.mode ||
-                  !1 !== t ||
-                  e.fadeOut(n.speed),
+                "fade" !== n.mode ||
+                !1 !== t ||
+                e.fadeOut(n.speed),
                 (i = !0 === t ? p : p * n.slideMove);
               var s, l;
               !0 === t && ((l = (s = e.length) - 1), i + 1 >= s && (i = l)),
                 !0 === n.loop &&
-                  "slide" === n.mode &&
-                  ((i =
-                    !0 === t
-                      ? p - o.find(".clone.left").length
-                      : p * n.slideMove),
+                "slide" === n.mode &&
+                ((i =
+                  !0 === t
+                    ? p - o.find(".clone.left").length
+                    : p * n.slideMove),
                   !0 === t &&
-                    ((l = (s = e.length) - 1),
+                  ((l = (s = e.length) - 1),
                     i + 1 === s ? (i = l) : i + 1 > s && (i = 0))),
                 this.doCss() ||
-                  "fade" !== n.mode ||
-                  !1 !== t ||
-                  e.eq(i).fadeIn(n.speed),
+                "fade" !== n.mode ||
+                !1 !== t ||
+                e.eq(i).fadeIn(n.speed),
                 e.eq(i).addClass("active");
             } else
               e.removeClass("active"),
                 e.eq(e.length - 1).addClass("active"),
                 this.doCss() ||
-                  "fade" !== n.mode ||
-                  !1 !== t ||
-                  (e.fadeOut(n.speed), e.eq(i).fadeIn(n.speed));
+                "fade" !== n.mode ||
+                !1 !== t ||
+                (e.fadeOut(n.speed), e.eq(i).fadeIn(n.speed));
           },
           move: function (e, t) {
             !0 === n.rtl && (t = -t),
               this.doCss()
                 ? !0 === n.vertical
                   ? e.css({
-                      transform: "translate3d(0px, " + -t + "px, 0px)",
-                      "-webkit-transform":
-                        "translate3d(0px, " + -t + "px, 0px)",
-                    })
+                    transform: "translate3d(0px, " + -t + "px, 0px)",
+                    "-webkit-transform":
+                      "translate3d(0px, " + -t + "px, 0px)",
+                  })
                   : e.css({
-                      transform: "translate3d(" + -t + "px, 0px, 0px)",
-                      "-webkit-transform":
-                        "translate3d(" + -t + "px, 0px, 0px)",
-                    })
+                    transform: "translate3d(" + -t + "px, 0px, 0px)",
+                    "-webkit-transform":
+                      "translate3d(" + -t + "px, 0px, 0px)",
+                  })
                 : !0 === n.vertical
-                ? e
+                  ? e
                     .css("position", "relative")
                     .animate({ top: -t + "px" }, n.speed, n.easing)
-                : e
+                  : e
                     .css("position", "relative")
                     .animate({ left: -t + "px" }, n.speed, n.easing);
             var i = m.parent().find(".lSPager").find("li");
@@ -1560,16 +1560,16 @@ function removeDiacritics(e) {
             (z.calSlide = function () {
               h > f &&
                 ((y = e.slideValue()),
-                e.active(a, !1),
-                y > h - f - n.slideMargin
-                  ? (y = h - f - n.slideMargin)
-                  : y < 0 && (y = 0),
-                e.move(o, y),
-                !0 === n.loop &&
+                  e.active(a, !1),
+                  y > h - f - n.slideMargin
+                    ? (y = h - f - n.slideMargin)
+                    : y < 0 && (y = 0),
+                  e.move(o, y),
+                  !0 === n.loop &&
                   "slide" === n.mode &&
                   (p >= u - o.find(".clone.left").length / n.slideMove &&
                     e.resetSlide(o.find(".clone.left").length),
-                  0 === p && e.resetSlide(m.find(".lslide").length)));
+                    0 === p && e.resetSlide(m.find(".lslide").length)));
             }),
               z.calSlide();
           },
@@ -1625,9 +1625,9 @@ function removeDiacritics(e) {
           auto: function () {
             n.auto &&
               (clearInterval($),
-              ($ = setInterval(function () {
-                o.goToNextSlide();
-              }, n.pause)));
+                ($ = setInterval(function () {
+                  o.goToNextSlide();
+                }, n.pause)));
           },
           pauseOnHover: function () {
             var t = this;
@@ -1636,10 +1636,10 @@ function removeDiacritics(e) {
               (m.on("mouseenter", function () {
                 e(this).addClass("ls-hover"), o.pause(), (n.auto = !0);
               }),
-              m.on("mouseleave", function () {
-                e(this).removeClass("ls-hover"),
-                  m.find(".lightSlider").hasClass("lsGrabbing") || t.auto();
-              }));
+                m.on("mouseleave", function () {
+                  e(this).removeClass("ls-hover"),
+                    m.find(".lightSlider").hasClass("lsGrabbing") || t.auto();
+                }));
           },
           touchMove: function (e, t) {
             if ((m.css("transition-duration", "0ms"), "slide" === n.mode)) {
@@ -1670,8 +1670,8 @@ function removeDiacritics(e) {
                     var s = 0, l = 0;
                     l < a.length &&
                     ((s += parseInt(a.eq(l).width()) + n.slideMargin),
-                    (p = l + i),
-                    !(s >= y));
+                      (p = l + i),
+                      !(s >= y));
                     l++
                   );
                 else {
@@ -1702,22 +1702,22 @@ function removeDiacritics(e) {
                   "lSPrev" !== e(t.target).attr("class") &&
                     "lSNext" !== e(t.target).attr("class") &&
                     ((i = !0 === n.vertical ? t.pageY : t.pageX),
-                    (l = !0),
-                    t.preventDefault
-                      ? t.preventDefault()
-                      : (t.returnValue = !1),
-                    (m.scrollLeft += 1),
-                    (m.scrollLeft -= 1),
-                    m
-                      .find(".lightSlider")
-                      .removeClass("lsGrab")
-                      .addClass("lsGrabbing"),
-                    clearInterval($));
+                      (l = !0),
+                      t.preventDefault
+                        ? t.preventDefault()
+                        : (t.returnValue = !1),
+                      (m.scrollLeft += 1),
+                      (m.scrollLeft -= 1),
+                      m
+                        .find(".lightSlider")
+                        .removeClass("lsGrab")
+                        .addClass("lsGrabbing"),
+                      clearInterval($));
                 }),
                 e(window).on("mousemove", function (e) {
                   l &&
                     ((s = !0 === n.vertical ? e.pageY : e.pageX),
-                    t.touchMove(s, i));
+                      t.touchMove(s, i));
                 }),
                 e(window).on("mouseup", function (o) {
                   if (l) {
@@ -1777,7 +1777,7 @@ function removeDiacritics(e) {
             var t = this;
             t.initialStyle(),
               this.doCss() &&
-                (!0 === n.enableTouch && t.enableTouch(),
+              (!0 === n.enableTouch && t.enableTouch(),
                 !0 === n.enableDrag && t.enableDrag()),
               e(window).on("focus", function () {
                 t.auto();
@@ -1805,14 +1805,14 @@ function removeDiacritics(e) {
               "slide" === n.mode && o.addClass("lSSlide");
             }, 1e3),
             !0 === n.adaptiveHeight &&
-              !1 === n.vertical &&
-              o.css("height", a.eq(p).outerHeight(!0)),
+            !1 === n.vertical &&
+            o.css("height", a.eq(p).outerHeight(!0)),
             !1 === n.adaptiveHeight &&
-              ("slide" === n.mode
-                ? !1 === n.vertical
-                  ? s.setHeight(o, !1)
-                  : s.auto()
-                : s.setHeight(o, !0)),
+            ("slide" === n.mode
+              ? !1 === n.vertical
+                ? s.setHeight(o, !1)
+                : s.auto()
+              : s.setHeight(o, !0)),
             !0 === n.gallery && s.slideThumb(),
             "slide" === n.mode && s.slide(),
             !1 === n.autoWidth
@@ -1820,8 +1820,8 @@ function removeDiacritics(e) {
                 ? m.find(".lSAction").hide()
                 : m.find(".lSAction").show()
               : z.calWidth(!1) < f && 0 !== h
-              ? m.find(".lSAction").hide()
-              : m.find(".lSAction").show();
+                ? m.find(".lSAction").hide()
+                : m.find(".lSAction").show();
         }),
         (o.goToPrevSlide = function () {
           if (p > 0)
@@ -1838,9 +1838,9 @@ function removeDiacritics(e) {
           } else
             !0 === n.slideEndAnimation &&
               (o.addClass("leftEnd"),
-              setTimeout(function () {
-                o.removeClass("leftEnd");
-              }, 400));
+                setTimeout(function () {
+                  o.removeClass("leftEnd");
+                }, 400));
         }),
         (o.goToNextSlide = function () {
           var e = !0;
@@ -1851,33 +1851,33 @@ function removeDiacritics(e) {
                 o.mode(!1),
                 !0 === n.gallery && s.slideThumb())
               : !0 === n.loop
-              ? (n.onBeforeNextSlide.call(this, o, p),
-                (p = 0),
-                o.mode(!1),
-                !0 === n.gallery && s.slideThumb())
-              : !0 === n.slideEndAnimation &&
+                ? (n.onBeforeNextSlide.call(this, o, p),
+                  (p = 0),
+                  o.mode(!1),
+                  !0 === n.gallery && s.slideThumb())
+                : !0 === n.slideEndAnimation &&
                 (o.addClass("rightEnd"),
-                setTimeout(function () {
-                  o.removeClass("rightEnd");
-                }, 400));
+                  setTimeout(function () {
+                    o.removeClass("rightEnd");
+                  }, 400));
         }),
         (o.mode = function (e) {
           !0 === n.adaptiveHeight &&
             !1 === n.vertical &&
             o.css("height", a.eq(p).outerHeight(!0)),
             !1 === g &&
-              ("slide" === n.mode
-                ? s.doCss() &&
-                  (o.addClass("lSSlide"),
-                  "" !== n.speed &&
-                    m.css("transition-duration", n.speed + "ms"),
-                  "" !== n.cssEasing &&
-                    m.css("transition-timing-function", n.cssEasing))
-                : s.doCss() &&
-                  ("" !== n.speed &&
-                    o.css("transition-duration", n.speed + "ms"),
-                  "" !== n.cssEasing &&
-                    o.css("transition-timing-function", n.cssEasing))),
+            ("slide" === n.mode
+              ? s.doCss() &&
+              (o.addClass("lSSlide"),
+                "" !== n.speed &&
+                m.css("transition-duration", n.speed + "ms"),
+                "" !== n.cssEasing &&
+                m.css("transition-timing-function", n.cssEasing))
+              : s.doCss() &&
+              ("" !== n.speed &&
+                o.css("transition-duration", n.speed + "ms"),
+                "" !== n.cssEasing &&
+                o.css("transition-timing-function", n.cssEasing))),
             e || n.onBeforeSlide.call(this, o, p),
             "slide" === n.mode ? s.slide() : s.fade(),
             m.hasClass("ls-hover") || s.auto(),
@@ -1914,32 +1914,32 @@ function removeDiacritics(e) {
         }),
         (o.destroy = function () {
           o.lightSlider &&
-            ((o.goToPrevSlide = function () {}),
-            (o.goToNextSlide = function () {}),
-            (o.mode = function () {}),
-            (o.play = function () {}),
-            (o.pause = function () {}),
-            (o.refresh = function () {}),
-            (o.getCurrentSlideCount = function () {}),
-            (o.getTotalSlideCount = function () {}),
-            (o.goToSlide = function () {}),
-            (o.lightSlider = null),
-            (z = { init: function () {} }),
-            o.parent().parent().find(".lSAction, .lSPager").remove(),
-            o
-              .removeClass(
-                "lightSlider lSFade lSSlide lsGrab lsGrabbing leftEnd right"
-              )
-              .removeAttr("style")
-              .unwrap()
-              .unwrap(),
-            o.children().removeAttr("style"),
-            a.removeClass("lslide active"),
-            o.find(".clone").remove(),
-            (a = null),
-            ($ = null),
-            (g = !1),
-            (p = 0));
+            ((o.goToPrevSlide = function () { }),
+              (o.goToNextSlide = function () { }),
+              (o.mode = function () { }),
+              (o.play = function () { }),
+              (o.pause = function () { }),
+              (o.refresh = function () { }),
+              (o.getCurrentSlideCount = function () { }),
+              (o.getTotalSlideCount = function () { }),
+              (o.goToSlide = function () { }),
+              (o.lightSlider = null),
+              (z = { init: function () { } }),
+              o.parent().parent().find(".lSAction, .lSPager").remove(),
+              o
+                .removeClass(
+                  "lightSlider lSFade lSSlide lsGrab lsGrabbing leftEnd right"
+                )
+                .removeAttr("style")
+                .unwrap()
+                .unwrap(),
+              o.children().removeAttr("style"),
+              a.removeClass("lslide active"),
+              o.find(".clone").remove(),
+              (a = null),
+              ($ = null),
+              (g = !1),
+              (p = 0));
         }),
         setTimeout(function () {
           n.onSliderLoad.call(this, o);
@@ -1962,8 +1962,8 @@ function removeDiacritics(e) {
       "object" == typeof module && module.exports
         ? t(require("lazysizes"))
         : e.lazySizes
-        ? i()
-        : e.addEventListener("lazyunveilread", i, !0);
+          ? i()
+          : e.addEventListener("lazyunveilread", i, !0);
   })(window, function (e, t, i) {
     "use strict";
     if (e.addEventListener) {
@@ -1976,7 +1976,7 @@ function removeDiacritics(e) {
           var t = i.gW(e, e.parentNode);
           return (
             (!e._lazysizesWidth || t > e._lazysizesWidth) &&
-              (e._lazysizesWidth = t),
+            (e._lazysizesWidth = t),
             e._lazysizesWidth
           );
         },
@@ -1984,7 +1984,7 @@ function removeDiacritics(e) {
           var t;
           return (
             (t = (
-              getComputedStyle(e) || { getPropertyValue: function () {} }
+              getComputedStyle(e) || { getPropertyValue: function () { } }
             ).getPropertyValue("background-size")),
             !a[t] && a[e.style.backgroundSize] && (t = e.style.backgroundSize),
             t
@@ -2008,16 +2008,16 @@ function removeDiacritics(e) {
               var i = t.createElement("source");
               r && "auto" != r && i.setAttribute("sizes", r),
                 e.match(l) &&
-                  (i.setAttribute(lazySizesConfig.srcsetAttr, RegExp.$1),
+                (i.setAttribute(lazySizesConfig.srcsetAttr, RegExp.$1),
                   RegExp.$2 &&
-                    i.setAttribute(
-                      "media",
-                      lazySizesConfig.customMedia[RegExp.$2] || RegExp.$2
-                    )),
+                  i.setAttribute(
+                    "media",
+                    lazySizesConfig.customMedia[RegExp.$2] || RegExp.$2
+                  )),
                 a.appendChild(i);
             }),
             r &&
-              (o.setAttribute(lazySizesConfig.sizesAttr, r),
+            (o.setAttribute(lazySizesConfig.sizesAttr, r),
               i.removeAttribute(lazySizesConfig.sizesAttr),
               i.removeAttribute("sizes")),
             c && o.setAttribute("data-optimumx", c),
@@ -2034,7 +2034,7 @@ function removeDiacritics(e) {
               (s.style.backgroundImage =
                 "url(" + (o.test(n) ? JSON.stringify(n) : n) + ")"),
               t._lazybgsetLoading &&
-                (i.fire(s, "_lazyloaded", {}, !1, !0),
+              (i.fire(s, "_lazyloaded", {}, !1, !0),
                 delete t._lazybgsetLoading);
           }
         };
@@ -2043,17 +2043,17 @@ function removeDiacritics(e) {
         !e.defaultPrevented &&
           (s = e.target.getAttribute("data-bgset")) &&
           ((l = e.target),
-          ((n = t.createElement("img")).alt = ""),
-          (n._lazybgsetLoading = !0),
-          (e.detail.firesLoad = !0),
-          c(s, l, n),
-          setTimeout(function () {
-            i.loader.unveil(n),
-              i.rAF(function () {
-                i.fire(n, "_lazyloaded", {}, !0, !0),
-                  n.complete && u({ target: n });
-              });
-          }));
+            ((n = t.createElement("img")).alt = ""),
+            (n._lazybgsetLoading = !0),
+            (e.detail.firesLoad = !0),
+            c(s, l, n),
+            setTimeout(function () {
+              i.loader.unveil(n),
+                i.rAF(function () {
+                  i.fire(n, "_lazyloaded", {}, !0, !0),
+                    n.complete && u({ target: n });
+                });
+            }));
       }),
         t.addEventListener("load", u, !0),
         e.addEventListener(
@@ -2068,11 +2068,11 @@ function removeDiacritics(e) {
                 s = d(t);
               a[s] &&
                 ((e.target._lazysizesParentFit = s),
-                i.rAF(function () {
-                  e.target.setAttribute("data-parent-fit", s),
-                    e.target._lazysizesParentFit &&
+                  i.rAF(function () {
+                    e.target.setAttribute("data-parent-fit", s),
+                      e.target._lazysizesParentFit &&
                       delete e.target._lazysizesParentFit;
-                }));
+                  }));
             }
           },
           !0
@@ -2093,8 +2093,8 @@ function removeDiacritics(e) {
       "object" == typeof module && module.exports
         ? t(require("lazysizes"), require("../fix-ios-sizes/fix-ios-sizes"))
         : e.lazySizes
-        ? i()
-        : e.addEventListener("lazyunveilread", i, !0);
+          ? i()
+          : e.addEventListener("lazyunveilread", i, !0);
   })(window, function (e, t, i) {
     "use strict";
     var s,
@@ -2117,7 +2117,7 @@ function removeDiacritics(e) {
                       ? RegExp.$1 / RegExp.$3
                       : RegExp.$3 / RegExp.$1) &&
                   t.setAttribute("data-aspectratio", i),
-                t.setAttribute(lazySizesConfig.srcsetAttr, s.replace(a, "")));
+                  t.setAttribute(lazySizesConfig.srcsetAttr, s.replace(a, "")));
             },
             o = function (e) {
               var t = e.target.parentNode;
@@ -2131,24 +2131,24 @@ function removeDiacritics(e) {
             };
           s[1] &&
             (t.addEventListener("lazybeforeunveil", o),
-            (n.onload = r),
-            (n.onerror = r),
-            (n.srcset = "data:,a 1w 1h"),
-            n.complete && r());
+              (n.onload = r),
+              (n.onerror = r),
+              (n.srcset = "data:,a 1w 1h"),
+              n.complete && r());
         };
       })();
     if (
       (n || ((n = {}), (e.lazySizesConfig = n)),
-      n.supportsType ||
+        n.supportsType ||
         (n.supportsType = function (e) {
           return !e;
         }),
-      !e.picturefill && !n.pf)
+        !e.picturefill && !n.pf)
     ) {
       if (e.HTMLPictureElement && o)
         return (
           t.msElementsFromPoint && r(navigator.userAgent.match(/Edge\/(\d+)/)),
-          void (n.pf = function () {})
+          void (n.pf = function () { })
         );
       (n.pf = function (t) {
         var i, n;
@@ -2157,8 +2157,8 @@ function removeDiacritics(e) {
       }),
         (s = (function () {
           var l = function (e, t) {
-              return e.w - t.w;
-            },
+            return e.w - t.w;
+          },
             r = /^\s*\d+\.*\d*px\s*$/,
             d = function (e) {
               var t,
@@ -2172,8 +2172,8 @@ function removeDiacritics(e) {
                     (t = e[l - 1]) &&
                     t.d > e.d - 0.13 * Math.pow(e.d, 2.2) &&
                     ((i = Math.pow(t.d - 0.6, 1.6)),
-                    t.cached && (t.d += 0.15 * i),
-                    t.d + (n.d - e.d) * i > e.d && (n = t));
+                      t.cached && (t.d += 0.15 * i),
+                      t.d + (n.d - e.d) * i > e.d && (n = t));
                   break;
                 }
               return n;
@@ -2197,20 +2197,20 @@ function removeDiacritics(e) {
             u = function () {
               u.init ||
                 ((u.init = !0),
-                addEventListener(
-                  "resize",
-                  (function () {
-                    var e,
-                      i = t.getElementsByClassName("lazymatchmedia"),
-                      n = function () {
-                        var e, t;
-                        for (e = 0, t = i.length; e < t; e++) s(i[e]);
+                  addEventListener(
+                    "resize",
+                    (function () {
+                      var e,
+                        i = t.getElementsByClassName("lazymatchmedia"),
+                        n = function () {
+                          var e, t;
+                          for (e = 0, t = i.length; e < t; e++) s(i[e]);
+                        };
+                      return function () {
+                        clearTimeout(e), (e = setTimeout(n, 66));
                       };
-                    return function () {
-                      clearTimeout(e), (e = setTimeout(n, 66));
-                    };
-                  })()
-                ));
+                    })()
+                  ));
             },
             h = function (t, s) {
               var l,
@@ -2221,14 +2221,14 @@ function removeDiacritics(e) {
                   ? t._lazypolyfill._set
                   : t.getAttribute(n.srcAttr) || t.getAttribute("src")),
                 (t._lazypolyfill && t._lazypolyfill._set == o) ||
-                  ((l = c(o || "")),
+                ((l = c(o || "")),
                   s &&
-                    t.parentNode &&
-                    ((l.isPicture =
-                      "PICTURE" == t.parentNode.nodeName.toUpperCase()),
+                  t.parentNode &&
+                  ((l.isPicture =
+                    "PICTURE" == t.parentNode.nodeName.toUpperCase()),
                     l.isPicture &&
-                      e.matchMedia &&
-                      (i.aC(t, "lazymatchmedia"), u())),
+                    e.matchMedia &&
+                    (i.aC(t, "lazymatchmedia"), u())),
                   (l._set = o),
                   Object.defineProperty(t, "_lazypolyfill", {
                     value: l,
@@ -2243,8 +2243,8 @@ function removeDiacritics(e) {
             f = function (t) {
               return e.matchMedia
                 ? (f = function (e) {
-                    return !e || (matchMedia(e) || {}).matches;
-                  })(t)
+                  return !e || (matchMedia(e) || {}).matches;
+                })(t)
                 : !t;
             },
             m = function (e) {
@@ -2252,8 +2252,8 @@ function removeDiacritics(e) {
               if (((a = e), h(a, !0), (c = a._lazypolyfill).isPicture))
                 for (
                   s = 0,
-                    o = (t = e.parentNode.getElementsByTagName("source"))
-                      .length;
+                  o = (t = e.parentNode.getElementsByTagName("source"))
+                    .length;
                   s < o;
                   s++
                 )
@@ -2288,25 +2288,25 @@ function removeDiacritics(e) {
                   t.u &&
                   e._lazypolyfill.cur != t.u &&
                   ((e._lazypolyfill.cur = t.u),
-                  (t.cached = !0),
-                  e.setAttribute(n.srcAttr, t.u),
-                  e.setAttribute("src", t.u));
+                    (t.cached = !0),
+                    e.setAttribute(n.srcAttr, t.u),
+                    e.setAttribute("src", t.u));
               }
             };
           return (p.parse = c), p;
         })()),
         n.loadedClass &&
-          n.loadingClass &&
-          (function () {
-            var e = [];
-            [
-              'img[sizes$="px"][srcset].',
-              "picture > img:not([srcset]).",
-            ].forEach(function (t) {
-              e.push(t + n.loadedClass), e.push(t + n.loadingClass);
-            }),
-              n.pf({ elements: t.querySelectorAll(e.join(", ")) });
-          })();
+        n.loadingClass &&
+        (function () {
+          var e = [];
+          [
+            'img[sizes$="px"][srcset].',
+            "picture > img:not([srcset]).",
+          ].forEach(function (t) {
+            e.push(t + n.loadedClass), e.push(t + n.loadingClass);
+          }),
+            n.pf({ elements: t.querySelectorAll(e.join(", ")) });
+        })();
     }
   }),
   (function (e, t) {
@@ -2390,7 +2390,7 @@ function removeDiacritics(e) {
               l = s,
               o = function () {
                 var t = l;
-                for (l = s.length ? n : s, e = !0, i = !1; t.length; )
+                for (l = s.length ? n : s, e = !0, i = !1; t.length;)
                   t.shift()();
                 e = !1;
               },
@@ -2404,15 +2404,15 @@ function removeDiacritics(e) {
           T = function (e, t) {
             return t
               ? function () {
-                  $(e);
-                }
+                $(e);
+              }
               : function () {
-                  var t = this,
-                    i = arguments;
-                  $(function () {
-                    e.apply(t, i);
-                  });
-                };
+                var t = this,
+                  i = arguments;
+                $(function () {
+                  e.apply(t, i);
+                });
+              };
           },
           z = function (e) {
             var t,
@@ -2423,16 +2423,16 @@ function removeDiacritics(e) {
               },
               o = c
                 ? function () {
-                    c(n, { timeout: s }), 666 !== s && (s = 666);
-                  }
+                  c(n, { timeout: s }), 666 !== s && (s = 666);
+                }
                 : T(function () {
-                    r(n);
-                  }, !0);
+                  r(n);
+                }, !0);
             return function (e) {
               var n;
               (e = !0 === e) && (s = 44),
                 t ||
-                  ((t = !0),
+                ((t = !0),
                   (n = 125 - (l.now() - i)) < 0 && (n = 0),
                   e || (n < 9 && c) ? o() : r(o, n));
             };
@@ -2492,11 +2492,11 @@ function removeDiacritics(e) {
                   (o = (w(l, "opacity") || 1) > 0) &&
                     "visible" != w(l, "overflow") &&
                     ((s = l.getBoundingClientRect()),
-                    (o =
-                      q > s.left &&
-                      A < s.right &&
-                      M > s.top - 1 &&
-                      k < s.bottom + 1));
+                      (o =
+                        q > s.left &&
+                        A < s.right &&
+                        M > s.top - 1 &&
+                        k < s.bottom + 1));
                 return o;
               },
               R = function () {
@@ -2505,11 +2505,11 @@ function removeDiacritics(e) {
                   (l = 0),
                     O++,
                     null == P &&
-                      ("expand" in s ||
-                        (s.expand =
-                          n.clientHeight > 500 && n.clientWidth > 500
-                            ? 500
-                            : 370),
+                    ("expand" in s ||
+                      (s.expand =
+                        n.clientHeight > 500 && n.clientWidth > 500
+                          ? 500
+                          : 370),
                       (j = s.expand),
                       (P = j * s.expFactor)),
                     N < P && W < 1 && O > 2 && h > 2 && !t.hidden
@@ -2522,13 +2522,13 @@ function removeDiacritics(e) {
                           (((f = i[l].getAttribute("data-expand")) &&
                             (u = 1 * f)) ||
                             (u = N),
-                          m !== u &&
+                            m !== u &&
                             ((S = innerWidth + u * H),
-                            (_ = innerHeight + u),
-                            (g = -1 * u),
-                            (m = u)),
-                          (a = i[l].getBoundingClientRect()),
-                          (M = a.bottom) >= g &&
+                              (_ = innerHeight + u),
+                              (g = -1 * u),
+                              (m = u)),
+                            (a = i[l].getBoundingClientRect()),
+                            (M = a.bottom) >= g &&
                             (k = a.top) <= _ &&
                             (q = a.right) >= g * H &&
                             (A = a.left) <= S &&
@@ -2582,7 +2582,7 @@ function removeDiacritics(e) {
                   i = e.getAttribute(s.srcsetAttr);
                 (t =
                   s.customMedia[
-                    e.getAttribute("data-media") || e.getAttribute("media")
+                  e.getAttribute("data-media") || e.getAttribute("media")
                   ]) && e.setAttribute("media", t),
                   i && e.setAttribute("srcset", i);
               },
@@ -2591,22 +2591,22 @@ function removeDiacritics(e) {
                 (g = y(e, "lazybeforeunveil", t)).defaultPrevented ||
                   (n &&
                     (i ? p(e, s.autosizesClass) : e.setAttribute("sizes", n)),
-                  (a = e.getAttribute(s.srcsetAttr)),
-                  (o = e.getAttribute(s.srcAttr)),
-                  l && (h = (d = e.parentNode) && u.test(d.nodeName || "")),
-                  (m = t.firesLoad || ("src" in e && (a || o || h))),
-                  (g = { target: e }),
-                  m &&
+                    (a = e.getAttribute(s.srcsetAttr)),
+                    (o = e.getAttribute(s.srcAttr)),
+                    l && (h = (d = e.parentNode) && u.test(d.nodeName || "")),
+                    (m = t.firesLoad || ("src" in e && (a || o || h))),
+                    (g = { target: e }),
+                    m &&
                     (b(e, I, !0),
-                    clearTimeout(c),
-                    (c = r(I, 2500)),
-                    p(e, s.loadingClass),
-                    b(e, U, !0)),
-                  h && f.call(d.getElementsByTagName("source"), K),
-                  a
-                    ? e.setAttribute("srcset", a)
-                    : o && !h && (B.test(e.nodeName) ? X(e, o) : (e.src = o)),
-                  l && (a || h) && C(e, { src: o })),
+                      clearTimeout(c),
+                      (c = r(I, 2500)),
+                      p(e, s.loadingClass),
+                      b(e, U, !0)),
+                    h && f.call(d.getElementsByTagName("source"), K),
+                    a
+                      ? e.setAttribute("srcset", a)
+                      : o && !h && (B.test(e.nodeName) ? X(e, o) : (e.src = o)),
+                    l && (a || h) && C(e, { src: o })),
                   e._lazyRace && delete e._lazyRace,
                   v(e, s.lazyClass),
                   $(function () {
@@ -2627,10 +2627,10 @@ function removeDiacritics(e) {
                   e.complete ||
                   m(e, s.errorClass)) &&
                   ((t = y(e, "lazyunveilread").detail),
-                  l && E.updateElem(e, !0, e.offsetWidth),
-                  (e._lazyRace = !0),
-                  W++,
-                  Q(e, t, l, n, i));
+                    l && E.updateElem(e, !0, e.offsetWidth),
+                    (e._lazyRace = !0),
+                    W++,
+                    Q(e, t, l, n, i));
               },
               Z = function () {
                 if (!d)
@@ -2663,10 +2663,10 @@ function removeDiacritics(e) {
                   a("resize", F, !0),
                   e.MutationObserver
                     ? new MutationObserver(F).observe(n, {
-                        childList: !0,
-                        subtree: !0,
-                        attributes: !0,
-                      })
+                      childList: !0,
+                      subtree: !0,
+                      attributes: !0,
+                    })
                     : (n.addEventListener("DOMNodeInserted", F, !0),
                       n.addEventListener("DOMAttrModified", F, !0),
                       setInterval(F, 999)),
@@ -2699,9 +2699,9 @@ function removeDiacritics(e) {
                 var n, l, o;
                 if (
                   ((e._lazysizesWidth = s),
-                  (s += "px"),
-                  e.setAttribute("sizes", s),
-                  u.test(t.nodeName || ""))
+                    (s += "px"),
+                    e.setAttribute("sizes", s),
+                    u.test(t.nodeName || ""))
                 )
                   for (
                     l = 0, o = (n = t.getElementsByTagName("source")).length;
@@ -2716,8 +2716,8 @@ function removeDiacritics(e) {
                   l = e.parentNode;
                 l &&
                   ((s = S(e, l, s)),
-                  (n = y(e, "lazybeforesizes", { width: s, dataAttr: !!t }))
-                    .defaultPrevented ||
+                    (n = y(e, "lazybeforesizes", { width: s, dataAttr: !!t }))
+                      .defaultPrevented ||
                     ((s = n.detail.width) &&
                       s !== e._lazysizesWidth &&
                       i(e, l, n, s)));
@@ -2788,127 +2788,127 @@ function removeDiacritics(e) {
   })(window);
 for (
   var defaultDiacriticsRemovalMap = [
-      {
-        base: "A",
-        letters:
-          "Aâ’¶ďĽˇĂ€ĂĂ‚áş¦áş¤áşŞáş¨ĂÄ€Ä‚áş°áş®áş´áş˛Č¦Ç Ă„Çžáş˘Ă…ÇşÇŤČ€Č‚áş áş¬áş¶á¸€Ä„Čşâ±Ż",
-      },
-      { base: "AA", letters: "ęś˛" },
-      { base: "AE", letters: "Ă†ÇĽÇ˘" },
-      { base: "AO", letters: "ęś´" },
-      { base: "AU", letters: "ęś¶" },
-      { base: "AV", letters: "ęś¸ęśş" },
-      { base: "AY", letters: "ęśĽ" },
-      { base: "B", letters: "Bâ’·ďĽ˘á¸‚á¸„á¸†ÉĆ‚Ć" },
-      { base: "C", letters: "Câ’¸ďĽŁÄ†ÄÄŠÄŚĂ‡á¸Ć‡Č»ęśľ" },
-      { base: "D", letters: "Dâ’ąďĽ¤á¸ŠÄŽá¸Śá¸á¸’á¸ŽÄĆ‹ĆŠĆ‰ęťąĂ" },
-      { base: "DZ", letters: "Ç±Ç„" },
-      { base: "Dz", letters: "Ç˛Ç…" },
-      {
-        base: "E",
-        letters:
-          "Eâ’şďĽĄĂĂ‰ĂŠá»€áşľá»„á»‚áşĽÄ’á¸”á¸–Ä”Ä–Ă‹áşşÄšČ„Č†áş¸á»†Č¨á¸śÄá¸á¸šĆĆŽ",
-      },
-      { base: "F", letters: "Fâ’»ďĽ¦á¸žĆ‘ęť»" },
-      { base: "G", letters: "Gâ’ĽďĽ§Ç´Äśá¸ ÄžÄ Ç¦Ä˘Ç¤Ć“ęž ęť˝ęťľ" },
-      { base: "H", letters: "Hâ’˝ďĽ¨Ä¤á¸˘á¸¦Čžá¸¤á¸¨á¸ŞÄ¦â±§â±µęžŤ" },
-      { base: "I", letters: "Iâ’ľďĽ©ĂŚĂŤĂŽÄ¨ÄŞÄ¬Ä°ĂŹá¸®á»ÇŹČČŠá»ŠÄ®á¸¬Ć—" },
-      { base: "J", letters: "Jâ’żďĽŞÄ´É" },
-      { base: "K", letters: "Kâ“€ďĽ«á¸°Ç¨á¸˛Ä¶á¸´Ćâ±©ęť€ęť‚ęť„ęž˘" },
-      { base: "L", letters: "Lâ“ďĽ¬ÄżÄąÄ˝á¸¶á¸¸Ä»á¸Ľá¸şĹČ˝â±˘â± ęťęť†ęž€" },
-      { base: "LJ", letters: "Ç‡" },
-      { base: "Lj", letters: "Ç" },
-      { base: "M", letters: "Mâ“‚ďĽ­á¸ľáą€áą‚â±®Ćś" },
-      { base: "N", letters: "Nâ“ďĽ®Ç¸ĹĂ‘áą„Ĺ‡áą†Ĺ…áąŠáąČ Ćťęžęž¤" },
-      { base: "NJ", letters: "ÇŠ" },
-      { base: "Nj", letters: "Ç‹" },
-      {
-        base: "O",
-        letters:
-          "Oâ“„ďĽŻĂ’Ă“Ă”á»’á»á»–á»”Ă•áąŚČ¬áąŽĹŚáąáą’ĹŽČ®Č°Ă–ČŞá»ŽĹÇ‘ČŚČŽĆ á»śá»šá» á»žá»˘á»Śá»ÇŞÇ¬ĂÇľĆ†ĆźęťŠęťŚ",
-      },
-      { base: "OI", letters: "Ć˘" },
-      { base: "OO", letters: "ęťŽ" },
-      { base: "OU", letters: "Č˘" },
-      { base: "OE", letters: "ÂŚĹ’" },
-      { base: "oe", letters: "ÂśĹ“" },
-      { base: "P", letters: "Pâ“…ďĽ°áą”áą–Ć¤â±Łęťęť’ęť”" },
-      { base: "Q", letters: "Qâ“†ďĽ±ęť–ęťÉŠ" },
-      { base: "R", letters: "Râ“‡ďĽ˛Ĺ”áąĹČČ’áąšáąśĹ–áąžÉŚâ±¤ęťšęž¦ęž‚" },
-      { base: "S", letters: "Sâ“ďĽłáşžĹšáą¤Ĺśáą Ĺ áą¦áą˘áą¨ČĹžâ±ľęž¨ęž„" },
-      { base: "T", letters: "Tâ“‰ďĽ´áąŞĹ¤áą¬ČšĹ˘áą°áą®Ĺ¦Ć¬Ć®Čľęž†" },
-      { base: "TZ", letters: "ęś¨" },
-      {
-        base: "U",
-        letters:
-          "Uâ“ŠďĽµĂ™ĂšĂ›Ĺ¨áą¸ĹŞáąşĹ¬ĂśÇ›Ç—Ç•Ç™á»¦Ĺ®Ĺ°Ç“Č”Č–ĆŻá»Şá»¨á»®á»¬á»°á»¤áą˛Ĺ˛áą¶áą´É„",
-      },
-      { base: "V", letters: "Vâ“‹ďĽ¶áąĽáąľĆ˛ęťžÉ…" },
-      { base: "VY", letters: "ęť " },
-      { base: "W", letters: "Wâ“ŚďĽ·áş€áş‚Ĺ´áş†áş„áşâ±˛" },
-      { base: "X", letters: "Xâ“ŤďĽ¸áşŠáşŚ" },
-      { base: "Y", letters: "Yâ“ŽďĽąá»˛ĂťĹ¶á»¸Č˛áşŽĹ¸á»¶á»´ĆłÉŽá»ľ" },
-      { base: "Z", letters: "Zâ“ŹďĽşĹąáşĹ»Ĺ˝áş’áş”ĆµČ¤â±żâ±«ęť˘" },
-      {
-        base: "a",
-        letters:
-          "aâ“ď˝áşšĂ ĂˇĂ˘áş§áşĄáş«áş©ĂŁÄÄáş±áşŻáşµáşłČ§ÇˇĂ¤ÇźáşŁĂĄÇ»ÇŽČČáşˇáş­áş·á¸Ä…â±ĄÉ",
-      },
-      { base: "aa", letters: "ęśł" },
-      { base: "ae", letters: "Ă¦Ç˝ÇŁ" },
-      { base: "ao", letters: "ęśµ" },
-      { base: "au", letters: "ęś·" },
-      { base: "av", letters: "ęśąęś»" },
-      { base: "ay", letters: "ęś˝" },
-      { base: "b", letters: "bâ“‘ď˝‚á¸á¸…á¸‡Ć€ĆÉ“" },
-      { base: "c", letters: "câ“’ď˝Ä‡Ä‰Ä‹ÄŤĂ§á¸‰ĆČĽęśżâ†„" },
-      { base: "d", letters: "dâ““ď˝„á¸‹ÄŹá¸Ťá¸‘á¸“á¸ŹÄ‘ĆŚÉ–É—ęťş" },
-      { base: "dz", letters: "ÇłÇ†" },
-      {
-        base: "e",
-        letters:
-          "eâ“”ď˝…Ă¨Ă©ĂŞá»áşżá»…á»áş˝Ä“á¸•á¸—Ä•Ä—Ă«áş»Ä›Č…Č‡áşąá»‡Č©á¸ťÄ™á¸™á¸›É‡É›Çť",
-      },
-      { base: "f", letters: "fâ“•ď˝†á¸źĆ’ęťĽ" },
-      { base: "g", letters: "gâ“–ď˝‡ÇµÄťá¸ˇÄźÄˇÇ§ÄŁÇĄÉ ęžˇáµąęťż" },
-      { base: "h", letters: "hâ“—ď˝ÄĄá¸Łá¸§Čźá¸Ąá¸©á¸«áş–Ä§â±¨â±¶ÉĄ" },
-      { base: "hv", letters: "Ć•" },
-      { base: "i", letters: "iâ“ď˝‰Ă¬Ă­Ă®Ä©Ä«Ä­ĂŻá¸Żá»‰ÇČ‰Č‹á»‹ÄŻá¸­É¨Ä±" },
-      { base: "j", letters: "jâ“™ď˝ŠÄµÇ°É‰" },
-      { base: "k", letters: "kâ“šď˝‹á¸±Ç©á¸łÄ·á¸µĆ™â±Şęťęťęť…ęžŁ" },
-      { base: "l", letters: "lâ“›ď˝ŚĹ€ÄşÄľá¸·á¸ąÄĽá¸˝á¸»ĹżĹ‚ĆšÉ«â±ˇęť‰ęžęť‡" },
-      { base: "lj", letters: "Ç‰" },
-      { base: "m", letters: "mâ“śď˝Ťá¸żáąáąÉ±ÉŻ" },
-      { base: "n", letters: "nâ“ťď˝ŽÇąĹ„Ă±áą…Ĺáą‡Ĺ†áą‹áą‰ĆžÉ˛Ĺ‰ęž‘ęžĄ" },
-      { base: "nj", letters: "ÇŚ" },
-      {
-        base: "o",
-        letters:
-          "oâ“žď˝ŹĂ˛ĂłĂ´á»“á»‘á»—á»•ĂµáąŤČ­áąŹĹŤáą‘áą“ĹŹČŻČ±Ă¶Č«á»ŹĹ‘Ç’ČŤČŹĆˇá»ťá»›á»ˇá»źá»Łá»Ťá»™Ç«Ç­Ă¸ÇżÉ”ęť‹ęťŤÉµ",
-      },
-      { base: "oi", letters: "ĆŁ" },
-      { base: "ou", letters: "ČŁ" },
-      { base: "oo", letters: "ęťŹ" },
-      { base: "p", letters: "pâ“źď˝áą•áą—ĆĄáµ˝ęť‘ęť“ęť•" },
-      { base: "q", letters: "qâ“ ď˝‘É‹ęť—ęť™" },
-      { base: "r", letters: "râ“ˇď˝’Ĺ•áą™Ĺ™Č‘Č“áą›áąťĹ—áąźÉŤÉ˝ęť›ęž§ęž" },
-      { base: "s", letters: "sâ“˘ď˝“ĂźĹ›áąĄĹťáąˇĹˇáą§áąŁáą©Č™ĹźČżęž©ęž…áş›" },
-      { base: "t", letters: "tâ“Łď˝”áą«áş—ĹĄáą­Č›ĹŁáą±áąŻĹ§Ć­Ęâ±¦ęž‡" },
-      { base: "tz", letters: "ęś©" },
-      {
-        base: "u",
-        letters:
-          "uâ“¤ď˝•ĂąĂşĂ»Ĺ©áąąĹ«áą»Ĺ­ĂĽÇśÇÇ–Çšá»§ĹŻĹ±Ç”Č•Č—Ć°á»«á»©á»Żá»­á»±á»ĄáąłĹłáą·áąµĘ‰",
-      },
-      { base: "v", letters: "vâ“Ąď˝–áą˝áążĘ‹ęťźĘŚ" },
-      { base: "vy", letters: "ęťˇ" },
-      { base: "w", letters: "wâ“¦ď˝—áşáşĹµáş‡áş…áşáş‰â±ł" },
-      { base: "x", letters: "xâ“§ď˝áş‹áşŤ" },
-      { base: "y", letters: "yâ“¨ď˝™á»łĂ˝Ĺ·á»ąČłáşŹĂżá»·áş™á»µĆ´ÉŹá»ż" },
-      { base: "z", letters: "zâ“©ď˝šĹşáş‘ĹĽĹľáş“áş•Ć¶ČĄÉ€â±¬ęťŁ" },
-    ],
-    diacriticsMap = {},
-    i = 0;
+    {
+      base: "A",
+      letters:
+        "Aâ’¶ďĽˇĂ€ĂĂ‚áş¦áş¤áşŞáş¨ĂÄ€Ä‚áş°áş®áş´áş˛Č¦Ç Ă„Çžáş˘Ă…ÇşÇŤČ€Č‚áş áş¬áş¶á¸€Ä„Čşâ±Ż",
+    },
+    { base: "AA", letters: "ęś˛" },
+    { base: "AE", letters: "Ă†ÇĽÇ˘" },
+    { base: "AO", letters: "ęś´" },
+    { base: "AU", letters: "ęś¶" },
+    { base: "AV", letters: "ęś¸ęśş" },
+    { base: "AY", letters: "ęśĽ" },
+    { base: "B", letters: "Bâ’·ďĽ˘á¸‚á¸„á¸†ÉĆ‚Ć" },
+    { base: "C", letters: "Câ’¸ďĽŁÄ†ÄÄŠÄŚĂ‡á¸Ć‡Č»ęśľ" },
+    { base: "D", letters: "Dâ’ąďĽ¤á¸ŠÄŽá¸Śá¸á¸’á¸ŽÄĆ‹ĆŠĆ‰ęťąĂ" },
+    { base: "DZ", letters: "Ç±Ç„" },
+    { base: "Dz", letters: "Ç˛Ç…" },
+    {
+      base: "E",
+      letters:
+        "Eâ’şďĽĄĂĂ‰ĂŠá»€áşľá»„á»‚áşĽÄ’á¸”á¸–Ä”Ä–Ă‹áşşÄšČ„Č†áş¸á»†Č¨á¸śÄá¸á¸šĆĆŽ",
+    },
+    { base: "F", letters: "Fâ’»ďĽ¦á¸žĆ‘ęť»" },
+    { base: "G", letters: "Gâ’ĽďĽ§Ç´Äśá¸ ÄžÄ Ç¦Ä˘Ç¤Ć“ęž ęť˝ęťľ" },
+    { base: "H", letters: "Hâ’˝ďĽ¨Ä¤á¸˘á¸¦Čžá¸¤á¸¨á¸ŞÄ¦â±§â±µęžŤ" },
+    { base: "I", letters: "Iâ’ľďĽ©ĂŚĂŤĂŽÄ¨ÄŞÄ¬Ä°ĂŹá¸®á»ÇŹČČŠá»ŠÄ®á¸¬Ć—" },
+    { base: "J", letters: "Jâ’żďĽŞÄ´É" },
+    { base: "K", letters: "Kâ“€ďĽ«á¸°Ç¨á¸˛Ä¶á¸´Ćâ±©ęť€ęť‚ęť„ęž˘" },
+    { base: "L", letters: "Lâ“ďĽ¬ÄżÄąÄ˝á¸¶á¸¸Ä»á¸Ľá¸şĹČ˝â±˘â± ęťęť†ęž€" },
+    { base: "LJ", letters: "Ç‡" },
+    { base: "Lj", letters: "Ç" },
+    { base: "M", letters: "Mâ“‚ďĽ­á¸ľáą€áą‚â±®Ćś" },
+    { base: "N", letters: "Nâ“ďĽ®Ç¸ĹĂ‘áą„Ĺ‡áą†Ĺ…áąŠáąČ Ćťęžęž¤" },
+    { base: "NJ", letters: "ÇŠ" },
+    { base: "Nj", letters: "Ç‹" },
+    {
+      base: "O",
+      letters:
+        "Oâ“„ďĽŻĂ’Ă“Ă”á»’á»á»–á»”Ă•áąŚČ¬áąŽĹŚáąáą’ĹŽČ®Č°Ă–ČŞá»ŽĹÇ‘ČŚČŽĆ á»śá»šá» á»žá»˘á»Śá»ÇŞÇ¬ĂÇľĆ†ĆźęťŠęťŚ",
+    },
+    { base: "OI", letters: "Ć˘" },
+    { base: "OO", letters: "ęťŽ" },
+    { base: "OU", letters: "Č˘" },
+    { base: "OE", letters: "ÂŚĹ’" },
+    { base: "oe", letters: "ÂśĹ“" },
+    { base: "P", letters: "Pâ“…ďĽ°áą”áą–Ć¤â±Łęťęť’ęť”" },
+    { base: "Q", letters: "Qâ“†ďĽ±ęť–ęťÉŠ" },
+    { base: "R", letters: "Râ“‡ďĽ˛Ĺ”áąĹČČ’áąšáąśĹ–áąžÉŚâ±¤ęťšęž¦ęž‚" },
+    { base: "S", letters: "Sâ“ďĽłáşžĹšáą¤Ĺśáą Ĺ áą¦áą˘áą¨ČĹžâ±ľęž¨ęž„" },
+    { base: "T", letters: "Tâ“‰ďĽ´áąŞĹ¤áą¬ČšĹ˘áą°áą®Ĺ¦Ć¬Ć®Čľęž†" },
+    { base: "TZ", letters: "ęś¨" },
+    {
+      base: "U",
+      letters:
+        "Uâ“ŠďĽµĂ™ĂšĂ›Ĺ¨áą¸ĹŞáąşĹ¬ĂśÇ›Ç—Ç•Ç™á»¦Ĺ®Ĺ°Ç“Č”Č–ĆŻá»Şá»¨á»®á»¬á»°á»¤áą˛Ĺ˛áą¶áą´É„",
+    },
+    { base: "V", letters: "Vâ“‹ďĽ¶áąĽáąľĆ˛ęťžÉ…" },
+    { base: "VY", letters: "ęť " },
+    { base: "W", letters: "Wâ“ŚďĽ·áş€áş‚Ĺ´áş†áş„áşâ±˛" },
+    { base: "X", letters: "Xâ“ŤďĽ¸áşŠáşŚ" },
+    { base: "Y", letters: "Yâ“ŽďĽąá»˛ĂťĹ¶á»¸Č˛áşŽĹ¸á»¶á»´ĆłÉŽá»ľ" },
+    { base: "Z", letters: "Zâ“ŹďĽşĹąáşĹ»Ĺ˝áş’áş”ĆµČ¤â±żâ±«ęť˘" },
+    {
+      base: "a",
+      letters:
+        "aâ“ď˝áşšĂ ĂˇĂ˘áş§áşĄáş«áş©ĂŁÄÄáş±áşŻáşµáşłČ§ÇˇĂ¤ÇźáşŁĂĄÇ»ÇŽČČáşˇáş­áş·á¸Ä…â±ĄÉ",
+    },
+    { base: "aa", letters: "ęśł" },
+    { base: "ae", letters: "Ă¦Ç˝ÇŁ" },
+    { base: "ao", letters: "ęśµ" },
+    { base: "au", letters: "ęś·" },
+    { base: "av", letters: "ęśąęś»" },
+    { base: "ay", letters: "ęś˝" },
+    { base: "b", letters: "bâ“‘ď˝‚á¸á¸…á¸‡Ć€ĆÉ“" },
+    { base: "c", letters: "câ“’ď˝Ä‡Ä‰Ä‹ÄŤĂ§á¸‰ĆČĽęśżâ†„" },
+    { base: "d", letters: "dâ““ď˝„á¸‹ÄŹá¸Ťá¸‘á¸“á¸ŹÄ‘ĆŚÉ–É—ęťş" },
+    { base: "dz", letters: "ÇłÇ†" },
+    {
+      base: "e",
+      letters:
+        "eâ“”ď˝…Ă¨Ă©ĂŞá»áşżá»…á»áş˝Ä“á¸•á¸—Ä•Ä—Ă«áş»Ä›Č…Č‡áşąá»‡Č©á¸ťÄ™á¸™á¸›É‡É›Çť",
+    },
+    { base: "f", letters: "fâ“•ď˝†á¸źĆ’ęťĽ" },
+    { base: "g", letters: "gâ“–ď˝‡ÇµÄťá¸ˇÄźÄˇÇ§ÄŁÇĄÉ ęžˇáµąęťż" },
+    { base: "h", letters: "hâ“—ď˝ÄĄá¸Łá¸§Čźá¸Ąá¸©á¸«áş–Ä§â±¨â±¶ÉĄ" },
+    { base: "hv", letters: "Ć•" },
+    { base: "i", letters: "iâ“ď˝‰Ă¬Ă­Ă®Ä©Ä«Ä­ĂŻá¸Żá»‰ÇČ‰Č‹á»‹ÄŻá¸­É¨Ä±" },
+    { base: "j", letters: "jâ“™ď˝ŠÄµÇ°É‰" },
+    { base: "k", letters: "kâ“šď˝‹á¸±Ç©á¸łÄ·á¸µĆ™â±Şęťęťęť…ęžŁ" },
+    { base: "l", letters: "lâ“›ď˝ŚĹ€ÄşÄľá¸·á¸ąÄĽá¸˝á¸»ĹżĹ‚ĆšÉ«â±ˇęť‰ęžęť‡" },
+    { base: "lj", letters: "Ç‰" },
+    { base: "m", letters: "mâ“śď˝Ťá¸żáąáąÉ±ÉŻ" },
+    { base: "n", letters: "nâ“ťď˝ŽÇąĹ„Ă±áą…Ĺáą‡Ĺ†áą‹áą‰ĆžÉ˛Ĺ‰ęž‘ęžĄ" },
+    { base: "nj", letters: "ÇŚ" },
+    {
+      base: "o",
+      letters:
+        "oâ“žď˝ŹĂ˛ĂłĂ´á»“á»‘á»—á»•ĂµáąŤČ­áąŹĹŤáą‘áą“ĹŹČŻČ±Ă¶Č«á»ŹĹ‘Ç’ČŤČŹĆˇá»ťá»›á»ˇá»źá»Łá»Ťá»™Ç«Ç­Ă¸ÇżÉ”ęť‹ęťŤÉµ",
+    },
+    { base: "oi", letters: "ĆŁ" },
+    { base: "ou", letters: "ČŁ" },
+    { base: "oo", letters: "ęťŹ" },
+    { base: "p", letters: "pâ“źď˝áą•áą—ĆĄáµ˝ęť‘ęť“ęť•" },
+    { base: "q", letters: "qâ“ ď˝‘É‹ęť—ęť™" },
+    { base: "r", letters: "râ“ˇď˝’Ĺ•áą™Ĺ™Č‘Č“áą›áąťĹ—áąźÉŤÉ˝ęť›ęž§ęž" },
+    { base: "s", letters: "sâ“˘ď˝“ĂźĹ›áąĄĹťáąˇĹˇáą§áąŁáą©Č™ĹźČżęž©ęž…áş›" },
+    { base: "t", letters: "tâ“Łď˝”áą«áş—ĹĄáą­Č›ĹŁáą±áąŻĹ§Ć­Ęâ±¦ęž‡" },
+    { base: "tz", letters: "ęś©" },
+    {
+      base: "u",
+      letters:
+        "uâ“¤ď˝•ĂąĂşĂ»Ĺ©áąąĹ«áą»Ĺ­ĂĽÇśÇÇ–Çšá»§ĹŻĹ±Ç”Č•Č—Ć°á»«á»©á»Żá»­á»±á»ĄáąłĹłáą·áąµĘ‰",
+    },
+    { base: "v", letters: "vâ“Ąď˝–áą˝áążĘ‹ęťźĘŚ" },
+    { base: "vy", letters: "ęťˇ" },
+    { base: "w", letters: "wâ“¦ď˝—áşáşĹµáş‡áş…áşáş‰â±ł" },
+    { base: "x", letters: "xâ“§ď˝áş‹áşŤ" },
+    { base: "y", letters: "yâ“¨ď˝™á»łĂ˝Ĺ·á»ąČłáşŹĂżá»·áş™á»µĆ´ÉŹá»ż" },
+    { base: "z", letters: "zâ“©ď˝šĹşáş‘ĹĽĹľáş“áş•Ć¶ČĄÉ€â±¬ęťŁ" },
+  ],
+  diacriticsMap = {},
+  i = 0;
   i < defaultDiacriticsRemovalMap.length;
   i++
 )
@@ -2944,7 +2944,7 @@ for (
           e(".jq_megamenu").each(function () {
             "block" == e(this).css("display") &&
               (e(this).hide(),
-              e(".jq_nav-link").removeClass("nav__link--active"));
+                e(".jq_nav-link").removeClass("nav__link--active"));
           });
       });
   }
@@ -2961,8 +2961,8 @@ for (
           e(this).hasClass("menu-is-open")
             ? e("#jq_header").addClass("header--open")
             : setTimeout(function () {
-                e("#jq_header").removeClass("header--open");
-              }, 0);
+              e("#jq_header").removeClass("header--open");
+            }, 0);
       }),
       e(".dropdown.jq_nav-link").click(function (t) {
         t.preventDefault(),
@@ -3040,16 +3040,19 @@ for (
         ((c = window.matchMedia("(min-width: 40.625em)").matches), a());
     }),
     e(".jq_side-nav").length &&
-      e(".jq_side-navToggle").on("click keypress", function (t) {
-        ("click" != t.type && 13 != t.which) ||
-          (e(".jq_side-navSubmenu").not(e(this).siblings("ul")).slideUp(),
-          e(".jq_side-navToggle").each(function () {
-            "–" == e(this).html() && e(this).html("+");
-          }),
+    e(".jq_side-navToggle").on("click keypress", function (t) {
+      ("click" != t.type && 13 != t.which) ||
+        (e(".jq_side-navSubmenu").not(e(this).siblings("ul")).slideUp(),
+          (!e(this).is(e(".side-nav__toggle.sub-is-open")))
+            ? e(".side-nav__toggle.sub-is-open").removeClass("sub-is-open")
+            : '',
+
+          e(this).toggleClass("sub-is-open"),
+
           e(this).siblings("ul").is(":visible")
-            ? (e(this).siblings("ul").slideUp(), e(this).html("+"))
-            : (e(this).siblings("ul").slideDown(), e(this).html("–")));
-      }),
+            ? (e(this).siblings("ul").slideUp())
+            : (e(this).siblings("ul").slideDown()));
+    }),
     e("#jq_side-nav-toggle").click(function () {
       e(".jq_side-nav").slideToggle();
     }),
@@ -3105,12 +3108,12 @@ for (
       }
       t.length &&
         (i.attr({ tabindex: "-1", "aria-selected": null, "aria-hidden": !0 }),
-        i.next().attr("aria-hidden", !0),
-        t
-          .attr({ tabindex: "0", "aria-selected": !0, "aria-hidden": !1 })
-          .focus(),
-        t.next().attr("aria-hidden", !1),
-        t.prev("input").trigger("click"));
+          i.next().attr("aria-hidden", !0),
+          t
+            .attr({ tabindex: "0", "aria-selected": !0, "aria-hidden": !1 })
+            .focus(),
+          t.next().attr("aria-hidden", !1),
+          t.prev("input").trigger("click"));
     });
   var u = e(".view-form-autosubmit").parent();
   e.each(u, function () {
@@ -3139,15 +3142,15 @@ for (
       h.addClass("search-mobile--open").attr("aria-hidden", "false"),
         h.find("input[type=search]").focus(),
         e("body, html").hasClass("no-scroll") ||
-          e("body, html").addClass("no-scroll");
+        e("body, html").addClass("no-scroll");
     }),
     e("#jq_search-close").on("click", function () {
       h.removeClass("search-mobile--open").attr("aria-hidden", "true"),
         e("#jq_hamburger").hasClass("menu-is-open") ||
-          e("body, html").removeClass("no-scroll");
+        e("body, html").removeClass("no-scroll");
     }),
     localStorage.getItem("fsvuk_cookies_agreed") ||
-      e("#jq_cookies").addClass("cookies--visible"),
+    e("#jq_cookies").addClass("cookies--visible"),
     e("#jq_cookiesClose").click(function () {
       e("#jq_cookies").hide(),
         localStorage && localStorage.setItem("fsvuk_cookies_agreed", !0);
@@ -3165,13 +3168,13 @@ for (
       .click(function (t) {
         if (
           location.pathname.replace(/^\//, "") ==
-            this.pathname.replace(/^\//, "") &&
+          this.pathname.replace(/^\//, "") &&
           location.hostname == this.hostname
         ) {
           var i = e(this.hash);
           (i = i.length ? i : e("[name=" + this.hash.slice(1) + "]")).length &&
             (t.preventDefault(),
-            e("html, body").animate({ scrollTop: i.offset().top - 200 }, 1e3));
+              e("html, body").animate({ scrollTop: i.offset().top - 200 }, 1e3));
         }
       });
 })(jQuery);

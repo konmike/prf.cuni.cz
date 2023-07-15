@@ -60,11 +60,14 @@
   });
 
   // Pass in the target node, as well as the observer options.
-  observer.observe(target, {
-    attributes: true,
-    childList: true,
-    characterData: true,
-  });
+  if (target) {
+    observer.observe(target, {
+      attributes: true,
+      childList: true,
+      characterData: true,
+    });
+  }
+
 
   function changeMap(id) {
     let active = $("#select-map").attr("data-active");

@@ -49,10 +49,18 @@
                     menu_level == 0 ? 'jq_side-nav-link'
                     ]    
                 %}
-                {{ link( item.title, item.url, item.attributes.addClass(linkClasses))}}
+                
+                {{ link(item.title, item.url, item.attributes.addClass(linkClasses))}}
+
                 {% if menu_level == 1 and item.below %}
-                    <a class="side-nav__toggle jq_side-navToggle {{ item.in_active_trail ? 'side-nav__toggle--active' }}" tabindex="0">{{ item.in_active_trail ? '–' : '+' }}</a>
+                    <span 
+                        class="side-nav__toggle jq_side-navToggle {{ item.in_active_trail ? 'side-nav__toggle--active sub-is-open' }}" 
+                        tabindex="0"
+                    >
+                    </span>
                 {% endif %}
+                
+                
                 {% if item.below %}
                     {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
                 {% endif %}
