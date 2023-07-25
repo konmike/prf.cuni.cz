@@ -1,69 +1,155 @@
-{% if content.field_fullmenu['#items'].0.getValue().value %} 
-
-<div id="fullmenu"></div>
+{% if content.field_fullmenu['#items'].0.getValue().value %}
+    <div id="fullmenu">
+    </div>
 {% endif %}
 
 {%
 	set classes = [
 		'controls__print-wrap',
-		'bc-' ~ content.field_barva_pozadi_obsahu[0]|render,
+		'bc-' ~ content.field_barva_pozadi_obsahu[0]|render
 	]
 %}
 
 <div  {{ attributes.addClass(classes) }}>
-
     {% if content.field_control_print['#items'].0.getValue().value %}
-
         <section class="controls controls--print">        
             <ul class="controls__list">
                 <li class="controls__item">
-                    <a class="controls__link controls__link--print" id="jq_print">{{ 'Tisk'|t}}</a>
+                    <a 
+                        class="controls__link controls__link--print" 
+                        id="jq_print"
+                    >
+                        {{ 'Tisk'|t}}
+                    </a>
                 </li>
             </ul>
         </section>
-
     {% endif %}
 
-    {% if (content.field_hide_title['#items'].0.getValue().value) %}{% else %}
- 
-        <h1 class="padding section-title page-title">{{ label }}</h1>
+    {% set title_text_clr = content.field_barva_nadpisu[0]|render %}
 
+    {% if (not content.field_hide_title['#items'].0.getValue().value 
+        and (node.field_header_layout.0.value == 'titleFirst' or node.field_header_layout.0.value == '')) 
+    %}
+       <h1 
+            class="page-title {{ content.field_additional_title_classes }}"
+            {% if title_text_clr|length > 0 %}
+                style="--page-title-text-clr: {{ title_text_clr|join(' ') }};"
+            {% endif %}
+        >
+            {{ node.title.value }}
+        </h1>
     {% endif %}
 
+    {% if content.field_hero_image.0 %}
+        {{ content.field_hero_image }}
+    {% endif %}
+
+    {% if (not content.field_hide_title['#items'].0.getValue().value 
+        and node.field_header_layout.0.value == 'imageFirst') 
+    %}
+        <h1 
+            class="page-title {{ content.field_additional_title_classes }}"
+            {% if title_text_clr|length > 0 %}
+                style="--page-title-text-clr: {{ title_text_clr|join(' ') }};"
+            {% endif %}
+        >
+            {{ node.title.value }}
+        </h1>
+    {% endif %}
+
+    {% if (content.field_tutor.0) %}
+        {{ drupal_view('tutor', 'block_1', node.id()) }}
+    {% endif %}
+
+    {% if (content.field_external_tutor.0) %}
+        <div class="tutor">
+            <div class="tutor__photo">
+                {%
+                    set img_path = content.field_external_tutor_photo.0 
+                        ? content.field_external_tutor_photo.0 
+                        : '/sites/default/files/default_images/no-photo_1.svg'
+                %}            
+                <img src="{{ img_path }}" class="image"/>
+            </div>
+            <div class="tutor__text">
+                <span class="tutor__title">Tutor</span>
+                <span class="tutor_name">{{ content.field_external_tutor }}</span>
+            </div>
+        </div>
+    {% endif %}
 
     {% block content %} 
-        
-        {{ content|without('field_node_show_controls','field_fullmenu','field_barva_pozadi_obsahu') }}
+        {{ content|without(
+            'field_node_show_controls',
+            'field_fullmenu',
+            'field_barva_pozadi_obsahu',
+            'field_hero_image',
+            'field_tutor',
+            'field_barva_nadpisu',
+            'field_additional_title_classes',
+            'field_external_tutor',
+            'field_external_tutor_photo',
+            'field_header_layout'
+            )
+        }}
         
         {% if related_news_tags_ids is defined %}
             {{ drupal_view(
-            'news_page',
-            'block_related_basic_page',
-            related_news_tags_ids | join('+')
-            ) }}
-        
+                'news_page',
+                'block_related_basic_page',
+                related_news_tags_ids | join('+')
+                )
+            }}
         {% endif %}
- 
     {% endblock %}
-
 </div>
 
 {% block controls %}
     {% if content.field_node_show_controls['#items'].0.getValue().value %}
         <section id="controls" class="controls mb">
-            <h2 class="section-title padding">{{"Ovládací prvky"|t}}</h2>
+            <h2 class="section-title padding">
+                {{"Ovládací prvky"|t}}
+            </h2>
+
             <ul class="controls__list">
                 <li class="controls__item">
-                    <a class="controls__link controls__link--print" id="jq_print">{{ 'Tisk'|t}}</a>
+                    <a 
+                        class="controls__link controls__link--print" 
+                        id="jq_print"
+                    >
+                        {{ 'Tisk'|t}}
+                    </a>
                 </li>
+
                 <li class="controls__item">
-                    <a class="controls__link controls__link--mail" href="mailto:?&body={{ host }}{{ current_uri }}" target="_blank">{{'Poslat mailem'|t}}</a>
+                    <a 
+                        class="controls__link controls__link--mail" 
+                        href="mailto:?&body={{ host }}{{ current_uri }}" 
+                        target="_blank"
+                    >
+                        {{'Poslat mailem'|t}}
+                    </a>
                 </li>
+
                 <li class="controls__item">
-                    <a class="controls__link controls__link--fb" href="https://www.facebook.com/sharer/sharer.php?u={{ host }}{{ current_uri }}" target="_blank">{{ 'Sdílet na Facebooku'|t}}</a>
+                    <a 
+                        class="controls__link controls__link--fb" 
+                        href="https://www.facebook.com/sharer/sharer.php?u={{ host }}{{ current_uri }}" 
+                        target="_blank"
+                    >
+                        {{ 'Sdílet na Facebooku'|t}}
+                    </a>
                 </li>
+
                 <li class="controls__item">
-                    <a class="controls__link controls__link--twitter" href="https://twitter.com/intent/tweet?source={{ host }}{{ current_uri }}" target="_blank">{{ 'Sdílet na Twitteru'|t}}</a>
+                    <a 
+                        class="controls__link controls__link--twitter" 
+                        href="https://twitter.com/intent/tweet?source={{ host }}{{ current_uri }}" 
+                        target="_blank"
+                    >
+                        {{ 'Sdílet na Twitteru'|t}}
+                    </a>
                 </li>
             </ul>
         </section>

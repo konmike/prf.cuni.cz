@@ -1,0 +1,8 @@
+name: FSV Megamenu
+type: module
+description: 'Block container for megamenu'
+package: FSV
+dependencies:
+  - link
+  - node
+core_version_requirement: ^8 || ^9

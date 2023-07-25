@@ -5,6 +5,7 @@
   max-width: 100%;
   padding-inline: 3em;
 }
+
 .vypis-zakladnich-stran__item {
   display: grid;
   grid-template-columns: 50px 1fr;
@@ -14,26 +15,35 @@
   &:first-child {
     margin-top: 0;
   }
+
   &:last-child .vypis-zakladnich-stran__link-more {
     border-bottom: 0;
   }
 }
+
 .vypis-zakladnich-stran__icon {
   grid-column: 1/2;
   opacity: 0.4;
+
   img {
     height: auto;
   }
 }
+
 .vypis-zakladnich-stran__header,
 .vypis-zakladnich-stran__content,
 .vypis-zakladnich-stran__link-more {
   grid-column: 2/3;
 }
-.vypis-zakladnich-stran__header {
+
+.vypis-zakladnich-stran__header a {
+  color: var(--llm-obory-header-text-clr);
+  text-decoration: none;
+  font-size: 2.8rem;
 }
-.vypis-zakladnich-stran__content {
-}
+
+.vypis-zakladnich-stran__content {}
+
 .vypis-zakladnich-stran__link-more {
   display: flex;
   flex-flow: row nowrap;

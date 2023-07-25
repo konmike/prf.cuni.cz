@@ -1,26 +1,27 @@
 {%
-	set section_classes = [
-		'osoby',
+    set section_classes = [
+        'osoby',
         'osoby--' ~ content.field_styl_rozlozeni[0]|render,
-		'pt-' ~ content.field_horni_odsazeni[0]|render,
-		'pb-' ~ content.field_spodni_odsazeni[0]|render,
-	]
+        'pt-' ~ content.field_horni_odsazeni[0]|render,
+        'pb-' ~ content.field_spodni_odsazeni[0]|render,
+    ]
 %}
 
 {% block paragraph %} 
-	{% block content %} 
+    {% block content %} 
+        <div {{ attributes.addClass(section_classes) }}>
 
-		<div {{ attributes.addClass(section_classes) }}>
+            {% if content.field_title[0] is not empty %}
+                <h3 class="osoby__title">{{ content.field_title.0 }}</h3>
+            {% endif %} 
 
-			{% if content.field_title[0] is not empty %}
-				<h3 class="osoby__title">{{ content.field_title.0 }}</h3>
-			{% endif %} 
-
-			<ul class="osoby__list" {% if content.field_styl_rozlozeni['#items'].0.getValue().value == "carousel" %}data-slick='{"slidesToShow": {{ content.field_slides_to_show }}, "slidesToScroll": 1, "infinite":false}'{% endif %}>
-				{{ content.field_osoba_carousel }}
-			</ul>
-
-		</div>
-
-	{% endblock %} 
+            <ul class="osoby__list" 
+                {% if content.field_styl_rozlozeni['#items'].0.getValue().value == "carousel" %}
+                    data-slick='{"slidesToShow": {{ content.field_slides_to_show }}, "slidesToScroll": 1, "infinite":false}'
+                {% endif %}
+            >
+                {{ content.field_osoba_carousel }}
+            </ul>
+        </div>
+    {% endblock %} 
 {% endblock paragraph %}

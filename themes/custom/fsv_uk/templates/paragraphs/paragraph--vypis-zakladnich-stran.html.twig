@@ -46,10 +46,15 @@
   ]
 %}
 
+{%
+	set header_text_clr = [
+    content.field_barva_nadpisu[0]|render,
+	]
+%}
 
 
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
+  <div {{ attributes.addClass(classes).setAttribute('style', '--llm-obory-header-text-clr: ' ~ header_text_clr|join(' ')) }}>
     {% block content %}
       {% set cat_id = content.field_vybrat_stitek[0]['#plain_text'] %}
       {{ drupal_view('vypis_zakladnich_stran_na_zaklade_stitku', 'block_1', cat_id) }}

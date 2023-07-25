@@ -34,6 +34,7 @@ h4 {
   font-weight: 400;
   line-height: 1.25em;
   letter-spacing: 0.015em;
+
   &:first-of-type {
     margin-top: 0;
   }
@@ -70,6 +71,7 @@ img {
   display: block;
   max-width: 100%;
   width: 100%;
+
   &.align-center {
     margin: 1em auto;
   }
@@ -79,6 +81,7 @@ p {
   &:first-of-type {
     margin-top: 0;
   }
+
   &:last-of-type {
     margin-bottom: 0;
   }
@@ -95,11 +98,19 @@ section {
   padding-bottom: 1rem;
   background-color: $c1;
 }
-.section > .section-title {
+
+.page-title,
+.section>.section-title {
   text-transform: none;
-  color: #000000;
+  color: var(--paragraph-title-text-clr, #000000);
   border: 0;
   padding-bottom: 0;
+}
+
+.page-title {
+  color: var(--page-title-text-clr, $c4);
+  border-bottom: 0.1rem solid $c7;
+  padding: 1.5rem;
 }
 
 ul {
@@ -133,6 +144,7 @@ iframe {
     display: none !important;
   }
 }
+
 .image--youtube-logo {
   width: 50% !important;
   max-width: 50% !important;
@@ -141,10 +153,12 @@ iframe {
 .footnote {
   font-size: 12px;
 }
+
 .side-nav__link-lvl2.czech-flag,
 .side-nav__link-lvl2.british-flag {
   display: inline-flex;
   align-items: center;
+
   &::after {
     display: inline-block;
     content: "";
@@ -156,23 +170,27 @@ iframe {
     background-repeat: no-repeat;
   }
 }
+
 .czech-flag::after {
   background-image: url("../images/icons/cs.svg");
 }
+
 .british-flag::after {
   background-image: url("../images/icons/en.svg");
 }
 
-@media (min-width: $headerBreak * 1em) {
+@media (min-width: ($headerBreak * 1em)) {
   #content-wrap {
     transform: translateY(183px);
     // Problém po aktualizaci chromu - nepříjemné probliknutí
     transition: transform 0.5s ease;
+
     &.header-fixed {
       transform: translateY(40px);
     }
   }
 }
+
 // @media(min-width: $n-sm * 1em){
 //     .h1, h1 {
 //         font-size: calc(1.59091vw + 1.89091rem);

@@ -226,10 +226,22 @@
   $('a[href^="#"').click(function (event) {
     var addressValue = $(this).attr("href");
     var pos = $(addressValue).position();
-    //console.log(pos);
-    //console.log(addressValue);
     $("html").scrollTop(pos.top);
     event.preventDefault();
+  });
+
+  document.querySelectorAll(".osoby__show-detail").forEach(function (detail) {
+    detail.addEventListener("click", () => {
+      const dialog = detail.parentNode.nextElementSibling;
+      dialog.showModal();
+    });
+  });
+
+  document.querySelectorAll(".close-dialog").forEach(function (btn) {
+    btn.addEventListener("click", () => {
+      const dialog = btn.parentNode;
+      dialog.close();
+    });
   });
 
   document.querySelectorAll(".akordeon__header").forEach(function (akordeon) {
@@ -281,7 +293,7 @@ function removeButton() {
 function isFilterRunning() {
   if (
     document.getElementById("edit-field-koho-hledame-list-value").value ===
-      "All" &&
+    "All" &&
     document.getElementById("edit-field-kraj-value").value === "All" &&
     document.getElementById("edit-field-uvazek-list-value").value === "All"
   ) {

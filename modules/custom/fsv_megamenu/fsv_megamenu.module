@@ -1,0 +1,161 @@
+<?php
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\Entity;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Menu\MenuLinkInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\menu_link_content\Plugin\Menu\MenuLinkContent;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ * Implements hook_theme().
+ */
+function fsv_megamenu_theme($existing, $type, $theme, $path) {
+    return [
+        'fsv_megamenu_block' => [
+            'variables' => [
+                'links' => [],
+                'most_visited' => [],
+            ],
+            'template' => 'megamenu'
+        ],
+        'fsv_megamenu_top_link' => [
+            'variables' => [
+                'item' => []
+            ],
+            'template' => 'megamenu_top_link'
+        ],
+        'fsv_megamenu_links' => [
+            'variables' => [
+                'items' => []
+            ],
+            'template' => 'megamenu_links'
+        ]
+    ];
+}
+
+/**
+ * Implements hook_preprocess_menu().
+ */
+/**
+ * Implements hook_preprocess().
+ */
+function fsv_megamenu_preprocess_fsv_megamenu_links(&$variables, $hook) {
+    $language = Drupal::languageManager()->getCurrentLanguage()->getId();
+
+    $entity_manager = \Drupal::entityTypeManager();
+    $node_storage = $entity_manager->getStorage('node');
+    fsv_megamenu_traverse_menu($variables['items'], $language, $node_storage);
+}
+
+function fsv_megamenu_preprocess_menu(&$variables) {
+    if ($variables['menu_name'] === 'main' || $variables['menu_name'] === 'ips' || $variables['menu_name'] === 'footer' || $variables['menu_name'] === 'bottom-header-navigation') {
+        $language = Drupal::languageManager()->getCurrentLanguage()->getId();
+
+        $entity_manager = \Drupal::entityTypeManager();
+        $node_storage = $entity_manager->getStorage('node');
+        fsv_megamenu_traverse_menu($variables['items'], $language, $node_storage);
+    }
+}
+
+function fsv_megamenu_traverse_menu(array &$items, $current_language, \Drupal\node\NodeStorageInterface $node_storage) {
+    foreach ($items as $key => &$item) {
+        if ($item['url']->isRouted() && !$item['url']->isExternal() && $item['url']->getRouteName() === 'entity.node.canonical') {
+            $node = $node_storage->load($item['url']->getRouteParameters()['node']);
+            $languages = $node->getTranslationLanguages();
+            // Remove links which is not translated to current language.
+            if (!isset($languages[$current_language])) {
+                unset($items[$key]);
+            }
+        }
+
+        if (!empty($item['below'])) {
+            fsv_megamenu_traverse_menu($item['below'], $current_language, $node_storage);
+        }
+    }
+}
+
+function fsv_megamenu_language_switch_links_alter(array &$links, $type, Url $url) {
+    foreach ($links as $lng => $link) {
+        $url = Url::fromRoute('<front>');
+        $url->setOption('language', $link['language']);
+        $links[$lng]['url'] = $url;
+    }
+}
+
+/**
+ * Implements hook_form_node_form_alter().
+ */
+function fsv_megamenu_form_node_form_alter(&$form, FormStateInterface $form_state) {
+  $bundle = $form_state->getFormObject()->getEntity()->getType();
+  $config = \Drupal::config('menu_select.settings');
+  $search_enabled = $config->get('menu_select.search_enabled');
+
+  // Get menus available to this content type.
+  // $menu_options = MenuSelect::getAvailableMenus($bundle);
+
+  // Leave if there are no menu options for this content type.
+  if (empty($menu_options)) {
+    return;
+  }
+
+  // Set the default menu.
+  $default_menu['machine'] = key($menu_options);
+  $default_menu['clean'] = $menu_options[$default_menu['machine']];
+
+  $rendered_menus = [];
+  foreach ($menu_options as $key => $menu) {
+    $menu_tree = MenuSelect::menuTreeMachineNameLoad($key);
+    $rendered_menus[] = MenuSelect::buildRenderedMenu($menu_tree, array('machine' => $key, 'clean' => $menu), $form_state);
+  }
+
+  // Attach supporting Javascript and stylesheets.
+  $form['#attached']['library'][] = 'menu_select/menu_select';
+
+  $form['menu']['link']['parent_menu_position_preview'] = array(
+    '#type' => 'item',
+    '#title' => t('Menu link position preview'),
+    '#description' => t("Preview of the menu item's hierarchical position."),
+  );
+
+  $form['menu']['link']['parent_menu_position_preview']['children'] = array(
+    '#type' => 'container',
+    '#attributes' => array(
+      'class' => array(
+        'menu-select-parent-position-preview',
+        'js-menu-select-parent-position-preview',
+      ),
+    ),
+  );
+
+  if ($search_enabled) {
+    $form['menu']['link']['parent_menu_item_search'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Search'),
+      '#autocomplete_route_name' => 'menu_select.menu_select_autocomplete',
+      '#autocomplete_route_parameters' => array('type' => $bundle),
+      '#description' => t("Alternatively, use this autocomplete search to find the menu item's parent and select it."),
+      '#attributes' => array(
+        'class' => array(
+          'menu-select-parent-menu-item-search',
+          'js-menu-select-parent-menu-item-search',
+        ),
+      ),
+    );
+  }
+
+  $form['menu']['link']['parent_menu_item'] = $rendered_menus;
+
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function fsv_megamenu_form_alter(&$form, FormStateInterface $form_state) {
+  // As we are implementing one of the 'extra' hooks we need the
+  // primary hook to exist so that we can invoke hook_module_implements_alter().
+
+}
+

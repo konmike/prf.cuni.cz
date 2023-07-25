@@ -62,6 +62,12 @@
 	]
 %}
 
+{%
+	set title_text_clr = [
+    content.field_barva_nadpisu[0]|render,
+	]
+%}
+
 {% block paragraph %}
   <section {{ attributes.addClass(section_classes) }}>
   
@@ -76,11 +82,18 @@
 
     {% if (content.field_skryt_nadpis['#items'].0.getValue().value) %}
     {% else %}
-        {# {{ content.field_title }} #}
-        <h2 id="{{ content.field_anchor.0 }}" {{ custom_title_classes.addClass(title_classes) }}>{{ content.field_title.0 }}</h2>
-        {# <h2 id="{{ content.field_anchor.0 }}" class="padding section-title">{{ content.field_title.0 }}</h2> #}
+        <h2 
+            id="{{ content.field_anchor.0 }}" 
+            {{ custom_title_classes.addClass(title_classes) }}
+            {{ attributes.setAttribute('style', '--paragraph-title-text-clr: ' ~ title_text_clr|join(' ')) }}
+        >
+          {{ content.field_title.0 }}
+        </h2>
     {% endif %}
 
+    {# {% if isFirst and parentNode.field_external_tutor.value %}
+        <h3>{{ parentNode.field_external_tutor.value }}</h3>
+    {% endif %} #}
 
     {{ content.field_wysiwyg_body }}
     

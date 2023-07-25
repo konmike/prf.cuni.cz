@@ -37,12 +37,18 @@
  */
 #}
 
+{%
+    set header_layout = element['#object'].field_header_layout.value
+%}
 
 {% for item in items %}
-    <div class="hero-image lazyload mb"
+    <div class="hero-image lazyload mb {{ header_layout }}"
         aria-hidden="true"
         data-sizes="auto" 
         data-bgset="
-            {{ item.content["#item"].entity.uri.value | image_style('760x425') }} 760w,
-            {{ item.content["#item"].entity.uri.value | image_style('1520x850') }} 1520w"></div>
+        {{ item.content["#item"].entity.uri.value | image_style('760x425') }} 760w,
+        {{ item.content["#item"].entity.uri.value | image_style('1520x850') }} 1520w"
+        data-title="{{ element['#object'].title.value }}"
+    >
+    </div>
 {% endfor %}

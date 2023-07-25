@@ -4,16 +4,18 @@ use Drupal\Core\Datetime\DateFormatter;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;
 
-function fsv_uk_preprocess(&$variables) {
+function fsv_uk_preprocess(&$variables)
+{
     $variables['theme_path'] = base_path() . $variables['directory'];
-    $variables['current_language'] =  \Drupal::languageManager()->getCurrentLanguage()->getId();
+    $variables['current_language'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
     $variables['current_uri'] = \Drupal::request()->getRequestUri();
     $variables['host'] = \Drupal::request()->getHost();
     $variables['host_scheme'] = \Drupal::request()->getSchemeAndHttpHost();
-    $variables['current_date'] =  \Drupal::service('date.formatter')->format(time(), 'custom', 'F Y');
+    $variables['current_date'] = \Drupal::service('date.formatter')->format(time(), 'custom', 'F Y');
 }
 
-function fsv_uk_preprocess_page(&$variables) {
+function fsv_uk_preprocess_page(&$variables)
+{
     $route = \Drupal::routeMatch()->getRouteName();
     $class = 'none';
 
@@ -21,35 +23,38 @@ function fsv_uk_preprocess_page(&$variables) {
         $class = \Drupal::routeMatch()->getParameter('node')->getType();
     } else if ($route === 'fsv_contacts.list') {
         $class = $route;
-    } else if (\substr($route, 0, 5) === 'view.'
+    } else if (
+        \substr($route, 0, 5) === 'view.'
         || \substr($route, 0, 7) === 'search.'
         || \substr($route, 0, 5) === 'user.'
     ) {
         $class = $route;
     }
-    
+
     $variables['page_class_name'] = \Drupal\Component\Utility\Html::cleanCssIdentifier($class);
     $variables['#attached']['drupalSettings']['clientId'] = "bbbd83fa44d54c3d8b831bcb1965ed8c";
     $variables['#attached']['drupalSettings']['clientSecret'] = "8e75c8134566401a92e4c57cf33edbc3";
 }
 
-function fsv_uk_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+function fsv_uk_form_alter(&$form, FormStateInterface $form_state, $form_id)
+{
     if ($form_id === 'search_form') {
         $form['advanced']['#access'] = false;
         $manager = \Drupal::languageManager();
         $form['advanced']['lang-fieldset']['language']['#default_value'] = [$manager->getCurrentLanguage()->getId()];
         unset($form['help_link']);
         $form['basic']['keys']['#attributes']['placeholder'] = t('Search term');
-    } if ($form_id === 'search_block_form') {
+    }
+    if ($form_id === 'search_block_form') {
         $build_args = $form_state->getBuildInfo()['args'];
         if (\count($build_args) > 0 && $build_args[0] === 'homepage') {
             $form['keys']['#attributes']['placeholder'] = t("Didn't find what you're looking for?");
         } else {
             $form['keys']['#attributes']['placeholder'] = t('Search term');
         }
-        
+
         $manager = \Drupal::languageManager();
-        
+
         $form['advanced-form'] = [
             '#type' => 'hidden',
             '#value' => 1,
@@ -64,13 +69,15 @@ function fsv_uk_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     }
 }
 
-function fsv_uk_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+function fsv_uk_theme_suggestions_alter(array &$suggestions, array $variables, $hook)
+{
     if ($variables['theme_hook_original'] === 'form') {
         $suggestions[] = 'form__' . $variables['element']['#form_id'];
     }
 }
 
-function fsv_uk_preprocess_node(array &$variables) {
+function fsv_uk_preprocess_node(array &$variables)
+{
     if ($variables['node']->bundle() === 'basic_page' || $variables['node']->bundle() === 'page_top_level') {
         $node = $variables['node'];
         if ($node->hasField('field_related_news')) {
@@ -80,26 +87,49 @@ function fsv_uk_preprocess_node(array &$variables) {
                 foreach ($related_news as $term) {
                     $id_array[] = $term->entity->id();
                 }
-        
+
                 $variables['related_news_tags_ids'] = $id_array;
             }
         }
     }
 }
 
-function fsv_uk_preprocess_paragraph(&$variables) {
+function fsv_uk_preprocess_paragraph(&$variables)
+{
     // $node = \Drupal::request()-  >attributes->get('node');
     $node = \Drupal::routeMatch()->getParameter('node');
     if ($node instanceof \Drupal\node\NodeInterface) {
-        // You can get nid and anything else you need from the node object.
         $nid = $node->id();
         $variables['page_id'] = $nid;
     }
-    
-  }
+
+    $paragraph = $variables['paragraph'];
+    $parentEntity = $paragraph->getParentEntity();
+
+    if ($parentEntity && $parentEntity->getEntityTypeId() === 'node') {
+        $node = $parentEntity;
+        $variables['parentNode'] = $node;
+
+        if ($node->hasField('field_content_blocks')) {
+            $children = $node->get('field_content_blocks')->getValue();
+
+            foreach ($children as $index => $child) {
+                if ($child['target_id'] == $paragraph->id()) {
+                    $variables['isFirst'] = ($index === 0);
+                    $variables['isLast'] = ($index === count($children) - 1);
+                    break;
+                }
+            }
+        }
+    }
 
 
-function fsv_uk_preprocess_field(&$variables, $hook) {
+
+}
+
+
+function fsv_uk_preprocess_field(&$variables, $hook)
+{
     $element = $variables['element'];
     if ($element['#field_name'] === 'field_gallery_images') {
         $feature_field = $element['#object']->get('field_gallery_feature_first_img');
@@ -114,10 +144,10 @@ function fsv_uk_preprocess_field(&$variables, $hook) {
 //     if ($variables['menu_name'] === 'bottom-header-navigation' ||
 //         $variables['menu_name'] === 'footer') {
 //         $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
-        
+
 //         foreach ($variables['items'] as $key => $item) {
 //             $attributes = $item['url']->getOption('attributes');
-            
+
 //             if (isset($attributes['class'])) {
 //                 foreach (\explode(' ', $attributes['class']) as $cls) {
 //                     if (\preg_match('/^lang-([^-]+)-only$/', $cls, $matches)) {
@@ -135,11 +165,13 @@ function fsv_uk_preprocess_field(&$variables, $hook) {
 /**
  * Implements hook_preprocess_block().
  */
-function fsv_uk_preprocess_block(&$variables) {
-  $variables['content']['#attributes']['block'] = $variables['attributes']['id'];
+function fsv_uk_preprocess_block(&$variables)
+{
+    $variables['content']['#attributes']['block'] = $variables['attributes']['id'];
 }
 
-function fsv_uk_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+function fsv_uk_theme_suggestions_block_alter(array &$suggestions, array $variables)
+{
     if (isset($variables['elements']['content']['#block_content'])) {
         array_splice($suggestions, 2, 0, 'block__type__' . $variables['elements']['content']['#block_content']->bundle());
     }
@@ -148,18 +180,20 @@ function fsv_uk_theme_suggestions_block_alter(array &$suggestions, array $variab
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
-function fsv_uk_theme_suggestions_menu_alter(array &$suggestions, array $variables) {
-  // Remove the block and replace dashes with underscores in the block ID to
-  // use for the hook name.
-  if (isset($variables['attributes']['block'])) {
-    $hook = str_replace(array('block-', '-'), array('', '_'),    $variables['attributes']['block']);
-    $suggestions[] = $variables['theme_hook_original'] . '__' . $hook;
-  }
+function fsv_uk_theme_suggestions_menu_alter(array &$suggestions, array $variables)
+{
+    // Remove the block and replace dashes with underscores in the block ID to
+    // use for the hook name.
+    if (isset($variables['attributes']['block'])) {
+        $hook = str_replace(array('block-', '-'), array('', '_'), $variables['attributes']['block']);
+        $suggestions[] = $variables['theme_hook_original'] . '__' . $hook;
+    }
 }
 
-function fsv_uk_preprocess_item_list__search_results(&$variables) {
+function fsv_uk_preprocess_item_list__search_results(&$variables)
+{
     $url = Url::fromUserInput($variables['current_uri']);
-    
+
     $query = $url->getOption('query');
     if (isset($query['keys'])) {
         $variables['search_string'] = $query['keys'];

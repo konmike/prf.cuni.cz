@@ -1,0 +1,77 @@
+{#
+/**
+ * @file
+ * Theme override to display a menu.
+ *
+ * Available variables:
+ * - links: Array of top level links in mega menu
+ *   - node: Rendered teaser of navigation node
+ *   - below: The menu item child items.
+ *   - topLevelLink: The top level link item
+ */
+#}
+<nav aria-labelledby="main-nav" {{ attributes|without('role', 'aria-labelledby') }} class="header__nav nav">
+  {# Label. If not displayed, we still provide it for screen readers. #}
+  {% if not configuration.label_display %}
+    {% set title_attributes = title_attributes.addClass('visually-hidden') %}
+  {% endif %}
+  {{ title_prefix }}
+    <h2 id="main-nav" class="visually-hidden">{{ "Hlavní navigace"|t }}</h2>
+  {{ title_suffix }}
+
+  {# Menu. #}
+  {% block content %}
+    <div class="nav__container container">
+
+
+      <ul class="nav__list reset-ul">
+   
+        {% for link in links %}
+
+              {% set semifinals = link.top_level_link.url|escape %}  
+              {% set final = semifinals|replace({'/en':'','/':'', '1':'', '2':'', '3':'', '4':'', '5':'', '6':'', '7':'', '8':'', '9':'', '0':''}) %}
+
+              {% if final != 'node' %}
+
+                <li class="
+
+                {{ menu_level < 1 ? 'nav__item' : 'nav__item-lvl2' }} {{ item.is_expanded ? 'nav__item--expanded' }}{{ item.is_collapsed ? ' nav__item--collapsed' }} {{ item.in_active_trail ? 'nav__item--active-trail' }}">
+                    {{ link( link.top_level_link.title, link.top_level_link.url, link.top_level_link.attributes.addClass("nav__link dropdown jq_nav-link"))}}
+
+                    <div class="nav__megamenu jq_megamenu">
+                        <span class="nav__megamenu__close jq_megamenu-close">✕</span>
+                        <div class="nav__megamenu__wrap clearfix">
+                            {{ link.node }}
+                            <ul class="nav__list-lvl2 sub-menu nav__megamenu__nav reset-ul">
+                                {{ link.below }}
+                            </ul>
+                        </div>
+                        <ul class="nav__megamenu__featured">
+                            <li class="nav__megamenu__featured__item">{{'Most popular'|t}}</li>
+    
+                            {% for menu_link in most_visited['#items'] %}
+                                <li class="nav__megamenu__featured__item">
+                                    {{ link(menu_link.title, menu_link.url, menu_link.attributes) }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+        
+                </li>
+                {% if menu_level == 0 %}
+                  <li aria-hidden="true" class="nav__separator">
+                    <svg height="8" width="8">
+                      <circle cx="4" cy="4" r="1.75" stroke="white" stroke-width="1.5" fill="transparent"></circle>
+                    </svg>
+                  </li>
+                {% endif %}
+
+            {% endif %}
+          
+        {% endfor %}
+
+
+      </ul>
+    </div>
+  {% endblock %}
+</nav>

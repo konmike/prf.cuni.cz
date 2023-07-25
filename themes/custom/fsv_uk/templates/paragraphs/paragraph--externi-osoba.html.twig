@@ -1,0 +1,63 @@
+{% block paragraph %} 
+    {% block content %}
+        {% set img_path = content.field_general_image.0 
+            ? content.field_general_image.0 
+            : '/sites/default/files/default_images/no-photo_1.svg' 
+        %}
+        
+        <li class="osoby__item">
+            <div class="osoby__img-wrap">
+                <div 
+                    class="osoby__img" 
+                    style="background-image: url({{ img_path }})"
+                >
+                </div>
+            </div>
+
+            <div class="osoby__text">
+                <h4 class="osoby__name">
+                    {{ content.field_jmeno_prijmeni }}
+                </h4>
+
+                <div class="osoby__description">
+                    <p>
+                        {{ content.field_osoby_popis|render|length > 250 
+                            ? content.field_osoby_popis|render|striptags|slice(0,250) ~ '...' 
+                            : content.field_osoby_popis
+                        }}
+                    </p>
+                </div>
+
+                <button class="osoby__show-detail">detail</button>
+            </div>
+
+            <dialog class="dialog">
+                <span class="close-dialog">
+                    <i class="far fa-times-circle"></i>
+                </span>
+
+                <div class="osoby__header">
+                    <div 
+                        class="osoby__img" 
+                        style="background-image: url({{ img_path }});"
+                    >
+                    </div>
+
+                    <div class="osoby__header-text">
+                        <span class="osoby__title">Lecturer</span>
+
+                        <h4 class="osoby__name">
+                            {{ content.field_jmeno_prijmeni }}
+                        </h4>
+                    </div>
+                </div>
+                
+                <div class="osoby__text">
+                    <div class="osoby__description">
+                        {{ content.field_osoby_popis }}
+                    </div>
+                </div>
+            </dialog>
+        </li>
+    {% endblock %}
+{% endblock paragraph %}
