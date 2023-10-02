@@ -6,7 +6,7 @@ aside[data-url^="/zahranici"] {
     // width: auto;
   }
 
-  + .main-content {
+  +.main-content {
     @media screen and (min-width: ($lg * 1em)) {
       width: calc(99.9% * 3 / 4 - (80px - 30px * 3 / 4));
     }
@@ -39,10 +39,12 @@ aside[data-url^="/zahranici"] {
       &.text-uppercase {
         text-transform: uppercase;
       }
+
       &.font-calibri-smaller {
         font-family: var(--calibri);
         font-size: 1.7rem;
       }
+
       &.border-bottom {
         padding-inline: 0;
         margin-inline: 1.5rem;
@@ -53,6 +55,7 @@ aside[data-url^="/zahranici"] {
     .faq {
       max-width: 100%;
     }
+
     .faq__item {
       list-style: none;
       padding-inline: 2em;
@@ -63,18 +66,22 @@ aside[data-url^="/zahranici"] {
         padding-bottom: 1em;
       }
     }
+
     .delimiter--faq-item {
       border-bottom: 1px solid var(--clr-mgr) !important;
       margin-block: 0 !important;
     }
+
     .faq__item:last-child {
       // border-bottom: none;
       margin-bottom: 0;
     }
+
     .faq__title {
       font-size: 1.7rem;
       position: relative;
     }
+
     .faq__title::before {
       --dimension: 0.75em;
       content: "";
@@ -88,8 +95,10 @@ aside[data-url^="/zahranici"] {
       left: -1.5em;
       top: calc(50% - (var(--dimension) / 2));
     }
+
     .faq__content {
       padding-bottom: 1em;
+
       a {
         color: var(--clr-mgr);
         text-decoration: none;
@@ -98,7 +107,8 @@ aside[data-url^="/zahranici"] {
   }
 }
 
-[data-url^="/zahranici"] + .main-content .tip {
+[data-url^="/zahranici"]+.main-content .tip,
+[data-url^="/dokumentace-sablony/wysiwyg-editor"]+.main-content .tip {
   display: grid;
   grid-template-columns: 85px auto;
   padding-right: 1em;
@@ -119,57 +129,70 @@ aside[data-url^="/zahranici"] {
       left: -3em;
     }
   }
+
   .tip__content {
     padding-block: 1.5em;
   }
+
   .image {
-    // max-width: 10em;
     opacity: 0;
   }
 }
-[data-url^="/zahranici/mgr-studenti"] + .main-content .tip {
+
+[data-url^="/zahranici/mgr-studenti"]+.main-content .tip {
   background-color: var(--clr-light-mgr);
+
   .image-wrap::after {
     background-image: url(/sites/default/files/uploads/images/tip_mgr.svg);
   }
+
   .tip__content {
     color: var(--clr-mgr);
   }
 }
-[data-url^="/zahranici/phd-studenti"] + .main-content .tip {
+
+[data-url^="/zahranici/phd-studenti"]+.main-content .tip {
   background-color: var(--clr-light-phd);
+
   .image-wrap::after {
     background-image: url(/sites/default/files/uploads/images/tip_phd.svg);
   }
+
   .tip__content {
     color: var(--clr-phd);
   }
 }
-[data-url^="/zahranici/absolventi"] + .main-content .tip {
+
+[data-url^="/zahranici/absolventi"]+.main-content .tip {
   background-color: var(--clr-light-absolventi);
+
   .image-wrap::after {
     background-image: url(/sites/default/files/uploads/images/tip_absolventi.svg);
   }
+
   .tip__content {
     color: var(--clr-absolventi);
   }
 }
-[data-url^="/zahranici/zamestnanci"] + .main-content .tip {
+
+[data-url^="/zahranici/zamestnanci"]+.main-content .tip {
   background-color: var(--clr-light-zamestnanci);
+
   .image-wrap::after {
     background-image: url(/sites/default/files/uploads/images/tip_zamestnanci.svg);
   }
+
   .tip__content {
     color: var(--clr-zamestnanci);
   }
 }
 
 [data-url^="/zahranici"] .line,
-[data-url^="/zahranici"] + .main-content .line {
+[data-url^="/zahranici"]+.main-content .line {
   border-bottom: 1px solid var(--clr-dark-red);
 }
 
-[data-url^="/zahranici"] + .main-content {
+[data-url^="/zahranici"]+.main-content {
   .section--white-text .section-title {
     border: 0;
     margin: 0;
@@ -186,10 +209,12 @@ aside[data-url^="/zahranici"] {
     &.text-uppercase {
       text-transform: uppercase;
     }
+
     &.font-calibri-smaller {
       font-family: var(--calibri);
       font-size: 1.7rem;
     }
+
     &.border-bottom {
       padding-inline: 0;
       margin-inline: 1.5rem;
@@ -203,6 +228,7 @@ aside[data-url^="/zahranici"] {
     gap: 1em 3em;
     padding: 0 0.5em;
     font-family: var(--calibri);
+
     @media screen and (min-width: ($md * 1em)) {
       flex-flow: row nowrap;
     }
@@ -213,7 +239,7 @@ aside[data-url^="/zahranici"] {
     font-weight: 500;
   }
 
-  .contacts__address > li:nth-last-child(2) {
+  .contacts__address>li:nth-last-child(2) {
     margin-top: 2em;
   }
 
@@ -229,10 +255,12 @@ aside[data-url^="/zahranici"] {
 
   .contacts__staff .item {
     line-height: 1.5;
-    > li:first-child {
+
+    >li:first-child {
       text-transform: uppercase;
     }
   }
+
   .contacts__link {
     text-transform: none;
     color: var(--clr-dark-red);
@@ -265,6 +293,7 @@ aside[data-url^="/zahranici"] {
     column-gap: 0.5em;
     margin-bottom: 0.25em;
   }
+
   .countries .countries__list img {
     max-height: 3rem;
     width: auto;
@@ -290,9 +319,11 @@ aside[data-url^="/zahranici"] {
     padding-inline: 1em;
     text-indent: 0;
     margin-bottom: 0.15em;
+
     &::before {
       display: none;
     }
+
     &:first-child {
       background-color: var(--clr-light-mgr);
     }
@@ -303,6 +334,7 @@ aside[data-url^="/zahranici"] {
       list-style-type: none;
       padding: 0;
     }
+
     ol li {
       padding-block: 0.25em;
       padding-inline: 1em;
@@ -333,82 +365,100 @@ aside[data-url^="/zahranici"] {
   }
 }
 
-[data-url^="/zahranici/mgr-studenti"] + .main-content,
-[data-url^="/zahranici/phd-studenti"] + .main-content,
-[data-url^="/zahranici/absolventi"] + .main-content,
-[data-url^="/zahranici/zamestnanci"] + .main-content,
-aside[data-url="/zahranici/faq"] + .main-content {
+[data-url^="/zahranici/mgr-studenti"]+.main-content,
+[data-url^="/zahranici/phd-studenti"]+.main-content,
+[data-url^="/zahranici/absolventi"]+.main-content,
+[data-url^="/zahranici/zamestnanci"]+.main-content,
+aside[data-url="/zahranici/faq"]+.main-content {
+
   ul:not([class]) li a,
   p a,
   span a {
     text-decoration: none !important;
+
     &::after {
       display: none !important;
     }
   }
 }
-aside[data-url="/zahranici/faq"] + .main-content,
-aside[data-url^="/zahranici/mgr-studenti"] + .main-content {
+
+aside[data-url="/zahranici/faq"]+.main-content,
+aside[data-url^="/zahranici/mgr-studenti"]+.main-content {
   .page-title {
     background-color: var(--clr-mgr);
   }
+
   ul:not([class]) li a,
   p a,
   span a {
     color: var(--clr-mgr) !important;
   }
+
   .check-list ol li {
     border-bottom: 1px solid var(--clr-light-mgr);
   }
+
   .check-list ol li::before {
     background-color: var(--clr-mgr);
   }
 }
-aside[data-url^="/zahranici/phd-studenti"] + .main-content {
+
+aside[data-url^="/zahranici/phd-studenti"]+.main-content {
   .page-title {
     background-color: var(--clr-phd);
   }
+
   ul:not([class]) li a,
   p a,
   span a,
   a span {
     color: var(--clr-phd) !important;
   }
+
   .check-list ol li {
     border-bottom: 1px solid var(--clr-light-phd);
   }
+
   .check-list ol li::before {
     background-color: var(--clr-phd);
   }
 }
-aside[data-url^="/zahranici/absolventi"] + .main-content {
+
+aside[data-url^="/zahranici/absolventi"]+.main-content {
   .page-title {
     background-color: var(--clr-absolventi);
   }
+
   ul:not([class]) li a,
   p a,
   span a {
     color: var(--clr-absolventi) !important;
   }
+
   .check-list ol li {
     border-bottom: 1px solid var(--clr-light-absolventi);
   }
+
   .check-list ol li::before {
     background-color: var(--clr-absolventi);
   }
 }
-aside[data-url^="/zahranici/zamestnanci"] + .main-content {
+
+aside[data-url^="/zahranici/zamestnanci"]+.main-content {
   .page-title {
     background-color: var(--clr-zamestnanci);
   }
+
   ul:not([class]) li a,
   p a,
   span a {
     color: var(--clr-zamestnanci) !important;
   }
+
   .check-list ol li {
     border-bottom: 1px solid var(--clr-light-zamestnanci);
   }
+
   .check-list ol li::before {
     background-color: var(--clr-zamestnanci);
   }

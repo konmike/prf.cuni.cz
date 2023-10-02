@@ -1,0 +1,44 @@
+@use "../abstracts/var" as *;
+
+.two-col-slot {
+    margin: 0;
+    margin-bottom: 4rem;
+}
+
+.two-col-slot .section-title {
+    color: $c4;
+    border-bottom: 0.2rem solid $c7;
+}
+
+.two-col-slot.halved-nav-links .section-title,
+.two-col-slot.featured-link .section-title {
+    color: $c1;
+}
+
+@media (min-width: ($sm * 1em)) {
+    .two-col-slot {
+        // lost-column: 1/2 auto 3rem;
+        width: calc(99.9% * 1 / 2 - (3rem - 3rem * 1 / 2));
+        display: flex;
+        flex-direction: column;
+
+        &:nth-child(1n) {
+            float: left;
+            margin-right: 3rem;
+            clear: none;
+        }
+
+        &:nth-child(2n) {
+            margin-right: 0;
+            float: right;
+        }
+
+        &:nth-child(2n + 1) {
+            clear: both;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

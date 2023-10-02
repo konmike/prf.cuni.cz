@@ -527,3 +527,8 @@
     text-indent: 0;
     transition: none;
 }
+
+#edit-field-hero-image-0--label+.image-widget {
+    display: flex;
+    flex-flow: column nowrap;
+}

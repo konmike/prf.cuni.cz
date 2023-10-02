@@ -76,15 +76,16 @@
 {%  set tid = node.get('field_taxonomy_main_tags').get(0).getValue()['target_id'] %}
 
 <li class="news-feed__item {{ drupal_view('taxonomy_term_name','block_1', tid) }} ">
-
-     <a class="news-feed__bg lazyload" href="{{ url }}" 
-        data-sizes="auto"
-        data-bgset="
-            {{ content.field_hero_image[0]["#item"].entity.uri.value | image_style('360x200') }} 360w,
-            {{ content.field_hero_image[0]["#item"].entity.uri.value | image_style('560x320') }} 560w,
-            {{ content.field_hero_image[0]["#item"].entity.uri.value | image_style('760x425') }} 760w,
-            {{ content.field_hero_image[0]["#item"].entity.uri.value | image_style('1520x850') }} 1520w">         
-    </a>
+    {% if content.field_hero_image[0]["#item"] %}
+        <a class="news-feed__bg lazyload" href="{{ url }}" 
+            data-sizes="auto"
+            data-bgset="
+                {{ content.field_hero_image[0]["#item"].entity.uri.value | image_style('360x200') }} 360w,
+                {{ content.field_hero_image[0]["#item"].entity.uri.value | image_style('560x320') }} 560w,
+                {{ content.field_hero_image[0]["#item"].entity.uri.value | image_style('760x425') }} 760w,
+                {{ content.field_hero_image[0]["#item"].entity.uri.value | image_style('1520x850') }} 1520w">         
+        </a>
+    {% endif %}
 
     <h3 class="news-feed__title"><a class="news-feed__title-link" href="{{ url }}">{{ label }}</a></h3>
     <div class="news-feed__text">

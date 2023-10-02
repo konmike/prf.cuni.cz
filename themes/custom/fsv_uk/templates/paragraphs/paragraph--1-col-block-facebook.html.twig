@@ -53,9 +53,35 @@
     {% block content %}
       {{ content.field_title }}
       <div class="facebook__wrap">
-        <div class="fb-page" data-href="{{ content.field_general_link['0']['#url'] }}" data-tabs="timeline" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true" data-height="350" data-width="250" ><blockquote cite="{{ content.field_general_link['0']['#url'] }}" class="fb-xfbml-parse-ignore"><a href="{{ content.field_general_link['0']['#url'] }}">{{ content.field_general_link['0']['#title'] }}</a></blockquote></div>
+          <div
+              class="fb-page" 
+              data-href="{{ content.field_general_link['0']['#url'] }}" 
+              data-tabs="timeline" 
+              data-small-header="false" 
+              data-adapt-container-width="false" 
+              data-hide-cover="false" 
+              data-show-facepile="true" 
+              data-height="350" 
+              data-width="250"
+          >
+              <blockquote 
+                  cite="{{ content.field_general_link['0']['#url'] }}" 
+                  class="fb-xfbml-parse-ignore"
+              >
+                  <a href="{{ content.field_general_link['0']['#url'] }}">
+                      {{ content.field_general_link['0']['#title'] }}
+                  </a>
+              </blockquote>
+          </div>
       </div>
-      <a class="facebook__footlink" href="{{ content.field_general_link['0']['#url'] }}" target="_blank">{{ content.field_general_link['0']['#title'] }}</a>
+
+      <div class="facebook__footlinks">
+          {% for link in content.field_general_link %}
+            {% if link['#url'] and link['#title'] %}
+                <a class="facebook__footlink" href="{{ link['#url'] }}" target="_blank"></a>
+            {% endif %}
+          {% endfor %}
+      </div>
     {% endblock %}
   </section>
 {% endblock paragraph %}
