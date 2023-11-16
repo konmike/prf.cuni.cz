@@ -1,0 +1,81 @@
+@use '../abstracts/var' as *;
+
+.kontaktni-blok {
+    font-family: var(--calibri);
+    font-size: 1.4rem;
+}
+
+.kontaktni-blok .section-title {
+    padding-bottom: 0.3rem;
+}
+
+.kontaktni-blok a:not([class="btn"]) {
+    color: $c4;
+    text-decoration: none;
+}
+
+.kontaktni-blok__content {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5rem;
+    padding: 1.5rem;
+}
+
+@media(min-width: 750px) {
+    .kontaktni-blok__content {
+        display: grid;
+        gap: 1rem;
+        // grid-template-columns: repeat(auto-fit, minmax(calc(45% - 1rem), 1fr));
+        grid-template-columns: 45% 55%;
+    }
+
+    .kontaktni-blok__content>*:only-child {
+        grid-column: 1/-1;
+    }
+}
+
+.kontaktni-blok__address {
+    line-height: 1.5;
+}
+
+.kontaktni-blok__persons {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3rem;
+}
+
+.kontaktni-blok__person {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.kontaktni-blok__person .details {
+    list-style-type: none;
+    line-height: 1.5;
+    padding-top: 0.7rem;
+
+    >li:first-of-type {
+        text-transform: uppercase;
+    }
+
+    li>p {
+        padding-top: 0.5rem;
+    }
+
+    li {
+        text-align: left;
+    }
+}
+
+.kontaktni-blok__after-content {
+    margin-inline: auto;
+    max-width: 80%;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+aside[data-url^="/dokumentace-sablony"]+.main-content .kontaktni-blok__person .details li {
+    text-align: left;
+}

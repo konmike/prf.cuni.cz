@@ -6,7 +6,8 @@
 {%
 	set classes = [
 		'controls__print-wrap',
-		'bc-' ~ content.field_barva_pozadi_obsahu[0]|render
+		'bc-' ~ content.field_barva_pozadi_obsahu[0]|render,
+        ('1' in content.field_reset_mb_pro_hero_image[0]) ? 'mb-reset-hero-image'
 	]
 %}
 
@@ -90,7 +91,8 @@
             'field_additional_title_classes',
             'field_external_tutor',
             'field_external_tutor_photo',
-            'field_header_layout'
+            'field_header_layout',
+            'field_reset_mb_pro_hero_image',
             )
         }}
         

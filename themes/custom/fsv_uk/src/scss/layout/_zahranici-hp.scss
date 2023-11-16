@@ -11,8 +11,6 @@ aside[data-url^="/zahranici"] {
       width: calc(99.9% * 3 / 4 - (80px - 30px * 3 / 4));
     }
 
-    font-family: var(--calibri);
-
     .page-title {
       background-color: var(--clr-mgr);
       color: white;
@@ -20,8 +18,17 @@ aside[data-url^="/zahranici"] {
       font-family: var(--calibri);
       border-bottom: 0;
     }
+  }
+}
 
-    p {
+aside[data-url^="/dokumentace-sablony"],
+aside[data-url^="/en"],
+aside[data-url^="/zahranici"] {
+  +.main-content {
+    font-family: var(--calibri);
+
+    p,
+    li {
       line-height: 1.35;
       text-align: justify;
     }
@@ -107,12 +114,14 @@ aside[data-url^="/zahranici"] {
   }
 }
 
+[data-url^="/en"]+.main-content .tip,
 [data-url^="/zahranici"]+.main-content .tip,
 [data-url^="/dokumentace-sablony/wysiwyg-editor"]+.main-content .tip {
   display: grid;
   grid-template-columns: 85px auto;
   padding-right: 1em;
   margin-top: 1em;
+  background-color: var(--clr-light-absolventi);
 
   .image-wrap {
     position: relative;
@@ -122,6 +131,7 @@ aside[data-url^="/zahranici"] {
       content: "";
       width: 7em;
       height: 7em;
+      background-image: url(/sites/default/files/uploads/images/tip_absolventi.svg);
       background-repeat: no-repeat;
       background-size: contain;
       position: absolute;
@@ -132,6 +142,7 @@ aside[data-url^="/zahranici"] {
 
   .tip__content {
     padding-block: 1.5em;
+    color: var(--clr-absolventi);
   }
 
   .image {
@@ -184,6 +195,19 @@ aside[data-url^="/zahranici"] {
 
   .tip__content {
     color: var(--clr-zamestnanci);
+  }
+}
+
+[data-url^="/en"]+.main-content .tip {
+  background-color: #FBEAEB;
+  text-indent: 0;
+
+  .image-wrap::after {
+    background-image: url(/sites/default/files/uploads/images/tip_universal.svg);
+  }
+
+  .tip__content {
+    color: $c4;
   }
 }
 
@@ -365,6 +389,17 @@ aside[data-url^="/zahranici"] {
   }
 }
 
+// [data-url^="/en"]+.main-content {
+
+//   ul:not([class]) li a,
+//   ol:not([class]) li a,
+//   p a,
+//   span a {
+//     color: $c4 !important;
+//   }
+// }
+
+// [data-url^="/en"]+.main-content,
 [data-url^="/zahranici/mgr-studenti"]+.main-content,
 [data-url^="/zahranici/phd-studenti"]+.main-content,
 [data-url^="/zahranici/absolventi"]+.main-content,
@@ -372,6 +407,7 @@ aside[data-url^="/zahranici"] {
 aside[data-url="/zahranici/faq"]+.main-content {
 
   ul:not([class]) li a,
+  ol:not([class]) li a,
   p a,
   span a {
     text-decoration: none !important;

@@ -1,0 +1,32 @@
+{%
+    set section_classes = [
+        'section',
+        'kontaktni-blok',
+        ('0' in content.field_join_with_next_block[0] or content.field_join_with_next_block[0] is empty) ? 'mt mb',
+        'pt-' ~ content.field_horni_odsazeni[0]|render,
+        'pb-' ~ content.field_spodni_odsazeni[0]|render,
+        ('1' in content.field_oddelit_tenkou_linkou[0]) ? 'border-bottom',
+    ]
+%}
+
+{% block paragraph %} 
+    {% block content %} 
+        <section {{ attributes.addClass(section_classes) }}>
+            {{ content.field_header }}
+
+            <div class="kontaktni-blok__content">
+                {% if content.field_adresa[0] is not empty  %} 
+                    <div class="kontaktni-blok__address">{{ content.field_adresa }}</div>
+                {% endif %}
+
+                <ul class="kontaktni-blok__persons">
+                    {{ content.field_osoba_v_kontaktnim_bloku }}
+                </ul>
+            </div>
+
+            <div class="kontaktni-blok__after-content">
+                {{ content.field_dodatecny_obsah }}
+            </div>
+        </section>
+    {% endblock %} 
+{% endblock paragraph %}

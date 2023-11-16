@@ -179,6 +179,11 @@
 
   .side-nav__item {
     border: 0;
+
+    &--active>.side-nav__link,
+    &--active>.side-nav__link+.side-nav__toggle {
+      background-color: #af1037;
+    }
   }
 
   .side-nav__item-lvl2 {
@@ -225,7 +230,7 @@
     --clr-dark-red: #c0161f;
     --clr-light-absolventi: #fad1d3;
 
-    background-color: var(--clr-dark-red);
+    background-color: $c4;
     color: $c1;
     border: 0;
     font-weight: 400;
@@ -236,7 +241,7 @@
     }
 
     +.side-nav__toggle {
-      background-color: #c0161f;
+      background-color: $c4;
 
       &::after {
         color: $c1;

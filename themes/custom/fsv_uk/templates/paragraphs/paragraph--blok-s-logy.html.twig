@@ -1,20 +1,22 @@
 {%
-	set classes = [
-		'section',
-		'section--logos',
-		'printable',
-		('0' in content.field_join_with_next_block[0]) ? 'mb',
-	]
+    set classes = [
+        'section',
+        'section--logos',
+        ('0' in content.field_join_with_next_block[0]) ? 'mb',
+        'pt-' ~ content.field_horni_odsazeni[0]|render,
+        'pb-' ~ content.field_spodni_odsazeni[0]|render,
+        ('1' in content.field_section_delimiter[0]) ? 'border-bottom',
+    ]
 %}
 
 {% block paragraph %}
-<section {{ attributes.addClass(classes) }}>
-	{% block content %} 
+    {% block content %} 
+        <section {{ attributes.addClass(classes) }}>
+            {{ content.field_header }}
 
-			<ul class="logos">
-				{{ content.field_logo }}
-			</ul>
-
-	{% endblock %} 
-    </section>
+            <ul class="logos">
+                {{ content.field_logo }}
+            </ul>
+        </section>
+    {% endblock %} 
 {% endblock paragraph %}

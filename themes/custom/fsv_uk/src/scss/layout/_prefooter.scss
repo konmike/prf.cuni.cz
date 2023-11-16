@@ -6,31 +6,38 @@
   border-top: 0.5rem solid $c4;
   max-width: none;
   background: #4b4b4b;
+
   &__container {
     padding: 4rem $padMob;
     background: #4b4b4b;
     color: $c1 !important;
+
     a {
       color: $c1 !important;
     }
   }
+
   &__top,
   &__left {
     margin-bottom: 1rem;
   }
+
   &__text {
     font-size: 1.6rem;
     margin-bottom: 3rem !important;
   }
+
   &__newsletter {
     position: relative;
+
     form {
-      & > *:not(:last-child) {
+      &>*:not(:last-child) {
         margin: {
           bottom: 16px;
         }
       }
     }
+
     input[type="email"] {
       background-color: transparent;
       border: none;
@@ -42,20 +49,24 @@
       z-index: 1;
       font-size: 1.6rem;
       color: $c4;
+
       &:focus,
       &:valid {
         border-color: $c4;
         outline: none;
       }
+
       @include placeholder {
         color: $c11;
         font-size: 1.6rem;
       }
     }
+
     // Honeypot
     input[name="firstname"] {
       display: none;
     }
+
     input[type="submit"] {
       position: absolute;
       width: auto;
@@ -73,6 +84,7 @@
     input[type="checkbox"] {
       width: auto;
     }
+
     label {
       position: absolute;
       left: -10000px;
@@ -100,40 +112,48 @@
       }
     }
   }
+
   &__social {
     display: flex;
     // justify-content: center;
     align-items: center;
+
     // max-width: 66.666%;
     &__item {
       margin-right: 8%;
     }
+
     &__link {
       background-position: center;
       background-size: contain;
       background-repeat: no-repeat;
       display: block;
       text-indent: -99999px;
+
       &[href*="facebook"] {
         width: 4rem;
         height: 4rem;
         background-image: url(../images/icons/fb.svg);
       }
+
       &[href*="twitter"] {
         width: 3.68rem;
         height: 3rem;
-        background-image: url(../images/icons/twitter.svg);
+        background-image: url(../images/icons/social-x-white.svg);
       }
+
       &[href*="instagram"] {
         width: 4rem;
         height: 4rem;
         background-image: url(../images/icons/instagram.svg);
       }
+
       &[href*="linkedin"] {
         width: 4rem;
         height: 4rem;
         background-image: url(../images/icons/linkedin-white.png);
       }
+
       &[href*="youtube"] {
         width: 5rem;
         height: 4rem;
@@ -143,6 +163,7 @@
   }
 
   @media (min-width: ($sm * 1em)) {
+
     &__newsletter,
     &__text {
       max-width: 66.666%;
@@ -150,30 +171,37 @@
   }
 
   @media (min-width: ($md * 1em)) {
+
     &__left,
     &__right {
       // lost-column: 1/2;
       width: calc(99.9% * 1 / 2 - (30px - 30px * 1 / 2));
       margin-bottom: 0;
+
       &:nth-child(1n) {
         float: left;
         margin-right: 30px;
         clear: none;
       }
+
       &:nth-child(2n) {
         margin-right: 0;
         float: right;
       }
+
       &:nth-child(2n + 1) {
         clear: both;
       }
+
       &:last-child {
         margin-right: 0;
       }
+
       &:only-child {
         margin-bottom: 2em;
       }
     }
+
     &__top {
       margin-bottom: 0;
     }

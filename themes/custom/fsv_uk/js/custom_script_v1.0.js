@@ -40,7 +40,6 @@
     });
 
     if ($(".section-menu").length) {
-      // $(".section-menu").addClass("here");
       let menus = $(".section-menu");
       menus.each(function () {
         // console.log(index);
@@ -170,50 +169,84 @@
   $("#edit-cat-102").addClass("makrela");
 
   //zajisti, spravne html rozlozeni tabulky
-  var count = $("table:not(.no-head)").length;
+  const elAside = document.querySelector('aside[data-url^="/en"]');
+  if (elAside !== null) {
+    const maskStyle = 'linear-gradient(to left, transparent, black 20%, black 100%)';
+    const tables = document.querySelectorAll('table');
 
-  for (q = 0; q < count; q++) {
-    if ($("table:eq(" + q + ") thead").length > 0) {
-      var firstR = $("table:eq(" + q + ") thead tr:first-child");
-      var others = $("table:eq(" + q + ") thead tr").not(":first");
-      $("table:eq(" + q + ") thead tr").remove();
-      $("table:eq(" + q + ")").append("<tbody>");
-    } else {
-      var firstR = $("table:eq(" + q + ") tbody tr:first-child");
-      var others = $("table:eq(" + q + ") tbody tr").not(":first");
+    tables.forEach((table) => {
+      const tableCells = table.querySelectorAll('td');
+      tableCells.forEach((cell) => {
+        cell.style.display = 'table-cell';
+        cell.style.textWrap = 'pretty';
+      });
 
-      $("table:eq(" + q + ") tbody tr").remove();
-      $("table:eq(" + q + ") tbody").before("<thead>");
-    }
+      const wrapper = document.createElement('div');
+      wrapper.style.overflowX = 'auto';
+      table.style.width = '100%';
+      table.parentNode.insertBefore(wrapper, table);
+      wrapper.appendChild(table);
 
-    $("table:eq(" + q + ") thead").append(firstR);
+      const checkScrollable = () => {
+        if (wrapper.scrollWidth > wrapper.clientWidth) {
+          wrapper.style.maskImage = maskStyle;
+          wrapper.style.webkitMaskImage = maskStyle;
+        } else {
+          wrapper.style.maskImage = 'none';
+          wrapper.style.webkitMaskImage = 'none';
+        }
+      };
 
-    var d_l1 = $("table:eq(" + q + ") thead tr th:eq(0)").html();
-    var d_l2 = $("table:eq(" + q + ") thead tr th:eq(1)").html();
-    var d_l3 = $("table:eq(" + q + ") thead tr th:eq(2)").html();
-    var d_l4 = $("table:eq(" + q + ") thead tr th:eq(3)").html();
+      checkScrollable();
+      window.addEventListener('resize', checkScrollable);
+    });
+  } else {
+    var count = $("table:not(.no-head)").length;
 
-    $("table:eq(" + q + ") tbody").append(others);
+    for (q = 0; q < count; q++) {
+      if ($("table:eq(" + q + ") thead").length > 0) {
+        var firstR = $("table:eq(" + q + ") thead tr:first-child");
+        var others = $("table:eq(" + q + ") thead tr").not(":first");
+        $("table:eq(" + q + ") thead tr").remove();
+        $("table:eq(" + q + ")").append("<tbody>");
+      } else {
+        var firstR = $("table:eq(" + q + ") tbody tr:first-child");
+        var others = $("table:eq(" + q + ") tbody tr").not(":first");
 
-    for (let index = 0; index < others.length; index++) {
-      $("table:eq(" + q + ") tbody tr:eq(" + index + ") td:eq(0)").attr(
-        "data-label",
-        d_l1
-      );
-      $("table:eq(" + q + ") tbody tr:eq(" + index + ") td:eq(1)").attr(
-        "data-label",
-        d_l2
-      );
-      $("table:eq(" + q + ") tbody tr:eq(" + index + ") td:eq(2)").attr(
-        "data-label",
-        d_l3
-      );
-      $("table:eq(" + q + ") tbody tr:eq(" + index + ") td:eq(3)").attr(
-        "data-label",
-        d_l4
-      );
+        $("table:eq(" + q + ") tbody tr").remove();
+        $("table:eq(" + q + ") tbody").before("<thead>");
+      }
+
+      $("table:eq(" + q + ") thead").append(firstR);
+
+      var d_l1 = $("table:eq(" + q + ") thead tr th:eq(0)").html();
+      var d_l2 = $("table:eq(" + q + ") thead tr th:eq(1)").html();
+      var d_l3 = $("table:eq(" + q + ") thead tr th:eq(2)").html();
+      var d_l4 = $("table:eq(" + q + ") thead tr th:eq(3)").html();
+
+      $("table:eq(" + q + ") tbody").append(others);
+
+      for (let index = 0; index < others.length; index++) {
+        $("table:eq(" + q + ") tbody tr:eq(" + index + ") td:eq(0)").attr(
+          "data-label",
+          d_l1
+        );
+        $("table:eq(" + q + ") tbody tr:eq(" + index + ") td:eq(1)").attr(
+          "data-label",
+          d_l2
+        );
+        $("table:eq(" + q + ") tbody tr:eq(" + index + ") td:eq(2)").attr(
+          "data-label",
+          d_l3
+        );
+        $("table:eq(" + q + ") tbody tr:eq(" + index + ") td:eq(3)").attr(
+          "data-label",
+          d_l4
+        );
+      }
     }
   }
+
 
   //Odstrani prazdne bunky z tabulky v mobilnim rezimu
   //Prida tridu, ktera zajisti odstraneni prazdnych bunek

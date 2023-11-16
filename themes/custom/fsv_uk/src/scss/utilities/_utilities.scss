@@ -9,3 +9,17 @@
 .border-none {
     border: none !important;
 }
+
+.border-top:before {
+    content: "";
+    display: block;
+    border-top: 1px solid var(--clr-dark-red) !important;
+}
+
+.font-bold {
+    font-weight: 600;
+}
+
+.mx-sm {
+    margin-inline: var(--mx-sm) !important;
+}

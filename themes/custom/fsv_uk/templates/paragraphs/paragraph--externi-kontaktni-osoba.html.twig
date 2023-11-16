@@ -1,0 +1,36 @@
+{% block paragraph %} 
+    {% block content %}
+        {% set img_path = content.field_general_image.0 
+            ? content.field_general_image.0 
+            : '/sites/default/files/default_images/no-photo_1.svg' 
+        %}
+        
+        <li class="kontaktni-blok__person">
+            <div class="img">
+                <div class="osoby__img" style="background-image: url({{ img_path }});"></div>
+            </div>
+
+            <ul class="details">
+                <li>
+                    {{ content.field_jmeno_prijmeni }}
+                </li>
+
+                {% if content.field_funkce_role is not empty %}
+                    <li>{{ content.field_funkce_role }}</li>
+                {% endif %}
+
+                {% if content.field_email is not empty %}
+                    <li>{{ content.field_email }}</li>
+                {% endif %}
+
+                {% if content.field_telefon is not empty %}
+                    <li>{{ content.field_telefon }}</li>
+                {% endif %}
+
+                {% if content.field_osoby_popis is not empty %}
+                    <li>{{ content.field_osoby_popis }}</li>
+                {% endif %}
+            </ul>
+        </li>
+    {% endblock %}
+{% endblock paragraph %}

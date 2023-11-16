@@ -8,12 +8,13 @@
   padding-bottom: 0;
 
   li {
-    &::after {
+    &::before {
       content: "|";
       color: var(--clr-dark-red);
       padding-inline: 0.3em;
     }
-    &:last-child::after {
+
+    &:first-child::before {
       display: none;
     }
   }

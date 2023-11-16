@@ -5,33 +5,44 @@
     background-color: $c1;
     color: $c2;
     transition: background-color 250ms;
-    &:hover {
+
+    &:hover,
+    &--active {
       background-color: rgba($color: $c2, $alpha: 0.1);
     }
   }
+
   &.bc-gray .akordeon .akordeon__header {
     background-color: var(--clr-dark-gray);
     color: $c1;
     transition: background-color 250ms;
-    &:hover {
+
+    &:hover,
+    &--active {
       background-color: rgba($color: $c15, $alpha: 0.8);
     }
   }
+
   &.bc-red .akordeon .akordeon__header {
     background-color: $c4;
     color: $c1;
     transition: background-color 250ms;
-    &:hover {
+
+    &:hover,
+    &--active {
       background-color: rgba($color: $c4, $alpha: 0.8);
     }
   }
 }
+
 .akordeon {
-  border-bottom: 2px solid var(--clr-light-gray);
+  border-bottom: 1px solid $c4;
+
   &:last-child {
     border-bottom: 0;
   }
 }
+
 .akordeon .akordeon__header {
   display: flex;
   flex-flow: row nowrap;
@@ -51,18 +62,22 @@
   font-weight: 700;
   color: inherit;
 }
+
 .akordeon .akordeon__header--active {
   text-decoration: none;
 }
+
 .akordeon .akordeon__header--active::after {
   content: "\f077";
   font-family: "Font Awesome 5 Free";
   font-weight: 700;
   color: inherit;
 }
-.akordeon .akordeon__header--active + .akordeon__content {
+
+.akordeon .akordeon__header--active+.akordeon__content {
   padding-block: 1em;
 }
+
 .akordeon .akordeon__content {
   max-height: 0;
   padding-block: 0;
@@ -72,4 +87,5 @@
   overflow: hidden;
   transition: all 150ms ease-in-out;
 }
+
 /* *** END Akordeon *** */

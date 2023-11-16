@@ -1,0 +1,27 @@
+<div class="img">
+    <a href="{{ fields.view_user_1.content }}">
+        <div class="osoby__img" style="background-image: url({{ fields.user_picture.content }});"></div>
+    </a>
+</div>
+
+<ul class="details">
+    <li>
+        {{ fields.field_titul.content }} {{ fields.field_jmeno.content }} {{ fields.field_prijmeni.content }} {{ fields.field_titul_za.content }}
+    </li>
+
+    {% if fields.field_funkce_role.content is not empty %}
+        <li>{{ fields.field_funkce_role.content }}</li>
+    {% endif %}
+
+    {% if fields.field_mail.content is not empty %}
+        <li>{{ fields.field_mail.content }}</li>
+    {% endif %}
+
+    {% if fields.field_telefon.content is not empty %}
+        <li>{{ fields.field_telefon.content }}</li>
+    {% endif %}
+
+    {% if fields.field_osoby_popis.content is not empty %}
+        <li>{{ fields.field_osoby_popis_1.content }}</li>
+    {% endif %}
+</ul>

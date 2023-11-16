@@ -1,0 +1,9 @@
+{% block paragraph %} 
+    {% block content %}
+        {% set parentNode = paragraph.parentEntity %}
+        {# {{ parentNode.field_styl_rozlozeni.value }} - vypis hodnoty pole z rodicovskeho paragrafu #}
+        <li class="kontaktni-blok__person">
+            {{ drupal_view('user_card', 'kontakt', paragraph.id()) }}
+        </li>
+    {% endblock %}
+{% endblock paragraph %}

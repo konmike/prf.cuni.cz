@@ -39,18 +39,34 @@
  */
 #}
 
-{% block content %}
-    <li class="logos__item">
-        {% if content.field_general_link.0['#url'] is not empty %}
-            {% set link, target = content.field_general_link.0['#url']|render, "_blank" %}
+{%
+    set title_classes = [
+        'section-title',
+        'padding',
+        ('1' in content.field_uppercase[0]) ? 'text-uppercase',
+        ('1' in content.field_zmensit[0]) ? 'font-calibri-smaller',
+        ('1' in content.field_tucne[0]) ? 'font-bold',
+        ('1' in content.field_oddelit_tenkou_linkou[0]) ? 'border-bottom',
+    ]
+%}
+
+{%
+    set title_text_clr = [
+        content.field_barva_nadpisu[0]|render,
+    ]
+%}
+
+{% block paragraph %}
+    {% block content %}
+        {% if (content.field_skryt_nadpis['#items'].0.getValue().value) %}
         {% else %}
-            {% set link, target = "#", "_self" %}
+            <h2 
+                id="{{ content.field_anchor.0 }}" 
+                {{ attributes.addClass(title_classes) }}
+                {{ attributes.setAttribute('style', '--paragraph-title-text-clr: ' ~ title_text_clr|join(' ')) }}
+            >
+                {{ content.field_title.0 }}
+            </h2>
         {% endif %}
-        <a href="{{ link }}" class="logos__link" target="{{target}}">
-            <img class="logos__img" src="{{ file_url( content.field_partners_block_logo_file.0['#file'].getFileUri() ) }}" alt="{{ content.field_partners_block_logo_file.0['#description'] }}">
-            {% if content.field_popisek_pod_logo[0] is not empty %}
-                <span class="sub-title">{{content.field_popisek_pod_logo}}</span>
-            {% endif %}
-        </a>
-    </li>
-{% endblock %}
+    {% endblock %}
+{% endblock paragraph %}

@@ -40,73 +40,86 @@
 #}
 {%
 	set section_classes = [
-		'paragraph--youtube-video',
+    'section',
+    'paragraph',
+    'padding',
+		'paragraph--socialni-site',
 		'pt-' ~ content.field_horni_odsazeni[0]|render,
 		'pb-' ~ content.field_spodni_odsazeni[0]|render,
+    ('1' in content.field_section_delimiter[0]) ? 'border-top',
+	]
+%}
+
+{% set custom_title_classes = create_attribute() %}
+
+{%
+	set title_classes = [
+    'padding',
+    'section-title',
+    ('1' in content.field_kapitalky[0] or content.field_kapitalky[0] is empty) ? 'text-uppercase',
+    ('1' in content.field_tucne[0]) ? 'font-bold',
+    ('1' in content.field_zmensit[0] or content.field_zmensit[0] is empty) ? 'font-calibri-smaller',
+		('1' in content.field_oddelit_tenkou_linkou[0] or content.field_oddelit_tenkou_linkou[0] is empty) ? 'border-bottom',
+	]
+%}
+
+{%
+	set title_text_clr = [
+    content.field_barva_nadpisu[0]|render,
 	]
 %}
 
 {% block paragraph %}
   <div {{ attributes.addClass(section_classes) }}> 
     {% block content %}
-        {% if (content.field_skryt_nadpis['#items'].0.getValue().value) %}{% else %}
-            <h2 class="padding section-title">{{ content.field_nazev }}</h2>
-        {% endif %}
-        
-        {% set link = content.field_odkaz_na_video['#items'].0.getValue().value|raw %}
-
-        {% if 'youtube.com' in link or 'youtu' in link %}
-            {% if '?v=' in link or '?vi=' in link %}
-                {% set cut = link|split('=') %}
-                {% set id = cut[1]|slice(0,11) %}
-            {% elseif 'embed' in link %}
-                {% set cut = link|split('/') %}
-                {% set id = cut[4] %}
-            {% else %}
-                {% set cut = link|split('/') %}
-                {% set id = cut[3] %}
-            {% endif %}
-            
-            {% if (content.field_autoplay['#items'].0.getValue().value) %}
-                {% set id = id ~ '?autoplay=1&mute=1' %}
-            {% endif %}
-        {% endif %}
-
-
-        {% if content.field_cover_iframe['#items'].value is empty %}
-            {% set classes = 'youtube--only-iframe' %}
+        {% if (content.field_skryt_nadpis['#items'].0.getValue().value) %}
         {% else %}
-            {% set classes = 'youtube--with-cover' %}
+            <h2 
+              {{ custom_title_classes.addClass(title_classes) }}
+              {{ attributes.setAttribute('style', '--paragraph-title-text-clr: ' ~ title_text_clr|join(' ')) }}
+            >
+              {{ content.field_title.0 }}
+            </h2>
         {% endif %}
 
-        <div class="youtube {{classes}}">
-            {% if content.field_cover_iframe['#items'].value is not empty %}
-                <img 
-                    class="image" 
-                    src='{{ file_url(content.field_cover_iframe['#items'].entity.uri.value) }}' 
-                />
+        {% if not (content.field_wysiwyg_body[0] is empty) %}
+            {{ content.field_wysiwyg_body }}
+        {% endif %}
+
+        <ul class="social-media">
+          {% for key, item in content.field_socialni_site if key|first != '#' %}
+            {% if 'instagram' in item['#plain_text'] %}
+              {% set file = 'social-ig.svg' %}
             {% endif %}
 
-            {% if 'youtube' in link or 'youtu' in link %}
-                <iframe 
-                    loading="lazy" 
-                    class="iframe {{ link }}" 
-                    allow="autoplay; gyroscope; picture-in-picture" 
-                    src="https://www.youtube.com/embed/{{id}}"
-                >
-                </iframe>
-            {% else %}
-                <iframe
-                    class="iframe"
-                    src="{{ link }}" 
-                    width="560" 
-                    height="315" 
-                    frameborder="0" 
-                    allowfullscreen
-                >
-                </iframe>
+            {% if 'facebook' in item['#plain_text'] %}
+              {% set file = 'social-fb.svg' %}
             {% endif %}
-        </div>
+
+            {% if 'twitter' in item['#plain_text'] %}
+              {% set file = 'social-x-black.svg' %}
+            {% endif %}
+
+            {% if 'linkedin' in item['#plain_text'] %}
+              {% set file = 'social-lin.svg' %}
+            {% endif %}
+
+            {% if 'youtube' in item['#plain_text'] %}
+              {% set file = 'social-yt.svg' %}
+            {% endif %}
+
+            <li>
+              <a href="{{ item }}">
+                <img 
+                  class="img img--social-icon" 
+                  alt="{{ item }}" 
+                  src="/sites/default/files/uploads/images/{{ file }}"
+                />
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+
     {% endblock %}
   </div>
 {% endblock paragraph %}

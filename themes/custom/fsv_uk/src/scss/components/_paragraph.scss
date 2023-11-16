@@ -14,11 +14,14 @@
       margin-left: auto;
     }
   }
+
   &--red-white {
     color: #ffffff;
+
     a {
       font-weight: 800;
       border-color: #ffffff;
+
       &::after {
         background-image: url("../images/icons/external-white.svg") !important;
       }
