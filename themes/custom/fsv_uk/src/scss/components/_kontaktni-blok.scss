@@ -12,6 +12,11 @@
 .kontaktni-blok a:not([class="btn"]) {
     color: $c4;
     text-decoration: none;
+    transition: color 150ms;
+
+    &:hover {
+        color: $c5;
+    }
 }
 
 .kontaktni-blok__content {
@@ -65,7 +70,7 @@
     }
 
     li {
-        text-align: left;
+        text-align: left !important;
     }
 }
 

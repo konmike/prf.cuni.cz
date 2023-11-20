@@ -41,34 +41,23 @@
 
     {# view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class, #}
 
-{% set parentNode = paragraph.parentEntity %}
+
+{%
+  set classes = [
+    (content.field_documents_layout[0]|render == "dlazdice" or content.field_documents_layout[0]|render == "tabulka") ? 'section dokumenty-2-0' : 'paragraph',
+    (content.field_documents_layout[0]|render == "dlazdice" or content.field_documents_layout[0]|render == "tabulka") ? 
+        'dokumenty-2-0--' ~ content.field_documents_layout[0]|render : 
+        'paragraph--type--' ~ paragraph.bundle|clean_class,
+    'pt-' ~ content.field_horni_odsazeni[0]|render,
+    'pb-' ~ content.field_spodni_odsazeni[0]|render,
+  ]
+%}
 
 {% block paragraph %}
     {% block content %}
-        {% if parentNode.field_documents_layout.value == "dlazdice" %}
-            {{ content.field_general_file_attachment }}
-        {% elseif parentNode.field_documents_layout.value == "tabulka" %}
-            <table>
-                <thead>
-                    <tr>
-                        <th>{{ 'Název'|t }}</th>
-                        <th>{{ 'Velikost'|t }}</th>
-                        <th>{{ 'Vytvořeno'|t }}</th>
-                    </tr>
-                </thead>
-
-                {{ content.field_general_file_attachment }}
-            </table>
-        {% else %}
-            {% set view = drupal_view_result('dokuments_in_paragraphs', 'block', paragraph.id())|length %}
-            {% if view > 0 %}
-                {{ drupal_view('dokuments_in_paragraphs', 'block', paragraph.id()) }}
-            {% endif %}
-
-            {% set viewprivate = drupal_view_result('dokuments_in_paragraphs', 'block_1', paragraph.id())|length %}
-            {% if viewprivate > 0 %}
-                {{ drupal_view('dokuments_in_paragraphs', 'block_1', paragraph.id()) }}
-            {% endif %}
-        {% endif %}
+        <div {{ attributes.addClass(classes) }}>
+            {{ content.field_header }}
+            {{ content.field_soubory }}
+        </div>
     {% endblock %}
 {% endblock paragraph %}

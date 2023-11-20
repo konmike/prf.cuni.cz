@@ -1,0 +1,29 @@
+.paragraph--socialni-site {}
+
+.paragraph--socialni-site .section-title {
+    padding-inline: 0;
+}
+
+.paragraph--socialni-site .body__content {
+    padding-inline: 0 !important;
+}
+
+.paragraph--socialni-site .social-media {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding-block: 1em 2em;
+}
+
+.paragraph--socialni-site .social-media .img--social-icon {
+    width: 3.5em;
+    height: 3.5em;
+}
+
+.paragraph--socialni-site .social-media a {
+    &::after {
+        display: none !important;
+    }
+}

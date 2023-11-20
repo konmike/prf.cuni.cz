@@ -1,7 +1,11 @@
 // plugins
+
 @use "vendors";
 @use "base";
 @use "layout";
 @use "components";
+
+@use "admin";
+
 @use "utilities";
 @use "shame";

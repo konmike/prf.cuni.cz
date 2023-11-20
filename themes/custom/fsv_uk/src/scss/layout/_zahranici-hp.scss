@@ -1,392 +1,393 @@
 @use "../abstracts" as *;
 
 aside[data-url^="/zahranici"] {
-  @media screen and (min-width: ($lg * 1em)) {
-    width: calc(99.9% * 1 / 4 - (50px - 30px * 1 / 4));
-    // width: auto;
-  }
-
-  +.main-content {
     @media screen and (min-width: ($lg * 1em)) {
-      width: calc(99.9% * 3 / 4 - (80px - 30px * 3 / 4));
+        width: calc(99.9% * 1 / 4 - (50px - 30px * 1 / 4));
+        // width: auto;
     }
 
-    .page-title {
-      background-color: var(--clr-mgr);
-      color: white;
-      font-weight: 300;
-      font-family: var(--calibri);
-      border-bottom: 0;
+    +.main-content {
+        @media screen and (min-width: ($lg * 1em)) {
+            width: calc(99.9% * 3 / 4 - (80px - 30px * 3 / 4));
+        }
+
+        .page-title {
+            background-color: var(--clr-mgr);
+            color: white;
+            font-weight: 300;
+            font-family: var(--calibri);
+            border-bottom: 0;
+        }
     }
-  }
 }
 
 aside[data-url^="/dokumentace-sablony"],
 aside[data-url^="/en"],
 aside[data-url^="/zahranici"] {
-  +.main-content {
-    font-family: var(--calibri);
-
-    p,
-    li {
-      line-height: 1.35;
-      text-align: justify;
-    }
-
-    .delimiter--content {
-      border-bottom: 1px solid #c0161f;
-      margin-block: 2rem;
-    }
-
-    .section--white-text {
-      font-family: var(--calibri);
-    }
-
-    .section-title {
-      &.text-uppercase {
-        text-transform: uppercase;
-      }
-
-      &.font-calibri-smaller {
+    +.main-content {
         font-family: var(--calibri);
-        font-size: 1.7rem;
-      }
 
-      &.border-bottom {
-        padding-inline: 0;
-        margin-inline: 1.5rem;
-        border-bottom: 1px solid var(--clr-dark-red);
-      }
+        p,
+        li {
+            line-height: 1.35;
+            text-align: justify;
+        }
+
+        .delimiter--content {
+            border-bottom: 1px solid #c0161f;
+            margin-block: 2rem;
+        }
+
+        .section--white-text {
+            font-family: var(--calibri);
+        }
+
+        .section-title {
+            &.text-uppercase {
+                text-transform: uppercase;
+            }
+
+            &.font-calibri-smaller {
+                font-family: var(--calibri);
+                font-size: 1.7rem;
+            }
+
+            &.border-bottom {
+                padding-inline: 0;
+                margin-inline: 1.5rem;
+                border-bottom: 1px solid var(--clr-dark-red);
+            }
+        }
+
+        .faq {
+            max-width: 100%;
+        }
+
+        .faq__item {
+            list-style: none;
+            padding-inline: 2em;
+            margin-top: 1em;
+            // border-bottom: 1px solid var(--clr-mgr);
+
+            p:last-child {
+                padding-bottom: 1em;
+            }
+        }
+
+        .delimiter--faq-item {
+            border-bottom: 1px solid var(--clr-mgr) !important;
+            margin-block: 0 !important;
+        }
+
+        .faq__item:last-child {
+            // border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .faq__title {
+            font-size: 1.7rem;
+            position: relative;
+        }
+
+        .faq__title::before {
+            --dimension: 0.75em;
+            content: "";
+            display: block;
+            width: var(--dimension);
+            height: var(--dimension);
+            margin-inline: 0 0.75em;
+            background-color: var(--clr-mgr);
+
+            position: absolute;
+            left: -1.5em;
+            top: calc(50% - (var(--dimension) / 2));
+        }
+
+        .faq__content {
+            padding-bottom: 1em;
+
+            a {
+                color: var(--clr-mgr);
+                text-decoration: none;
+            }
+        }
     }
-
-    .faq {
-      max-width: 100%;
-    }
-
-    .faq__item {
-      list-style: none;
-      padding-inline: 2em;
-      margin-top: 1em;
-      // border-bottom: 1px solid var(--clr-mgr);
-
-      p:last-child {
-        padding-bottom: 1em;
-      }
-    }
-
-    .delimiter--faq-item {
-      border-bottom: 1px solid var(--clr-mgr) !important;
-      margin-block: 0 !important;
-    }
-
-    .faq__item:last-child {
-      // border-bottom: none;
-      margin-bottom: 0;
-    }
-
-    .faq__title {
-      font-size: 1.7rem;
-      position: relative;
-    }
-
-    .faq__title::before {
-      --dimension: 0.75em;
-      content: "";
-      display: block;
-      width: var(--dimension);
-      height: var(--dimension);
-      margin-inline: 0 0.75em;
-      background-color: var(--clr-mgr);
-
-      position: absolute;
-      left: -1.5em;
-      top: calc(50% - (var(--dimension) / 2));
-    }
-
-    .faq__content {
-      padding-bottom: 1em;
-
-      a {
-        color: var(--clr-mgr);
-        text-decoration: none;
-      }
-    }
-  }
 }
 
 [data-url^="/en"]+.main-content .tip,
 [data-url^="/zahranici"]+.main-content .tip,
 [data-url^="/dokumentace-sablony/wysiwyg-editor"]+.main-content .tip {
-  display: grid;
-  grid-template-columns: 85px auto;
-  padding-right: 1em;
-  margin-top: 1em;
-  background-color: var(--clr-light-absolventi);
+    display: grid;
+    grid-template-columns: 85px auto;
+    padding-right: 1em;
+    margin-top: 1em;
+    background-color: var(--clr-light-absolventi);
 
-  .image-wrap {
-    position: relative;
-    overflow: hidden;
+    .image-wrap {
+        position: relative;
+        overflow: hidden;
 
-    &::after {
-      content: "";
-      width: 7em;
-      height: 7em;
-      background-image: url(/sites/default/files/uploads/images/tip_absolventi.svg);
-      background-repeat: no-repeat;
-      background-size: contain;
-      position: absolute;
-      top: -1.5em;
-      left: -3em;
+        &::after {
+            content: "";
+            width: 7em;
+            height: 7em;
+            background-image: url(/sites/default/files/uploads/images/tip_absolventi.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: absolute;
+            top: -1.5em;
+            left: -3em;
+        }
     }
-  }
 
-  .tip__content {
-    padding-block: 1.5em;
-    color: var(--clr-absolventi);
-  }
+    .tip__content {
+        padding-block: 1.5em;
+        color: var(--clr-absolventi);
+    }
 
-  .image {
-    opacity: 0;
-  }
+    .image {
+        opacity: 0;
+    }
 }
 
 [data-url^="/zahranici/mgr-studenti"]+.main-content .tip {
-  background-color: var(--clr-light-mgr);
+    background-color: var(--clr-light-mgr);
 
-  .image-wrap::after {
-    background-image: url(/sites/default/files/uploads/images/tip_mgr.svg);
-  }
+    .image-wrap::after {
+        background-image: url(/sites/default/files/uploads/images/tip_mgr.svg);
+    }
 
-  .tip__content {
-    color: var(--clr-mgr);
-  }
+    .tip__content {
+        color: var(--clr-mgr);
+    }
 }
 
 [data-url^="/zahranici/phd-studenti"]+.main-content .tip {
-  background-color: var(--clr-light-phd);
+    background-color: var(--clr-light-phd);
 
-  .image-wrap::after {
-    background-image: url(/sites/default/files/uploads/images/tip_phd.svg);
-  }
+    .image-wrap::after {
+        background-image: url(/sites/default/files/uploads/images/tip_phd.svg);
+    }
 
-  .tip__content {
-    color: var(--clr-phd);
-  }
+    .tip__content {
+        color: var(--clr-phd);
+    }
 }
 
 [data-url^="/zahranici/absolventi"]+.main-content .tip {
-  background-color: var(--clr-light-absolventi);
+    background-color: var(--clr-light-absolventi);
 
-  .image-wrap::after {
-    background-image: url(/sites/default/files/uploads/images/tip_absolventi.svg);
-  }
+    .image-wrap::after {
+        background-image: url(/sites/default/files/uploads/images/tip_absolventi.svg);
+    }
 
-  .tip__content {
-    color: var(--clr-absolventi);
-  }
+    .tip__content {
+        color: var(--clr-absolventi);
+    }
 }
 
 [data-url^="/zahranici/zamestnanci"]+.main-content .tip {
-  background-color: var(--clr-light-zamestnanci);
+    background-color: var(--clr-light-zamestnanci);
 
-  .image-wrap::after {
-    background-image: url(/sites/default/files/uploads/images/tip_zamestnanci.svg);
-  }
+    .image-wrap::after {
+        background-image: url(/sites/default/files/uploads/images/tip_zamestnanci.svg);
+    }
 
-  .tip__content {
-    color: var(--clr-zamestnanci);
-  }
+    .tip__content {
+        color: var(--clr-zamestnanci);
+    }
 }
 
 [data-url^="/en"]+.main-content .tip {
-  background-color: #FBEAEB;
-  text-indent: 0;
+    background-color: #FBEAEB;
+    text-indent: 0;
 
-  .image-wrap::after {
-    background-image: url(/sites/default/files/uploads/images/tip_universal.svg);
-  }
+    .image-wrap::after {
+        background-image: url(/sites/default/files/uploads/images/tip_universal.svg);
+        // background-image: url(/sites/default/files/uploads/images/tip-eng.png);
+    }
 
-  .tip__content {
-    color: $c4;
-  }
+    .tip__content {
+        color: $c4;
+    }
 }
 
 [data-url^="/zahranici"] .line,
 [data-url^="/zahranici"]+.main-content .line {
-  border-bottom: 1px solid var(--clr-dark-red);
+    border-bottom: 1px solid var(--clr-dark-red);
 }
 
 [data-url^="/zahranici"]+.main-content {
-  .section--white-text .section-title {
-    border: 0;
-    margin: 0;
-    margin-left: 0.5em;
-    padding-bottom: 0.3em;
-    padding-left: 0;
-    text-transform: uppercase;
-    color: $c2;
-    font-size: 1.7rem;
-    font-family: var(--calibri);
-  }
-
-  .section--white-text .section-title {
-    &.text-uppercase {
-      text-transform: uppercase;
+    .section--white-text .section-title {
+        border: 0;
+        margin: 0;
+        margin-left: 0.5em;
+        padding-bottom: 0.3em;
+        padding-left: 0;
+        text-transform: uppercase;
+        color: $c2;
+        font-size: 1.7rem;
+        font-family: var(--calibri);
     }
 
-    &.font-calibri-smaller {
-      font-family: var(--calibri);
-      font-size: 1.7rem;
+    .section--white-text .section-title {
+        &.text-uppercase {
+            text-transform: uppercase;
+        }
+
+        &.font-calibri-smaller {
+            font-family: var(--calibri);
+            font-size: 1.7rem;
+        }
+
+        &.border-bottom {
+            padding-inline: 0;
+            margin-inline: 1.5rem;
+            border-bottom: 1px solid var(--clr-dark-red);
+        }
     }
 
-    &.border-bottom {
-      padding-inline: 0;
-      margin-inline: 1.5rem;
-      border-bottom: 1px solid var(--clr-dark-red);
-    }
-  }
+    .contacts {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1em 3em;
+        padding: 0 0.5em;
+        font-family: var(--calibri);
 
-  .contacts {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 1em 3em;
-    padding: 0 0.5em;
-    font-family: var(--calibri);
-
-    @media screen and (min-width: ($md * 1em)) {
-      flex-flow: row nowrap;
-    }
-  }
-
-  .contacts__address {
-    text-transform: uppercase;
-    font-weight: 500;
-  }
-
-  .contacts__address>li:nth-last-child(2) {
-    margin-top: 2em;
-  }
-
-  .contacts__address .img--email {
-    max-width: 25%;
-  }
-
-  .contacts__staff {
-    display: grid;
-    row-gap: 1.5em;
-    font-size: 1.4rem;
-  }
-
-  .contacts__staff .item {
-    line-height: 1.5;
-
-    >li:first-child {
-      text-transform: uppercase;
-    }
-  }
-
-  .contacts__link {
-    text-transform: none;
-    color: var(--clr-dark-red);
-  }
-
-  .countries {
-    background-color: var(--clr-light-gray);
-    padding-block: 1em;
-    margin-top: 1em;
-  }
-
-  .countries .countries__title {
-    margin-bottom: 1.5em;
-    font-family: var(--calibri);
-    font-weight: 600;
-    font-size: 1.6rem;
-    text-align: center;
-  }
-
-  .countries .countries__list {
-    columns: 3 140px;
-    max-width: 70%;
-    margin-inline: auto;
-  }
-
-  .countries .countries__list li {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    column-gap: 0.5em;
-    margin-bottom: 0.25em;
-  }
-
-  .countries .countries__list img {
-    max-height: 3rem;
-    width: auto;
-  }
-
-  .scholarship-table {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    gap: 1em;
-    margin-inline: auto;
-    text-align: center;
-  }
-
-  .scholarship-table ul {
-    padding: 0;
-    margin: 0;
-  }
-
-  .scholarship-table ul li {
-    background-color: rgba(0, 0, 0, 0.05);
-    list-style-type: none;
-    padding-inline: 1em;
-    text-indent: 0;
-    margin-bottom: 0.15em;
-
-    &::before {
-      display: none;
+        @media screen and (min-width: ($md * 1em)) {
+            flex-flow: row nowrap;
+        }
     }
 
-    &:first-child {
-      background-color: var(--clr-light-mgr);
-    }
-  }
-
-  .check-list {
-    ol {
-      list-style-type: none;
-      padding: 0;
+    .contacts__address {
+        text-transform: uppercase;
+        font-weight: 500;
     }
 
-    ol li {
-      padding-block: 0.25em;
-      padding-inline: 1em;
-      padding-bottom: 0.15em;
-      margin-left: 1.5em;
-      background-color: $c1;
-      border-bottom: 1px solid var(--clr-light-mgr);
-      position: relative;
-
-      &:nth-child(2n) {
-        background-color: rgba(0, 0, 0, 0.02);
-      }
-
-      &::before {
-        --dimension: 1em;
-        content: "";
-        display: block;
-        width: var(--dimension);
-        height: var(--dimension);
-        margin-inline: 0 0.75em;
-        background-color: var(--clr-mgr);
-
-        position: absolute;
-        left: -1.5em;
-        top: calc(50% - (var(--dimension) / 2));
-      }
+    .contacts__address>li:nth-last-child(2) {
+        margin-top: 2em;
     }
-  }
+
+    .contacts__address .img--email {
+        max-width: 25%;
+    }
+
+    .contacts__staff {
+        display: grid;
+        row-gap: 1.5em;
+        font-size: 1.4rem;
+    }
+
+    .contacts__staff .item {
+        line-height: 1.5;
+
+        >li:first-child {
+            text-transform: uppercase;
+        }
+    }
+
+    .contacts__link {
+        text-transform: none;
+        color: var(--clr-dark-red);
+    }
+
+    .countries {
+        background-color: var(--clr-light-gray);
+        padding-block: 1em;
+        margin-top: 1em;
+    }
+
+    .countries .countries__title {
+        margin-bottom: 1.5em;
+        font-family: var(--calibri);
+        font-weight: 600;
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .countries .countries__list {
+        columns: 3 140px;
+        max-width: 70%;
+        margin-inline: auto;
+    }
+
+    .countries .countries__list li {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        column-gap: 0.5em;
+        margin-bottom: 0.25em;
+    }
+
+    .countries .countries__list img {
+        max-height: 3rem;
+        width: auto;
+    }
+
+    .scholarship-table {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        gap: 1em;
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .scholarship-table ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    .scholarship-table ul li {
+        background-color: rgba(0, 0, 0, 0.05);
+        list-style-type: none;
+        padding-inline: 1em;
+        text-indent: 0;
+        margin-bottom: 0.15em;
+
+        &::before {
+            display: none;
+        }
+
+        &:first-child {
+            background-color: var(--clr-light-mgr);
+        }
+    }
+
+    .check-list {
+        ol {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ol li {
+            padding-block: 0.25em;
+            padding-inline: 1em;
+            padding-bottom: 0.15em;
+            margin-left: 1.5em;
+            background-color: $c1;
+            border-bottom: 1px solid var(--clr-light-mgr);
+            position: relative;
+
+            &:nth-child(2n) {
+                background-color: rgba(0, 0, 0, 0.02);
+            }
+
+            &::before {
+                --dimension: 1em;
+                content: "";
+                display: block;
+                width: var(--dimension);
+                height: var(--dimension);
+                margin-inline: 0 0.75em;
+                background-color: var(--clr-mgr);
+
+                position: absolute;
+                left: -1.5em;
+                top: calc(50% - (var(--dimension) / 2));
+            }
+        }
+    }
 }
 
 // [data-url^="/en"]+.main-content {
@@ -406,96 +407,121 @@ aside[data-url^="/zahranici"] {
 [data-url^="/zahranici/zamestnanci"]+.main-content,
 aside[data-url="/zahranici/faq"]+.main-content {
 
-  ul:not([class]) li a,
-  ol:not([class]) li a,
-  p a,
-  span a {
-    text-decoration: none !important;
+    ul:not([class]) li a,
+    ol:not([class]) li a,
+    p a,
+    span a {
+        text-decoration: none !important;
 
-    &::after {
-      display: none !important;
+        &::after {
+            display: none !important;
+        }
     }
-  }
 }
 
 aside[data-url="/zahranici/faq"]+.main-content,
 aside[data-url^="/zahranici/mgr-studenti"]+.main-content {
-  .page-title {
-    background-color: var(--clr-mgr);
-  }
+    .page-title {
+        background-color: var(--clr-mgr);
+    }
 
-  ul:not([class]) li a,
-  p a,
-  span a {
-    color: var(--clr-mgr) !important;
-  }
+    ul:not([class]) li a,
+    p a,
+    span a {
+        color: var(--clr-mgr) !important;
+    }
 
-  .check-list ol li {
-    border-bottom: 1px solid var(--clr-light-mgr);
-  }
+    .check-list ol li {
+        border-bottom: 1px solid var(--clr-light-mgr);
+    }
 
-  .check-list ol li::before {
-    background-color: var(--clr-mgr);
-  }
+    .check-list ol li::before {
+        background-color: var(--clr-mgr);
+    }
 }
 
 aside[data-url^="/zahranici/phd-studenti"]+.main-content {
-  .page-title {
-    background-color: var(--clr-phd);
-  }
+    .page-title {
+        background-color: var(--clr-phd);
+    }
 
-  ul:not([class]) li a,
-  p a,
-  span a,
-  a span {
-    color: var(--clr-phd) !important;
-  }
+    ul:not([class]) li a,
+    p a,
+    span a,
+    a span {
+        color: var(--clr-phd) !important;
+    }
 
-  .check-list ol li {
-    border-bottom: 1px solid var(--clr-light-phd);
-  }
+    .check-list ol li {
+        border-bottom: 1px solid var(--clr-light-phd);
+    }
 
-  .check-list ol li::before {
-    background-color: var(--clr-phd);
-  }
+    .check-list ol li::before {
+        background-color: var(--clr-phd);
+    }
 }
 
 aside[data-url^="/zahranici/absolventi"]+.main-content {
-  .page-title {
-    background-color: var(--clr-absolventi);
-  }
+    .page-title {
+        background-color: var(--clr-absolventi);
+    }
 
-  ul:not([class]) li a,
-  p a,
-  span a {
-    color: var(--clr-absolventi) !important;
-  }
+    ul:not([class]) li a,
+    p a,
+    span a {
+        color: var(--clr-absolventi) !important;
+    }
 
-  .check-list ol li {
-    border-bottom: 1px solid var(--clr-light-absolventi);
-  }
+    .check-list ol li {
+        border-bottom: 1px solid var(--clr-light-absolventi);
+    }
 
-  .check-list ol li::before {
-    background-color: var(--clr-absolventi);
-  }
+    .check-list ol li::before {
+        background-color: var(--clr-absolventi);
+    }
 }
 
 aside[data-url^="/zahranici/zamestnanci"]+.main-content {
-  .page-title {
-    background-color: var(--clr-zamestnanci);
-  }
+    .page-title {
+        background-color: var(--clr-zamestnanci);
+    }
 
-  ul:not([class]) li a,
-  p a,
-  span a {
-    color: var(--clr-zamestnanci) !important;
-  }
+    ul:not([class]) li a,
+    p a,
+    span a {
+        color: var(--clr-zamestnanci) !important;
+    }
 
-  .check-list ol li {
-    border-bottom: 1px solid var(--clr-light-zamestnanci);
-  }
+    .check-list ol li {
+        border-bottom: 1px solid var(--clr-light-zamestnanci);
+    }
 
-  .check-list ol li::before {
-    background-color: var(--clr-zamestnanci);
-  }
+    .check-list ol li::before {
+        background-color: var(--clr-zamestnanci);
+    }
+}
+
+aside[data-url^="/en"]+.main-content {
+    a:not([class]) {
+        color: $c4;
+        text-decoration: none;
+        transition: color 125ms;
+
+        &:hover {
+            color: $c5;
+        }
+    }
+
+    p a.file {
+        text-decoration: none;
+        transition: color 125ms;
+
+        &::after {
+            display: none !important;
+        }
+
+        &:hover {
+            color: $c5;
+        }
+    }
 }

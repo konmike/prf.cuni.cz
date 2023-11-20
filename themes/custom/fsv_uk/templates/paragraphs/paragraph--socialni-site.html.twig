@@ -41,8 +41,8 @@
 {%
 	set section_classes = [
     'section',
-    'paragraph',
     'padding',
+    'paragraph',
 		'paragraph--socialni-site',
 		'pt-' ~ content.field_horni_odsazeni[0]|render,
 		'pb-' ~ content.field_spodni_odsazeni[0]|render,
@@ -54,7 +54,6 @@
 
 {%
 	set title_classes = [
-    'padding',
     'section-title',
     ('1' in content.field_kapitalky[0] or content.field_kapitalky[0] is empty) ? 'text-uppercase',
     ('1' in content.field_tucne[0]) ? 'font-bold',
@@ -72,15 +71,7 @@
 {% block paragraph %}
   <div {{ attributes.addClass(section_classes) }}> 
     {% block content %}
-        {% if (content.field_skryt_nadpis['#items'].0.getValue().value) %}
-        {% else %}
-            <h2 
-              {{ custom_title_classes.addClass(title_classes) }}
-              {{ attributes.setAttribute('style', '--paragraph-title-text-clr: ' ~ title_text_clr|join(' ')) }}
-            >
-              {{ content.field_title.0 }}
-            </h2>
-        {% endif %}
+        {{ content.field_header }}
 
         {% if not (content.field_wysiwyg_body[0] is empty) %}
             {{ content.field_wysiwyg_body }}

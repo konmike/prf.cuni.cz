@@ -1,0 +1,9 @@
+#block-node-tabs {
+    a {
+        color: black;
+
+        &:after {
+            display: none !important;
+        }
+    }
+}

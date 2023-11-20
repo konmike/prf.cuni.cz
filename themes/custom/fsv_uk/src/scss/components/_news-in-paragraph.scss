@@ -7,10 +7,12 @@
   .news__filter {
     display: none;
   }
+
   .news__feed {
     width: 100%;
     margin-block: 0;
   }
+
   .section-title {
     border: 0;
     margin: 0;
@@ -23,7 +25,7 @@
     font-family: var(--calibri);
   }
 
-  > a {
+  >a {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -63,12 +65,11 @@
   .item {
     display: flex;
     flex-direction: column;
-
     padding: 1em;
     background-color: $c7;
-
     position: relative;
     z-index: 1;
+    text-align: left !important;
 
     &:hover,
     &:focus,
@@ -83,7 +84,6 @@
       line-height: 1;
       font-family: var(--calibri);
       font-size: 1.9rem;
-      // font-weight: 600;
     }
   }
 
@@ -101,19 +101,23 @@
     width: min-content;
   }
 
-  .item__header ul > li {
+  .item__header ul>li {
     height: 1em;
     width: 1em;
   }
+
   .item__header .tag--mgr {
     background-color: var(--clr-mgr);
   }
+
   .item__header .tag--phd {
     background-color: var(--clr-phd);
   }
+
   .item__header .tag--absolventi {
     background-color: var(--clr-absolventi);
   }
+
   .item__header .tag--zamestnanci {
     background-color: var(--clr-zamestnanci);
   }

@@ -1,0 +1,58 @@
+{% macro format_size(bytes) %}
+    {% set kilobyte = 1024 %}
+    {% set megabyte = kilobyte * 1024 %}
+    {% if bytes < kilobyte %}
+        {{ bytes ~ ' B' }}
+    {% elseif bytes < megabyte %}
+        {{ (bytes / kilobyte)|number_format(2, '.', ',') ~ ' KB' }}
+    {% else %}
+        {{ (bytes / megabyte)|number_format(2, '.', ',') ~ ' MB' }}
+    {% endif %}
+{% endmacro %}
+
+{% macro file_link(file, description) %}
+    <a 
+        class="dokument__link"
+        href="{{ file_url(file.uri.value) }}" 
+        type="{{ file.filemime.0.value }}"
+        title="{{ file.filename.0.value }}"
+    >
+        {% if description is not empty %}
+            {{ description }}
+        {% else %}
+            {{ file.filename.0.value }}
+        {% endif %}
+    </a>
+{% endmacro %}
+
+{% import _self as macros %}
+
+{% set layout = element['#object']._referringItem.parent.parent.entity.field_documents_layout.value %}
+{% set layout_tile_number = element['#object']._referringItem.parent.parent.entity.field_pocet_dlazdic_na_radek.value %}
+
+{% if layout == 'dlazdice' %}
+    {% for item in items[0].content['#rows'] %}
+        <div 
+            class="dokument"
+            {{ attributes.setAttribute('style', '--layout_tile_number: ' ~ layout_tile_number|join(' ')) }}
+        >
+            {{ macros.file_link(item.0.data['#file'], item.0.data['#description']) }}
+        </div>
+    {% endfor %}
+{% else %}
+    {% for row in items[0].content['#rows'] %}
+        <tr>
+            <td>
+                {{ macros.file_link(row.0.data['#file'], row.0.data['#description']) }}
+            </td>
+
+            <td>
+                {{ macros.format_size(row.0.data['#file'].filesize.0.value) }}
+            </td>
+
+            <td>
+                {{ row.0.data['#file'].created.0.value|date('d. m. Y') }}
+            </td>
+        </tr>
+    {% endfor %}
+{% endif %}

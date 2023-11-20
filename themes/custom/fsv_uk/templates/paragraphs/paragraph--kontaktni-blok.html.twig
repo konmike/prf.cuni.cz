@@ -24,9 +24,11 @@
                 </ul>
             </div>
 
-            <div class="kontaktni-blok__after-content">
-                {{ content.field_dodatecny_obsah }}
-            </div>
+            {% if content.field_dodatecny_obsah[0] is not empty  %}
+                <div class="kontaktni-blok__after-content">
+                    {{ content.field_dodatecny_obsah }}
+                </div>
+            {% endif %}
         </section>
     {% endblock %} 
 {% endblock paragraph %}
