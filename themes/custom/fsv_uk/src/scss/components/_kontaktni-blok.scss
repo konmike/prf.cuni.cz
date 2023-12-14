@@ -28,10 +28,10 @@
 
 @media(min-width: 750px) {
     .kontaktni-blok__content {
+        --content-gap: 1.25rem;
         display: grid;
-        gap: 1rem;
-        // grid-template-columns: repeat(auto-fit, minmax(calc(45% - 1rem), 1fr));
-        grid-template-columns: 45% 55%;
+        gap: var(--content-gap);
+        grid-template-columns: 58% calc(42% - var(--content-gap));
     }
 
     .kontaktni-blok__content>*:only-child {
@@ -41,6 +41,11 @@
 
 .kontaktni-blok__address {
     line-height: 1.5;
+    padding-top: 0.5rem;
+
+    p {
+        text-align: left !important;
+    }
 }
 
 .kontaktni-blok__persons {
@@ -53,13 +58,13 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 1.25rem;
 }
 
 .kontaktni-blok__person .details {
     list-style-type: none;
     line-height: 1.5;
-    padding-top: 0.7rem;
+    padding-top: 0.5rem;
 
     >li:first-of-type {
         text-transform: uppercase;
@@ -75,8 +80,6 @@
 }
 
 .kontaktni-blok__after-content {
-    margin-inline: auto;
-    max-width: 80%;
     padding: 1.5rem;
     margin-top: 2rem;
 }

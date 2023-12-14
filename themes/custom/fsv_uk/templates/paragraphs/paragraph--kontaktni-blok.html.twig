@@ -15,13 +15,13 @@
             {{ content.field_header }}
 
             <div class="kontaktni-blok__content">
-                {% if content.field_adresa[0] is not empty  %} 
-                    <div class="kontaktni-blok__address">{{ content.field_adresa }}</div>
-                {% endif %}
-
                 <ul class="kontaktni-blok__persons">
                     {{ content.field_osoba_v_kontaktnim_bloku }}
                 </ul>
+                
+                {% if content.field_adresa[0] is not empty  %} 
+                    <div class="kontaktni-blok__address">{{ content.field_adresa }}</div>
+                {% endif %}
             </div>
 
             {% if content.field_dodatecny_obsah[0] is not empty  %}

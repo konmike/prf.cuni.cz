@@ -8,9 +8,11 @@
 
 .vypis-zakladnich-stran__item {
   display: grid;
-  grid-template-columns: 50px 1fr;
+  grid-template-columns: 1fr;
   column-gap: 2em;
   margin-top: var(--articles-gap);
+  text-align: left !important;
+  line-height: 1.715 !important;
 
   &:first-child {
     margin-top: 0;
@@ -19,21 +21,6 @@
   &:last-child .vypis-zakladnich-stran__link-more {
     border-bottom: 0;
   }
-}
-
-.vypis-zakladnich-stran__icon {
-  grid-column: 1/2;
-  opacity: 0.4;
-
-  img {
-    height: auto;
-  }
-}
-
-.vypis-zakladnich-stran__header,
-.vypis-zakladnich-stran__content,
-.vypis-zakladnich-stran__link-more {
-  grid-column: 2/3;
 }
 
 .vypis-zakladnich-stran__header a {

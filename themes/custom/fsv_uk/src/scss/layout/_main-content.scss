@@ -6,12 +6,43 @@
     margin-bottom: 40px;
     width: 100%;
 
+    &.table--course {
+      font-size: 1.6rem;
+      margin-bottom: 0;
+
+      @container cnt-section (min-width: 576px) {
+        max-width: 70%;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: rgb(255, 250, 250);
+      }
+
+      tbody td {
+        padding: 10px;
+      }
+
+      .detail-information {
+        color: $c4;
+        transition: color 125ms;
+        text-wrap: pretty;
+
+        &:hover {
+          color: $c5;
+        }
+
+        @container cnt-section (min-width: 576px) {
+          text-wrap: nowrap;
+        }
+      }
+    }
+
     &.kpd-people {
       margin-bottom: 0;
     }
 
     td {
-      padding: 10px 10px 0 0;
+      padding: 10px 10px 0 10px;
       text-align: left;
     }
 

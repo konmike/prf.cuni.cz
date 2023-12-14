@@ -27,8 +27,7 @@ aside[data-url^="/zahranici"] {
     +.main-content {
         font-family: var(--calibri);
 
-        p,
-        li {
+        p {
             line-height: 1.35;
             text-align: justify;
         }
@@ -416,6 +415,12 @@ aside[data-url="/zahranici/faq"]+.main-content {
         &::after {
             display: none !important;
         }
+    }
+}
+
+aside[data-url^="/en"]+.main-content a[href$=".pdf"] {
+    &::after {
+        display: none !important;
     }
 }
 

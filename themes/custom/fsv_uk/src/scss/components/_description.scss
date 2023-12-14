@@ -17,6 +17,7 @@
 
         a.external-link {
             color: $c1;
+
             &:after {
                 background-image: url(../images/icons/external-white.svg);
             }
@@ -25,6 +26,16 @@
         a.download-link {
             &:after {
                 background-image: url(../images/icons/download-white.svg);
+            }
+        }
+    }
+
+    &[role="contentinfo"] {
+        a {
+            color: white !important;
+
+            &::after {
+                display: none !important;
             }
         }
     }
