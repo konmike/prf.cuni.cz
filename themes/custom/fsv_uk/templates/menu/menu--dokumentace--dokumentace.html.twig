@@ -38,10 +38,10 @@
     
     {% for item in items %}
 
-        <li class="{{ menu_level < 1 ? 'side-nav__item' : 'side-nav__item-lvl2' }} {{ item.in_active_trail ? 'side-nav__item--active' }}">
+        <li class="{{ menu_level < 1 ? 'side-nav__item' : 'side-nav__item-lvl' ~ menu_level }} {{ item.in_active_trail ? 'side-nav__item--active' }}">
                 {%
                     set linkClasses = [
-                    menu_level < 1 ? 'side-nav__link' : 'side-nav__link-lvl2',
+                    menu_level < 1 ? 'side-nav__link' : 'side-nav__link-lvl' ~ menu_level,
                     item.in_active_trail ? 'side-nav__link--active',
                     menu_level == 0 ? 'jq_side-nav-link'
                     ]    

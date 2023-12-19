@@ -3042,16 +3042,11 @@ for (
     e(".jq_side-nav").length &&
     e(".jq_side-navToggle").on("click keypress", function (t) {
       ("click" != t.type && 13 != t.which) ||
-        (e(".jq_side-navSubmenu").not(e(this).siblings("ul")).slideUp(),
-          (!e(this).is(e(".side-nav__toggle.sub-is-open")))
-            ? e(".side-nav__toggle.sub-is-open").removeClass("sub-is-open")
-            : '',
-
+        (e(this).siblings(".jq_side-navSubmenu").slideUp(),
           e(this).toggleClass("sub-is-open"),
-
           e(this).siblings("ul").is(":visible")
-            ? (e(this).siblings("ul").slideUp())
-            : (e(this).siblings("ul").slideDown()));
+            ? e(this).siblings("ul").slideUp()
+            : e(this).siblings("ul").slideDown());
     }),
     e("#jq_side-nav-toggle").click(function () {
       e(".jq_side-nav").slideToggle();
