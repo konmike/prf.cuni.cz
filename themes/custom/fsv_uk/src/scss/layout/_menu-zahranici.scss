@@ -2,201 +2,197 @@
 
 [data-url^="/zahranici"],
 [data-url^="/zahranici/aktuality"] {
-  .side-nav__list {
-    display: grid;
-    row-gap: 1em;
-  }
-
-  .side-nav__list-lvl2 {
-    padding: 0;
-    padding-top: 0.5em;
-  }
-
-  .side-nav__item {
-    border: 0;
-    text-transform: uppercase;
-
-    &:nth-last-child(3),
-    &:last-child {
-      border: 2px solid var(--clr-light-gray);
+    .side-nav__list {
+        display: grid;
+        row-gap: 1em;
     }
 
-    &:nth-last-child(3) {
-      @media screen and (min-width: ($lg * 1em)) {
-        margin-top: 4em;
-      }
-    }
-  }
-
-  .side-nav__item-lvl2 {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    padding: 0.5em 0.5em 0.5em 0;
-    transition: background-color 250ms;
-    cursor: pointer;
-    text-transform: uppercase;
-
-    &::before {
-      content: "";
-      display: block;
-      min-width: 0.75em;
-      min-height: 0.75em;
-      margin-inline: 1.25em 0.75em;
-      background-color: transparent;
-      transition: background-color 250ms;
-    }
-  }
-
-  .side-nav__link-lvl2.is-active,
-  .side-nav__link-lvl2.side-nav__link-lvl2--active {
-    color: $c2;
-    font-weight: 600;
-
-    &::after {
-      display: none;
-    }
-  }
-
-  .side-nav__link {
-    text-align: center;
-    border-left: 0;
-    border-bottom: 0;
-    // border: 1px solid rgba(0, 0, 0, 0.4);
-
-    font-family: var(--calibri);
-    font-size: 2rem;
-    font-weight: 500;
-    color: $c2;
-    padding-block: 0.4em;
-  }
-
-  .side-nav__link-lvl2 {
-    &:hover {
-      color: inherit;
-    }
-  }
-
-  .side-nav__link--mgr,
-  .side-nav__link--phd,
-  .side-nav__link--absolventi,
-  .side-nav__link--zamestnanci {
-    color: $c1;
-    border: 0;
-    font-weight: 400;
-    text-align: left;
-    padding-left: 2rem;
-
-    &:hover {
-      border: 0;
+    .side-nav__list-lvl2 {
+        padding: 0;
+        padding-top: 0.5em;
     }
 
-    +.side-nav__toggle::after {
-      color: $c1;
+    .side-nav__item {
+        border: 0;
+        text-transform: uppercase;
+
+        &:nth-last-child(3),
+        &:last-child {
+            border: 2px solid var(--clr-light-gray);
+        }
+
+        &:nth-last-child(4) {
+            @media screen and (min-width: ($lg * 1em)) {
+                margin-top: 4em;
+            }
+        }
     }
-  }
 
-  .side-nav__link--mgr {
-    background-color: var(--clr-mgr);
-
-    ~.side-nav__list-lvl2 .side-nav__item-lvl2 {
-
-      &:hover,
-      &.side-nav__item--active {
-        background-color: var(--clr-light-mgr);
+    .side-nav__item-lvl2 {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        padding: 0.5em 0.5em 0.5em 0;
+        transition: background-color 250ms;
+        cursor: pointer;
+        text-transform: uppercase;
 
         &::before {
-          background-color: var(--clr-mgr);
+            content: "";
+            display: block;
+            min-width: 0.75em;
+            min-height: 0.75em;
+            margin-inline: 1.25em 0.75em;
+            background-color: transparent;
+            transition: background-color 250ms;
         }
-      }
     }
 
-    +.side-nav__toggle {
-      background-color: var(--clr-mgr);
-    }
-  }
+    .side-nav__link-lvl2.is-active,
+    .side-nav__link-lvl2.side-nav__link-lvl2--active {
+        color: $c2;
+        font-weight: 600;
 
-  .side-nav__link--phd {
-    background-color: var(--clr-phd);
-
-    ~.side-nav__list-lvl2 .side-nav__item-lvl2 {
-
-      &:hover,
-      &.side-nav__item--active {
-        background-color: var(--clr-light-phd);
-
-        &::before {
-          background-color: var(--clr-phd);
+        &::after {
+            display: none;
         }
-      }
     }
 
-    +.side-nav__toggle {
-      background-color: var(--clr-phd);
+    .side-nav__link {
+        text-align: center;
+        border-left: 0;
+        border-bottom: 0;
+        // border: 1px solid rgba(0, 0, 0, 0.4);
+
+        font-family: var(--calibri);
+        font-size: 2rem;
+        font-weight: 500;
+        color: $c2;
+        padding-block: 0.4em;
     }
-  }
 
-  .side-nav__link--absolventi {
-    background-color: var(--clr-absolventi);
-
-    ~.side-nav__list-lvl2 .side-nav__item-lvl2 {
-
-      &:hover,
-      &.side-nav__item--active {
-        background-color: var(--clr-light-absolventi);
-
-        &::before {
-          background-color: var(--clr-absolventi);
+    .side-nav__link-lvl2 {
+        &:hover {
+            color: inherit;
         }
-      }
     }
 
-    +.side-nav__toggle {
-      background-color: var(--clr-absolventi);
-    }
-  }
+    .side-nav__link--mgr,
+    .side-nav__link--phd,
+    .side-nav__link--absolventi,
+    .side-nav__link--zamestnanci {
+        color: $c1;
+        border: 0;
+        font-weight: 400;
+        text-align: left;
+        padding-left: 2rem;
 
-  .side-nav__link--zamestnanci {
-    background-color: var(--clr-zamestnanci);
-
-    ~.side-nav__list-lvl2 .side-nav__item-lvl2 {
-
-      &:hover,
-      &.side-nav__item--active {
-        background-color: var(--clr-light-zamestnanci);
-
-        &::before {
-          background-color: var(--clr-zamestnanci);
+        &:hover {
+            border: 0;
         }
-      }
+
+        + .side-nav__toggle::after {
+            color: $c1;
+        }
     }
 
-    +.side-nav__toggle {
-      background-color: var(--clr-zamestnanci);
+    .side-nav__link--mgr {
+        background-color: var(--clr-mgr);
+
+        ~ .side-nav__list-lvl2 .side-nav__item-lvl2 {
+            &:hover,
+            &.side-nav__item--active {
+                background-color: var(--clr-light-mgr);
+
+                &::before {
+                    background-color: var(--clr-mgr);
+                }
+            }
+        }
+
+        + .side-nav__toggle {
+            background-color: var(--clr-mgr);
+        }
     }
-  }
+
+    .side-nav__link--phd {
+        background-color: var(--clr-phd);
+
+        ~ .side-nav__list-lvl2 .side-nav__item-lvl2 {
+            &:hover,
+            &.side-nav__item--active {
+                background-color: var(--clr-light-phd);
+
+                &::before {
+                    background-color: var(--clr-phd);
+                }
+            }
+        }
+
+        + .side-nav__toggle {
+            background-color: var(--clr-phd);
+        }
+    }
+
+    .side-nav__link--absolventi {
+        background-color: var(--clr-absolventi);
+
+        ~ .side-nav__list-lvl2 .side-nav__item-lvl2 {
+            &:hover,
+            &.side-nav__item--active {
+                background-color: var(--clr-light-absolventi);
+
+                &::before {
+                    background-color: var(--clr-absolventi);
+                }
+            }
+        }
+
+        + .side-nav__toggle {
+            background-color: var(--clr-absolventi);
+        }
+    }
+
+    .side-nav__link--zamestnanci {
+        background-color: var(--clr-zamestnanci);
+
+        ~ .side-nav__list-lvl2 .side-nav__item-lvl2 {
+            &:hover,
+            &.side-nav__item--active {
+                background-color: var(--clr-light-zamestnanci);
+
+                &::before {
+                    background-color: var(--clr-zamestnanci);
+                }
+            }
+        }
+
+        + .side-nav__toggle {
+            background-color: var(--clr-zamestnanci);
+        }
+    }
 }
 
 [data-url="/partnerske-univerzity"] .side-nav__toggle,
 [data-url^="/zahranici"] .side-nav__toggle,
 [data-url^="/zahranici/aktuality"] .side-nav__toggle {
-  color: transparent;
-
-  &::after {
-    content: "\f078";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 600;
-    color: $c2;
-    font-size: 1.4rem;
-    opacity: 0.5;
-    transition: opacity 250ms;
-  }
-
-  &:hover::after {
-    opacity: 0.9;
-  }
-
-  &--active {
     color: transparent;
-  }
+
+    &::after {
+        content: "\f078";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 600;
+        color: $c2;
+        font-size: 1.4rem;
+        opacity: 0.5;
+        transition: opacity 250ms;
+    }
+
+    &:hover::after {
+        opacity: 0.9;
+    }
+
+    &--active {
+        color: transparent;
+    }
 }

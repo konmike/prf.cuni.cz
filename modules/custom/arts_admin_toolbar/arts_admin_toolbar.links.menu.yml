@@ -1,0 +1,5 @@
+arts_admin_toolbar.settings:
+  title: 'Adminimal Admin Toolbar'
+  parent: system.admin_config_ui
+  description: 'Configure Adminimal Admin Toolbar.'
+  route_name: arts_admin_toolbar.settings

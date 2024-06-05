@@ -418,9 +418,15 @@ aside[data-url="/zahranici/faq"]+.main-content {
     }
 }
 
-aside[data-url^="/en"]+.main-content a[href$=".pdf"] {
-    &::after {
-        display: none !important;
+aside[data-url^="/en"]+.main-content {
+    a[href$=".pdf"],
+    a[href$=".doc"],
+    a[href$=".docx"],
+    a[href$=".xlsx"],
+    a[href$=".xls"]{
+        &::after {
+            display: none !important;
+        }
     }
 }
 
@@ -517,6 +523,7 @@ aside[data-url^="/en"]+.main-content {
         }
     }
 
+    .akordeon__content a.file,
     p a.file {
         text-decoration: none;
         transition: color 125ms;

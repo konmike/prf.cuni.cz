@@ -1,0 +1,7 @@
+arts_admin_toolbar.settings:
+  path: '/admin/config/user-interface/arts_admin_toolbar'
+  defaults:
+    _form: '\Drupal\arts_admin_toolbar\Form\SettingsForm'
+    _title: 'Adminimal Admin Toolbar Settings'
+  requirements:
+    _permission: 'administer site configuration'

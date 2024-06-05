@@ -1,0 +1,19 @@
+adminimal-admin-toolbar:
+    version: VERSION
+    css:
+        theme:
+            css/arts_admin_toolbar.css: {}
+    js:
+        js/custom.js: {}
+    dependencies:
+        - core/jquery
+google-fonts:
+    version: VERSION
+    css:
+        theme:
+            css/font.css: {}
+font-awesome:
+    css:
+        theme:
+            //cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css:
+                { type: external }

@@ -532,3 +532,332 @@
     display: flex;
     flex-flow: column nowrap;
 }
+
+.layout-node-form .paragraphs-subform .field--name-field-title label {
+    display: block;
+}
+
+.obsah-bloku,
+.nastaveni-bloku {
+    background-color: white !important;
+    margin-block: 0 !important;
+    margin-top: -0.5em !important;
+    padding-top: 2em !important;
+}
+
+.obsah-bloku .field-multiple-table thead:has(+ tbody .hlavicka-sekce),
+.nastaveni-bloku .field-multiple-table thead,
+.obsah-bloku .field-multiple-table tbody .paragraph-type--hlavicka-komponenty .field-multiple-drag,
+.nastaveni-bloku .field-multiple-table tbody .field-multiple-drag,
+.obsah-bloku .field-multiple-table tbody .paragraph-type--hlavicka-komponenty .paragraph-top,
+.nastaveni-bloku .field-multiple-table tbody .paragraph-top {
+    display: none;
+}
+
+.nastaveni-bloku .field-multiple-table tbody tr,
+.obsah-bloku .field-multiple-table tbody .paragraph-type--hlavicka-komponenty {
+    border-bottom: 0;
+}
+
+.nastaveni-bloku .field-multiple-table tbody tr:hover,
+.obsah-bloku .field-multiple-table tbody tr:hover,
+.nastaveni-bloku .field-multiple-table tbody tr:focus,
+.obsah-bloku .field-multiple-table tbody tr:focus {
+    background: transparent;
+}
+
+.nastaveni-bloku .field-multiple-table tbody tr td:nth-child(2),
+.obsah-bloku .field-multiple-table tbody tr td:nth-child(2) {
+    padding-top: 0;
+}
+
+/* Fancy switch */
+.nastaveni-bloku .field-multiple-table tbody .form-type-checkbox,
+.obsah-bloku .field-multiple-table tbody .form-type-checkbox {
+    display: grid;
+    grid-template-areas: "input label"
+        ". description";
+    grid-template-columns: min-content auto;
+    align-items: center;
+    column-gap: 0.25rem;
+    row-gap: 0.1rem;
+    min-height: 1.5rem;
+    margin-bottom: 0.125rem;
+    margin-top: 0;
+}
+
+.nastaveni-bloku .field-multiple-table tbody .form-checkbox,
+.obsah-bloku .field-multiple-table tbody .form-checkbox {
+    grid-area: input;
+    background: transparent;
+    vertical-align: top;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 1px solid rgba(0, 0, 0, .25);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    width: 2.5em !important;
+    height: 1.5em !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
+    background-position: left center;
+    border-radius: 2em;
+    transition: background-position .15s ease-in-out;
+    top: 0;
+    box-shadow: none;
+}
+
+.nastaveni-bloku .field-multiple-table tbody .form-checkbox:checked,
+.obsah-bloku .field-multiple-table tbody .form-checkbox:checked {
+    background-position: right center;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+    background-color: #0074bd;
+    border-color: #0074bd;
+}
+
+.nastaveni-bloku .field-multiple-table tbody .form-checkbox+label,
+.obsah-bloku .field-multiple-table tbody .form-checkbox+label {
+    grid-area: label;
+    margin-bottom: 0;
+}
+
+.nastaveni-bloku .field-multiple-table tbody .form-checkbox+label+.description,
+.obsah-bloku .field-multiple-table tbody .form-checkbox+label+.description {
+    grid-area: description;
+    margin-left: 0;
+}
+
+/*  */
+.obsah-bloku .hlavicka-sekce {
+    display: grid;
+    grid-template-columns: repeat(6, 100px);
+    row-gap: 1rem;
+    column-gap: 0.5rem;
+    align-items: center;
+}
+
+.obsah-bloku .hlavicka-sekce .form-wrapper:nth-child(1) {
+    grid-column: 1 / -1;
+    margin-bottom: -0.75rem;
+    width: min-content;
+}
+
+.obsah-bloku .hlavicka-sekce .form-wrapper:nth-child(1) label,
+.obsah-bloku .hlavicka-sekce .form-wrapper:nth-child(7) label {
+    text-wrap: nowrap;
+}
+
+.obsah-bloku .hlavicka-sekce .form-wrapper:nth-child(2) {
+    grid-column: 1 / 4;
+}
+
+.obsah-bloku .hlavicka-sekce .form-wrapper:nth-child(3) {
+    grid-column: 4 / -1;
+}
+
+.obsah-bloku .hlavicka-sekce .form-wrapper:nth-child(4) {
+    grid-column: 1 / 3;
+}
+
+.obsah-bloku .hlavicka-sekce .form-wrapper:nth-child(5) {
+    grid-column: 3 / -1;
+}
+
+.obsah-bloku .hlavicka-sekce .form-wrapper:nth-child(6) {
+    grid-column: 1 / 2;
+}
+
+.obsah-bloku .hlavicka-sekce .form-wrapper:nth-child(7) {
+    grid-column: 2 / -1;
+    width: min-content;
+}
+
+.obsah-bloku .hlavicka-sekce .form-wrapper:nth-child(8) {
+    grid-column: 1 / 4;
+}
+
+.obsah-bloku .hlavicka-sekce .form-wrapper:nth-child(9) {
+    grid-column: 4 / -1;
+}
+
+.field--name-field-obecna-nastaveni .field-multiple-table tbody .paragraphs-subform {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    max-width: 640px;
+}
+
+.nastaveni-bloku .field--type-list-string,
+.obsah-bloku .field--type-list-string {
+    width: 200px;
+    position: relative;
+}
+
+.obsah-bloku .field--type-string {
+    width: 300px;
+    position: relative;
+}
+
+.obsah-bloku .field--type-string input {
+    height: 2.75rem;
+}
+
+.obsah-bloku .field--type-string input:focus {
+    background-color: transparent;
+}
+
+.obsah-bloku .field--type-string input::placeholder {
+    opacity: 0;
+}
+
+.nastaveni-bloku .form-type-select,
+.obsah-bloku .form-type-select,
+.obsah-bloku .form--type-string {
+    margin-block: 0 !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.obsah-bloku .field--type-string label {
+    position: absolute;
+    background-color: #fcfcfa;
+    color: rgba(0, 0, 0, 1);
+    padding-inline: 0.25em;
+    display: inline-block;
+    top: 2px;
+    left: 10px;
+    font-weight: 900;
+    font-size: 12px;
+    transition: all 150ms;
+}
+
+.obsah-bloku .field--type-string label:has(+.form-text:placeholder-shown) {
+    position: absolute;
+    background-color: #fcfcfa;
+    color: rgba(0, 0, 0, 0.75);
+    padding-inline: 0.25em;
+    display: inline-block;
+    top: 22px;
+    left: 10px;
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.obsah-bloku .field--type-string label:has(+.form-text:focus) {
+    top: 2px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 1);
+}
+
+.nastaveni-bloku .field--type-list-string label,
+.obsah-bloku .field--type-list-string label {
+    position: absolute;
+    background-color: #fcfcfa;
+    padding-inline: 0.25em;
+    display: inline-block;
+    top: -8px;
+    left: 10px;
+    font-weight: 900;
+    font-size: 12px;
+}
+
+.nastaveni-bloku .form-select,
+.obsah-bloku .form-select,
+.obsah-bloku .form-text {
+    width: 100%;
+    padding: 15px 10px;
+    padding-right: 25px;
+    border-radius: 5px !important;
+    border-color: rgba(0, 0, 0, 0.1);
+    background-position-x: 95%;
+    background-position-y: 55%;
+    transition: all 100ms;
+}
+
+.nastaveni-bloku .form-select:focus,
+.nastaveni-bloku .form-select:hover,
+.obsah-bloku .form-select:focus,
+.obsah-bloku .form-select:hover,
+.obsah-bloku .form-text:hover,
+.obsah-bloku .form-text:focus {
+    border-color: #0074bd;
+    border-radius: 5px;
+    outline: none !important;
+    background-position-x: 95%;
+    background-position-y: 55%;
+    box-shadow: none;
+}
+
+.specificka-nastaveni .details-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    column-gap: 1rem;
+    padding-top: 1em;
+}
+
+[data-drupal-selector*="field-pocet-dlazdic-na-radek-wrapper"] {
+    display: none;
+}
+
+/* testovani nove administrace */
+.obsah-bloku .field--name-field-polozka .paragraph-type--polozka-do-tab-s-odkazy-dlazdice>td+td {
+    padding-block: 0;
+}
+
+.obsah-bloku .field--name-field-polozka .paragraph-type--polozka-do-tab-s-odkazy-dlazdice>td+td .paragraph-type,
+.obsah-bloku .field--name-field-polozka .paragraph-type--polozka-do-tab-s-odkazy-dlazdice>td+td .paragraph-info,
+.obsah-bloku .field--name-field-polozka .paragraph-type--polozka-do-tab-s-odkazy-dlazdice>td+td .paragraph-summary,
+.obsah-bloku .field--name-field-polozka .paragraph-type--polozka-do-tab-s-odkazy-dlazdice>td+td .paragraphs-icon-button,
+.obsah-bloku .field--name-field-polozka .paragraph-type--polozka-do-tab-s-odkazy-dlazdice>td+td .paragraphs-dropdown-toggle {
+    display: none;
+}
+
+.obsah-bloku .field--name-field-polozka .paragraph-type--polozka-do-tab-s-odkazy-dlazdice>td+td .paragraphs-dropdown-actions {
+    display: flex;
+    top: 26px;
+    box-shadow: none;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    height: 1.7rem;
+}
+
+.obsah-bloku .field--name-field-polozka .paragraph-type--polozka-do-tab-s-odkazy-dlazdice>td+td .paragraphs-dropdown-actions input {
+    opacity: 0;
+    max-width: 2rem;
+    padding: 0;
+}
+
+.obsah-bloku .field--name-field-polozka .paragraph-type--polozka-do-tab-s-odkazy-dlazdice>td+td .paragraphs-dropdown-actions::after {
+    content: '\f24d';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    position: absolute;
+    right: 5px;
+    font-size: 1.25rem;
+    bottom: 5px;
+    z-index: -1;
+    opacity: 0.75;
+}
+
+.obsah-bloku .field--name-field-polozka .paragraph-type--polozka-do-tab-s-odkazy-dlazdice>td+td .paragraphs-dropdown-actions::before {
+    content: '\f1f8';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    color: #d43414;
+    position: absolute;
+    left: 6px;
+    font-size: 1.25rem;
+    bottom: 5px;
+    opacity: 0.75;
+    transition: all 100ms;
+}
+
+.obsah-bloku .field--name-field-polozka .paragraph-type--polozka-do-tab-s-odkazy-dlazdice>td+td .paragraphs-dropdown-actions:has(+input[name="field_content_blocks_5_subform_field_polozka_0_remove"]:hover)::before {
+    opacity: 1;
+}

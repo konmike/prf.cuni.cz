@@ -1,0 +1,13 @@
+name: Drupal ᐬrts Admin Toolbar
+# core: 8.x
+description: Adminimal styling brought to admin toolbar.
+package: Administration
+configure: arts_admin_toolbar.settings
+type: module
+dependencies:
+  - admin_toolbar:admin_toolbar
+
+version: '8.x-1.8'
+core_version_requirement: ^8 || ^9
+project: 'arts_admin_toolbar'
+datestamp: 1533653789
