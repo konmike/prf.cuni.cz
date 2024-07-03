@@ -1,0 +1,64 @@
+@use "../abstracts/var" as *;
+
+.eu-cookie-compliance-banner{
+    outline: none;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    margin: 15px;
+    padding: 30px 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.15) 7px 7px 25px 0px, rgba(0, 0, 0, 0.1) 1px 1px 3px 0px;
+    font-size: 13px;
+    max-width: 380px;
+}
+
+.eu-cookie-compliance-message {
+    h2 {
+        color: $c4;
+    }
+    p{
+        color: #333333;
+    }
+}
+
+.eu-cookie-compliance-categories .eu-cookie-compliance-category > div {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    column-gap: 1rem;
+    font-size: 1.5rem;
+    color: #333333;
+
+    input {
+        max-width: min-content;
+    }
+    label {
+        color: inherit;
+    }
+}
+
+.eu-cookie-compliance-categories-buttons .eu-cookie-compliance-save-preferences-button,
+.agree-button.eu-cookie-compliance-default-button  {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #333333;
+    border: 2px solid $c4;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 2px;
+    font-weight: normal;
+    font-size: inherit;
+    box-shadow: none;
+    background: none;
+    text-shadow: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $c4;
+}
+
+.agree-button.eu-cookie-compliance-default-button {
+    margin-right: 0;
+}
