@@ -4,6 +4,17 @@
     let megaMenu = $(".no-dropdown").siblings(".nav__megamenu");
     megaMenu.remove();
 
+    const btnCookieChange = document.getElementById("cookie-change");
+
+    if (btnCookieChange) {
+      btnCookieChange.addEventListener("click", () => {
+        document.cookie = "cookieConsentStatus=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "cookieConsentStatus-categories=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "cookieConsentStatus-version=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        location.reload();
+      });
+    }
+
     $(".no-dropdown").click(function (e) {
       // let href = $(this);
       let href = $(this).attr("href");
