@@ -57,3 +57,36 @@
     margin-top: 40px;
   }
 }
+
+.captcha {
+  background-color: #fff6f7;
+  padding: 1rem;
+  margin-inline: 1.5rem;
+  margin-block: 1.5rem;
+  outline: none;
+}
+.captcha img {
+  margin-top: 0.5rem;
+  max-width: 50%;
+}
+.captcha .form-item-captcha-response {
+  max-width: 50%;
+}
+.captcha .description {
+  display: none;
+}
+.captcha .reload-captcha-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+.reload-captcha-wrapper::before {
+  content: '\f2f1';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  text-decoration: none;
+}
+.captcha .reload-captcha {
+  text-decoration: underline;
+}
