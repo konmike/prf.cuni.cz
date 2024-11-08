@@ -1,6 +1,6 @@
 @use "../abstracts" as *;
 
-[data-url^="/zahranici/aktuality"] {
+[data-url^="/cs/zahranici/aktuality"] {
   +.main-content {
     background-color: $c1;
 
