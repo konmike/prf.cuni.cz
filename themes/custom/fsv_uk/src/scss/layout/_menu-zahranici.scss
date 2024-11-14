@@ -1,6 +1,8 @@
 @use "../abstracts" as *;
 
 [data-url^="/cs/zahranici"],
+[data-url^="/zahranici"],
+[data-url^="/zahranici/aktuality"],
 [data-url^="/cs/zahranici/aktuality"] {
     .side-nav__list {
         display: grid;
@@ -171,8 +173,11 @@
 }
 
 [data-url="/cs/partnerske-univerzity"] .side-nav__toggle,
+[data-url="/partnerske-univerzity"] .side-nav__toggle,
 [data-url^="/cs/zahranici"] .side-nav__toggle,
-[data-url^="/cs/zahranici/aktuality"] .side-nav__toggle {
+[data-url^="/zahranici"] .side-nav__toggle,
+[data-url^="/cs/zahranici/aktuality"] .side-nav__toggle,
+[data-url^="/zahranici/aktuality"] .side-nav__toggle {
     color: transparent;
 
     &::after {

@@ -1,76 +1,79 @@
 @use "../abstracts" as *;
 
-[data-url^="/cs/zahranici"] + .main-content {
-  .section--white-text,
-  #bodycontent {
-    hr {
-      border-bottom: 1px solid #c0161f;
-      margin-block: 2rem;
-    }
-    p,
-    a,
-    span,
-    b,
-    i {
-      font-family: var(--calibri) !important;
-      font-size: 1.6rem !important;
-      line-height: 1.35 !important;
-      margin-left: 0 !important;
-    }
-    ol:not([class]) > li > ul:not([class]),
-    ul:not([class]) > li > ol:not([class]),
-    ol:not([class]) > li > ol:not([class]),
-    ul:not([class]) > li > ul:not([class]) {
-      margin-top: 0.3em;
-    }
-    ol:not([class]),
-    ul:not([class]) {
-      li {
+[data-url^="/cs/zahranici"],
+[data-url^="/zahranici"] {
+  & + .main-content {
+    .section--white-text,
+    #bodycontent {
+      hr {
+        border-bottom: 1px solid #c0161f;
+        margin-block: 2rem;
+      }
+      p,
+      a,
+      span,
+      b,
+      i {
+        font-family: var(--calibri) !important;
+        font-size: 1.6rem !important;
+        line-height: 1.35 !important;
         margin-left: 0 !important;
-        line-height: 1.35;
-        margin-bottom: 0.1em !important;
-        &:last-child {
-          margin-bottom: 0.5em;
+      }
+      ol:not([class]) > li > ul:not([class]),
+      ul:not([class]) > li > ol:not([class]),
+      ol:not([class]) > li > ol:not([class]),
+      ul:not([class]) > li > ul:not([class]) {
+        margin-top: 0.3em;
+      }
+      ol:not([class]),
+      ul:not([class]) {
+        li {
+          margin-left: 0 !important;
+          line-height: 1.35;
+          margin-bottom: 0.1em !important;
+          &:last-child {
+            margin-bottom: 0.5em;
+          }
+          &:empty {
+            display: none;
+          }
         }
-        &:empty {
-          display: none;
+      }
+      ul:not([class]) {
+        //   margin-left: 0.5em;
+        padding-left: 40px;
+        list-style: initial;
+        li {
+          list-style: inherit;
+          text-indent: 0;
+          padding-left: 0;
+
+          &::before {
+            display: none;
+          }
+
+          &.paragraph {
+            padding-bottom: 0;
+          }
         }
       }
     }
-    ul:not([class]) {
-      //   margin-left: 0.5em;
-      padding-left: 40px;
-      list-style: initial;
-      li {
-        list-style: inherit;
-        text-indent: 0;
-        padding-left: 0;
 
-        &::before {
-          display: none;
-        }
-
-        &.paragraph {
-          padding-bottom: 0;
-        }
-      }
-    }
-  }
-
-  .paragraph--type--dokumenty-sada {
-    font-family: var(--calibri);
-    caption {
+    .paragraph--type--dokumenty-sada {
       font-family: var(--calibri);
-    }
-    table th {
-      background-color: var(--clr-light-mgr);
-      color: $c2;
-    }
-    a {
-      color: var(--clr-mgr);
-      text-decoration: none;
-      &::after {
-        background-image: url(../images/icons/download-blue.svg);
+      caption {
+        font-family: var(--calibri);
+      }
+      table th {
+        background-color: var(--clr-light-mgr);
+        color: $c2;
+      }
+      a {
+        color: var(--clr-mgr);
+        text-decoration: none;
+        &::after {
+          background-image: url(../images/icons/download-blue.svg);
+        }
       }
     }
   }

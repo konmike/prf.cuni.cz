@@ -1,184 +1,187 @@
 @use "../abstracts" as *;
 
-[data-url^="/cs/zahranici"] .events-container {
-  display: none;
-  @media screen and (min-width: ($lg * 1em)) {
-    display: block;
-    margin-top: 2em;
-    font-family: var(--calibri);
-    background-color: white;
-    padding-block: 1em 3em;
-    padding-inline: 0.3em;
-  }
-}
-
-[data-url^="/cs/zahranici"] .events-container .events__title {
-  padding-left: 0.5em;
-  margin-bottom: 1.5em;
-  text-transform: uppercase;
-  font-family: var(--calibri);
-  border-bottom: 1px solid var(--clr-dark-red);
-}
-
-[data-url^="/cs/zahranici"] .calendar .month {
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  font-size: 1.6rem;
-  height: 30px;
-  color: var(--clr-dark-red);
-}
-[data-url^="/cs/zahranici"] .calendar .year {
-  font-weight: 400;
-  color: $c2;
-}
-[data-url^="/cs/zahranici"] .calendar table {
-  margin-top: 0.1em;
-  margin-bottom: 0;
-  border-spacing: 2px;
-  border-collapse: separate;
-}
-[data-url^="/cs/zahranici"] .calendar header {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.4em;
-  padding-inline: 0.5em;
-}
-[data-url^="/cs/zahranici"] .calendar header .simple-calendar-btn-wrap {
-  display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
-}
-[data-url^="/cs/zahranici"] .calendar header .simple-calendar-btn {
-  position: relative;
-}
-
-[data-url^="/cs/zahranici"] .calendar thead td {
-  font-size: 1.6rem;
-  color: $c2;
-  background-color: var(--clr-dark-gray);
-}
-[data-url^="/cs/zahranici"] .calendar thead,
-[data-url^="/cs/zahranici"] .calendar tbody tr {
-  line-height: 1;
-}
-[data-url^="/cs/zahranici"] .calendar thead td,
-[data-url^="/cs/zahranici"] .calendar .day {
-  width: 2em;
-  height: 2em;
-  line-height: 2em;
-  text-transform: uppercase;
-}
-[data-url^="/cs/zahranici"] .calendar td {
-  padding: 0;
-}
-[data-url^="/cs/zahranici"] .calendar tbody td {
-  background-color: var(--clr-light-gray);
-  color: $c2;
-}
-
-[data-url^="/cs/zahranici"] .calendar .day {
-  border-radius: 0;
-}
-[data-url^="/cs/zahranici"] .calendar .day.today {
-  // background-color: hsl(var(--clr-dark-red-hsl), 35%);
-  border: 2px solid hsla(var(--clr-dark-red-hsl), 50%);
-  background-color: transparent;
-  color: $c2;
-
-  &:hover {
-    border: 2px solid hsla(var(--clr-dark-red-hsl), 50%);
-  }
-}
-[data-url^="/cs/zahranici"] .calendar .has-event.today {
-  background-color: var(--clr-dark-red);
-  border-color: var(--clr-dark-red);
-  color: $c1;
-}
-[data-url^="/cs/zahranici"] .calendar .has-event {
-  // border: 2px solid hsla(var(--clr-dark-red-hsl), 50%);
-  transition: border 250ms;
-  background-color: var(--clr-dark-red);
-  color: $c1;
-  &::after {
+[data-url^="/cs/zahranici"],
+[data-url^="/zahranici"] {
+  .events-container {
     display: none;
+    @media screen and (min-width: ($lg * 1em)) {
+      display: block;
+      margin-top: 2em;
+      font-family: var(--calibri);
+      background-color: white;
+      padding-block: 1em 3em;
+      padding-inline: 0.3em;
+    }
   }
-  &:hover {
-    // border: 2px solid hsla(var(--clr-dark-red-hsl), 100%);
-    border-color: transparent;
-  }
-}
-[data-url^="/cs/zahranici"] .calendar .event-container {
-  padding: 1em;
-  padding-top: 4em;
-  font-family: var(--calibri);
-}
-[data-url^="/cs/zahranici"] .calendar .event-container .event {
-  font-family: var(--calibri);
-  padding-block: 0.5em;
-  text-transform: none;
-  // background: hsl(var(--clr-dark-red-hsl), 50%);
-  background: hsl(var(--clr-dark-red-hsl));
-}
-[data-url^="/cs/zahranici"] .calendar .event-container .event-date {
-  margin-bottom: 0;
-}
-[data-url^="/cs/zahranici"] .events {
-  margin-top: 1em;
-  font-family: var(--calibri);
-}
-[data-url^="/cs/zahranici"] .events .events__list {
-}
-[data-url^="/cs/zahranici"] .events .events__list .events__item {
-  display: none;
-  flex-flow: row nowrap;
-  column-gap: 1em;
-  padding-bottom: 0.4em;
-  border-bottom: 1px solid var(--clr-dark-red);
-  margin-bottom: 0.5em;
-  //   &:last-child {
-  //     border-bottom: 0;
-  //   }
 
-  & > div:first-child > span > span {
-    padding: 0.5em;
+  .events-container .events__title {
+    padding-left: 0.5em;
+    margin-bottom: 1.5em;
+    text-transform: uppercase;
+    font-family: var(--calibri);
+    border-bottom: 1px solid var(--clr-dark-red);
+  }
+
+  .calendar .month {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    height: 30px;
+    color: var(--clr-dark-red);
+  }
+  .calendar .year {
+    font-weight: 400;
+    color: $c2;
+  }
+  .calendar table {
+    margin-top: 0.1em;
+    margin-bottom: 0;
+    border-spacing: 2px;
+    border-collapse: separate;
+  }
+  .calendar header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.4em;
+    padding-inline: 0.5em;
+  }
+  .calendar header .simple-calendar-btn-wrap {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+  .calendar header .simple-calendar-btn {
+    position: relative;
+  }
+
+  .calendar thead td {
+    font-size: 1.6rem;
+    color: $c2;
+    background-color: var(--clr-dark-gray);
+  }
+  .calendar thead,
+  .calendar tbody tr {
+    line-height: 1;
+  }
+  .calendar thead td,
+  .calendar .day {
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    text-transform: uppercase;
+  }
+  .calendar td {
+    padding: 0;
+  }
+  .calendar tbody td {
     background-color: var(--clr-light-gray);
     color: $c2;
   }
 
-  & > div:first-child > span > .today {
-    background-color: var(--clr-dark-red);
+  .calendar .day {
+    border-radius: 0;
+  }
+  .calendar .day.today {
+    // background-color: hsl(var(--clr-dark-red-hsl), 35%);
+    border: 2px solid hsla(var(--clr-dark-red-hsl), 50%);
+    background-color: transparent;
+    color: $c2;
 
+    &:hover {
+      border: 2px solid hsla(var(--clr-dark-red-hsl), 50%);
+    }
+  }
+  .calendar .has-event.today {
+    background-color: var(--clr-dark-red);
+    border-color: var(--clr-dark-red);
     color: $c1;
   }
-
-  a {
-    text-decoration: none;
+  .calendar .has-event {
+    // border: 2px solid hsla(var(--clr-dark-red-hsl), 50%);
+    transition: border 250ms;
+    background-color: var(--clr-dark-red);
+    color: $c1;
+    &::after {
+      display: none;
+    }
+    &:hover {
+      // border: 2px solid hsla(var(--clr-dark-red-hsl), 100%);
+      border-color: transparent;
+    }
   }
-}
+  .calendar .event-container {
+    padding: 1em;
+    padding-top: 4em;
+    font-family: var(--calibri);
+  }
+  .calendar .event-container .event {
+    font-family: var(--calibri);
+    padding-block: 0.5em;
+    text-transform: none;
+    // background: hsl(var(--clr-dark-red-hsl), 50%);
+    background: hsl(var(--clr-dark-red-hsl));
+  }
+  .calendar .event-container .event-date {
+    margin-bottom: 0;
+  }
+  .events {
+    margin-top: 1em;
+    font-family: var(--calibri);
+  }
+  .events .events__list {
+  }
+  .events .events__list .events__item {
+    display: none;
+    flex-flow: row nowrap;
+    column-gap: 1em;
+    padding-bottom: 0.4em;
+    border-bottom: 1px solid var(--clr-dark-red);
+    margin-bottom: 0.5em;
+    //   &:last-child {
+    //     border-bottom: 0;
+    //   }
 
-[data-url^="/cs/zahranici"] .btn--podani-prihlasek {
-  display: flex;
-  flex-flow: column nowrap;
-  margin-top: 1em;
-  padding: 0.3em;
-  font-size: 2rem;
-  font-family: var(--calibri);
-  background-color: $c1;
-  text-transform: uppercase;
+    & > div:first-child > span > span {
+      padding: 0.5em;
+      background-color: var(--clr-light-gray);
+      color: $c2;
+    }
 
-  &:after {
-    content: "";
-    display: block;
-    width: 3rem;
-    height: 3rem;
-    background-image: url(../images/icons/sipka.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin-left: -0.5em;
+    & > div:first-child > span > .today {
+      background-color: var(--clr-dark-red);
+
+      color: $c1;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .btn--podani-prihlasek {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-top: 1em;
+    padding: 0.3em;
+    font-size: 2rem;
+    font-family: var(--calibri);
+    background-color: $c1;
+    text-transform: uppercase;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 3rem;
+      height: 3rem;
+      background-image: url(../images/icons/sipka.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-left: -0.5em;
+    }
   }
 }

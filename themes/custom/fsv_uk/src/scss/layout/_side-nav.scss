@@ -263,7 +263,8 @@
   }
 }
 
-[data-url^="/cs/dokumentace-sablony"] {
+[data-url^="/cs/dokumentace-sablony"],
+[data-url^="/dokumentace-sablony"] {
   .side-nav__list-lvl2>.side-nav__item-lvl1:has(>.side-nav__list-lvl2) {
     display: grid;
     grid-template-areas: 'title toggle'
